@@ -126,6 +126,13 @@ for t in hilos.values():
 noticias.sort(key=lambda x: -x["score"])
 f["noticias"] = noticias[:top]
 
+# ---------------------------------------------------------------- limites de Go
+ruta_go = os.path.join(HERE, "go_limites.json")
+if os.path.exists(ruta_go):
+    f["go_limites"] = json.load(open(ruta_go, encoding="utf-8"))
+    print("  limites de Go:", len(f["go_limites"]["filas"]), "modelos ·",
+          f["go_limites"].get("actualizado"))
+
 # ---------------------------------------------------------------- meta + salida
 n_coment = sum(len(t.get("comments") or []) for t in hilos.values())
 f["meta"] = {

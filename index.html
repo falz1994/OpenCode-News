@@ -3,58 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
 <title>Modelos de OpenCode por habilidad</title>
 <style>
+  /* ---------- tema oscuro (por defecto) ---------- */
   :root{
-    --bg:#0e1116; --panel:#161b22; --panel2:#1c232d; --line:#2a323d;
+    --bg:#0d1117; --panel:#151b23; --panel2:#1b222c; --line:#2a323d;
     --txt:#e6edf3; --dim:#8b949e; --acc:#58a6ff;
-    --r3:#1f6f3f; --r2:#2f5d34; --r1:#2b3440; --r0:#20262e; --rm1:#6e2b2b;
-    --pos:#3fb950; --neg:#f85149;
+
+    /* Rampa SECUENCIAL de un solo tono: mas azul = mejor.
+       (antes habia dos verdes casi iguales y no se distinguia el mejor) */
+    --r3:#1d4ed8;  --r3-txt:#ffffff;
+    --r2:#1e3a8a;  --r2-txt:#dbe6ff;
+    --r1:#232c39;  --r1-txt:#c9d4e2;
+    --r0:#171c23;  --r0-txt:#5c6675;
+    --rm1:#6e1f1f; --rm1-txt:#ffd7d7;
+    --pos:#3fb950; --neg:#f85149; --warn:#d29922;
+  }
+  /* ---------- tema claro ---------- */
+  body.light{
+    --bg:#f6f8fa; --panel:#ffffff; --panel2:#eef2f7; --line:#d6dde6;
+    --txt:#1f2328; --dim:#5b6673; --acc:#0a58ca;
+    --r3:#1d4ed8;  --r3-txt:#ffffff;
+    --r2:#a9c4fb;  --r2-txt:#0b2a6b;
+    --r1:#dfe6f0;  --r1-txt:#243040;
+    --r0:#eef1f5;  --r0-txt:#8b949e;
+    --rm1:#f0b6b6; --rm1-txt:#6b1414;
+    --pos:#1a7f37; --neg:#cf222e; --warn:#9a6700;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
-       font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+       font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#0e1116 70%,#0e1116e0);
-         border-bottom:1px solid var(--line);padding:18px 22px 12px}
-  h1{margin:0 0 4px;font-size:22px} h2{margin:34px 0 10px;font-size:18px;border-left:3px solid var(--acc);padding-left:10px}
+  :focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+  header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+         padding:16px 22px 10px}
+  h1{margin:0 0 4px;font-size:21px}
+  h2{margin:32px 0 10px;font-size:17px;border-left:3px solid var(--acc);padding-left:10px}
   .sub{color:var(--dim);font-size:13px;margin-bottom:10px}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;color:var(--dim);align-items:center}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 12px;font-size:12px;color:var(--dim);align-items:center}
   .pill{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:3px 10px}
+  button,input[type=search]{font:inherit;font-size:13px}
   button{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:8px;
-         padding:6px 12px;cursor:pointer;font-size:13px}
+         padding:6px 11px;cursor:pointer}
   button:hover{border-color:var(--acc)}
   input[type=search]{background:var(--panel);border:1px solid var(--line);color:var(--txt);
-         border-radius:8px;padding:6px 10px;font-size:13px;min-width:220px}
-  main{padding:8px 22px 60px}
-  .wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+         border-radius:8px;padding:6px 10px;min-width:200px}
+  main{padding:6px 22px 60px}
+  .wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-height:78vh}
   table{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+  caption{text-align:left;padding:10px 12px;color:var(--dim);font-size:12px}
   th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-  thead th{position:sticky;top:0;background:var(--panel2);font-size:12px;text-transform:uppercase;
-           letter-spacing:.03em;color:var(--dim);cursor:pointer;z-index:5}
-  thead th:hover{color:var(--txt)}
-  tbody tr:hover{background:#1b222c}
+  thead th{position:sticky;top:0;background:var(--panel2);font-size:11.5px;text-transform:uppercase;
+           letter-spacing:.04em;color:var(--dim);z-index:5;padding:0}
+  thead th button{all:unset;display:block;width:100%;padding:8px 9px;cursor:pointer;
+                  font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}
+  thead th button:hover{color:var(--txt)}
+  thead th[aria-sort] button{color:var(--acc);font-weight:700}
+  tbody tr:hover{background:var(--panel2)}
   td.mod,th.mod{position:sticky;left:0;background:var(--panel);z-index:6;font-weight:600}
   thead th.mod{z-index:7;background:var(--panel2)}
   td.c{text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
-  td.c .n{display:block;font-weight:400;font-size:10px;color:var(--dim)}
-  .r3{background:var(--r3)} .r2{background:var(--r2)} .r1{background:var(--r1)}
-  .r0{background:var(--r0);color:#5b6675} .rm1{background:var(--rm1)}
-  .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--dim);margin:10px 0 0}
-  .leg span b{display:inline-block;min-width:34px;text-align:center;border-radius:4px;padding:1px 4px;color:var(--txt)}
-  .bar{height:8px;border-radius:99px;background:#30363d;overflow:hidden;min-width:70px}
+  td.c .n{display:block;font-weight:400;font-size:10px;opacity:.75}
+  td.c.top{box-shadow:inset 0 0 0 2px var(--acc)}
+  .r3{background:var(--r3);color:var(--r3-txt)} .r2{background:var(--r2);color:var(--r2-txt)}
+  .r1{background:var(--r1);color:var(--r1-txt)} .r0{background:var(--r0);color:var(--r0-txt)}
+  .rm1{background:var(--rm1);color:var(--rm1-txt)}
+  .leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--dim);margin:10px 0 0;align-items:center}
+  .leg b{display:inline-block;min-width:36px;text-align:center;border-radius:4px;padding:1px 5px;color:#fff}
+  .bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;min-width:60px;margin-top:3px}
   .bar i{display:block;height:100%;background:var(--pos)}
-  .neg{color:var(--neg)} .pos{color:var(--pos)} .dim{color:var(--dim)}
+  .pos{color:var(--pos)} .neg{color:var(--neg)} .dim{color:var(--dim)} .warn{color:var(--warn)}
+  .xplan{font-weight:700;color:var(--acc)}
+  tr.mejor td{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 12%,transparent),transparent 70%)}
   ul.news{list-style:none;padding:0;margin:0}
-  ul.news li{padding:9px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+  ul.news li{padding:9px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
   ul.news li:last-child{border-bottom:0}
-  .score{font-variant-numeric:tabular-nums;color:var(--pos);font-weight:700;min-width:52px}
-  .fecha{color:var(--dim);font-size:12px;min-width:110px}
+  .score{font-variant-numeric:tabular-nums;color:var(--pos);font-weight:700;min-width:50px}
+  .fecha{color:var(--dim);font-size:12px;min-width:104px}
   .sub-tag{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:11px;color:var(--dim)}
   ul.notas{color:var(--dim);font-size:13px;padding-left:20px}
+  ul.notas li{margin:3px 0}
   code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:12px}
+  .fuente{font-size:12px;color:var(--dim);margin:6px 0 0}
   footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 22px;color:var(--dim);font-size:12px}
-  .err{background:var(--rm1);border:1px solid var(--neg);border-radius:10px;padding:12px;margin:20px 0}
+  .err{background:var(--rm1);color:var(--rm1-txt);border:1px solid var(--neg);border-radius:10px;padding:12px;margin:16px 0}
 </style>
 </head>
 <body>
@@ -64,8 +97,9 @@
   <div class="meta">
     <span class="pill" id="m-generado">cargando…</span>
     <span class="pill" id="m-datos"></span>
-    <button id="refresh">↻ Actualizar desde la fuente</button>
-    <input type="search" id="filtro" placeholder="Filtrar modelos…">
+    <button id="refresh" title="Vuelve a leer la fuente de datos">↻ Actualizar</button>
+    <button id="tema" title="Cambiar entre tema claro y oscuro">◐ Tema</button>
+    <input type="search" id="filtro" placeholder="Filtrar modelos…" aria-label="Filtrar modelos">
     <label class="dim"><input type="checkbox" id="solo-evidencia"> solo con evidencia</label>
   </div>
   <div class="leg" id="leyenda"></div>
@@ -83,137 +117,185 @@
 </main>
 
 <footer>
-  Fuente de datos: <code>datos.json</code> / <code>datos.js</code> (generados por <code>index_datos.py</code>)
-  a partir de los volcados <code>hilos-*.json</code>.
-  Para refrescar: <code>python3 noticias.py --subreddit opencode</code> y luego <code>python3 index_datos.py</code>.
-  Abierto con <code>file://</code> se usa <code>datos.js</code>; servido por HTTP se recarga desde <code>datos.json</code>.
+  Fuente: <code>datos.json</code>/<code>datos.js</code> generados por <code>index_datos.py</code>
+  a partir de los volcados <code>hilos-*.json</code> y de <code>go_limites.json</code>
+  (scrapeado de la documentación oficial con <code>go_limites.py</code>).
+  Refrescar: <code>python3 noticias.py --subreddit opencode</code> ·
+  <code>python3 go_limites.py</code> · <code>python3 index_datos.py</code>.
 </footer>
 
 <script src="datos.js"></script>
 <script>
-const SIM = {3:"+++", 2:"++", 1:"+", 0:"–", "-1":"✗"};
-const AYUDA_SIM = {
-  3:"primera opción", 2:"buen encaje", 1:"aceptable", 0:"sin evidencia", "-1":"evitar / contraproducente"
-};
-let D = window.DATOS || null;
+const SIM  = {3:"+++", 2:"++", 1:"+", 0:"–", "-1":"✗"};
+const DESC = {3:"primera opción", 2:"buen encaje", 1:"aceptable", 0:"sin evidencia", "-1":"evitar"};
+let D = window.DATOS || null, orden = null, asc = false;
 
-function el(tag, attrs={}, ...hijos){
+const el = (tag, attrs={}, ...hijos) => {
   const n = document.createElement(tag);
   for (const [k,v] of Object.entries(attrs)){
     if (k === "class") n.className = v;
     else if (k === "html") n.innerHTML = v;
+    else if (k === "text") n.textContent = v;
     else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
     else n.setAttribute(k, v);
   }
-  for (const h of hijos) if (h !== null && h !== undefined) n.append(h.nodeType ? h : document.createTextNode(h));
+  for (const h of hijos) if (h != null) n.append(h.nodeType ? h : document.createTextNode(h));
   return n;
-}
+};
+const celda = c => {
+  if (c && typeof c === "object" && !c.nodeType){
+    const td = el("td", {class: c.class || ""});
+    if (c.html !== undefined) td.innerHTML = c.html;
+    else td.textContent = c.text ?? "";
+    return td;
+  }
+  return el("td", {}, c ?? "");
+};
 
-function tabla(cols, filas, clases=[]){
+function tabla(cols, filas, opciones={}){
   const t = el("table");
+  if (opciones.caption) t.append(el("caption", {text: opciones.caption}));
   const thead = el("thead"), tr = el("tr");
-  cols.forEach((c,i)=> tr.append(el("th", {class: clases[i] || ""}, c)));
+  cols.forEach(c => tr.append(el("th", {scope:"col"}, c)));
   thead.append(tr); t.append(thead);
   const tb = el("tbody");
-  filas.forEach(f=>{
-    const r = el("tr");
-    f.forEach((c,i)=>{
-      const td = el("td", {class: clases[i] || ""});
-      if (c && c.html !== undefined) td.innerHTML = c.html; else td.textContent = c;
-      r.append(td);
-    });
+  filas.forEach((f, i) => {
+    const r = el("tr", opciones.claseFila ? {class: opciones.claseFila(f)} : {});
+    f.forEach(c => r.append(celda(c)));
     tb.append(r);
   });
   t.append(tb);
   return t;
 }
 
+/* ---------------- matriz ---------------- */
 function pintaMatriz(){
   if (!D) return;
   const habs = D.habilidades, mods = D.modelos;
-  const filtro = (document.getElementById("filtro").value || "").toLowerCase();
+  const filtro = document.getElementById("filtro").value.toLowerCase();
   const soloEv = document.getElementById("solo-evidencia").checked;
   const t = document.getElementById("matriz");
   t.innerHTML = "";
+  t.append(el("caption", {text: "Más azul = mejor encaje en esa habilidad. ★ marca el mejor de cada columna; " +
+                               "el número pequeño son las menciones que lo respaldan. Clic en una columna para ordenar."}));
+
+  // mejor valor de cada columna (para el marcador ★ y el recuadro)
+  const mejor = {};
+  habs.forEach(h => { mejor[h.id] = Math.max(...mods.map(m => m.r[h.id] ?? 0)); });
 
   const thead = el("thead"), tr = el("tr");
-  tr.append(el("th", {class:"mod"}, "Modelo"));
-  habs.forEach(h => tr.append(el("th", {title: h.ayuda, onclick: ()=>ordenar(h.id)}, h.nombre)));
-  tr.append(el("th", {title:"Opiniones positivas / totales"}, "Sentimiento"));
-  tr.append(el("th", "Rol ideal"));
-  tr.append(el("th", "Pega principal"));
+  tr.append(el("th", {class:"mod", scope:"col"}, "Modelo"));
+  habs.forEach(h => {
+    const activa = orden === h.id;
+    tr.append(el("th", {scope:"col", "aria-sort": activa ? (asc ? "ascending" : "descending") : "none"},
+      el("button", {title: h.ayuda, onclick: () => ordenar(h.id)}, h.nombre + (activa ? (asc ? " ↑" : " ↓") : ""))));
+  });
+  ["Sentimiento", "Rol ideal", "Pega principal"].forEach(c => tr.append(el("th", {scope:"col"}, c)));
   thead.append(tr); t.append(thead);
 
   const tb = el("tbody");
-  mods
-    .filter(m => !filtro || m.nombre.toLowerCase().includes(filtro))
-    .sort((x,y)=> (y.__ord ?? 0) - (x.__ord ?? 0))
-    .forEach(m=>{
-      const ev = Object.values(m.menciones || {}).reduce((a,b)=>a+b, 0);
-      if (soloEv && ev === 0) return;
-      const r = el("tr");
-      r.append(el("td", {class:"mod"}, m.nombre));
-      habs.forEach(h=>{
-        const v = m.r[h.id];
-        const n = (m.menciones || {})[h.id] || 0;
-        const cls = "c r" + (v === -1 ? "m1" : v);
-        const td = el("td", {class: cls, title: `${h.nombre}: ${AYUDA_SIM[v]} · ${n} menciones`});
-        td.append(SIM[v]);
-        if (n) td.append(el("span", {class:"n"}, n));
-        r.append(td);
+  mods.filter(m => !filtro || m.nombre.toLowerCase().includes(filtro))
+      .sort((x,y) => {
+        if (!orden) return 0;
+        const d = (y.r[orden] ?? 0) - (x.r[orden] ?? 0);
+        return asc ? -d : d;
+      })
+      .forEach(m => {
+        const ev = Object.values(m.menciones || {}).reduce((a,b) => a+b, 0);
+        if (soloEv && ev === 0) return;
+        const r = el("tr");
+        r.append(el("th", {class:"mod", scope:"row"}, m.nombre));
+        habs.forEach(h => {
+          const v = m.r[h.id] ?? 0, n = (m.menciones || {})[h.id] || 0;
+          const esTop = v > 0 && v === mejor[h.id];
+          const td = el("td", {
+            class: "c r" + (v === -1 ? "m1" : v) + (esTop ? " top" : ""),
+            title: `${h.nombre} · ${DESC[v]}${n ? " · " + n + " menciones" : ""}`,
+            "aria-label": `${m.nombre}, ${h.nombre}: ${DESC[v]}${n ? ", " + n + " menciones" : ""}`,
+          });
+          td.append((esTop ? "★" : "") + SIM[v]);
+          if (n) td.append(el("span", {class:"n"}, n));
+          r.append(td);
+        });
+        const s = m.sentimiento || {}, pct = s.pct ?? null;
+        const tdS = el("td");
+        if (pct === null) tdS.append(el("span", {class:"dim"}, "sin datos"));
+        else tdS.append(el("span", {class: pct >= 60 ? "pos" : pct >= 45 ? "" : "neg"}, pct + "% "),
+                        el("span", {class:"dim"}, `(+${s.pos}/-${s.neg})`),
+                        el("div", {class:"bar"}, el("i", {style:`width:${pct}%`})));
+        r.append(tdS, el("td", {text:m.rol || ""}), el("td", {class:"dim", text:m.pega || ""}));
+        tb.append(r);
       });
-      const s = m.sentimiento || {};
-      const pct = s.pct === null || s.pct === undefined ? null : s.pct;
-      const tdS = el("td");
-      if (pct === null){
-        tdS.append(el("span", {class:"dim"}, "sin datos"));
-      } else {
-        tdS.append(el("span", {class: pct >= 60 ? "pos" : pct >= 45 ? "" : "neg"}, pct + "% "),
-                  el("span", {class:"dim"}, `(+${s.pos}/-${s.neg})`),
-                  el("div", {class:"bar"}, el("i", {style:`width:${pct}%`})));
-      }
-      r.append(tdS, el("td", {}, m.rol || ""), el("td", {class:"dim"}, m.pega || ""));
-      tb.append(r);
-    });
   t.append(tb);
 }
-
-let orden = null;
 function ordenar(id){
-  if (!D) return;
-  orden = orden === id ? null : id;
-  D.modelos.forEach(m => m.__ord = orden ? (m.r[orden] ?? 0) : 0);
-  if (orden) D.modelos.sort((a,b)=> (b.r[orden] ?? 0) - (a.r[orden] ?? 0));
+  if (orden === id) asc = !asc; else { orden = id; asc = false; }
   pintaMatriz();
+}
+
+/* ---------------- secciones ---------------- */
+const fmtLim = v => (typeof v === "number" ? "$" + v : String(v));
+const fmtX   = v => (typeof v === "number" ? "x" + (Number.isInteger(v) ? v : v.toFixed(1)) : String(v));
+
+function tablaGo(){
+  const g = D.go_limites;
+  if (!g) return null;
+  const hab = {class:"warn", html:"⚠ entrena con tus datos"};
+  const filas = g.filas.map(f => {
+    const claro = f.entrena !== "Yes";
+    return [
+      f.modelo, f.entrada, f.salida, f.cache_lectura,
+      {html:`<b>${fmtLim(f.limite_go)}</b>`},
+      {html:`<span class="xplan">${fmtX(f.x_plan)}</span>`},
+      fmtLim(f.limite_plus),
+      f.x_go_plus === "—" ? "—" : "x" + f.x_go_plus,
+      f.req_mes,
+      claro ? {class:"dim", text:"no entrena · " + f.retencion} : hab,
+    ];
+  });
+  const cols = ["Modelo","Entrada","Salida","Caché lectura","Límite Go/mes","×plan",
+                "Límite Go Plus","×Go","Peticiones/mes","Datos"];
+  const t = tabla(cols, filas, {
+    caption: "Límite mensual en dólares por modelo en el plan Go ($10). ×plan = valor de uso por cada $ del plan.",
+    claseFila: f => (typeof f[5].html === "string" && /x(6|8)/.test(f[5].html)) ? "mejor" : ""
+  });
+  const cont = el("div");
+  cont.append(el("div", {class:"wrap"}, t));
+  const ul = el("ul", {class:"notas"});
+  (g.reglas || []).forEach(r => ul.append(el("li", {}, r)));
+  cont.append(ul);
+  cont.append(el("div", {class:"fuente", html:
+    `Fuente oficial: <a href="${g.fuente}" target="_blank" rel="noopener">${g.fuente}</a> · actualizado ${g.actualizado}`}));
+  return cont;
 }
 
 function pintaSecciones(){
   const cont = document.getElementById("secciones");
   cont.innerHTML = "";
+  if (D.go_limites){
+    cont.append(el("h2", {}, D.go_limites.titulo || "Uso y límites de OpenCode Go"));
+    const tg = tablaGo(); if (tg) cont.append(tg);
+  }
   const bloques = [
-    ["Stack recomendado según presupuesto", D.presupuestos],
-    ["Precio real y valor en Go / Zen", D.precios],
+    [D.presupuestos?.titulo || "Stack recomendado según presupuesto", D.presupuestos],
+    [D.precios?.titulo || "Precios por token (resumen)", D.precios],
     ["Modelos stealth y routers: qué son en realidad", D.stealth],
     ["Banderas rojas recurrentes", D.banderas],
   ];
   for (const [titulo, tb] of bloques){
     if (!tb) continue;
     cont.append(el("h2", {}, titulo));
-    const w = el("div", {class:"wrap"});
-    w.append(tabla(tb.columnas, tb.filas));
-    cont.append(w);
+    cont.append(el("div", {class:"wrap"}, tabla(tb.columnas, tb.filas)));
   }
   if (D.benchmarks){
     cont.append(el("h2", {}, "Evidencia dura: benchmarks de la comunidad"));
-    D.benchmarks.forEach(b=>{
+    D.benchmarks.forEach(b => {
       cont.append(el("div", {class:"sub"}, b.titulo));
-      const w = el("div", {class:"wrap"});
-      w.append(tabla(b.columnas, b.filas));
-      cont.append(w);
+      cont.append(el("div", {class:"wrap"}, tabla(b.columnas, b.filas)));
     });
     if (D.benchmarks_notas){
       const ul = el("ul", {class:"notas"});
-      D.benchmarks_notas.forEach(n=> ul.append(el("li", {}, n)));
+      D.benchmarks_notas.forEach(n => ul.append(el("li", {}, n)));
       cont.append(ul);
     }
   }
@@ -222,15 +304,12 @@ function pintaSecciones(){
 function pintaNoticias(){
   const ul = document.getElementById("noticias");
   ul.innerHTML = "";
-  (D.noticias || []).forEach(n=>{
-    ul.append(el("li", {},
-      el("span", {class:"score"}, "↑" + n.score),
-      el("span", {class:"fecha"}, n.fecha),
-      el("span", {class:"sub-tag"}, "r/" + n.sub),
-      el("a", {href: n.url, target:"_blank", rel:"noopener"}, n.titulo),
-      el("span", {class:"dim"}, `${n.comentarios} comentarios`)
-    ));
-  });
+  (D.noticias || []).forEach(n => ul.append(el("li", {},
+    el("span", {class:"score"}, "↑" + n.score),
+    el("span", {class:"fecha"}, n.fecha),
+    el("span", {class:"sub-tag"}, "r/" + n.sub),
+    el("a", {href:n.url, target:"_blank", rel:"noopener"}, n.titulo),
+    el("span", {class:"dim"}, `${n.comentarios} comentarios`))));
 }
 
 function pinta(){
@@ -238,45 +317,55 @@ function pinta(){
   document.getElementById("titulo").textContent = D.titulo || "Modelos de OpenCode";
   document.getElementById("subtitulo").textContent = D.subtitulo || "";
   const m = D.meta || {};
-  document.getElementById("m-generado").textContent = "generado: " + (m.generado || "?");
-  const subs = Object.entries(m.subs || {}).map(([k,v])=>`r/${k} (${v})`).join(" · ");
+  document.getElementById("m-generado").textContent = "datos: " + (m.generado || "?");
+  const subs = Object.entries(m.subs || {}).map(([k,v]) => `r/${k} (${v})`).join(" · ");
   document.getElementById("m-datos").textContent =
-    `${m.hilos || 0} hilos · ${m.comentarios || 0} comentarios · ${m.unidades || 0} textos · ${subs}`;
+    `${m.hilos || 0} hilos · ${m.comentarios || 0} comentarios · ${subs}`;
   const leg = document.getElementById("leyenda");
   leg.innerHTML = "";
-  [3,2,1,0,-1].forEach(v=>{
-    leg.append(el("span", {}, el("b", {class:"r" + (v === -1 ? "m1" : v)}, SIM[v]), " " + AYUDA_SIM[v]));
-  });
+  leg.append(el("b", {class:"r3"}, "+++"), el("span", {}, "primera opción"),
+             el("b", {class:"r2"}, "++"),  el("span", {}, "buen encaje"),
+             el("b", {class:"r1"}, "+"),   el("span", {}, "aceptable"),
+             el("b", {class:"r0"}, "–"),   el("span", {}, "sin evidencia"),
+             el("b", {class:"rm1"}, "✗"),  el("span", {}, "evitar"),
+             el("span", {}, "· ★ = mejor de la columna"));
   pintaMatriz(); pintaSecciones(); pintaNoticias();
 }
 
+/* ---------------- tema ---------------- */
+const prefiereClaro = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+if (localStorage.getItem("tema") === "claro" || (!localStorage.getItem("tema") && prefiereClaro))
+  document.body.classList.add("light");
+document.getElementById("tema").addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  localStorage.setItem("tema", document.body.classList.contains("light") ? "claro" : "oscuro");
+});
+
+/* ---------------- carga ---------------- */
 document.getElementById("filtro").addEventListener("input", pintaMatriz);
 document.getElementById("solo-evidencia").addEventListener("change", pintaMatriz);
-document.getElementById("refresh").addEventListener("click", ()=>cargar(true));
+document.getElementById("refresh").addEventListener("click", () => cargar(true));
 
 async function cargar(manual){
-  // 1) datos.js (funciona con file://)  ·  2) datos.json (fresco, servido por HTTP)
-  if (window.DATOS) { D = window.DATOS; pinta(); }
-  try {
+  if (window.DATOS){ D = window.DATOS; pinta(); }
+  try{
     const r = await fetch("datos.json?v=" + Date.now(), {cache:"no-store"});
     if (r.ok){
       const fresco = await r.json();
-      if (!D || fresco.meta.generado >= (D.meta?.generado || "")){ D = fresco; pinta(); }
+      if (!D || (fresco.meta?.generado || "") >= (D.meta?.generado || "")){ D = fresco; pinta(); }
+      if (manual) aviso("Datos recargados desde datos.json.", false);
     } else if (manual) aviso("No se pudo leer datos.json (HTTP " + r.status + "). Se usa datos.js.");
-  } catch(e){
-    if (!window.DATOS){
-      aviso("No se pudo cargar la fuente de datos. Genera <code>datos.js</code> con " +
-            "<code>python3 index_datos.py</code>, o sirve la carpeta por HTTP " +
-            "(<code>python3 -m http.server</code>).");
-    } else if (manual){
-      aviso("Recargado desde datos.js (datos.json no es accesible sin servidor HTTP).");
-    }
+  }catch(e){
+    if (!window.DATOS) aviso("No se pudo cargar la fuente. Genera <code>datos.js</code> con " +
+        "<code>python3 index_datos.py</code> o sirve la carpeta por HTTP (<code>python3 -m http.server</code>).");
+    else if (manual) aviso("Sin servidor HTTP: recargado desde datos.js.", false);
   }
 }
-function aviso(txt){
+function aviso(txt, error=true){
   const a = document.getElementById("aviso");
-  a.innerHTML = ""; a.append(el("div", {class:"err", html: txt}));
-  setTimeout(()=>{ a.innerHTML = ""; }, 6000);
+  a.innerHTML = "";
+  a.append(el("div", {class: error ? "err" : "fuente", html: txt}));
+  setTimeout(() => { a.innerHTML = ""; }, 5000);
 }
 cargar(false);
 </script>

@@ -26,22 +26,53 @@ con datos en vez de con impresiones:
 | `informe.py` | Informe de los 3 ejes (noticias / calidad-precio / modelos) desde los volcados locales |
 | `especialidades.py` | Matriz modelo × dominio de tarea (frontend, backend, planning, motion, debug…) |
 | `index_datos.py` | Genera la fuente del dashboard: `datos.json` + `datos.js` a partir de `fuente.json` + volcados |
+| `go_limites.py` | Scrapea los **límites de uso oficiales de OpenCode Go** → `go_limites.json` (incluye el multiplicador ×plan) |
+
+## Límites de OpenCode Go
+
+`go_limites.py` baja la tabla oficial de <https://opencode.ai/v2/docs/console/go/> y calcula lo que
+la gente compara de verdad: **cuánto valor de uso da cada modelo por los $10 del plan**.
+
+| Modelo | Límite/mes (Go) | ×plan | Go Plus | Peticiones/mes |
+|---|---|:--:|---|---|
+| DeepSeek V4.1 Flash | $80 | **x8** | $160 | 173.330 |
+| GLM-5.3-Flash · GLM-5.2 · Kimi K2.7/K2.6 · MiMo-Flash · MiniMax · Hy3 · Muse Spark | $60 | **x6** | $120-240 | 4.300-226.600 |
+| Qwen3.8 Flash · Space Bunny · Hy4 · DeepSeek V4 Flash | $30 | x3 | $90-120 | 15.630-65.000 |
+| GPT 6 Luna · Claude Haiku 5.5 · Grok 4.7/4.6 · Kimi K3 · MiMo-Pro | $15 | x1.5 | $60 | 490-21.130 |
+| LongCat 2.5 · Step 5 · Cat Jam (Free) | ∞ | ∞ | ∞ | ilimitado |
+
+Reglas: 5 h = 20% del límite mensual, semana = 50%, mes = 100%. DeepSeek tiene horas punta
+(01:00-04:00 y 06:00-10:00 UTC, L-V). Muse Spark Contributor y Cat Jam **entrenan con tus datos**.
 
 ## Dashboard
 
-- **`index.html`** — matriz modelo × habilidad, roles por presupuesto, precios, benchmarks, stealth y
-  banderas rojas. Se abre con doble clic (usa `datos.js`) o servido por HTTP (recarga `datos.json`).
+- **`index.html`** — matriz modelo × habilidad, **límites oficiales de Go con el multiplicador ×plan**,
+  roles por presupuesto, precios, benchmarks, stealth y banderas rojas. Se abre con doble clic
+  (usa `datos.js`) o servido por HTTP (recarga `datos.json`).
 - **`fuente.json`** — la fuente editable: valoraciones, roles, pegas y las tablas curadas.
   Es lo único que hay que tocar a mano cuando cambie tu criterio.
+- **`go_limites.json`** — la otra fuente, scrapeada de la web oficial con `go_limites.py`.
 - **`datos.json` / `datos.js`** — salida generada. No editar a mano.
 
 ```bash
+python3 go_limites.py           # refresca los límites de Go desde la web oficial
 python3 index_datos.py          # regenera datos.json/datos.js
 python3 -m http.server 8765     # opcional: http://127.0.0.1:8765/index.html
 ```
 
 Los recuentos de menciones por habilidad y el sentimiento (positivas/negativas) **se calculan
 solos** desde los volcados; las valoraciones `+++/++/+/–/✗` son criterio curado en `fuente.json`.
+
+### Criterios de UI
+
+- **Rampa secuencial de un solo tono** (azul) para las valoraciones: más azul = mejor. Se evitó el
+  verde doble porque dos verdes parecidos no dejaban distinguir cuál era el mejor.
+- **★ en el mejor de cada columna** con recuadro de acento: codificación redundante, no depende del color.
+- El **rojo se reserva para `✗` (evitar)**; "sin evidencia" (`–`) es gris neutro. Así "no aplica"
+  (p. ej. modelos cloud en la columna local) nunca se lee como "malo".
+- Tema claro/oscuro con `prefers-color-scheme` y memoria en `localStorage`.
+- Accesibilidad: `caption`, `scope` en cabeceras y celdas, `aria-sort`, ordenación por teclado
+  (las cabeceras son `<button>`) y `aria-label` con la valoración y las menciones.
 
 ## Uso
 

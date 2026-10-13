@@ -6,170 +6,744 @@
   "noticias_dias": 12,
   "noticias_top": 14,
   "habilidades": [
-    { "id": "frontend",     "nombre": "Frontend / UI",     "ayuda": "Interfaces, React/Vue, CSS, diseño web" },
-    { "id": "backend",      "nombre": "Backend / APIs",    "ayuda": "Servicios, bases de datos, endpoints" },
-    { "id": "planificacion","nombre": "Planificación",     "ayuda": "Arquitectura, specs y design docs" },
-    { "id": "motion",       "nombre": "Motion / Visual",   "ayuda": "Animación, vídeo, gráficos, 3D" },
-    { "id": "codigo",       "nombre": "Programación",      "ayuda": "Implementación y refactor" },
-    { "id": "debug",        "nombre": "Debugging",         "ayuda": "Cazar y arreglar bugs" },
-    { "id": "tests",        "nombre": "Tests / Review",    "ayuda": "Tests, QA y revisión adversarial" },
-    { "id": "orquestacion", "nombre": "Orquestación",      "ayuda": "Routers, subagentes, contexto largo" },
-    { "id": "docs",         "nombre": "Escritura / Docs",  "ayuda": "Documentación, prosa, commits" },
-    { "id": "research",     "nombre": "Research / Datos",  "ayuda": "Búsqueda, scraping, traducción" },
-    { "id": "vision",       "nombre": "Visión / Imagen",   "ayuda": "Capturas, OCR, multimodal" },
-    { "id": "local",        "nombre": "Local / self-host", "ayuda": "Ollama, llama.cpp, privacidad" },
-    { "id": "simples",      "nombre": "Tareas simples",    "ayuda": "Grunt work, boilerplate, commits" },
-    { "id": "valor",        "nombre": "Calidad/precio",    "ayuda": "Valor dentro de OpenCode Go/Zen" }
+    {
+      "id": "frontend",
+      "nombre": "Frontend / UI",
+      "ayuda": "Interfaces, React/Vue, CSS, diseño web"
+    },
+    {
+      "id": "backend",
+      "nombre": "Backend / APIs",
+      "ayuda": "Servicios, bases de datos, endpoints"
+    },
+    {
+      "id": "planificacion",
+      "nombre": "Planificación",
+      "ayuda": "Arquitectura, specs y design docs"
+    },
+    {
+      "id": "motion",
+      "nombre": "Motion / Visual",
+      "ayuda": "Animación, vídeo, gráficos, 3D"
+    },
+    {
+      "id": "codigo",
+      "nombre": "Programación",
+      "ayuda": "Implementación y refactor"
+    },
+    {
+      "id": "debug",
+      "nombre": "Debugging",
+      "ayuda": "Cazar y arreglar bugs"
+    },
+    {
+      "id": "tests",
+      "nombre": "Tests / Review",
+      "ayuda": "Tests, QA y revisión adversarial"
+    },
+    {
+      "id": "orquestacion",
+      "nombre": "Orquestación",
+      "ayuda": "Routers, subagentes, contexto largo"
+    },
+    {
+      "id": "docs",
+      "nombre": "Escritura / Docs",
+      "ayuda": "Documentación, prosa, commits"
+    },
+    {
+      "id": "research",
+      "nombre": "Research / Datos",
+      "ayuda": "Búsqueda, scraping, traducción"
+    },
+    {
+      "id": "vision",
+      "nombre": "Visión / Imagen",
+      "ayuda": "Capturas, OCR, multimodal"
+    },
+    {
+      "id": "local",
+      "nombre": "Local / self-host",
+      "ayuda": "Ollama, llama.cpp, privacidad"
+    },
+    {
+      "id": "simples",
+      "nombre": "Tareas simples",
+      "ayuda": "Grunt work, boilerplate, commits"
+    },
+    {
+      "id": "valor",
+      "nombre": "Calidad/precio",
+      "ayuda": "Valor dentro de OpenCode Go/Zen"
+    }
   ],
   "modelos": [
     {
-      "nombre": "DeepSeek 4.1 Flash", "alias": "deepseek|ds ?4\\.1|v4\\.1 ?flash|dsv4",
-      "rol": "Workhorse por defecto", "pega": "Bucles repetidos, caídas y contexto largo flojo",
-      "r": { "frontend": 2, "backend": 3, "planificacion": 2, "motion": 2, "codigo": 3, "debug": 3, "tests": 2, "orquestacion": 2, "docs": 1, "research": 1, "vision": 2, "local": -1, "simples": 3, "valor": 3 }
+      "nombre": "DeepSeek 4.1 Flash",
+      "alias": "deepseek|ds ?4\\.1|v4\\.1 ?flash|dsv4",
+      "rol": "Workhorse por defecto",
+      "pega": "Bucles repetidos, caídas y contexto largo flojo",
+      "r": {
+        "frontend": 2,
+        "backend": 3,
+        "planificacion": 2,
+        "motion": 2,
+        "codigo": 3,
+        "debug": 3,
+        "tests": 2,
+        "orquestacion": 2,
+        "docs": 1,
+        "research": 1,
+        "vision": 2,
+        "local": 0,
+        "simples": 3,
+        "valor": 3
+      }
     },
     {
-      "nombre": "GLM 5.3 Flash", "alias": "\\bglm\\b",
-      "rol": "Orquestador y revisor", "pega": "Precio en Go y hay que babysitearlo",
-      "r": { "frontend": 3, "backend": 3, "planificacion": 3, "motion": 1, "codigo": 3, "debug": 3, "tests": 3, "orquestacion": 3, "docs": 3, "research": 3, "vision": 1, "local": -1, "simples": 2, "valor": 2 }
+      "nombre": "GLM 5.3 Flash",
+      "alias": "\\bglm\\b",
+      "rol": "Orquestador y revisor",
+      "pega": "Precio en Go y hay que babysitearlo",
+      "r": {
+        "frontend": 3,
+        "backend": 3,
+        "planificacion": 3,
+        "motion": 1,
+        "codigo": 3,
+        "debug": 3,
+        "tests": 3,
+        "orquestacion": 3,
+        "docs": 3,
+        "research": 3,
+        "vision": 1,
+        "local": 0,
+        "simples": 2,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Opus 5.5", "alias": "\\bopus\\b",
-      "rol": "Arquitecto / design docs", "pega": "Consumo de tokens brutal",
-      "r": { "frontend": 2, "backend": 2, "planificacion": 3, "motion": 3, "codigo": 3, "debug": 2, "tests": 3, "orquestacion": 3, "docs": 3, "research": 2, "vision": 2, "local": -1, "simples": 1, "valor": 1 }
+      "nombre": "Opus 5.5",
+      "alias": "\\bopus\\b",
+      "rol": "Arquitecto / design docs",
+      "pega": "Consumo de tokens brutal",
+      "r": {
+        "frontend": 2,
+        "backend": 2,
+        "planificacion": 3,
+        "motion": 3,
+        "codigo": 3,
+        "debug": 2,
+        "tests": 3,
+        "orquestacion": 3,
+        "docs": 3,
+        "research": 2,
+        "vision": 2,
+        "local": 0,
+        "simples": 1,
+        "valor": 1
+      }
     },
     {
-      "nombre": "Sonnet 5.5", "alias": "\\bsonnet\\b",
-      "rol": "Implementar tras el plan de Opus", "pega": "Caro en tokens",
-      "r": { "frontend": 2, "backend": 2, "planificacion": 2, "motion": 2, "codigo": 3, "debug": 3, "tests": 3, "orquestacion": 2, "docs": 2, "research": 2, "vision": 1, "local": -1, "simples": 1, "valor": 1 }
+      "nombre": "Sonnet 5.5",
+      "alias": "\\bsonnet\\b",
+      "rol": "Implementar tras el plan de Opus",
+      "pega": "Caro en tokens",
+      "r": {
+        "frontend": 2,
+        "backend": 2,
+        "planificacion": 2,
+        "motion": 2,
+        "codigo": 3,
+        "debug": 3,
+        "tests": 3,
+        "orquestacion": 2,
+        "docs": 2,
+        "research": 2,
+        "vision": 1,
+        "local": 0,
+        "simples": 1,
+        "valor": 1
+      }
     },
     {
-      "nombre": "Haiku 5.5", "alias": "\\bhaiku\\b",
-      "rol": "Worker barato", "pega": "Precio x5 al pasar de 100k de contexto",
-      "r": { "frontend": 1, "backend": 1, "planificacion": 1, "motion": 0, "codigo": 2, "debug": 1, "tests": 2, "orquestacion": 1, "docs": 1, "research": 1, "vision": 0, "local": -1, "simples": 2, "valor": 2 }
+      "nombre": "Haiku 5.5",
+      "alias": "\\bhaiku\\b",
+      "rol": "Worker barato",
+      "pega": "Precio x5 al pasar de 100k de contexto",
+      "r": {
+        "frontend": 1,
+        "backend": 1,
+        "planificacion": 1,
+        "motion": 0,
+        "codigo": 2,
+        "debug": 1,
+        "tests": 2,
+        "orquestacion": 1,
+        "docs": 1,
+        "research": 1,
+        "vision": 0,
+        "local": 0,
+        "simples": 2,
+        "valor": 2
+      }
     },
     {
-      "nombre": "GPT-6 Luna", "alias": "\\bluna\\b",
-      "rol": "Volumen a bajo coste", "pega": "Lento en razonamiento alto",
-      "r": { "frontend": 1, "backend": 2, "planificacion": 2, "motion": 0, "codigo": 2, "debug": 1, "tests": 2, "orquestacion": 2, "docs": 2, "research": 2, "vision": 1, "local": -1, "simples": 3, "valor": 3 }
+      "nombre": "GPT-6 Luna",
+      "alias": "\\bluna\\b",
+      "rol": "Volumen a bajo coste",
+      "pega": "Lento en razonamiento alto",
+      "r": {
+        "frontend": 1,
+        "backend": 2,
+        "planificacion": 2,
+        "motion": 0,
+        "codigo": 2,
+        "debug": 1,
+        "tests": 2,
+        "orquestacion": 2,
+        "docs": 2,
+        "research": 2,
+        "vision": 1,
+        "local": 0,
+        "simples": 3,
+        "valor": 3
+      }
     },
     {
-      "nombre": "Sol 6.1 / GPT-6", "alias": "\\bsol ?6|\\bsol\\b|gpt-?6",
-      "rol": "Cabeza pensante eficiente", "pega": "Lento",
-      "r": { "frontend": 1, "backend": 2, "planificacion": 3, "motion": 1, "codigo": 2, "debug": 1, "tests": 3, "orquestacion": 3, "docs": 2, "research": 2, "vision": 0, "local": -1, "simples": 1, "valor": 2 }
+      "nombre": "Sol 6.1 / GPT-6",
+      "alias": "\\bsol ?6|\\bsol\\b|gpt-?6",
+      "rol": "Cabeza pensante eficiente",
+      "pega": "Lento",
+      "r": {
+        "frontend": 1,
+        "backend": 2,
+        "planificacion": 3,
+        "motion": 1,
+        "codigo": 2,
+        "debug": 1,
+        "tests": 3,
+        "orquestacion": 3,
+        "docs": 2,
+        "research": 2,
+        "vision": 0,
+        "local": 0,
+        "simples": 1,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Gemini 4 Argon", "alias": "gemini|argon",
-      "rol": "Frontend y diseño visual", "pega": "Coste por tarea",
-      "r": { "frontend": 3, "backend": 2, "planificacion": 2, "motion": 3, "codigo": 2, "debug": 2, "tests": 2, "orquestacion": 1, "docs": 2, "research": 2, "vision": 3, "local": -1, "simples": 1, "valor": 1 }
+      "nombre": "Gemini 4 Argon",
+      "alias": "gemini|argon",
+      "rol": "Frontend y diseño visual",
+      "pega": "Coste por tarea",
+      "r": {
+        "frontend": 3,
+        "backend": 2,
+        "planificacion": 2,
+        "motion": 3,
+        "codigo": 2,
+        "debug": 2,
+        "tests": 2,
+        "orquestacion": 1,
+        "docs": 2,
+        "research": 2,
+        "vision": 3,
+        "local": 0,
+        "simples": 1,
+        "valor": 1
+      }
     },
     {
-      "nombre": "Muse Spark 1.3", "alias": "muse ?spark|muse ?1\\.3|\\bspark\\b",
-      "rol": "Subagente rápido", "pega": "Benchmaxxed y entrena con tus datos",
-      "r": { "frontend": 2, "backend": 2, "planificacion": 1, "motion": 1, "codigo": 2, "debug": 2, "tests": 1, "orquestacion": 2, "docs": -1, "research": 2, "vision": 1, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "Muse Spark 1.3",
+      "alias": "muse ?spark|muse ?1\\.3|\\bspark\\b",
+      "rol": "Subagente rápido",
+      "pega": "Benchmaxxed y entrena con tus datos",
+      "r": {
+        "frontend": 2,
+        "backend": 2,
+        "planificacion": 1,
+        "motion": 1,
+        "codigo": 2,
+        "debug": 2,
+        "tests": 1,
+        "orquestacion": 2,
+        "docs": -1,
+        "research": 2,
+        "vision": 1,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "MiMo 2.6 Flash/Pro", "alias": "\\bmimo\\b",
-      "rol": "Implementador y mejor modelo medio", "pega": "Repite tool-calls y quema contexto",
-      "r": { "frontend": 2, "backend": 2, "planificacion": 2, "motion": 3, "codigo": 3, "debug": 2, "tests": 2, "orquestacion": 2, "docs": 1, "research": 1, "vision": 2, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "MiMo 2.6 Flash/Pro",
+      "alias": "\\bmimo\\b",
+      "rol": "Implementador y mejor modelo medio",
+      "pega": "Repite tool-calls y quema contexto",
+      "r": {
+        "frontend": 2,
+        "backend": 2,
+        "planificacion": 2,
+        "motion": 3,
+        "codigo": 3,
+        "debug": 2,
+        "tests": 2,
+        "orquestacion": 2,
+        "docs": 1,
+        "research": 1,
+        "vision": 2,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "Kimi K2.7 / K2.6 / K3", "alias": "\\bkimi\\b|\\bk3\\b",
-      "rol": "Frontend y planner", "pega": "K3 es el más caro de Go",
-      "r": { "frontend": 3, "backend": 2, "planificacion": 3, "motion": 1, "codigo": 3, "debug": 2, "tests": 2, "orquestacion": 2, "docs": 2, "research": 2, "vision": 2, "local": -1, "simples": 1, "valor": 1 }
+      "nombre": "Kimi K2.7 / K2.6 / K3",
+      "alias": "\\bkimi\\b|\\bk3\\b",
+      "rol": "Frontend y planner",
+      "pega": "K3 es el más caro de Go",
+      "r": {
+        "frontend": 3,
+        "backend": 2,
+        "planificacion": 3,
+        "motion": 1,
+        "codigo": 3,
+        "debug": 2,
+        "tests": 2,
+        "orquestacion": 2,
+        "docs": 2,
+        "research": 2,
+        "vision": 2,
+        "local": 0,
+        "simples": 1,
+        "valor": 1
+      }
     },
     {
-      "nombre": "Qwen 3.8", "alias": "\\bqwen\\b",
-      "rol": "Local y agentes largos", "pega": "Overthinking",
-      "r": { "frontend": 1, "backend": 2, "planificacion": 2, "motion": 0, "codigo": 2, "debug": 1, "tests": 1, "orquestacion": 3, "docs": 1, "research": 2, "vision": 1, "local": 3, "simples": 2, "valor": 2 }
+      "nombre": "Qwen 3.8",
+      "alias": "\\bqwen\\b",
+      "rol": "Local y agentes largos",
+      "pega": "Overthinking",
+      "r": {
+        "frontend": 1,
+        "backend": 2,
+        "planificacion": 2,
+        "motion": 0,
+        "codigo": 2,
+        "debug": 1,
+        "tests": 1,
+        "orquestacion": 3,
+        "docs": 1,
+        "research": 2,
+        "vision": 1,
+        "local": 3,
+        "simples": 2,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Space Bunny (MiniMax)", "alias": "space ?bunny|minimax",
-      "rol": "One-shot creativo", "pega": "Lento, token-ineficiente y retirado",
-      "r": { "frontend": 2, "backend": 1, "planificacion": 1, "motion": 3, "codigo": 3, "debug": 1, "tests": 2, "orquestacion": 1, "docs": 1, "research": 1, "vision": 2, "local": -1, "simples": 1, "valor": 2 }
+      "nombre": "Space Bunny (MiniMax)",
+      "alias": "space ?bunny|minimax",
+      "rol": "One-shot creativo",
+      "pega": "Lento, token-ineficiente y retirado",
+      "r": {
+        "frontend": 2,
+        "backend": 1,
+        "planificacion": 1,
+        "motion": 3,
+        "codigo": 3,
+        "debug": 1,
+        "tests": 2,
+        "orquestacion": 1,
+        "docs": 1,
+        "research": 1,
+        "vision": 2,
+        "local": 0,
+        "simples": 1,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Step 5 Preview", "alias": "step ?5|stepfun",
-      "rol": "Alternativa gratis", "pega": "Lento, se distrae y cae el endpoint",
-      "r": { "frontend": 0, "backend": 1, "planificacion": 1, "motion": 0, "codigo": 2, "debug": 1, "tests": 2, "orquestacion": 0, "docs": 1, "research": 0, "vision": 0, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "Step 5 Preview",
+      "alias": "step ?5|stepfun",
+      "rol": "Alternativa gratis",
+      "pega": "Lento, se distrae y cae el endpoint",
+      "r": {
+        "frontend": 0,
+        "backend": 1,
+        "planificacion": 1,
+        "motion": 0,
+        "codigo": 2,
+        "debug": 1,
+        "tests": 2,
+        "orquestacion": 0,
+        "docs": 1,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "LongCat 2.5", "alias": "longcat",
-      "rol": "Microtareas y visión barata", "pega": "Rompió el CLI a varios",
-      "r": { "frontend": 2, "backend": 1, "planificacion": 0, "motion": 0, "codigo": 1, "debug": 1, "tests": 0, "orquestacion": 0, "docs": 0, "research": 0, "vision": 2, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "LongCat 2.5",
+      "alias": "longcat",
+      "rol": "Microtareas y visión barata",
+      "pega": "Rompió el CLI a varios",
+      "r": {
+        "frontend": 2,
+        "backend": 1,
+        "planificacion": 0,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 1,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": 0,
+        "research": 0,
+        "vision": 2,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "Ling 3.1", "alias": "\\bling\\b",
-      "rol": "Relleno gratis", "pega": "Sin defensores",
-      "r": { "frontend": 0, "backend": 0, "planificacion": 0, "motion": 0, "codigo": 1, "debug": 0, "tests": 0, "orquestacion": 0, "docs": 0, "research": 0, "vision": 0, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "Ling 3.1",
+      "alias": "\\bling\\b",
+      "rol": "Relleno gratis",
+      "pega": "Sin defensores",
+      "r": {
+        "frontend": 0,
+        "backend": 0,
+        "planificacion": 0,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 0,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": 0,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "Nemotron 3 Ultra", "alias": "nemotron",
-      "rol": "Orquestador por su 1M de contexto", "pega": "Falla tareas básicas",
-      "r": { "frontend": 0, "backend": 1, "planificacion": 1, "motion": 0, "codigo": 1, "debug": 1, "tests": 1, "orquestacion": 2, "docs": 0, "research": 0, "vision": 0, "local": -1, "simples": 1, "valor": 2 }
+      "nombre": "Nemotron 3 Ultra",
+      "alias": "nemotron",
+      "rol": "Orquestador por su 1M de contexto",
+      "pega": "Falla tareas básicas",
+      "r": {
+        "frontend": 0,
+        "backend": 1,
+        "planificacion": 1,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 1,
+        "tests": 1,
+        "orquestacion": 2,
+        "docs": 0,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 1,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Cat Jam", "alias": "cat ?jam",
-      "rol": "Trivial a 300-350 tps", "pega": "Inteligencia muy baja",
-      "r": { "frontend": 0, "backend": 0, "planificacion": 0, "motion": 0, "codigo": 1, "debug": 0, "tests": 0, "orquestacion": 0, "docs": 0, "research": 0, "vision": 0, "local": -1, "simples": 2, "valor": 3 }
+      "nombre": "Cat Jam",
+      "alias": "cat ?jam",
+      "rol": "Trivial a 300-350 tps",
+      "pega": "Inteligencia muy baja",
+      "r": {
+        "frontend": 0,
+        "backend": 0,
+        "planificacion": 0,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 0,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": 0,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 2,
+        "valor": 3
+      }
     },
     {
-      "nombre": "big-pickle (MAI)", "alias": "big-?pickle",
-      "rol": "Evitar", "pega": "Documentos y rutas alucinadas",
-      "r": { "frontend": 0, "backend": 1, "planificacion": 0, "motion": 0, "codigo": 1, "debug": 1, "tests": 0, "orquestacion": 0, "docs": -1, "research": 0, "vision": 0, "local": -1, "simples": 1, "valor": 2 }
+      "nombre": "big-pickle (MAI)",
+      "alias": "big-?pickle",
+      "rol": "Evitar",
+      "pega": "Documentos y rutas alucinadas",
+      "r": {
+        "frontend": 0,
+        "backend": 1,
+        "planificacion": 0,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 1,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": -1,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 1,
+        "valor": 2
+      }
     },
     {
-      "nombre": "Grok 4.6", "alias": "\\bgrok\\b",
-      "rol": "—", "pega": "Quema la cuota en 3 prompts",
-      "r": { "frontend": 0, "backend": 1, "planificacion": 1, "motion": 0, "codigo": 1, "debug": 0, "tests": 0, "orquestacion": 0, "docs": 0, "research": 0, "vision": 0, "local": -1, "simples": 0, "valor": -1 }
+      "nombre": "Grok 4.6",
+      "alias": "\\bgrok\\b",
+      "rol": "—",
+      "pega": "Quema la cuota en 3 prompts",
+      "r": {
+        "frontend": 0,
+        "backend": 1,
+        "planificacion": 1,
+        "motion": 0,
+        "codigo": 1,
+        "debug": 0,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": 0,
+        "research": 0,
+        "vision": 0,
+        "local": 0,
+        "simples": 0,
+        "valor": -1
+      }
     }
   ],
   "presupuestos": {
-    "columnas": ["Presupuesto", "Planificador", "Orquestador", "Implementador", "Revisor", "Worker barato"],
+    "columnas": [
+      "Presupuesto",
+      "Planificador",
+      "Orquestador",
+      "Implementador",
+      "Revisor",
+      "Worker barato"
+    ],
     "filas": [
-      ["$0 (free tier)", "Luna / Muse Spark", "GLM 5.3 Flash (si entra)", "MiMo 2.6 Flash Free · Ling 3.1", "Muse Spark · Space Bunny", "LongCat 2.5 · Step 5 · Cat Jam"],
-      ["$10 (Go)", "Luna max o GLM 5.3", "GLM 5.3 Flash", "DeepSeek 4.1 Flash", "GLM 5.3 Flash (adversarial)", "DeepSeek Flash · MiMo Flash"],
-      ["$20", "Opus 5.5 (plan + design docs)", "Sonnet 5.5", "Sonnet 5.5", "Sonnet 5.5", "Luna low/medium"],
-      ["$30-40", "Opus 5.5 / Sol 6.1", "Opus 5.5 + GLM 5.3", "DeepSeek 4.1 Flash + MiMo Pro", "GLM 5.3 Flash + Sonnet", "Haiku 5.5"],
-      ["Local (0 €/token)", "Qwen 3.8 (si te da)", "Qwen 3.8 contexto largo", "Qwen 3.6 35B A3B", "—", "Qwen local pequeño"]
+      [
+        "$0 (free tier)",
+        "Luna / Muse Spark",
+        "GLM 5.3 Flash (si entra)",
+        "MiMo 2.6 Flash Free · Ling 3.1",
+        "Muse Spark · Space Bunny",
+        "LongCat 2.5 · Step 5 · Cat Jam"
+      ],
+      [
+        "$10 (Go)",
+        "Luna max o GLM 5.3",
+        "GLM 5.3 Flash",
+        "DeepSeek 4.1 Flash",
+        "GLM 5.3 Flash (adversarial)",
+        "DeepSeek Flash · MiMo Flash"
+      ],
+      [
+        "$20",
+        "Opus 5.5 (plan + design docs)",
+        "Sonnet 5.5",
+        "Sonnet 5.5",
+        "Sonnet 5.5",
+        "Luna low/medium"
+      ],
+      [
+        "$30-40",
+        "Opus 5.5 / Sol 6.1",
+        "Opus 5.5 + GLM 5.3",
+        "DeepSeek 4.1 Flash + MiMo Pro",
+        "GLM 5.3 Flash + Sonnet",
+        "Haiku 5.5"
+      ],
+      [
+        "Local (0 €/token)",
+        "Qwen 3.8 (si te da)",
+        "Qwen 3.8 contexto largo",
+        "Qwen 3.6 35B A3B",
+        "—",
+        "Qwen local pequeño"
+      ]
     ]
   },
   "precios": {
-    "columnas": ["Modelo / plan", "Entrada /1M", "Salida /1M", "Cache read /1M", "Notas"],
+    "columnas": [
+      "Modelo / plan",
+      "Entrada /1M",
+      "Salida /1M",
+      "Cache read /1M",
+      "Notas"
+    ],
     "filas": [
-      ["DeepSeek 4.1 Flash", "$0.15", "$0.60", "$0.003", "96% cache hit; 2,5x el trabajo de GLM por 20% más de coste"],
-      ["GLM 5.3 Flash", "$0.15", "$0.50", "$0.03", "92% cache hit; se siente más listo pero cuesta más por tarea"],
-      ["GPT-6 Luna (Zen)", "$0.10", "$0.50", "$0.01", "Más barato en lista que DeepSeek: la caché decide"],
-      ["Haiku 5.5", "$0.10", "$0.50", "—", "≤100k tokens; x5 de precio al pasarlos"],
-      ["Kimi K3", "$2.00", "$10.00", "—", "El más caro de Go; quema la cuota en 3 prompts"],
-      ["Mistral Large 4", "—", "—", "—", "Toda la potencia de Luna por 15x el coste"],
-      ["Go $10", "—", "—", "—", "$60 → $80 de uso DeepSeek (subida sin anunciar, 12-oct)"],
-      ["Go Plus $40", "—", "—", "—", "2x límites por 4x precio: DOA; la gente apila subs de $10"],
-      ["OpenDesign Go ($8-10)", "—", "—", "—", "$120 de crédito con DS 4.1 Flash; sin verificar, olor a CrofAI"]
-    ]
+      [
+        "DeepSeek 4.1 Flash",
+        "$0.15",
+        "$0.60",
+        "$0.003",
+        "96% cache hit; 2,5x el trabajo de GLM por 20% más de coste"
+      ],
+      [
+        "GLM 5.3 Flash",
+        "$0.15",
+        "$0.50",
+        "$0.03",
+        "92% cache hit; se siente más listo pero cuesta más por tarea"
+      ],
+      [
+        "GPT-6 Luna (Zen)",
+        "$0.10",
+        "$0.50",
+        "$0.01",
+        "Más barato en lista que DeepSeek: la caché decide"
+      ],
+      [
+        "Haiku 5.5",
+        "$0.10",
+        "$0.50",
+        "—",
+        "≤100k tokens; x5 de precio al pasarlos"
+      ],
+      [
+        "Kimi K3",
+        "$3.00",
+        "$15.00",
+        "$0.30",
+        "Oficial de Go: limite $15/mes (x1.5). El mas caro del plan"
+      ],
+      [
+        "Mistral Large 4 (Zen)",
+        "—",
+        "—",
+        "—",
+        "No esta en Go; disponible en Zen. Potencia de Luna a 15x el coste"
+      ],
+      [
+        "Go $10",
+        "—",
+        "—",
+        "—",
+        "DeepSeek V4.1 Flash: $80 de uso (x8). GLM-5.3-Flash y otros: $60 (x6). Ver tabla oficial abajo"
+      ],
+      [
+        "Go Plus $40",
+        "—",
+        "—",
+        "—",
+        "Limites mayores pero no uniformes: GLM-5.3-Flash x3, GLM-5.3 x8, MiMo-Flash x2"
+      ],
+      [
+        "OpenDesign Go ($8-10)",
+        "—",
+        "—",
+        "—",
+        "$120 de crédito con DS 4.1 Flash; sin verificar, olor a CrofAI"
+      ]
+    ],
+    "titulo": "Precios por token (resumen rapido)"
   },
   "benchmarks": [
     {
       "titulo": "Terminal-Bench 2.1 (89 tareas x 3 intentos)",
-      "columnas": ["Modelo", "Pass@1", "Pass@3", "Tokens/intento", "Velocidad"],
+      "columnas": [
+        "Modelo",
+        "Pass@1",
+        "Pass@3",
+        "Tokens/intento",
+        "Velocidad"
+      ],
       "filas": [
-        ["Space Bunny (retirado)", "52,1%", "66,3%", "~1,69M", "mediana 979 s"],
-        ["Step 5 Preview", "50,2%", "64,0%", "~0,90M", "el más lento"],
-        ["LongCat 2.5 Preview", "48,7%", "64,0%", "~0,54M", "mediana 784 s"],
-        ["MiMo v2.5", "44,2%", "66,3%", "~0,57M", "mediana 830 s"]
+        [
+          "Space Bunny (retirado)",
+          "52,1%",
+          "66,3%",
+          "~1,69M",
+          "mediana 979 s"
+        ],
+        [
+          "Step 5 Preview",
+          "50,2%",
+          "64,0%",
+          "~0,90M",
+          "el más lento"
+        ],
+        [
+          "LongCat 2.5 Preview",
+          "48,7%",
+          "64,0%",
+          "~0,54M",
+          "mediana 784 s"
+        ],
+        [
+          "MiMo v2.5",
+          "44,2%",
+          "66,3%",
+          "~0,57M",
+          "mediana 830 s"
+        ]
       ]
     },
     {
       "titulo": "Workers gratis (8-oct): Q&A + arreglar 2 tests, timeout 420 s",
-      "columnas": ["Puesto", "Modelo", "Puntuación", "Segundos"],
+      "columnas": [
+        "Puesto",
+        "Modelo",
+        "Puntuación",
+        "Segundos"
+      ],
       "filas": [
-        ["1", "mimo-v2.6-flash-free", "100", "129"],
-        ["2", "muse-spark-1.3-contributor-free", "99", "132"],
-        ["3", "space-bunny-free", "95", "167"],
-        ["4", "longcat-2.5-preview-free", "92", "214"],
-        ["5", "ling-3.1-flash-free", "91", "220"],
-        ["6", "nemotron-3-ultra-free", "70", "257"],
-        ["7", "nemotron-3.5-lightning-free", "20", "422"],
-        ["8", "exo-free · fledge-alpha-free · ling-3.0-fin-free", "0 (timeout)", "—"]
+        [
+          "1",
+          "mimo-v2.6-flash-free",
+          "100",
+          "129"
+        ],
+        [
+          "2",
+          "muse-spark-1.3-contributor-free",
+          "99",
+          "132"
+        ],
+        [
+          "3",
+          "space-bunny-free",
+          "95",
+          "167"
+        ],
+        [
+          "4",
+          "longcat-2.5-preview-free",
+          "92",
+          "214"
+        ],
+        [
+          "5",
+          "ling-3.1-flash-free",
+          "91",
+          "220"
+        ],
+        [
+          "6",
+          "nemotron-3-ultra-free",
+          "70",
+          "257"
+        ],
+        [
+          "7",
+          "nemotron-3.5-lightning-free",
+          "20",
+          "422"
+        ],
+        [
+          "8",
+          "exo-free · fledge-alpha-free · ling-3.0-fin-free",
+          "0 (timeout)",
+          "—"
+        ]
       ]
     }
   ],
@@ -180,30 +754,97 @@
     "Opencode Go Bench: 43 modelos de opencode.ai/go cruzados con Artificial Analysis; el debate es si Go sirve versiones cuantizadas."
   ],
   "stealth": {
-    "columnas": ["Nombre público", "Qué era en realidad", "Cómo se supo"],
+    "columnas": [
+      "Nombre público",
+      "Qué era en realidad",
+      "Cómo se supo"
+    ],
     "filas": [
-      ["Space Bunny", "MiniMax M3.1", "Filtraba etiquetas <minimax>; tokenizer coincide con M2/M3"],
-      ["Exo Free", "Router a GPT/Claude (probablemente Haiku 5.5); murió en horas", "Se cayó al llegar tráfico"],
-      ["Fledge Alpha", "Router: DeepSeek 4.1 + Kimi (¿K3?) + un tercero; con visión", "Fingerprint de tokenizer"],
-      ["big-pickle", "MAI de Microsoft AI (varía con el tiempo)", "Se autodelata al preguntarle"],
-      ["Cat Jam", "«CatJam by LitterBox AI»; se sospecha Groq", "300-350 tps y respuesta del propio modelo"],
-      ["Hy4 Preview", "Probablemente MiniMax / Space Bunny", "Comparativas de la comunidad"],
-      ["Union Alpha", "Se especuló Mistral", "Conferencia en España y contexto"],
-      ["CrofAI", "Wrapper de OpenRouter con hasta 20x de margen", "Auditoría de la comunidad → cerró"],
-      ["«greg-2-super» (OpenRouter)", "Ruta a Kimi K2.7 Code", "Nombres de ruta filtrados"]
+      [
+        "Space Bunny",
+        "MiniMax M3.1",
+        "Filtraba etiquetas <minimax>; tokenizer coincide con M2/M3"
+      ],
+      [
+        "Exo Free",
+        "Router a GPT/Claude (probablemente Haiku 5.5); murió en horas",
+        "Se cayó al llegar tráfico"
+      ],
+      [
+        "Fledge Alpha",
+        "Router: DeepSeek 4.1 + Kimi (¿K3?) + un tercero; con visión",
+        "Fingerprint de tokenizer"
+      ],
+      [
+        "big-pickle",
+        "MAI de Microsoft AI (varía con el tiempo)",
+        "Se autodelata al preguntarle"
+      ],
+      [
+        "Cat Jam",
+        "«CatJam by LitterBox AI»; se sospecha Groq",
+        "300-350 tps y respuesta del propio modelo"
+      ],
+      [
+        "Hy4 Preview",
+        "Probablemente MiniMax / Space Bunny",
+        "Comparativas de la comunidad"
+      ],
+      [
+        "Union Alpha",
+        "Se especuló Mistral",
+        "Conferencia en España y contexto"
+      ],
+      [
+        "CrofAI",
+        "Wrapper de OpenRouter con hasta 20x de margen",
+        "Auditoría de la comunidad → cerró"
+      ],
+      [
+        "«greg-2-super» (OpenRouter)",
+        "Ruta a Kimi K2.7 Code",
+        "Nombres de ruta filtrados"
+      ]
     ]
   },
   "banderas": {
-    "columnas": ["Señal", "Detalle"],
+    "columnas": [
+      "Señal",
+      "Detalle"
+    ],
     "filas": [
-      ["Bucles y repeticiones", "DeepSeek 4.1 repite bucles; MiMo 2.6 repite tool-calls idénticas; Muse 1.3 da 8 rondas de review sin terminar"],
-      ["Datos de entrenamiento", "Los modelos «Contributor» (Muse Spark) y Space Bunny entrenan con tus prompts según la doc de Go"],
-      ["Cuotas que se agotan", "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"],
-      ["Límites opacos", "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80)"],
-      ["Cuantización", "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate es constante"],
-      ["Estabilidad", "Endpoints caídos (Step 5), y 70-87 tok/s en Go frente a 270 t/s de la API directa de DeepSeek"],
-      ["Seguridad", "OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"],
-      ["Rompe-instalaciones", "LongCat 2.5 Preview obligó a reinstalar el CLI a varios usuarios"]
+      [
+        "Bucles y repeticiones",
+        "DeepSeek 4.1 repite bucles; MiMo 2.6 repite tool-calls idénticas; Muse 1.3 da 8 rondas de review sin terminar"
+      ],
+      [
+        "Datos de entrenamiento",
+        "Los modelos «Contributor» (Muse Spark) y Space Bunny entrenan con tus prompts según la doc de Go"
+      ],
+      [
+        "Cuotas que se agotan",
+        "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"
+      ],
+      [
+        "Límites opacos",
+        "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80)"
+      ],
+      [
+        "Cuantización",
+        "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate es constante"
+      ],
+      [
+        "Estabilidad",
+        "Endpoints caídos (Step 5), y 70-87 tok/s en Go frente a 270 t/s de la API directa de DeepSeek"
+      ],
+      [
+        "Seguridad",
+        "OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
+      ],
+      [
+        "Rompe-instalaciones",
+        "LongCat 2.5 Preview obligó a reinstalar el CLI a varios usuarios"
+      ]
     ]
   }
 }
