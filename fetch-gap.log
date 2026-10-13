@@ -1,0 +1,24 @@
+== Posts ==
+  posts: +100 (total 100) @ 2026-10-10 17:29
+  posts: +45 (total 145) @ 2026-10-12 01:18
+== Comments ==
+  retry 1 (HTTP Error 422: Unprocessable Entity) wait 1s
+  comments: +100 (total 100) @ 2026-10-08 08:36
+  comments: +100 (total 200) @ 2026-10-08 11:29
+  retry 1 (HTTP Error 422: Unprocessable Entity) wait 1s
+  comments: +100 (total 300) @ 2026-10-08 15:23
+  comments: +100 (total 400) @ 2026-10-08 18:43
+  comments: +100 (total 500) @ 2026-10-09 02:13
+  comments: +100 (total 600) @ 2026-10-09 09:50
+  comments: +100 (total 700) @ 2026-10-09 15:26
+  comments: +100 (total 800) @ 2026-10-09 20:47
+  comments: +100 (total 900) @ 2026-10-10 07:16
+  comments: +100 (total 1000) @ 2026-10-10 16:46
+  comments: +100 (total 1100) @ 2026-10-11 01:55
+  comments: +100 (total 1200) @ 2026-10-11 12:21
+  comments: +100 (total 1300) @ 2026-10-11 17:28
+  comments: +100 (total 1400) @ 2026-10-12 00:53
+  comments: +43 (total 1443) @ 2026-10-12 01:24
+posts=145 comments=1443
+huerfanos=376
+OK: {"subreddit": "opencode", "range": "2026-10-08 .. 2026-10-13", "fetched_at": "2026-10-12T01:33:12.796789+00:00", "posts": 145, "comments": 1067, "source": "arctic-shift.photon-reddit.com"}

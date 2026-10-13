@@ -1,0 +1,188 @@
+# Especialidades por modelo — 20592 unidades de texto (2185 hilos)
+
+## MATRIZ modelo x dominio (nº de frases que los vinculan)
+
+modelo                  frontend   backend planifica motion/vi    diseno implement debugging  tests/QA orquestac escritura investiga    vision local/pri tareas si
+DeepSeek 4.1 Flash            10       200        45         9        21       170        47        93        83        33         8        23        29        13
+GLM 5.3 (Flash)                8        42        33         3        11       109        26        60        34        14         4         8        16         6
+Muse Spark 1.3                13        15        11         1         8        46        30        27        30        12         4         3         3         4
+MiMo v2.6                      5         7        13         4         8        41        13        37        15         3         5         2         5         9
+Space Bunny/MiniMax            6         8         2         3         7        35        10        24         9         8         1         8         3         2
+Kimi K2.7/K3                   5        13        11         1         4        37         5        14         9                   2         1         3          
+Qwen 3.8                       2        19         4         2         1        23         7        17        13         3         3         2        37         3
+Opus 5.5                       4         7        29         7        15        53        12        34        21        12         3                   4         3
+Sonnet 5.5                               1         9                   9        18         3         7         9         5         1                   1         2
+Haiku 5.5                                2         1                   2         6         1        11         7         1         1                   1         3
+GPT-6 Luna                     1         8        20         2         7        46         7        27        30        14         2         1         1         6
+Sol 6.1 / GPT-6                2        10        30         2        10        39         4        33        26        12         4         1         2         2
+Gemini 4 Argon                 4        19         4         5         4        10        12        16         2         7         8         6         3          
+big-pickle (MAI)                        10         1                                                                               1                              
+LongCat 2.5                    1                   1                             4         1         5                             1         1                   1
+Ling 3.1                                                                         4                   2         1         1                             1         1
+Step 5 Preview                           8                                       1                                                                     1          
+Cat Jam                                                                                              1                                                            
+Nemotron                                 3                                       4         1         1         4                                                 1
+Grok 4.6                       1         1                             1        11         1         7         2         2         1                   4          
+
+## DETALLE: dominios top por modelo
+
+
+### DeepSeek 4.1 Flash
+  · backend (200 menciones)
+      [  60↑ r/opencode] So I compared OpenCode Go to the direct DeepSeek API.
+  · implementar (170 menciones)
+      [  61↑ r/opencode] Deepseek V4.1 Flash scores lower but does a much better job at coding.
+  · tests/QA (93 menciones)
+      [  60↑ r/opencode] In both cases OpenCode's DeepSeek used more turns, context window, and total reads for the review compared to Direct API, and it was more expensive.
+  · orquestacion (83 menciones)
+      [  60↑ r/opencode] In both cases OpenCode's DeepSeek used more turns, context window, and total reads for the review compared to Direct API, and it was more expensive.
+
+### GLM 5.3 (Flash)
+  · implementar (109 menciones)
+      [  39↑ r/opencode] How does it compare with GLM Flash for coding work like this?
+  · tests/QA (60 menciones)
+      [  12↑ r/opencodeCLI] He put Gemini 3.8 Flash at around the same level as GLM 5.3 Flash, which more or less where Artificial Analysis shows the benchmarks.
+  · backend (42 menciones)
+      [  17↑ r/opencodeCLI] While a lot of the plans are tightening or closing free rails, we're offering free DSV4.1 Flash, GLM 5.3 Flash and Mimo 2.6 Flash for a month on Phoenix Grove API.
+  · orquestacion (34 menciones)
+      [  56↑ r/opencode] - GLM 5.3 flash for orchestration
+
+### Muse Spark 1.3
+  · implementar (46 menciones)
+      [  61↑ r/opencode] Muse Spark 1.3 scores very high, but I just let it implement a plan with one feature, like I usually do, and oh boy.
+  · orquestacion (30 menciones)
+      [  14↑ r/opencode] I find muse 1.3 with caveman and ponytail in plan mode with subagents and then build more with worktrees incredible effective and pretty light on tokens.
+  · debugging (30 menciones)
+      [  26↑ r/opencode] Wondering why all the hate for muse spark 1.3 since in my testing on a codebase with about 10k LOC it performed pretty well , sometime even outperforming Gemini flash 3.8 in s
+  · tests/QA (27 menciones)
+      [  26↑ r/opencode] Wondering why all the hate for muse spark 1.3 since in my testing on a codebase with about 10k LOC it performed pretty well , sometime even outperforming Gemini flash 3.8 in s
+
+### MiMo v2.6
+  · implementar (41 menciones)
+      [  98↑ r/opencodeCLI] After the MiMo-V2.6 series models launched, we noticed them sometimes repeating identical or highly similar tool calls — burning context and stalling tasks, especially in MiMo
+  · tests/QA (37 menciones)
+      [  52↑ r/opencodeCLI] Can't wait for MiMo 2.6 Flash benchmarks!
+  · orquestacion (15 menciones)
+      [   5↑ r/opencode] I use dsv4.1 flash for both planning and orchestration, then mimo-v2.6-flash for implementation and browser test drive.
+  · planificacion (13 menciones)
+      [   5↑ r/opencode] I use dsv4.1 flash for both planning and orchestration, then mimo-v2.6-flash for implementation and browser test drive.
+
+### Space Bunny/MiniMax
+  · implementar (35 menciones)
+      [ 141↑ r/opencode] I wondered how good Space Bunny was at coding.
+  · tests/QA (24 menciones)
+      [ 123↑ r/opencodeCLI] Minimax is actively testing M3.1-Flash-Preview (release coming soon).
+  · debugging (10 menciones)
+      [  29↑ r/opencodeCLI] "MiniMax's new M3.1-Flash-Preview is live in MiniMax Code, aimed at everyday dev work from bug fixes to full features.
+  · orquestacion (9 menciones)
+      [  50↑ r/opencode] Less than a month later, on **September 23, 2026**, Space Bunny Alpha appeared on OpenRouter with a 1M-token context window, native text/image/video input, adjustable reasonin
+
+### Kimi K2.7/K3
+  · implementar (37 menciones)
+      [ 180↑ r/opencodeCLI] `greg-2-super`, `greg-1`, `greg-1-super` routes to Kimi K2.7 Code.
+  · tests/QA (14 menciones)
+      [   4↑ r/opencode] The models I’m considering most for planning/reviews are **MiMo-V2.6-Pro, GPT-5.6 Luna, GPT-6 Luna, DeepSeek V4 Pro, Kimi K2.7 Code, and GLM-5.3**.
+  · backend (13 menciones)
+      [   4↑ r/opencode] Kimi K3 through NVIDIA Build API just outputs !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  · planificacion (11 menciones)
+      [   5↑ r/opencode] - Kimi 2.7 Code (planner)
+
+### Qwen 3.8
+  · local/privado (37 menciones)
+      [ 148↑ r/opencode] The long-term idea is not to hard-code one Whisper model, but to make the STT backend extensible so things like Whisper, Parakeet, Qwen ASR, and other local models/providers c
+  · implementar (23 menciones)
+      [ 148↑ r/opencode] The long-term idea is not to hard-code one Whisper model, but to make the STT backend extensible so things like Whisper, Parakeet, Qwen ASR, and other local models/providers c
+  · backend (19 menciones)
+      [ 148↑ r/opencode] The long-term idea is not to hard-code one Whisper model, but to make the STT backend extensible so things like Whisper, Parakeet, Qwen ASR, and other local models/providers c
+  · tests/QA (17 menciones)
+      [ 106↑ r/opencode] I made a $0.10/$1 Qwen 3.8 API for OpenCode, giving 100M tokens to anyone who wants to beta test it.
+
+### Opus 5.5
+  · implementar (53 menciones)
+      [  34↑ r/opencode] Is opus 5.5 token inefficient or just doesn't do well on open code?.
+  · tests/QA (34 menciones)
+      [  22↑ r/opencodeCLI] opus passed everything but it has a visual bug the tests didnt catch.
+  · planificacion (29 menciones)
+      [   7↑ r/opencode] Yeah the best way to work on a $20 plan is by using opus 5.5 to plan and write design docs while using sonnet for implenenting.
+  · orquestacion (21 menciones)
+      [  10↑ r/opencodeCLI] I would say that I get basically enough Opus usage on the $20/month plan that I scrapped Go altogether and only do Claude as an orchestrator or owning hard projects and then e
+
+### Sonnet 5.5
+  · implementar (18 menciones)
+      [   6↑ r/opencode] Claude runs the show, with ultracode workflows along with the Claude code plug-in for codex/grok/ollama I can use opus as the orchestrator dispatch for most of the plans or ev
+  · diseno (9 menciones)
+      [  25↑ r/opencodeCLI] Opus 5.5 is just fantastic, especially for visual elements, and Sonnet 5.5 isn't far behind.
+  · planificacion (9 menciones)
+      [   7↑ r/opencode] Yeah the best way to work on a $20 plan is by using opus 5.5 to plan and write design docs while using sonnet for implenenting.
+  · orquestacion (9 menciones)
+      [   7↑ r/opencodeCLI] But if you're deliberately avoiding Sol/Opus/Sonnet and trying to push these little models to maximum orchestration on a big project, it will cost you more.
+
+### Haiku 5.5
+  · tests/QA (11 menciones)
+      [ 315↑ r/opencodeCLI] Claude Haiku 5.5 benchmarks (better than GPT-6 Luna).
+  · orquestacion (7 menciones)
+      [   7↑ r/opencodeCLI] Haiku prices go up 5x after the context window gets to 100k.
+  · implementar (6 menciones)
+      [   2↑ r/opencodeCLI] haiku 5.5 is extremely proficient at straight-forward coding tasks, and sonnet (on 100k, 150k, or maybe 200k tops) is good at more complicated ones.
+
+### GPT-6 Luna
+  · implementar (46 menciones)
+      [  27↑ r/opencode] they all seem to be great at different things for me, luna says little, works FAST, and keeps it clean, glm seems to be the best at following instructions and filling in gaps 
+  · orquestacion (30 menciones)
+      [   7↑ r/opencode] Although anyone routing Luna to DS 4.1 is doing you a favour lmao.
+  · tests/QA (27 menciones)
+      [ 315↑ r/opencodeCLI] Claude Haiku 5.5 benchmarks (better than GPT-6 Luna).
+  · planificacion (20 menciones)
+      [   5↑ r/opencode] I have them consult or work with opus 5.5 or sol for planning and review while Glm and Luna are more the grunt workers.
+
+### Sol 6.1 / GPT-6
+  · implementar (39 menciones)
+      [   6↑ r/opencodeCLI] I'll probably continue to do: design with Astra, implement with 5.6 Sol.
+  · tests/QA (33 menciones)
+      [ 315↑ r/opencodeCLI] Claude Haiku 5.5 benchmarks (better than GPT-6 Luna).
+  · planificacion (30 menciones)
+      [   5↑ r/opencode] I have them consult or work with opus 5.5 or sol for planning and review while Glm and Luna are more the grunt workers.
+  · orquestacion (26 menciones)
+      [   7↑ r/opencodeCLI] But if you're deliberately avoiding Sol/Opus/Sonnet and trying to push these little models to maximum orchestration on a big project, it will cost you more.
+
+### Gemini 4 Argon
+  · backend (19 menciones)
+      [  26↑ r/opencode] Granted I think Gemini is certainly better for frontend and designs much better looking interfaces without much prompting, but for complex bugs spanning multiple backend parts
+  · tests/QA (16 menciones)
+      [  26↑ r/opencode] Wondering why all the hate for muse spark 1.3 since in my testing on a codebase with about 10k LOC it performed pretty well , sometime even outperforming Gemini flash 3.8 in s
+  · debugging (12 menciones)
+      [  26↑ r/opencode] Wondering why all the hate for muse spark 1.3 since in my testing on a codebase with about 10k LOC it performed pretty well , sometime even outperforming Gemini flash 3.8 in s
+  · implementar (10 menciones)
+      [  56↑ r/opencode] I was curious if they added any new models (maybe gemini 3.8 flash), and I see the Google logo along with other model devs that are featured in opencode go?
+
+### big-pickle (MAI)
+  · backend (10 menciones)
+      [  21↑ r/opencode] data: {"id":"mai-api-3ece767b-0681-4cbb-b80c-b9995472c295","object":"chat.completion.chunk","created":1791334645,"model":"big-pickle","choices":[{"index":0,"finish_reason":nul
+
+### LongCat 2.5
+  · tests/QA (5 menciones)
+      [  28↑ r/opencodeCLI] I have a large refactoring task, that I meant to do by hand, but as a test I decided to give it to longcat 2.5 preview, since its free anyway.
+  · implementar (4 menciones)
+      [  28↑ r/opencodeCLI] I have a large refactoring task, that I meant to do by hand, but as a test I decided to give it to longcat 2.5 preview, since its free anyway.
+
+### Ling 3.1
+  · implementar (4 menciones)
+      [  33↑ r/opencode] The Bulk Workers ($0 / OpenCode Free Tier): A roster of unmetered models (dev-nemotron-ultra, dev-mimo, dev-ling, dev-muse) handles bounded coding tasks, parsing, and small sc
+
+### Step 5 Preview
+  · backend (8 menciones)
+      [   2↑ r/opencode] I just change from space bunny to step 5 preview in opencode zen today, but i meet "Upstream request failed: Endpoint is unavailable." for so many times.
+
+### Nemotron
+  · orquestacion (4 menciones)
+      [   1↑ r/opencode] To be honest ,i liked nemotron 3 ultra as orchestrator just for the reason of 1 M context window
+  · implementar (4 menciones)
+      [  33↑ r/opencode] The Bulk Workers ($0 / OpenCode Free Tier): A roster of unmetered models (dev-nemotron-ultra, dev-mimo, dev-ling, dev-muse) handles bounded coding tasks, parsing, and small sc
+
+### Grok 4.6
+  · implementar (11 menciones)
+      [   6↑ r/opencode] Claude runs the show, with ultracode workflows along with the Claude code plug-in for codex/grok/ollama I can use opus as the orchestrator dispatch for most of the plans or ev
+  · tests/QA (7 menciones)
+      [   1↑ r/opencode] the ratings and benchmark compared to astra high, opus 5.5, grok 4.8 ...
+  · local/privado (4 menciones)
+      [   6↑ r/opencode] Do you believe OAI, anthropic, grok etc when they claim ZDR?
