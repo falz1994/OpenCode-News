@@ -28,6 +28,9 @@ con datos en vez de con impresiones:
 | `index_datos.py` | Genera la fuente del dashboard: `datos.json` + `datos.js` a partir de `fuente.json` + volcados |
 | `go_limites.py` | Scrapea los **límites de uso oficiales de OpenCode Go** → `go_limites.json` (incluye el multiplicador ×plan) |
 | `presets.py` | Lee los presets de DSH (`~/.dsh/.agent-presets`) y genera `presets.json` para el frame de presets |
+| `audita.py` | Auditoría del dashboard con Chrome headless (CDP): contraste WCAG, desbordes, solapes con el header y geometría |
+| `sonda.py` | Medidas puntuales de layout (una celda, un chip, un título) para decidir si algo está mal alineado |
+| `captura.py` | Capturas dirigidas: desplaza a un título y guarda el viewport en claro/oscuro y a cualquier ancho |
 
 ## Límites de OpenCode Go
 
@@ -81,17 +84,41 @@ solos** desde los volcados; las valoraciones `+++/++/+/–/✗` son criterio cur
 
 ## Presets de DSH
 
-El dashboard incluye el frame **“Presets de DSH: cómo trabaja el agente”**: qué es cada preset, en qué
-escenarios funciona, cuándo evitarlo y sus rasgos (persona propia, nº de herramientas, read-only,
-watchdog, delegación, herencia). Se genera con `presets.py`, que lee `preset.yml` y resuelve la
-herencia de `agent.cordis.yml` (`inherit-composition.js` → `path`), ignorando los módulos `disabled`.
+El dashboard incluye el frame **“Presets de DSH: cómo trabaja el agente”** con tres bloques:
 
-- **`PRESETS.md`** — la simulación paso a paso: qué se carga y qué se manda al prompt al enviar un
-  mensaje **con preset seleccionado** frente a un **request normal** sin preset.
+1. **Qué es un preset y en qué escenarios funciona** — no es un modelo ni una cuota: es el grafo de
+   módulos que se monta al crear la sesión (persona, herramientas, políticas y delegación), y se elige
+   antes de crearla.
+2. **Una tarjeta por preset** — descripción, *cuándo funciona*, *cuándo evitarlo* y los **rasgos medidos
+   del grafo** (bytes del prompt de persona, módulos de herramienta, read-only, watchdog, observador de
+   límites, vía de delegación y de qué preset hereda).
+3. **Simulación: mandar un mensaje en una sesión nueva** — el mismo mensaje con un preset elegido frente
+   a un request normal sin preset, paso a paso: qué se carga, qué se manda al prompt, quién escribe y
+   quién verifica. Incluye el orden real de las secciones del system prompt con los bytes medidos.
+
+Todo se genera con `presets.py`, que lee `preset.yml` y resuelve la herencia de `agent.cordis.yml`
+(`inherit-composition.js` → `path`), ignorando los módulos `disabled`. Los bytes del `prefix` de la
+persona se miden del propio YAML y se contrastan con PyYAML:
 
 ```bash
 python3 presets.py              # refresca presets.json desde ~/.dsh/.agent-presets
+python3 presets.py --verifica   # contrasta la cuenta del prefix contra PyYAML (debe dar 0 fallos)
+python3 index_datos.py          # lo mete en datos.json / datos.js
 ```
+
+- **`PRESETS.md`** — la traza larga, con las citas de los ficheros del harness.
+
+### Revisión visual
+
+```bash
+python3 -m http.server 8765 &                                  # el dashboard por HTTP
+python3 audita.py --tema oscuro                                # defectos: contraste, desbordes, solapes
+python3 captura.py --h2 "Presets de DSH" -o .rev/presets.png    # captura dirigida
+```
+
+`audita.py` necesita Chrome y lo arranca con `--no-sandbox` (el helper SUID no está configurado en esta
+máquina); solo audita `127.0.0.1`. Las celdas de tabla quedan excluidas del chequeo de desborde porque
+llevan `white-space: nowrap` a propósito.
 
 ## Uso
 

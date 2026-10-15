@@ -1986,8 +1986,17 @@
  "presets": {
   "titulo": "Presets de DSH: cómo trabaja el agente",
   "fuente": "/home/devni/.dsh/.agent-presets",
-  "actualizado": "2026-10-15 04:01 UTC",
+  "actualizado": "2026-10-15 04:33 UTC",
   "nota": "Un preset no es un modelo: es la configuración con la que arranca la sesión (persona, instrucciones, herramientas, políticas y delegación). Se elige antes de crear la sesión.",
+  "que_es": {
+   "titulo": "Qué es un preset y en qué escenarios funciona",
+   "parrafos": [
+    "Un preset es un grafo de módulos que se monta al crear la sesión. Decide cuatro cosas: la persona (el texto que abre el system prompt), qué herramientas existen, qué políticas se imponen (por ejemplo fijar la sesión en read-only) y si el trabajo pesado se delega o lo hace el modelo principal.",
+    "No es un modelo ni una cuota: el modelo lo elige la sesión. Tampoco es un prompt que se suma al del deployment: cuando un preset declara `persona`, ocupa el mismo slot y lo reemplaza.",
+    "Elegilo por la forma del trabajo, no por el tema: si el trabajo es pesado, multi-archivo o la cuota del modelo principal es escasa, conviene un preset que delegue; si es una pregunta o un cambio de una línea, el perfil por defecto gana porque no paga la ida y vuelta."
+   ],
+   "regla": "Un preset se elige antes de crear la sesión y no se cambia a mitad."
+  },
   "presets": [
    {
     "id": "hyperframes-educativo",
@@ -2006,7 +2015,9 @@
     ],
     "rasgos": {
      "persona_propia": true,
-     "largo_prompt_persona": 6890,
+     "largo_prompt_persona": 6474,
+     "bytes_prompt_persona": 6528,
+     "suffix_persona": "",
      "instrucciones_max_bytes": 65536,
      "plugins": [],
      "herramientas": [
@@ -2035,7 +2046,14 @@
       "@deepseek-ai/dsh-tool-bash",
       "@deepseek-ai/dsh-tool-pwsh"
      ],
-     "delegacion_vaciada": true
+     "delegacion_vaciada": true,
+     "delegacion": {
+      "mecanismo": "ninguna: el modelo principal produce todo",
+      "escribe": "el modelo principal escribe directamente en el workspace",
+      "carriles": "el modelo de la sesión, sin router",
+      "via": "ninguna",
+      "herramientas": 0
+     }
     }
    },
    {
@@ -2055,7 +2073,9 @@
     ],
     "rasgos": {
      "persona_propia": true,
-     "largo_prompt_persona": 13094,
+     "largo_prompt_persona": 12764,
+     "bytes_prompt_persona": 12964,
+     "suffix_persona": "",
      "instrucciones_max_bytes": 65536,
      "plugins": [
       "omniroute-limit-observer.js",
@@ -2090,7 +2110,14 @@
       "@deepseek-ai/dsh-tool-bash",
       "@deepseek-ai/dsh-tool-pwsh"
      ],
-     "delegacion_vaciada": false
+     "delegacion_vaciada": false,
+     "delegacion": {
+      "mecanismo": "un hijo in-process (omniroute_code)",
+      "escribe": "el hijo escribe; la raíz queda read-only",
+      "carriles": "router local OmniRoute, combo `code` con failover propio",
+      "via": "omniroute_code",
+      "herramientas": 1
+     }
     }
    },
    {
@@ -2108,7 +2135,9 @@
     "hereda_de": [],
     "rasgos": {
      "persona_propia": true,
-     "largo_prompt_persona": 13094,
+     "largo_prompt_persona": 12764,
+     "bytes_prompt_persona": 12964,
+     "suffix_persona": "",
      "instrucciones_max_bytes": 65536,
      "plugins": [
       "omniroute-limit-observer.js",
@@ -2143,13 +2172,325 @@
       "@deepseek-ai/dsh-tool-bash",
       "@deepseek-ai/dsh-tool-pwsh"
      ],
-     "delegacion_vaciada": false
+     "delegacion_vaciada": false,
+     "delegacion": {
+      "mecanismo": "un hijo in-process (omniroute_code)",
+      "escribe": "el hijo escribe; la raíz queda read-only",
+      "carriles": "router local OmniRoute, combo `code` con failover propio",
+      "via": "omniroute_code",
+      "herramientas": 1
+     }
     }
    }
-  ]
+  ],
+  "simulacion": {
+   "titulo": "Simulación: mandar un mensaje en una sesión nueva",
+   "intro": "Qué se carga y qué se manda al prompt cuando abrís una sesión nueva y mandás un mensaje. La columna izquierda es una sesión con un preset elegido; la derecha, un request normal sin elegir nada. Los bytes del system prompt están medidos de dos sesiones reales del disco (las rutas están en cada columna): no son estimaciones.",
+   "columnas": [
+    {
+     "id": "con_preset",
+     "titulo": "Con un preset elegido",
+     "sub": "ejemplo medido: `hyperframes-educativo` · system prompt de 28.704 B",
+     "sesion": "~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-6408e2f7-ef2b-4f09-9c38-d647de84990b",
+     "total": 28704
+    },
+    {
+     "id": "sin_preset",
+     "titulo": "Request normal, sin elegir preset",
+     "sub": "se compone con el default del roster: standard · system prompt de 6.902 B",
+     "sesion": "~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-d26f77b4-5e65-494a-a5e3-6c09858f9d4f",
+     "total": 6902
+    }
+   ],
+   "pasos": [
+    {
+     "n": 0,
+     "titulo": "Elegís el preset (o no)",
+     "con_preset": "El selector lee `preset.yml` de cada carpeta de `/home/devni/.dsh/.agent-presets` y de los presets que trae el propio paquete. Ese fichero solo aporta metadatos: nombre, descripción y orden. Todavía no se carga código.",
+     "sin_preset": "No elegís nada. La sesión NO queda sin composición: el roster tiene un default (`agent-presets.default: standard` en el perfil web) y se monta ese.",
+     "fuente": "preset.yml · dsh-web-app/cordis.patch.yml"
+    },
+    {
+     "n": 1,
+     "titulo": "Se compone el grafo de módulos",
+     "con_preset": "Se montan los módulos de `agent.cordis.yml`: persona, 4 plugins, 12 módulos de herramienta y 3 grupos.",
+     "sin_preset": "Se montan los módulos del preset `standard` (el que trae el paquete): persona, 11 módulos de herramienta, 3 grupos y el grupo de delegación con `subagent`, `subagent_fork`, `workflow` y `ralph`. Sin plugins de política.",
+     "fuente": "agent.cordis.yml"
+    },
+    {
+     "n": 2,
+     "titulo": "Se ensambla el system prompt",
+     "con_preset": "`deployment:persona-prefix` = 6.565 B del preset; además su extensión aporta 22.026 B. Total medido: 28.704 B.",
+     "sin_preset": "`deployment:persona-prefix` = 64 B: la persona del preset `standard` («You are a coding agent…»). La guía de herramientas pesa 6.723 B. Total medido: 6.902 B.",
+     "fuente": "dsh-system-prompt · renderPrompt"
+    },
+    {
+     "n": 3,
+     "titulo": "Mandas el mensaje",
+     "con_preset": "Lo que ve el modelo es: system prompt + instrucciones del proyecto + contexto de entorno + historial + TU MENSAJE.",
+     "sin_preset": "La misma forma, con el system prompt de 6.902 B. Tus ficheros NO viajan dentro: entran solo si el modelo llama a una herramienta.",
+     "fuente": "dsh-agent-loop"
+    },
+    {
+     "n": 4,
+     "titulo": "Primer request: dos mensajes aparte",
+     "con_preset": "Las instrucciones del proyecto (AGENTS.md, hasta 64 kB) y el contexto de entorno (workspace, fecha, política de sandbox y de aprobación) van como mensajes aparte, no dentro del system prompt.",
+     "sin_preset": "Los mismos dos mensajes: no dependen del preset.",
+     "fuente": "dsh-agent-instructions · runtime-context"
+    },
+    {
+     "n": 5,
+     "titulo": "Quién escribe",
+     "con_preset": "El hijo escribe; la raíz queda read-only. Carriles: router local OmniRoute, combo `code` con failover propio.",
+     "sin_preset": "El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace. No hay pin read-only.",
+     "fuente": "plugins del preset / sandbox"
+    },
+    {
+     "n": 6,
+     "titulo": "Cuota y verificación",
+     "con_preset": "Watchdog y observador de límites activos. La verificación la hace la raíz leyendo evidencia.",
+     "sin_preset": "Una sola llamada al modelo de la sesión: sin router, sin failover y sin cuarentenas. La verificación la hacés vos.",
+     "fuente": "plugins del preset"
+    },
+    {
+     "n": 7,
+     "titulo": "¿Y si el preset elegido es «Standard»?",
+     "con_preset": "Elegir «Standard» a mano da exactamente la misma composición que no elegir nada: es el default del roster. La diferencia aparece cuando elegís OTRO preset, porque su composición reemplaza a la del default.",
+     "sin_preset": "Por eso la comparación honesta no es «con preset / sin preset», sino «con ESTE preset / con el default». Un preset no se suma al default: lo reemplaza.",
+     "fuente": "dsh-agent-presets"
+    }
+   ],
+   "ensamblado": {
+    "nota": "Las secciones se interpolan y las vacías se descartan (`renderPrompt`). Con un preset, su persona ocupa el mismo slot que la del deployment: la reemplaza, no se suma.",
+    "medido": [
+     {
+      "preset": "hyperframes-educativo",
+      "sesion": "~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-6408e2f7-ef2b-4f09-9c38-d647de84990b",
+      "cwd": "/home/devni/imagen/reddit-opencode",
+      "total": 28704,
+      "secciones": [
+       {
+        "nombre": "harness:identity",
+        "orden": -1000,
+        "bytes": 48,
+        "texto": "You are an AI agent powered by DeepSeek Harness."
+       },
+       {
+        "nombre": "deployment:persona-prefix",
+        "orden": 0,
+        "bytes": 6565,
+        "texto": "el `prefix` del preset, con {{model}} y {{cwd}} resueltos"
+       },
+       {
+        "nombre": "preset:hyperframes-educativo",
+        "orden": 100,
+        "bytes": 22026,
+        "texto": "sección que aporta hyperframes-prompt-extension.js (motion editorial + protocolo de calidad)"
+       },
+       {
+        "nombre": "deployment:persona-suffix",
+        "orden": 10200,
+        "bytes": 61,
+        "texto": "Your working directory is /home/devni/imagen/reddit-opencode."
+       }
+      ],
+      "etiqueta": "con preset elegido"
+     },
+     {
+      "preset": "standard (el default del roster: `agent-presets.default: standard`)",
+      "sesion": "~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-d26f77b4-5e65-494a-a5e3-6c09858f9d4f",
+      "cwd": "/home/devni/imagen/reddit-opencode",
+      "total": 6902,
+      "secciones": [
+       {
+        "nombre": "harness:identity",
+        "orden": -1000,
+        "bytes": 48,
+        "texto": "You are an AI agent powered by DeepSeek Harness."
+       },
+       {
+        "nombre": "deployment:persona-prefix",
+        "orden": 0,
+        "bytes": 64,
+        "texto": "You are a coding agent powered by the deepseek-v4.1-flash model."
+       },
+       {
+        "nombre": "guía de herramientas (tool:*, harness:source, web-surface)",
+        "orden": 1000,
+        "bytes": 6723,
+        "texto": "18 secciones: read, write, edit, glob, grep, bash, jobs, web_search, web_fetch, goal, workflow, ralph, subagent, subagent_fork, present, checkout, GUI…"
+       },
+       {
+        "nombre": "deployment:persona-suffix",
+        "orden": 10200,
+        "bytes": 61,
+        "texto": "Your working directory is /home/devni/imagen/reddit-opencode."
+       }
+      ],
+      "etiqueta": "sin elegir preset"
+     }
+    ],
+    "orden_posible": [
+     {
+      "orden": -1000,
+      "seccion": "harness:identity",
+      "nota": "Siempre presente; no lo cambia ningún preset (48 B medidos)."
+     },
+     {
+      "orden": 0,
+      "seccion": "deployment:persona-prefix",
+      "nota": "Con preset: el `prefix` del módulo `persona`. Sin preset: el del preset por defecto («You are a coding agent…», 64 B). Nunca se suman: la sección se reemplaza."
+     },
+     {
+      "orden": 100,
+      "seccion": "preset:… (extensiones del preset)",
+      "nota": "Solo si el preset monta un plugin que registra secciones propias. La extensión educativa aporta 22.026 B en la sesión medida."
+     },
+     {
+      "orden": 500,
+      "seccion": "políticas (plan, equipo, PTC)",
+      "nota": "Sólo si el preset monta esos módulos."
+     },
+     {
+      "orden": 900,
+      "seccion": "file-reference",
+      "nota": "Cómo se referencian archivos en el mensaje (343 B medidos en el preset por defecto)."
+     },
+     {
+      "orden": 1000,
+      "seccion": "guía de herramientas (tool:bash, tool:read, tool:write, tool:glob, tool:grep, tool:jobs, tool:web_search, tool:web_fetch, tool:goal, tool:subagent, …)",
+      "nota": "Una sección por herramienta montada. En el preset por defecto suman 6.723 B: es la pieza más grande de ese prompt."
+     },
+     {
+      "orden": 10000,
+      "seccion": "harness:source",
+      "nota": "Cómo leer el propio harness (356 B medidos)."
+     },
+     {
+      "orden": 10100,
+      "seccion": "web-surface",
+      "nota": "Cómo interactuar con la GUI web (995 B medidos)."
+     },
+     {
+      "orden": 10200,
+      "seccion": "deployment:persona-suffix",
+      "nota": "`suffix` del módulo `persona` («Your working directory is {{cwd}}», 61 B resueltos)."
+     }
+    ],
+    "aparte": [
+     {
+      "que": "Instrucciones del proyecto (AGENTS.md / CLAUDE.md)",
+      "como": "mensaje de rol usuario con el baseline durable",
+      "bytes": "hasta 64 kB"
+     },
+     {
+      "que": "Contexto de entorno",
+      "como": "snapshot «Current runtime context»",
+      "bytes": "no medido: workspace, fecha y textos de política"
+     },
+     {
+      "que": "Catálogo de skills",
+      "como": "secciones del system prompt",
+      "bytes": "según las skills disponibles"
+     },
+     {
+      "que": "Historial de la sesión + tu mensaje",
+      "como": "mensajes de rol usuario",
+      "bytes": "según la conversación"
+     }
+    ]
+   },
+   "modulos": {
+    "con_preset": {
+     "persona": {
+      "aporta": "System prompt propio del preset",
+      "dato": "prefix de 12.764 caracteres"
+     },
+     "agent-instructions": {
+      "aporta": "Instrucciones del proyecto (AGENTS.md y similares)",
+      "dato": "tope de 64 kB"
+     },
+     "omniroute-limit-observer.js": {
+      "aporta": "Registra límites y pone el modelo que falla en cuarentena",
+      "dato": "montado"
+     },
+     "orchestrator-job-watchdog.js": {
+      "aporta": "Vigila los jobs hijos por señales de vida reales",
+      "dato": "montado"
+     },
+     "orchestrator-readonly-policy-v2.js": {
+      "aporta": "Fija la sesión en read-only al arrancar y lo reafirma en cada pre-step",
+      "dato": "montado"
+     },
+     "orchestrator-spawn-provider.js": {
+      "aporta": "Aporta el spawn del hijo in-process (omniroute_code)",
+      "dato": "montado"
+     },
+     "herramientas": {
+      "aporta": "Módulos de herramienta del grafo",
+      "dato": "12 módulos: ask-user, bash, fs, fs-search, goal, jobs, present, pwsh, skill, subagent, todo, web"
+     },
+     "grupos cordis:group": {
+      "aporta": "Plan mode, compactación y delegación",
+      "dato": "3 grupos"
+     },
+     "grupo delegation": {
+      "aporta": "Vía de producción del trabajo pesado",
+      "dato": "un hijo in-process (omniroute_code)"
+     }
+    },
+    "sin_preset": {
+     "persona": {
+      "aporta": "System prompt del preset por defecto (`standard`)",
+      "dato": "«You are a coding agent powered by the deepseek-v4.1-flash model.» — 64 B"
+     },
+     "persona (suffix)": {
+      "aporta": "`deployment:persona-suffix`",
+      "dato": "«Your working directory is /home/devni/imagen/reddit-opencode.» — 61 B"
+     },
+     "agent-instructions": {
+      "aporta": "Instrucciones del proyecto (AGENTS.md y similares)",
+      "dato": "tope de 64 kB"
+     },
+     "herramientas": {
+      "aporta": "Módulos de herramienta del grafo",
+      "dato": "13 módulos: bash, pwsh, jobs, fs, fs-search, skill, todo, goal, web, subagent-control, subagent, workflow, ralph"
+     },
+     "grupos cordis:group": {
+      "aporta": "Plan mode, compactación y delegación",
+      "dato": "2 grupos"
+     },
+     "grupo delegation": {
+      "aporta": "Vía de producción del trabajo pesado",
+      "dato": "subagentes in-process (subagent, subagent_fork, workflow, ralph)"
+     }
+    }
+   },
+   "reparto": [
+    {
+     "preset": "standard",
+     "sesiones": 34,
+     "nota": "default del roster; incluye las que no eligieron nada"
+    },
+    {
+     "preset": "hyperframes-orquestador-educativo",
+     "sesiones": 32
+    },
+    {
+     "preset": "orchestrator",
+     "sesiones": 14
+    }
+   ],
+   "no_hace": [
+    "No cambia el modelo de la sesión ni la cuota: el modelo lo elige la sesión, el preset decide cómo trabaja.",
+    "No mete tus archivos dentro del prompt: eso lo decide el modelo llamando a herramientas.",
+    "No comparte tu conversación con los hijos: cada hijo recibe un prompt nuevo y autocontenido.",
+    "No sobrevive a la sesión: se aplica al crearla, no se puede cambiar a mitad."
+   ]
+  }
  },
  "meta": {
-  "generado": "2026-10-15 04:06 UTC",
+  "generado": "2026-10-15 04:33 UTC",
   "subs": {
    "opencode": 1729,
    "opencodeCLI": 633

@@ -101,6 +101,98 @@
   .card .evitar{color:var(--warn)}
   .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
   .chip{background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:2px 9px;font-size:11.5px;color:var(--dim)}
+
+  /* ---- presets: intro + tarjetas ---- */
+  .intro{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
+         border-radius:10px;padding:12px 15px;margin:10px 0 16px;max-width:110ch}
+  .intro p{margin:0 0 8px;font-size:13px}
+  .intro p:last-child{margin-bottom:0}
+  .intro .regla{color:var(--warn);font-weight:600}
+  .grid-presets{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
+  .card-preset{display:grid;grid-template-columns:minmax(0,1fr) 224px;gap:6px 20px;align-items:start}
+  .card-preset .cab{grid-column:1 / -1;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .card-preset h3{margin:0;font-size:15px}
+  .card-preset .badge{background:var(--panel2);border:1px solid var(--line);border-radius:99px;
+                      padding:1px 9px;font-size:11px;color:var(--dim);white-space:nowrap}
+  .card-preset .desc{grid-column:1 / -1;margin:0;font-size:13px;max-width:105ch}
+  .card-preset .cuerpo{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+                       gap:4px 24px;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+  .card-preset p{margin:0;font-size:13px}
+  .card-preset .rotulo{margin:0;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--dim)}
+  .card-preset ul{margin:4px 0 0 18px;padding:0;font-size:13px;color:var(--dim)}
+  .card-preset ul li{margin:3px 0}
+  .card-preset .evitar{color:var(--warn);font-size:12.5px;margin-top:8px}
+  .card-preset .chips{margin:0;align-content:start}
+  .card-preset .chips .chip{overflow-wrap:anywhere}
+  .card-preset .pie{grid-column:1 / -1;margin-top:8px}
+
+  /* ---- simulacion ---- */
+  .sim-intro{color:var(--dim);font-size:13px;margin:10px 0 12px;max-width:110ch}
+  .sim{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1fr);gap:10px 18px;align-items:start}
+  .sim .celda{border-top:1px solid var(--line);padding-top:10px;min-width:0}
+  .sim .celda p{margin:0;font-size:13px}
+  .sim .celda .fuente{margin-top:5px;font-size:11.5px}
+  .sim .paso{display:flex;gap:7px;align-items:baseline;font-size:12.5px;font-weight:700}
+  .sim .paso i{font-style:normal;color:var(--acc);font-variant-numeric:tabular-nums}
+  .sim-cab{font-size:12.5px;font-weight:700}
+  .sim-cab span{display:block;font-weight:400;font-size:11.5px;color:var(--dim);
+                overflow-wrap:anywhere;word-break:break-word}
+  .ens{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:16px;align-items:start;margin-top:16px}
+
+  /* system prompt medido: una barra apilada por escenario */
+  .medido{margin:16px 0 0}
+  .medido-bloque{margin:0 0 14px}
+  .medido-cab{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;font-size:13px;margin-bottom:6px}
+  .medido-cab .fuente{margin:0}
+  .stack{display:flex;height:22px;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--panel2)}
+  .stack .seg{height:100%;min-width:2px}
+  .seg.s0{background:var(--dim)}
+  .seg.s1{background:var(--acc)}
+  .seg.s2{background:var(--pos)}
+  .seg.s3{background:var(--warn)}
+  .medido-leyenda{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px;font-size:11.5px;color:var(--dim)}
+  .medido-leyenda .li{display:flex;align-items:center;gap:6px}
+  .medido-leyenda i{width:10px;height:10px;border-radius:3px;flex:none}
+  .medido-leyenda i.s0{background:var(--dim)}
+  .medido-leyenda i.s1{background:var(--acc)}
+  .medido-leyenda i.s2{background:var(--pos)}
+  .medido-leyenda i.s3{background:var(--warn)}
+  .ens-sec{display:grid;grid-template-columns:64px minmax(0,1fr) 96px;gap:4px 12px;align-items:baseline;
+           border-top:1px solid var(--line);padding:9px 0}
+  .ens-sec .orden{color:var(--dim);font-size:11px;font-variant-numeric:tabular-nums;text-align:right}
+  .ens-sec .nom{font-size:12.5px;font-weight:600;overflow-wrap:anywhere}
+  .ens-sec .nom em{display:block;font-style:normal;font-weight:400;color:var(--dim);font-size:11.5px;margin-top:2px}
+  .ens-sec .bytes{font-size:11.5px;color:var(--dim);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ens-sec .bytes b{color:var(--txt)}
+  .ens-sec .barra{grid-column:2 / 4;height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+  .ens-sec .barra i{display:block;height:100%;background:var(--acc)}
+  .ens-sec.destacada{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 10%,transparent),transparent 70%)}
+  .ens-sec.destacada .barra i{background:var(--pos)}
+  .ens-sec .cero{color:var(--dim);font-size:11.5px}
+  .lista-aparte{list-style:none;padding:0;margin:0}
+  .lista-aparte li{border-top:1px solid var(--line);padding:8px 0;font-size:12.5px}
+  .lista-aparte b{display:block;font-size:12.5px}
+  .lista-aparte span{color:var(--dim);font-size:11.5px}
+  .nota-caja{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
+             border-radius:10px;padding:10px 13px;margin:12px 0 0;font-size:12.5px;color:var(--dim);max-width:110ch}
+
+  /* En pantallas angostas la grilla de 3 columnas no se lee: cada paso pasa a
+     una sola columna y el rotulo del paso encabeza su bloque. */
+  @media (max-width:1080px){
+    .sim{grid-template-columns:minmax(0,1fr)}
+    .sim-cab{display:none}
+    .ens{grid-template-columns:minmax(0,1fr)}
+    .ens-sec{grid-template-columns:52px minmax(0,1fr) 84px}
+    .card-preset{grid-template-columns:minmax(0,1fr)}
+    .card-preset .cuerpo{grid-template-columns:minmax(0,1fr)}
+  }
+  @media (max-width:700px){
+    .grid-presets{grid-template-columns:minmax(0,1fr)}
+    .ens-sec{grid-template-columns:minmax(0,1fr) auto}
+    .ens-sec .orden{display:none}
+    .ens-sec .barra{grid-column:1 / 3}
+  }
+
   .cambios{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--warn);
            border-radius:8px;padding:9px 12px;margin:0 0 10px;font-size:12.5px;color:var(--txt)}
   footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 22px;color:var(--dim);font-size:12px}
@@ -295,39 +387,203 @@ function tablaGo(){
   return cont;
 }
 
+/* ---------------- presets ---------------- */
+
+/* Los presets se ordenan por `order` (los que no lo declaran van al final) y
+   cada tarjeta declara: qué es, cuándo funciona, cuándo evitarlo y sus rasgos
+   medidos del agent.cordis.yml. Los rasgos son datos, no adjetivos: si un
+   preset no monta watchdog, no aparece el chip. */
+const kB = n => (n >= 1000 ? (n/1000).toFixed(1).replace(".", ",") + " kB" : n + " B");
+
+function chipsPreset(p){
+  const r = p.rasgos || {}, d = r.delegacion || {};
+  return [
+    r.persona_propia ? "persona propia (" + kB(r.bytes_prompt_persona || r.largo_prompt_persona) + ")" : "sin persona propia",
+    (r.herramientas || []).length + " módulos de herramienta",
+    r.read_only ? "raíz read-only" : "la raíz escribe",
+    r.watchdog ? "watchdog de jobs" : null,
+    r.observador_limites ? "observador de límites" : null,
+    r.delegacion_vaciada ? "delegación vaciada" : (d.via && d.via !== "ninguna" ? "delegación: " + d.via : null),
+    r.grupos ? r.grupos + " grupos" : null,
+    p.hereda_de?.length ? "hereda de " + p.hereda_de.join(", ") : "base: no hereda de otro preset",
+  ].filter(Boolean);
+}
+
+function tarjetaPreset(p){
+  const card = el("div", {class:"card card-preset"});
+  card.append(el("div", {class:"cab"},
+    el("h3", {}, p.nombre),
+    p.orden ? el("span", {class:"badge"}, "orden " + p.orden) : el("span", {class:"badge"}, "sin orden declarado")));
+  card.append(el("p", {class:"desc dim", text:p.descripcion}));
+
+  // Cuerpo en dos columnas: a la izquierda los escenarios, a la derecha los
+  // rasgos medidos. Las dos columnas empiezan a la misma altura y el borde
+  // superior las separa de la descripcion.
+  const cuerpo = el("div", {class:"cuerpo"});
+  const izq = el("div");
+  if ((p.cuando || []).length){
+    izq.append(el("p", {class:"rotulo"}, "Cuándo funciona"));
+    const ul = el("ul");
+    p.cuando.forEach(c => ul.append(el("li", {}, c)));
+    izq.append(ul);
+  }
+  if (p.evitar) izq.append(el("p", {class:"evitar", html:"<b>Evitar:</b> " + p.evitar}));
+  const der = el("div");
+  der.append(el("p", {class:"rotulo"}, "Rasgos medidos del grafo"));
+  const chips = el("div", {class:"chips"});
+  chipsPreset(p).forEach(c => chips.append(el("span", {class:"chip"}, c)));
+  der.append(chips);
+  cuerpo.append(izq, der);
+  card.append(cuerpo);
+  return card;
+}
+
 function pintaPresets(){
   const P = D.presets;
   if (!P || !P.presets?.length) return null;
   const cont = el("div");
-  cont.append(el("div", {class:"fuente", text:P.nota || ""}));
-  const cards = el("div", {class:"cards"});
-  P.presets.forEach(p => {
-    const r = p.rasgos || {};
-    const card = el("div", {class:"card"});
-    card.append(el("h3", {}, p.nombre + (p.orden ? " · preset " + p.orden : "")));
-    card.append(el("p", {class:"dim", text:p.descripcion}));
-    if ((p.cuando || []).length){
-      card.append(el("p", {}, el("b", {}, "Cuándo funciona")));
-      const ul = el("ul");
-      p.cuando.forEach(c => ul.append(el("li", {}, c)));
-      card.append(ul);
-    }
-    if (p.evitar) card.append(el("p", {class:"evitar", html:"<b>Evitar:</b> " + p.evitar}));
-    const chips = el("div", {class:"chips"});
-    [ r.persona_propia ? "persona propia (" + Math.round((r.largo_prompt_persona || 0)/1000) + " kB)" : null,
-      (r.herramientas || []).length + " herramientas",
-      r.read_only ? "raíz read-only" : "la raíz escribe",
-      r.watchdog ? "watchdog de jobs" : null,
-      r.observador_limites ? "observador de límites" : null,
-      r.delegacion_vaciada ? "sin delegación" : (r.grupos ? r.grupos + " grupos" : null),
-      p.hereda_de?.length ? "hereda de " + p.hereda_de.join(", ") : null,
-    ].filter(Boolean).forEach(c => chips.append(el("span", {class:"chip"}, c)));
-    card.append(chips);
-    cards.append(card);
-  });
+
+  // 1) que es un preset y en que escenarios funciona
+  const q = P.que_es;
+  if (q){
+    const caja = el("div", {class:"intro"});
+    (q.parrafos || []).forEach(t => caja.append(el("p", {}, t)));
+    if (q.regla) caja.append(el("p", {class:"regla"}, q.regla));
+    cont.append(caja);
+  } else if (P.nota){
+    cont.append(el("div", {class:"fuente", text:P.nota}));
+  }
+
+  // 2) tarjetas, una por preset
+  const cards = el("div", {class:"grid-presets"});
+  P.presets.forEach(p => cards.append(tarjetaPreset(p)));
   cont.append(cards);
   cont.append(el("div", {class:"fuente", html:
     "Fuente: <code>" + P.fuente + "</code> · actualizado " + P.actualizado}));
+
+  // 3) simulacion: sesion nueva con preset frente a un request normal
+  const sim = pintaSimulacion(P.simulacion);
+  if (sim) cont.append(sim);
+  return cont;
+}
+
+function pintaSimulacion(S){
+  if (!S || !S.pasos?.length) return null;
+  const cont = el("div");
+  cont.append(el("h3", {style:"margin:22px 0 4px;font-size:15px"}, S.titulo));
+  if (S.intro) cont.append(el("p", {class:"sim-intro", text:S.intro}));
+
+  // Una sola grilla de 3 columnas: etiqueta del paso | con preset | sin preset.
+  // Las celdas de cada paso se apilan dentro de la MISMA grilla para que los
+  // dos escenarios queden siempre a la misma altura.
+  const cols = S.columnas || [];
+  const grid = el("div", {class:"sim"});
+  grid.append(el("div", {}), ...cols.map(c =>
+    el("div", {class:"sim-cab"}, c.titulo, el("span", {}, c.sub))));
+  S.pasos.forEach(p => {
+    grid.append(el("div", {class:"celda paso"}, el("i", {}, String(p.n)), el("span", {}, p.titulo)));
+    cols.forEach(c => {
+      const celda = el("div", {class:"celda"}, el("p", {}, p[c.id] ?? "—"));
+      if (p.fuente) celda.append(el("div", {class:"fuente", html:"fuente: <code>" + p.fuente + "</code>"}));
+      grid.append(celda);
+    });
+  });
+  cont.append(grid);
+
+  // System prompt medido: una barra apilada por escenario (las secciones son
+  // proporcionales a sus bytes reales) y la tabla de secciones con su orden.
+  const E = S.ensamblado;
+  if (E?.medido?.length){
+    const caja = el("div", {class:"medido"});
+    E.medido.forEach(m => {
+      const bloque = el("div", {class:"medido-bloque"});
+      bloque.append(el("div", {class:"medido-cab"},
+        el("b", {}, m.etiqueta),
+        el("span", {class:"dim"}, " · " + m.total.toLocaleString("es-ES") + " bytes de system prompt"),
+        el("span", {class:"fuente", html:"sesión medida: <code>" + m.sesion + "</code>"})));
+      const barra = el("div", {class:"stack", role:"img",
+        "aria-label":"Composición del system prompt: " + m.secciones.map(x => x.nombre + " " + x.bytes + " bytes").join(", ")});
+      const max = m.total;
+      m.secciones.forEach((x, i) => {
+        const seg = el("div", {class:"seg s" + (i % 4), style:`width:${100*x.bytes/max}%`,
+          title:`${x.nombre} · ${x.bytes} bytes`});
+        barra.append(seg);
+      });
+      bloque.append(barra);
+      const leyenda = el("div", {class:"medido-leyenda"});
+      m.secciones.forEach((x, i) => leyenda.append(el("span", {class:"li"},
+        el("i", {class:"s" + (i % 4)}),
+        x.nombre + " · " + x.bytes.toLocaleString("es-ES") + " B")));
+      bloque.append(leyenda);
+      caja.append(bloque);
+    });
+    if (E.nota) caja.append(el("p", {class:"fuente", text:E.nota}));
+    cont.append(caja);
+
+    const der = el("div");
+    der.append(el("p", {class:"rotulo"}, "Va aparte, no dentro del system prompt"));
+    const ul = el("ul", {class:"lista-aparte"});
+    (E.aparte || []).forEach(x => ul.append(el("li", {},
+      el("b", {}, x.que), el("span", {}, x.como + " · " + x.bytes))));
+    der.append(ul);
+
+    const izq = el("div");
+    izq.append(el("p", {class:"rotulo"}, "Orden posible de las secciones"));
+    (E.orden_posible || []).forEach(x => {
+      const fila = el("div", {class:"ens-sec"});
+      fila.append(el("div", {class:"orden"}, "orden " + x.orden));
+      const nom = el("div", {class:"nom"}, x.seccion);
+      if (x.nota) nom.append(el("em", {}, x.nota));
+      fila.append(nom);
+      fila.append(el("div", {class:"bytes"}, ""));
+      izq.append(fila);
+    });
+    cont.append(el("div", {class:"ens"}, izq, der));
+  }
+
+  // Modulos que monta cada escenario. El emparejamiento es por clave, no por
+  // posicion: las dos listas tienen distinta longitud (el perfil por defecto no
+  // tiene plugins ni grupo de delegacion) y emparejarlas por indice compararia
+  // cosas que no se corresponden.
+  const M = S.modulos;
+  if (M){
+    cont.append(el("h3", {style:"margin:22px 0 8px;font-size:15px"}, "Módulos que se montan en cada caso"));
+    const claves = [...Object.keys(M.con_preset), ...Object.keys(M.sin_preset)]
+      .filter((k, i, a) => a.indexOf(k) === i);
+    const filas = claves.map(k => {
+      const a = M.con_preset[k], b = M.sin_preset[k];
+      return [
+        {html:"<b>" + k + "</b>"},
+        {class:"rol", text:(a?.aporta || b?.aporta || "")},
+        {class:"rol", html:a ? (a.dato || "sí") : '<span class="dim">no se monta</span>'},
+        {class:"rol", html:b ? (b.dato || "sí") : '<span class="dim">no se monta</span>'},
+      ];
+    });
+    cont.append(el("div", {class:"wrap"}, tabla(
+      ["Módulo", "Qué aporta", "Con preset", "Sin preset"], filas)));
+  }
+
+  if ((S.no_hace || []).length){
+    const caja = el("div", {class:"nota-caja"});
+    caja.append(el("b", {}, "Lo que un preset no hace"));
+    const ul = el("ul", {class:"notas"});
+    S.no_hace.forEach(x => ul.append(el("li", {}, x)));
+    caja.append(ul);
+    cont.append(caja);
+  }
+
+  // Reparto observado en el disco: cuanto se usa cada preset.
+  if ((S.reparto || []).length){
+    const total = S.reparto.reduce((a, x) => a + x.sesiones, 0);
+    const caja = el("div", {class:"nota-caja"});
+    caja.append(el("b", {}, "Presets elegidos en las " + total + " sesiones más recientes del disco"));
+    const ul = el("ul", {class:"notas"});
+    S.reparto.forEach(x => ul.append(el("li", {},
+      el("b", {}, x.preset), " — " + x.sesiones + " sesiones (" + Math.round(100*x.sesiones/total) + "%)"
+      + (x.nota ? " · " + x.nota : ""))));
+    caja.append(ul);
+    cont.append(caja);
+  }
   return cont;
 }
 

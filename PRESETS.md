@@ -1,133 +1,181 @@
-# Simulación: qué pasa al mandar un mensaje con un preset seleccionado
+# Simulación: qué pasa al mandar un mensaje en una sesión nueva
 
 Antes de entrar en la anatomía de un preset, aquí va la traza de lo que ocurre **de verdad** cuando
 abres una sesión nueva, mandas un mensaje y tienes un preset elegido — comparado con un request
-normal, sin preset, solo con el contexto y una pregunta.
+normal, sin elegir nada, solo con el contexto y una pregunta.
 
-Fuentes de esta traza: los propios ficheros de `~/.dsh/.agent-presets/`
-(`preset.yml` + `agent.cordis.yml` + plugins) y la documentación del harness.
-El frame **“Presets de DSH”** del dashboard (`index.html`) resume cada preset; esto es el paso a paso.
+El frame **“Presets de DSH”** del dashboard (`index.html`) trae la misma simulación en formato visual;
+esto es el texto largo con las citas.
+
+## Fuentes y método
+
+- Los ficheros de los presets: `~/.dsh/.agent-presets/<preset>/preset.yml` y `agent.cordis.yml`
+  (más sus bases heredadas vía `inherit-composition.js`).
+- Los paquetes del harness que ensamblan el prompt: `dsh-system-prompt` (`renderPrompt`,
+  `SECTION_ORDERS`), `dsh-agent-loop` (dónde entra el system prompt en la sesión),
+  `dsh-agent-instructions` (el baseline de AGENTS.md), `dsh-agent-presets` (el roster y su default)
+  y `dsh-web-app/cordis.patch.yml` (`agent-presets.default: standard`).
+- **Los bytes del system prompt se midieron**, no se estimaron: se leyó el primer `system/message`
+  de dos sesiones reales del disco. Para repetirlo:
+
+```bash
+zstd -dc -- ~/.dsh/sessions/<workspace>/<sesion>/session.v3.jsonl.zstd | python3 -c "
+import sys, json
+for l in sys.stdin:
+    e = json.loads(l)
+    if e.get('type') == 'system/message':
+        t = ''.join(c.get('text','') for c in e['data']['message']['content'])
+        if t.strip():
+            print(len(t.encode()), 'bytes'); print(t); break"
+```
+
+- Los bytes del `prefix` de la persona salen del bloque escalar del YAML, con el sangrado del bloque
+  descontado. `python3 presets.py --verifica` contrasta esa cuenta contra PyYAML sobre cada preset
+  instalado (los tres dan `0` de diferencia). Lo que no se midió se declara **“no medido”**.
 
 ---
 
-## A) Sesión nueva **con preset** (ejemplo: `Orquestador`)
+## 0) Qué es un preset y en qué escenarios funciona
 
-### 0. Antes de crear la sesión
-Eliges el preset en Ajustes. El selector lee `preset.yml` de cada carpeta de
-`~/.dsh/.agent-presets/`, que solo aporta metadatos: `name`, `description` y `order`
-(el Orquestador no declara `order`; HyperFrames Educativo es 1 y el Orquestador Educativo es 2).
+Un preset es un **grafo de módulos** que se monta al crear la sesión. Decide cuatro cosas:
 
-> Aquí no se carga nada de código todavía: es solo la etiqueta que decides.
+1. **La persona** — el texto que abre el system prompt (`deployment:persona-prefix`).
+2. **Qué herramientas existen** — cada módulo `@deepseek-ai/dsh-tool-*` montado aporta su herramienta
+   y su sección de guía en el prompt.
+3. **Qué políticas se imponen** — por ejemplo un plugin que fija la sesión en `read-only` al arrancar.
+4. **Si el trabajo pesado se delega** — o lo hace el modelo principal con sus propias manos.
 
-### 1. Se compone el grafo de módulos (`agent.cordis.yml`)
-Al arrancar la sesión, el harness instancia los módulos del preset, en este orden de bloques:
+En qué escenarios funciona, en una frase: **por la forma del trabajo, no por el tema**.
 
-| Módulo | Qué aporta | Dato real del preset Orquestador |
+| Forma del trabajo | Qué conviene | Por qué |
 |---|---|---|
-| `persona` (`@deepseek-ai/dsh-persona`) | El system prompt propio del preset | `prefix` de **13.094 caracteres** + `suffix` “Your working directory is `{{cwd}}`” |
-| `agent-instructions` | Instrucciones del proyecto (AGENTS.md y similares) | `maxBytes: 65536` (64 kB) |
-| `orchestrator-readonly-policy-v2.js` | Fija la sesión en **read-only** al arrancar | Plugin del preset |
-| `orchestrator-job-watchdog.js` | Vigila los jobs hijos por señales de vida reales | Plugin del preset |
-| `omniroute-limit-observer.js` | Registra límites y pone modelos en cuarentena | Plugin del preset |
-| `orchestrator-spawn-provider.js` | Aporta el spawn del hijo in-process | Plugin del preset |
-| herramientas | 12 módulos (`bash`/`pwsh`, `fs`, `fs-search`, `jobs`, `skill`, `goal`, `ask-user`, `todo`, `web`, `present`, …) | Contadas del `agent.cordis.yml` |
-| grupos | 3 grupos `cordis:group` (planning, compaction, **delegation**) | La delegación vive en un grupo aislado |
+| Preguntas, lecturas, cambios de una línea | **No elegir nada** (se usa el default del roster) | Una sola llamada, sin ida y vuelta ni prompt largo |
+| Pieza corta o mediana que querés cerrar de una tirada | Preset **directo** (p. ej. HyperFrames Educativo) | El modelo de la sesión produce y verifica; no depende del router |
+| Trabajo pesado, multi-archivo, muchas iteraciones | Preset que **delega** (Orquestador) | El hijo produce y la raíz queda read-only: la cuota del principal no se quema produciendo |
+| Cuota del modelo principal escasa | Preset que **delega** | El peso se reparte con el router y su failover |
 
-Variables: `{{model}}` y `{{cwd}}` se resuelven del route y del workspace de la sesión.
-**Ninguna otra variable puede aparecer en la persona o el ensamblado del prompt falla.**
-
-### 2. Mandas el mensaje
-El prompt que ve el modelo se ensambla así:
-
-```
-persona del preset (prefix + suffix con {{model}} y {{cwd}})
-+ instrucciones del proyecto (hasta 64 kB)
-+ catálogo de skills disponibles
-+ contexto de entorno (workspace, fecha)
-+ historial de la sesión
-+ TU MENSAJE
-```
-
-Dos cosas que la gente asume mal y no ocurren:
-
-- **Tus ficheros no viajan dentro del prompt.** Solo entran si el modelo llama a una herramienta
-  (`read`, `glob`, `grep`, `bash`). El prompt es instrucciones + conversación.
-- **El preset no elige el modelo.** El modelo lo elige la sesión; el preset decide *cómo* trabaja.
-
-### 3. La raíz queda en read-only
-El plugin de política fija la sesión en `read-only` al arrancar: cualquier `write`, `edit` o `bash`
-que produzca archivos **se rechaza en el sandbox**. No es un bug ni algo que esquivar: es la garantía
-de que todo lo pesado sale de la raíz. (Los hijos in-process están exentos: comparten sesión y
-workspace, y son los únicos que escriben.)
-
-### 4. Delegación (si el trabajo es pesado)
-El root llama a `omniroute_code` — **una sola vía**, eliges la herramienta, no el modelo:
-
-1. El hijo arranca con **sesión nueva y prompt propio**: **no ve tu conversación**. Si no le pasas
-   rutas absolutas, el contrato esperado y el comando de verificación, trabaja a ciegas.
-2. El router local decide el carril con failover propio:
-   `big-pickle` → `longcat-2.5` (OpenCode/Zen vía `ocwrap`) → OpenRouter Cohere →
-   `nex-n2.5-pro:free` → Gemini Flash Lite (×2 cuentas).
-3. El razonamiento `max` **solo** se inyecta si el combo ya resolvió a Gemini; nunca se manda a
-   OpenCode/OpenRouter.
-4. Límites prácticos del router: 60 req/min, 6 concurrentes, 350 ms entre requests → se lanza en
-   lotes de 2-3.
-
-### 5. Vigilancia mientras corre
-- **Watchdog**: aviso a los **20 min** de silencio total (no mata), **kill a los 45 min** de silencio
-  total o si el job pasa de **75 min** de runtime. La evidencia queda en
-  `<cwd>/.dsh-tmp/watchdog-stalls.jsonl`. Un `job_output` que responde “(no new output)” **no**
-  significa que el hijo esté colgado.
-- **Observador de límites**: el modelo que da su primer error entra en **cuarentena 5 horas**;
-  no se reintenta, se usa el siguiente escalón sano.
-
-### 6. Verificación (la hace la raíz, no el hijo)
-El hijo **produce y renderiza** el snapshot; el root lee el `contact-sheet.jpg` con `read_image` y
-juzga con criterios concretos (texto solapado, contraste, encuadre). Renderizar no es ver: el hijo
-genera el PNG pero no lo mira.
-
-### 7. Cierre
-Síntesis para el usuario: qué se delegó, con qué evidencia, si hubo failover y el **ratio** de
-trabajo propio (`bash`/`read`) contra delegado.
+Tres cosas que un preset **no** hace: no cambia el modelo ni la cuota, no mete tus archivos dentro del
+prompt (eso lo decide el modelo llamando a herramientas) y no se puede cambiar a mitad de sesión.
 
 ---
 
-## B) Request normal: solo contexto y una pregunta (sin preset)
+## 1) El punto que casi nadie tiene claro: **no existe “sin composición”**
 
-| Paso | Qué pasa |
+Una sesión **siempre** se compone desde un preset. Si no elegís ninguno, el roster aplica su default
+(`agent-presets.default: standard` en el perfil web) y se monta el preset `standard` que trae el propio
+paquete `dsh-agent-presets`. Consecuencias:
+
+- Elegir **«Standard» a mano** da exactamente la misma composición que no elegir nada.
+- La comparación útil no es «con preset / sin preset», sino **«con ESTE preset / con el default»**.
+- Un preset **no se suma** al default: su composición **lo reemplaza**.
+
+Reparto observado en las 80 sesiones más recientes del disco (cabecera `agentPreset` + evento
+`agent-preset/selected`):
+
+| Preset | Sesiones |
 |---|---|
-| 0 | No eliges preset: se usa el **perfil por defecto** del harness. El preset no “añade” nada; cuando existe, *shadowea* la persona por defecto |
-| 1 | Se cargan los módulos base: persona por defecto, instrucciones del proyecto, herramientas base y skills. **Sin** plugins de política, sin watchdog, sin observador de límites y sin el grupo de delegación con router |
-| 2 | Prompt = persona base + instrucciones + historial + tu pregunta. Igual que antes: **tus ficheros no van dentro**, se leen si el modelo llama a una herramienta |
-| 3 | El modelo principal **escribe directamente**: `write`, `edit` y `bash` van al sandbox del workspace. No hay pin read-only ni delegación forzada |
-| 4 | **Una sola llamada** al modelo de la sesión: sin router, sin failover y sin cuarentenas. La cuota que se consume es la de ese modelo |
-| 5 | La verificación la haces tú (o el propio modelo en la misma sesión), sin watchdog ni contacto con hijos |
+| `standard` (default del roster; incluye las que no eligieron nada) | 34 |
+| `hyperframes-orquestador-educativo` | 32 |
+| `orchestrator` | 14 |
 
 ---
 
-## C) Comparación directa
+## 2) Las dos trazas, medidas
 
-| Dimensión | Con preset `Orquestador` | Sin preset (perfil por defecto) |
+### A) Con un preset elegido — `hyperframes-educativo`
+
+Sesión medida: `~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-6408e2f7-…`
+(cwd `/home/devni/imagen/reddit-opencode`). **System prompt: 28.704 bytes.**
+
+| orden | sección | bytes | qué es |
+|---:|---|---:|---|
+| -1000 | `harness:identity` | 48 | `You are an AI agent powered by DeepSeek Harness.` |
+| 0 | `deployment:persona-prefix` | 6.565 | el `prefix` del preset, con `{{model}}` y `{{cwd}}` resueltos |
+| 100 | `preset:hyperframes-educativo` | 22.026 | sección que aporta `hyperframes-prompt-extension.js` |
+| 10200 | `deployment:persona-suffix` | 61 | `Your working directory is /home/devni/imagen/reddit-opencode.` |
+
+La suma da 28.700 B y el prompt mide 28.704 B: los 4 B de diferencia son los separadores entre
+secciones. **La persona del preset no aparece como sección nueva: ocupa el slot
+`deployment:persona-prefix` y reemplaza a la del default.**
+
+### B) Sin elegir preset — se monta `standard`
+
+Sesión medida: `~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-d26f77b4-…`
+(mismo cwd). **System prompt: 6.902 bytes.**
+
+| orden | sección | bytes | qué es |
+|---:|---|---:|---|
+| -1000 | `harness:identity` | 48 | la misma línea de siempre |
+| 0 | `deployment:persona-prefix` | 64 | `You are a coding agent powered by the deepseek-v4.1-flash model.` |
+| 1000 | guía de herramientas (`tool:*`, `harness:source`, `web-surface`) | 6.723 | 18 secciones: `read`, `write`, `edit`, `glob`, `grep`, `bash`, `jobs`, `web_search`, `web_fetch`, `goal`, `workflow`, `ralph`, `subagent`, `subagent_fork`, `present`, checkout, GUI… |
+| 10200 | `deployment:persona-suffix` | 61 | el mismo `cwd` |
+
+La suma da 6.896 B y el prompt mide 6.902 B. **En este prompt la pieza más grande no es la persona
+(64 B) sino la guía de herramientas (6.723 B).**
+
+### C) Lo que va aparte, en los dos casos
+
+| Pieza | Cómo entra | Tamaño |
 |---|---|---|
-| System prompt | Persona propia (13 kB) que shadowea la del deployment | Persona por defecto |
-| Instrucciones de proyecto | Sí, con tope de 64 kB | Sí (las del perfil base) |
-| Herramientas | 12, con shell solo para leer/verificar | Las base |
-| Escritura de la raíz | **Bloqueada** (read-only forzado) | Permitida en el workspace |
-| Delegación | Obligatoria para el trabajo pesado, a un hijo in-process | No existe: el modelo hace y escribe |
-| Router / failover | Combo `code` con failover y cuarentena 5 h | No hay |
-| Vigilancia de jobs | Watchdog (aviso 20 min, kill 45/75 min) | No hay |
-| Verificación | La raíz lee evidencia visual y decide | La misma sesión |
-| Coste por paso | Prompt largo + ida y vuelta al hijo | Una llamada directa |
-| Cuándo conviene | Trabajo pesado, multi-archivo, cuota escasa, quieres que la raíz no toque nada | Preguntas, lecturas y cambios pequeños |
+| Instrucciones del proyecto (AGENTS.md / CLAUDE.md) | mensaje de rol usuario, baseline durable del primer request | hasta 64 kB (`maxBytes: 65536`) |
+| Contexto de entorno | snapshot «Current runtime context» (workspace, fecha, política de sandbox y de aprobación) | no medido |
+| Catálogo de skills | secciones del system prompt | según las skills disponibles |
+| Historial de la sesión + tu mensaje | mensajes de rol usuario | según la conversación |
+
+**Tus ficheros no viajan dentro del prompt.** Solo entran si el modelo llama a una herramienta
+(`read`, `glob`, `grep`, `bash`). El prompt es instrucciones + conversación.
 
 ---
 
-## D) Lo que un preset **no** hace
+## 3) La traza paso a paso
 
-- No cambia el modelo de la sesión ni la cuota.
+| # | Paso | Con un preset elegido | Sin elegir preset |
+|---:|---|---|---|
+| 0 | Elegís el preset (o no) | El selector lee `preset.yml` de cada carpeta: solo metadatos (nombre, descripción, orden). No se carga código todavía | No elegís nada: se aplica el default del roster (`standard`) |
+| 1 | Se compone el grafo | Se montan los módulos de `agent.cordis.yml`: persona, plugins, módulos de herramienta y grupos | Se montan los módulos de `standard`: persona, 13 módulos de herramienta, 3 grupos, delegación con `subagent`/`subagent_fork`/`workflow`/`ralph`. Sin plugins de política. (`hyperframes-educativo` monta 11: vacía el grupo de delegación) |
+| 2 | Se ensambla el system prompt | 28.704 B medidos (persona + extensión del preset) | 6.902 B medidos (persona de 64 B + guía de herramientas de 6.723 B) |
+| 3 | Mandás el mensaje | system prompt + instrucciones del proyecto + contexto de entorno + historial + TU MENSAJE | la misma forma, con el otro system prompt |
+| 4 | Primer request | Se añaden los dos mensajes aparte (AGENTS.md y contexto de entorno) | los mismos dos mensajes: no dependen del preset |
+| 5 | Quién escribe | Según el preset: `Orquestador` deja la raíz en **read-only** y produce un hijo in-process (`omniroute_code`); `HyperFrames Educativo` vacía la delegación y produce el modelo principal | El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace |
+| 6 | Cuota y verificación | Según el preset: watchdog y observador de límites si los monta; la raíz verifica leyendo evidencia | Una sola llamada, sin router ni failover ni cuarentenas; la verificación la hacés vos |
+
+### El caso `Orquestador`, con sus números
+
+| Módulo | Qué aporta | Dato real |
+|---|---|---|
+| `persona` | El system prompt propio | `prefix` de **12.764 caracteres / 12.964 bytes** + `suffix` «Your working directory is `{{cwd}}`» |
+| `agent-instructions` | Instrucciones del proyecto | `maxBytes: 65536` (64 kB) |
+| `orchestrator-readonly-policy-v2.js` | Fija la sesión en read-only al arrancar y lo reafirma en cada pre-step | plugin del preset |
+| `orchestrator-job-watchdog.js` | Vigila los jobs hijos por señales de vida reales | plugin del preset |
+| `omniroute-limit-observer.js` | Registra límites y pone el modelo que falla en cuarentena | plugin del preset |
+| `orchestrator-spawn-provider.js` | Aporta el spawn del hijo in-process | plugin del preset |
+| herramientas | 12 módulos (incluye `subagent` para el spawn) | contados del `agent.cordis.yml` |
+| grupos | 3 grupos `cordis:group` (planning, compaction, **delegation**) | la delegación vive en un grupo aislado |
+
+La única vía de producción es `omniroute_code`: el hijo arranca con **sesión nueva y prompt propio**,
+**no ve tu conversación**, y el failover entre carriles lo hace el router
+(`big-pickle` → `longcat-2.5` → OpenRouter Cohere → `nex-n2.5-pro:free` → Gemini Flash Lite ×2).
+El razonamiento `max` solo se inyecta si el combo ya resolvió a Gemini.
+
+---
+
+## 4) Lo que un preset **no** hace
+
+- No cambia el modelo de la sesión ni la cuota: el modelo lo elige la sesión, el preset decide *cómo* trabaja.
 - No mete tus archivos en el prompt: eso lo decide el modelo llamando a herramientas.
+- No se suma al prompt del default: lo **reemplaza**.
 - No comparte tu conversación con los hijos: cada hijo recibe un prompt nuevo y autocontenido.
 - No sobrevive a la sesión: se aplica al crearla, no se puede “cambiar a mitad”.
+
+---
+
+## 5) Cómo se comprueba
+
+```bash
+python3 presets.py --verifica   # bytes del prefix: regex propia vs PyYAML (0 fallos = coincide)
+python3 presets.py              # regenera presets.json con la simulación
+python3 index_datos.py          # la mete en datos.json / datos.js del dashboard
+```
 
 ---
 
