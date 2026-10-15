@@ -31,7 +31,11 @@ for l in sys.stdin:
 
 - Los bytes del `prefix` de la persona salen del bloque escalar del YAML, con el sangrado del bloque
   descontado. `python3 presets.py --verifica` contrasta esa cuenta contra PyYAML sobre cada preset
-  instalado (los tres dan `0` de diferencia). Lo que no se midió se declara **“no medido”**.
+  instalado (los tres dan `0` de diferencia) **y** contrasta el desglose de secciones declarado
+  contra las dos sesiones reales. Lo que no se midió se declara **“no medido”**.
+- Los bytes se miden **sobre los bytes** del prompt, nunca sobre sus caracteres: el prompt lleva
+  acentos y guiones largos y mezclar índices de carácter con rebanadas de texto infla las cuentas.
+  El desglose reproducible está en `scripts/mide_prompt.py`.
 
 ---
 
@@ -91,12 +95,21 @@ Sesión medida: `~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-6
 |---:|---|---:|---|
 | -1000 | `harness:identity` | 48 | `You are an AI agent powered by DeepSeek Harness.` |
 | 0 | `deployment:persona-prefix` | 6.565 | el `prefix` del preset, con `{{model}}` y `{{cwd}}` resueltos |
-| 100 | `preset:hyperframes-educativo` | 22.026 | sección que aporta `hyperframes-prompt-extension.js` |
+| 100 | `preset:hyperframes-educativo` (**compuesta**) | 22.024 | la extensión aporta 16.789 B y las secciones de sus módulos 5.235 B |
 | 10200 | `deployment:persona-suffix` | 61 | `Your working directory is /home/devni/imagen/reddit-opencode.` |
 
-La suma da 28.700 B y el prompt mide 28.704 B: los 4 B de diferencia son los separadores entre
-secciones. **La persona del preset no aparece como sección nueva: ocupa el slot
+La suma da 28.698 B y el prompt mide 28.704 B: los 6 B de diferencia son los tres separadores
+`\n\n` entre secciones. **La persona del preset no aparece como sección nueva: ocupa el slot
 `deployment:persona-prefix` y reemplaza a la del default.**
+
+La sección del preset **no es una sección suelta**: la extensión registra orden 100 y las
+secciones que registran los módulos del preset caen en el mismo tramo. Por eso mide 22.024 B:
+
+| parte del tramo 100 | bytes |
+|---|---:|
+| extensión del preset (`hyperframes-prompt-extension.js`) | 16.789 |
+| `file-reference` | 345 |
+| una sección por herramienta montada (11 herramientas) | 4.890 |
 
 ### B) Sin elegir preset — se monta `standard`
 
@@ -107,11 +120,19 @@ Sesión medida: `~/.dsh/sessions/--home-devni-imagen-reddit-opencode--/session-d
 |---:|---|---:|---|
 | -1000 | `harness:identity` | 48 | la misma línea de siempre |
 | 0 | `deployment:persona-prefix` | 64 | `You are a coding agent powered by the deepseek-v4.1-flash model.` |
-| 1000 | guía de herramientas (`tool:*`, `harness:source`, `web-surface`) | 6.723 | 18 secciones: `read`, `write`, `edit`, `glob`, `grep`, `bash`, `jobs`, `web_search`, `web_fetch`, `goal`, `workflow`, `ralph`, `subagent`, `subagent_fork`, `present`, checkout, GUI… |
+| 1000 | guía de herramientas (`tool:*`, `file-reference`, `harness:source`, `web-surface`) | 6.723 | 345 B de referencia de archivos + 5.027 B de 15 secciones de herramienta + 358 B de `harness:source` + 995 B de `web-surface`. Cada tramo incluye el separador que lo une al siguiente |
 | 10200 | `deployment:persona-suffix` | 61 | el mismo `cwd` |
 
-La suma da 6.896 B y el prompt mide 6.902 B. **En este prompt la pieza más grande no es la persona
-(64 B) sino la guía de herramientas (6.723 B).**
+La suma da 6.896 B y el prompt mide 6.902 B (los 6 B de los tres separadores). **En este prompt
+la pieza más grande no es la persona (64 B) sino la guía de herramientas (6.723 B).**
+
+### El dato que sorprende: el preset envía MENOS guía de herramientas
+
+Los dos presets montan **11 módulos de herramienta**, pero el preset educativo directo envía **12
+secciones de herramienta (4.890 B)** frente a las **15 del `standard` (5.027 B)**. Las cuatro que
+faltan son las guías de `subagent`, `subagent_fork`, `workflow` y `ralph`: viven en el grupo de
+delegación y el preset directo lo vacía. Lo que hace grande su prompt no es la guía de
+herramientas: es la extensión de 16.789 B y la persona de 6.565 B.
 
 ### C) Lo que va aparte, en los dos casos
 
@@ -132,8 +153,8 @@ La suma da 6.896 B y el prompt mide 6.902 B. **En este prompt la pieza más gran
 | # | Paso | Con un preset elegido | Sin elegir preset |
 |---:|---|---|---|
 | 0 | Elegís el preset (o no) | El selector lee `preset.yml` de cada carpeta: solo metadatos (nombre, descripción, orden). No se carga código todavía | No elegís nada: se aplica el default del roster (`standard`) |
-| 1 | Se compone el grafo | Se montan los módulos de `agent.cordis.yml`: persona, plugins, módulos de herramienta y grupos | Se montan los módulos de `standard`: persona, 13 módulos de herramienta, 3 grupos, delegación con `subagent`/`subagent_fork`/`workflow`/`ralph`. Sin plugins de política. (`hyperframes-educativo` monta 11: vacía el grupo de delegación) |
-| 2 | Se ensambla el system prompt | 28.704 B medidos (persona + extensión del preset) | 6.902 B medidos (persona de 64 B + guía de herramientas de 6.723 B) |
+| 1 | Se compone el grafo | Se montan los módulos de `agent.cordis.yml` y de su base heredada: persona, 0 plugins de política, **11 módulos de herramienta** y **2 grupos**. Su grupo de delegación se vacía a propósito | Se montan los módulos de `standard`: persona, **11 módulos de herramienta**, **2 grupos** y el grupo de delegación completo con `subagent`, `subagent_fork`, `workflow` y `ralph`. Sin plugins de política |
+| 2 | Se ensambla el system prompt | 28.704 B medidos (persona de 6.565 B + sección compuesta del preset de 22.024 B) | 6.902 B medidos (persona de 64 B + guía de herramientas de 6.723 B) |
 | 3 | Mandás el mensaje | system prompt + instrucciones del proyecto + contexto de entorno + historial + TU MENSAJE | la misma forma, con el otro system prompt |
 | 4 | Primer request | Se añaden los dos mensajes aparte (AGENTS.md y contexto de entorno) | los mismos dos mensajes: no dependen del preset |
 | 5 | Quién escribe | Según el preset: `Orquestador` deja la raíz en **read-only** y produce un hijo in-process (`omniroute_code`); `HyperFrames Educativo` vacía la delegación y produce el modelo principal | El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace |
@@ -172,10 +193,15 @@ El razonamiento `max` solo se inyecta si el combo ya resolvió a Gemini.
 ## 5) Cómo se comprueba
 
 ```bash
-python3 presets.py --verifica   # bytes del prefix: regex propia vs PyYAML (0 fallos = coincide)
+python3 presets.py --verifica   # bytes del prefix (regex vs PyYAML) + desglose vs las dos sesiones
 python3 presets.py              # regenera presets.json con la simulación
 python3 index_datos.py          # la mete en datos.json / datos.js del dashboard
+python3 audita.py               # desbordes, contraste y solapes del dashboard
+python3 captura.py --texto "Simulación" -o .rev/sim-final.png --alto 1150 --offset 130
 ```
+
+Las correcciones de números de este documento están registradas en `FACTCHECK.md`, con la
+afirmación, el veredicto, la evidencia y el cambio aplicado.
 
 ---
 

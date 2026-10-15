@@ -24,12 +24,21 @@ import argparse, json, os, re, glob, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 ap = argparse.ArgumentParser()
 ap.add_argument("--dir", default=os.path.expanduser("~/.dsh/.agent-presets"))
+ap.add_argument("--dir-estandar",
+                default=os.path.expanduser("~/.npm-global/lib/node_modules/@deepseek-ai/dsh/"
+                                           "node_modules/@deepseek-ai/dsh-agent-presets/presets"),
+                help="presets que trae el paquete dsh-agent-presets (incluye `standard`)")
 ap.add_argument("--verifica", action="store_true",
-                help="contrasta la cuenta del prefix contra PyYAML y termina")
+                help="contrasta la cuenta del prefix contra PyYAML y el desglose del prompt "
+                     "contra las dos sesiones medidas; termina")
 a = ap.parse_args()
 
 PRESET_STANDARD = "standard"          # preset base del que hereda el educativo directo
-PRESET_ORQUESTADOR = "orchestrator"   # preset que se usa como ejemplo en la simulacion
+PRESET_ORQUESTADOR = "orchestrator"   # preset que delega (se documenta en las tarjetas)
+# El preset que ilustra la columna "con preset" de la simulacion. Tiene que ser
+# el mismo que se midio en MEDICION["con_preset"]: si no coinciden, el texto del
+# paso 1 describiria un preset y la columna diria otro. `--verifica` lo contrasta.
+PRESET_SIMULADO = "hyperframes-educativo"
 
 ESCENARIOS = {
     "hyperframes educativo": {
@@ -98,6 +107,11 @@ SUFFIX_DEFAULT = "Your working directory is {{cwd}}."
 MODELO_MEDIDO = "deepseek-v4.1-flash"
 CWD_MEDIDO = "/home/devni/imagen/reddit-opencode"
 
+# Lista que se usaba a mano para describir el preset por defecto. Ya NO se usa:
+# la tabla de modulos lee el `agent.cordis.yml` real de `standard`. Se conserva
+# solo como referencia historica — declaraba `subagent`, `workflow` y `ralph`
+# como modulos de herramienta, cuando en ese preset viven dentro del grupo de
+# delegacion y la guia de herramientas no los cuenta.
 HERRAMIENTAS_BASE = ["bash", "pwsh", "jobs", "fs", "fs-search", "skill", "todo",
                      "goal", "web", "subagent-control", "subagent", "workflow", "ralph"]
 
@@ -114,6 +128,16 @@ HERRAMIENTAS_BASE = ["bash", "pwsh", "jobs", "fs", "fs-search", "skill", "todo",
 #           t=''.join(c.get('text','') for c in e['data']['message']['content'])
 #           if t.strip(): print(len(t.encode()),'bytes'); print(t); break"
 #
+#
+# Los bytes se midieron SOBRE LOS BYTES del prompt, no sobre sus caracteres: el
+# prompt lleva acentos y guiones largos, y mezclar indices de caracter con
+# rebanadas de texto infla las cuentas. Para repetir la medida en cualquier
+# sesion (imprime el desglose por seccion tal como se lee abajo):
+#
+#   zstd -dc -- <sesion>/session.v3.jsonl.zstd | python3 scripts/mide_prompt.py
+#
+# Cada fila lleva su `bytes` por escenario y una `verifica` con el texto que
+# debe medir exactamente esa cantidad. `--verifica` recalcula las dos cosas.
 MEDICION = {
     "con_preset": {
         "preset": "hyperframes-educativo",
@@ -123,13 +147,30 @@ MEDICION = {
         "total": 28704,
         "secciones": [
             {"nombre": "harness:identity", "orden": -1000, "bytes": 48,
-             "texto": "You are an AI agent powered by DeepSeek Harness."},
+             "texto": "You are an AI agent powered by DeepSeek Harness.",
+             "verifica": "You are an AI agent powered by DeepSeek Harness."},
             {"nombre": "deployment:persona-prefix", "orden": 0, "bytes": 6565,
-             "texto": "el `prefix` del preset, con {{model}} y {{cwd}} resueltos"},
-            {"nombre": "preset:hyperframes-educativo", "orden": 100, "bytes": 22026,
-             "texto": "sección que aporta hyperframes-prompt-extension.js (motion editorial + protocolo de calidad)"},
+             "texto": "el `prefix` del preset, con {{model}} y {{cwd}} resueltos",
+             "verifica": "Eres un agente de producción educativa en video"},
+            {"nombre": "preset: (compuesta)", "orden": 100, "bytes": 22024,
+             "texto": "sección del preset: la extensión aporta 16.789 B y su guía de herramientas 5.235 B "
+                      "(referencia de archivos 345 B incluida). No es una sección suelta: la extensión "
+                      "registra orden 100 y las secciones de sus módulos caen en el mismo tramo.",
+             "compuesta": [
+                 {"nombre": "extensión del preset (hyperframes-prompt-extension.js)", "bytes": 16789,
+                  "verifica": "HYPERFRAMES EDUCATIVO — CAPA COMPARTIDA OBLIGATORIA"},
+                 {"nombre": "guía de sus herramientas", "bytes": 5235,
+                  "verifica": "Tokens prefixed with @ are workspace paths the user explicitly referenced",
+                  "desglose": [
+                      {"nombre": "referencia de archivos", "bytes": 345,
+                       "verifica": "Tokens prefixed with @ are workspace paths the user explicitly referenced"},
+                      {"nombre": "una sección por herramienta montada (11 herramientas)", "bytes": 4890,
+                       "verifica": "Check the [exit code: N] marker on every bash result"},
+                  ]},
+             ]},
             {"nombre": "deployment:persona-suffix", "orden": 10200, "bytes": 61,
-             "texto": "Your working directory is /home/devni/imagen/reddit-opencode."},
+             "texto": "Your working directory is /home/devni/imagen/reddit-opencode.",
+             "verifica": "Your working directory is /home/devni/imagen/reddit-opencode."},
         ],
     },
     "sin_preset": {
@@ -140,15 +181,29 @@ MEDICION = {
         "total": 6902,
         "secciones": [
             {"nombre": "harness:identity", "orden": -1000, "bytes": 48,
-             "texto": "You are an AI agent powered by DeepSeek Harness."},
+             "texto": "You are an AI agent powered by DeepSeek Harness.",
+             "verifica": "You are an AI agent powered by DeepSeek Harness."},
             {"nombre": "deployment:persona-prefix", "orden": 0, "bytes": 64,
-             "texto": "You are a coding agent powered by the deepseek-v4.1-flash model."},
-            {"nombre": "guía de herramientas (tool:*, harness:source, web-surface)",
-             "orden": 1000, "bytes": 6723,
-             "texto": "18 secciones: read, write, edit, glob, grep, bash, jobs, web_search, web_fetch, goal, "
-                      "workflow, ralph, subagent, subagent_fork, present, checkout, GUI…"},
+             "texto": "You are a coding agent powered by the deepseek-v4.1-flash model.",
+             "verifica": "You are a coding agent powered by the deepseek-v4.1-flash model."},
+            {"nombre": "guía de herramientas (compuesta)", "orden": 1000, "bytes": 6723,
+             "texto": "referencia de archivos (345 B), una sección por herramienta montada (5.025 B), "
+                      "harness:source (358 B) y GUI web (995 B); cada tramo incluye el separador que lo "
+                      "une al siguiente",
+             "verifica": "Tokens prefixed with @ are workspace paths the user explicitly referenced",
+             "compuesta": [
+                 {"nombre": "referencia de archivos", "bytes": 345,
+                  "verifica": "Tokens prefixed with @ are workspace paths the user explicitly referenced"},
+                 {"nombre": "una sección por herramienta montada (15 herramientas)", "bytes": 5025,
+                  "verifica": "Check the [exit code: N] marker on every bash result"},
+                 {"nombre": "harness:source", "bytes": 358,
+                  "verifica": "The DeepSeek Harness implementation checkout is at"},
+                 {"nombre": "web-surface", "bytes": 995,
+                  "verifica": "You are interacting with the user through the DeepSeek Harness Web GUI"},
+             ]},
             {"nombre": "deployment:persona-suffix", "orden": 10200, "bytes": 61,
-             "texto": "Your working directory is /home/devni/imagen/reddit-opencode."},
+             "texto": "Your working directory is /home/devni/imagen/reddit-opencode.",
+             "verifica": "Your working directory is /home/devni/imagen/reddit-opencode."},
         ],
     },
     # Reparto observado en las 80 sesiones mas recientes del disco (cabecera
@@ -163,32 +218,55 @@ MEDICION = {
 
 # Como se ensambla el system prompt. Los nombres de seccion y su orden salen de
 # @deepseek-ai/dsh-system-prompt (SECTION_ORDERS) y de los modulos del preset.
+#
+# `con_preset` / `sin_preset`: los bytes de esa seccion en cada escenario, tal
+# como se midieron en las dos sesiones de MEDICION. `None` = la seccion no
+# existe en ese escenario. Son la fuente de la columna "bytes" de la tabla: si
+# aqui falta el numero, la tabla muestra un hueco, no un cero.
 ASSEMBLY = [
     {"orden": -1000, "seccion": "harness:identity",
-     "nota": "Siempre presente; no lo cambia ningún preset (48 B medidos)."},
+     "con_preset": 48, "sin_preset": 48,
+     "nota": "Siempre presente; no lo cambia ningún preset."},
     {"orden": 0, "seccion": "deployment:persona-prefix",
-     "nota": "Con preset: el `prefix` del módulo `persona`. Sin preset: el del preset por defecto "
-             "(«You are a coding agent…», 64 B). Nunca se suman: la sección se reemplaza."},
+     "con_preset": 6565, "sin_preset": 64,
+     "nota": "Con preset: el `prefix` del módulo `persona`, con {{model}} y {{cwd}} resueltos. Sin preset: "
+             "el del preset por defecto («You are a coding agent…»). Nunca se suman: la sección se reemplaza."},
     {"orden": 100, "seccion": "preset:… (extensiones del preset)",
-     "nota": "Solo si el preset monta un plugin que registra secciones propias. La extensión educativa "
-             "aporta 22.026 B en la sesión medida."},
+     "con_preset": 22024, "sin_preset": None,
+     "nota": "Solo si el preset monta un plugin que registra secciones propias. En la sesión medida la "
+             "extensión educativa aporta 16.789 B y su guía de herramientas 5.235 B: la sección es la suma "
+             "de las dos, porque las secciones de los módulos del preset comparten el orden 100."},
     {"orden": 500, "seccion": "políticas (plan, equipo, PTC)",
-     "nota": "Sólo si el preset monta esos módulos."},
+     "con_preset": None, "sin_preset": None,
+     "nota": "Sólo si el preset monta esos módulos. Ninguno de los dos presets medidos los monta."},
     {"orden": 900, "seccion": "file-reference",
-     "nota": "Cómo se referencian archivos en el mensaje (343 B medidos en el preset por defecto)."},
+     "con_preset": 345, "sin_preset": 345,
+     "nota": "Cómo se referencian archivos en el mensaje. Igual en los dos casos: lo aporta el perfil base."},
     {"orden": 1000, "seccion": "guía de herramientas (tool:bash, tool:read, tool:write, tool:glob, "
                                "tool:grep, tool:jobs, tool:web_search, tool:web_fetch, tool:goal, "
                                "tool:subagent, …)",
-     "nota": "Una sección por herramienta montada. En el preset por defecto suman 6.723 B: es la pieza "
-             "más grande de ese prompt."},
+     "con_preset": 4890, "sin_preset": 5025,
+     "nota": "Una sección por herramienta montada. Con el preset directo pesa MENOS que con el default: "
+             "los dos montan 11 módulos de herramienta, pero el default además guía subagent, "
+             "subagent_fork, workflow y ralph, que viven en su grupo de delegación."},
     {"orden": 10000, "seccion": "harness:source",
-     "nota": "Cómo leer el propio harness (356 B medidos)."},
+     "con_preset": 358, "sin_preset": 358,
+     "nota": "Cómo leer el propio harness. Con preset sus bytes quedan DENTRO del tramo 100 (junto a la "
+             "extensión), no como sección suelta: el valor se repite aquí para comparar, no se suma dos veces."},
     {"orden": 10100, "seccion": "web-surface",
-     "nota": "Cómo interactuar con la GUI web (995 B medidos)."},
+     "con_preset": 995, "sin_preset": 995,
+     "nota": "Cómo interactuar con la GUI web. Igual que harness:source: con preset queda dentro del "
+             "tramo 100 y aquí se repite para comparar, no se suma dos veces."},
     {"orden": 10200, "seccion": "deployment:persona-suffix",
-     "nota": "`suffix` del módulo `persona` («Your working directory is {{cwd}}», 61 B resueltos)."},
+     "con_preset": 61, "sin_preset": 61,
+     "nota": "`suffix` del módulo `persona` («Your working directory is {{cwd}}»), resuelto al cwd medido."},
 ]
 
+
+# Miles con punto, sin tocar la puntuacion de la frase. Un `.replace(",", ".")`
+# global sobre el texto entero tambien cambiaba las comas de la redaccion.
+def n(x):
+    return f"{x:,}".replace(",", ".")
 
 def bloques(txt):
     """Cada modulo del cordis.yml empieza en '- ' a nivel raiz."""
@@ -279,6 +357,74 @@ def verifica():
     return fallos
 
 
+def verifica_prompt():
+    """Relee las dos sesiones de MEDICION y contrasta el desglose declarado.
+
+    Detecta lo que se rompe solo: numeros que se copiaron a mano y dejaron de
+    coincidir con la sesion, o un desglose que ya no suma el total. Se salta sin
+    fallar si la sesion no esta en el disco (otra maquina, sesion purgada).
+    """
+    import subprocess, sys as _sys
+    ruta_script = os.path.join(HERE, "scripts", "mide_prompt.py")
+    if not os.path.exists(ruta_script):
+        print("  · scripts/mide_prompt.py no existe: no se puede contrastar el desglose")
+        return 0
+    _sys.path.insert(0, os.path.join(HERE, "scripts"))
+    import mide_prompt
+
+    fallos = 0
+    for clave in ("con_preset", "sin_preset"):
+        m = MEDICION[clave]
+        zstd = os.path.expanduser(m["sesion"]) + "/session.v3.jsonl.zstd"
+        if not os.path.exists(zstd):
+            print(f"  · {clave}: sesion no encontrada ({m['sesion']}) — sin contrastar")
+            continue
+        try:
+            salida = subprocess.run(["zstd", "-dc", "--", zstd], capture_output=True, check=True)
+        except Exception as e:
+            print(f"  · {clave}: no se pudo descomprimir la sesion ({e})")
+            continue
+        prompt = mide_prompt.lee_prompt(salida.stdout.decode("utf-8", "replace").splitlines())
+        if prompt is None:
+            print(f"  MAL {clave}: la sesion no tiene un system/message legible")
+            fallos += 1
+            continue
+        real = mide_prompt.mide(prompt)
+        etiqueta = f"{clave} ({m['preset'].split(' (')[0]})"
+        ok_total = real["total"] == m["total"]
+        fallos += 0 if ok_total else 1
+        print(f"  {'OK ' if ok_total else 'MAL'} {etiqueta}: total declarado {m['total']} B / "
+              f"medido {real['total']} B")
+        # el desglose declarado debe sumar el total menos los separadores
+        suma = sum(s["bytes"] for s in m["secciones"])
+        sep = m["total"] - suma
+        ok_suma = 0 <= sep <= 2 * len(m["secciones"])
+        fallos += 0 if ok_suma else 1
+        print(f"  {'OK ' if ok_suma else 'MAL'} {etiqueta}: secciones suman {suma} B "
+              f"+ {sep} B de separadores = {m['total']} B")
+        # las partes de una seccion compuesta deben sumar la seccion
+        for s in m["secciones"]:
+            partes = s.get("compuesta")
+            if not partes:
+                continue
+            sp = sum(p["bytes"] for p in partes)
+            ok_c = sp == s["bytes"]
+            fallos += 0 if ok_c else 1
+            print(f"  {'OK ' if ok_c else 'MAL'} {etiqueta}: «{s['nombre']}» {s['bytes']} B = "
+                  + " + ".join(f"{p['bytes']}" for p in partes) + f" = {sp} B")
+            for p in partes:
+                for q in p.get("desglose", []):
+                    pass
+                d = p.get("desglose")
+                if d:
+                    sd = sum(x["bytes"] for x in d)
+                    ok_d = sd == p["bytes"]
+                    fallos += 0 if ok_d else 1
+                    print(f"  {'OK ' if ok_d else 'MAL'} {etiqueta}: «{p['nombre']}» {p['bytes']} B = "
+                          + " + ".join(str(x["bytes"]) for x in d) + f" = {sd} B")
+    return fallos
+
+
 def rasgos(rutas):
     """Cuenta modulos activos sobre el preset y sus bases heredadas."""
     textos = []
@@ -312,10 +458,13 @@ def rasgos(rutas):
             if m and "agent-instructions" in b:
                 maxbytes = int(m.group(1))
     deleg = delegacion(todo)
+    texto_persona = bloque_escalar(todo, "prefix") if persona else ""
     return {
         "persona_propia": persona,
         "largo_prompt_persona": largo,
-        "bytes_prompt_persona": len(bloque_escalar(todo, "prefix").encode("utf-8")) if persona else 0,
+        "bytes_prompt_persona": len(texto_persona.encode("utf-8")),
+        # el texto sin resolver (`{{model}}`, `{{cwd}}`): quien lo use lo interpola
+        "prefix_persona": texto_persona,
         "suffix_persona": suffix,
         "instrucciones_max_bytes": maxbytes,
         "plugins": sorted(plugins),
@@ -390,25 +539,32 @@ def leer_preset(d):
 
 # ---------------------------------------------------------------- simulacion
 def secciones_prompt(pre, std):
-    """Rellena el ensamblado con los bytes medidos en los ficheros reales."""
+    """Rellena el ensamblado con los bytes medidos en los ficheros reales.
+
+    Los bytes salen de ASSEMBLY (medidos en las dos sesiones de MEDICION), no de
+    una estimacion. Se anaden los campos que consume la tabla del frame:
+    `bytes_con_preset` y `bytes_sin_preset` (None = la seccion no existe ahi).
+    """
     out = []
     for s in ASSEMBLY:
         s = dict(s)
+        s["bytes_con_preset"] = s.pop("con_preset", None)
+        s["bytes_sin_preset"] = s.pop("sin_preset", None)
         if s["seccion"] == "deployment:persona-prefix":
-            s["texto"] = f"{pre['rasgos']['largo_prompt_persona']} caracteres del `prefix` del preset"
-            s["bytes"] = pre["rasgos"]["bytes_prompt_persona"]
-            s["texto_sin_preset"] = "vacío (0 bytes): la sección se descarta al renderizar"
+            # El fichero vivo del preset puede haber cambiado despues de la
+            # sesion medida: se declaran las dos cifras y a que pertenece cada una.
+            vivo = pre["rasgos"]["bytes_prompt_persona"]
+            s["texto"] = (f"{pre['rasgos']['largo_prompt_persona']} caracteres del `prefix` del preset "
+                          f"({vivo} B en el fichero de ahora; {s['bytes_con_preset']} B en la sesión medida)")
+            s["bytes"] = vivo
+            s["texto_sin_preset"] = "la del preset por defecto, no se suma: la sección se reemplaza"
         elif s["seccion"] == "deployment:persona-suffix":
             suf = pre["rasgos"]["suffix_persona"]
             s["texto"] = f"`{suf}`" if suf else "vacío (0 bytes)"
             s["bytes"] = len(suf.encode("utf-8"))
-            s["texto_sin_preset"] = "vacío (0 bytes)"
+            s["texto_sin_preset"] = "la misma sección, con el cwd del deployment"
         elif s["seccion"] == "harness:identity":
-            s["bytes"] = len(s["texto"].encode("utf-8"))
-            s["texto_sin_preset"] = s["texto"]
-        else:
-            s["bytes"] = None
-            s["texto_sin_preset"] = "igual en los dos casos (perfil base)"
+            s["bytes"] = s["bytes_con_preset"]
         out.append(s)
     return out
 
@@ -424,23 +580,26 @@ def modulos(pre, std):
         r = p["rasgos"]
         f = {}
         if es_default:
-            resuelta = (PERSONA_DEFAULT.replace("{{model}}", MODELO_MEDIDO)
-                        .replace("{{cwd}}", CWD_MEDIDO))
+            # El preset `standard` SI declara su propia persona: se lee de su
+            # fichero y se resuelven las variables. Antes esto se escribia a mano
+            # con PERSONA_DEFAULT/SUFFIX_DEFAULT, y bastaba tocar el preset para
+            # que la tabla quedara mintiendo.
+            resuelta = (r.get("prefix_persona") or PERSONA_DEFAULT)
+            resuelta = resuelta.replace("{{model}}", MODELO_MEDIDO).replace("{{cwd}}", CWD_MEDIDO)
             f["persona"] = {
-                "aporta": "System prompt del preset por defecto (`standard`)",
+                "aporta": f"System prompt del preset `{std.get('id', PRESET_STANDARD)}`",
                 "dato": f"«{resuelta}» — {len(resuelta.encode())} B",
+            }
+            suf = (r.get("suffix_persona") or SUFFIX_DEFAULT).replace("{{cwd}}", CWD_MEDIDO)
+            f["persona (suffix)"] = {
+                "aporta": "`deployment:persona-suffix`",
+                "dato": f"«{suf}» — {len(suf.encode())} B",
             }
         else:
             f["persona"] = {
                 "aporta": "System prompt propio del preset",
-                "dato": (f"prefix de {r['largo_prompt_persona']:,} caracteres".replace(",", ".")
+                "dato": (f"prefix de {n(r['largo_prompt_persona'])} caracteres"
                          + (f" + suffix «{r['suffix_persona']}»" if r["suffix_persona"] else "")),
-            }
-        if es_default:
-            f["persona (suffix)"] = {
-                "aporta": "`deployment:persona-suffix`",
-                "dato": f"«{SUFFIX_DEFAULT.replace('{{cwd}}', CWD_MEDIDO)}» — "
-                        f"{len(SUFFIX_DEFAULT.replace('{{cwd}}', CWD_MEDIDO).encode())} B",
             }
         f["agent-instructions"] = {
             "aporta": "Instrucciones del proyecto (AGENTS.md y similares)",
@@ -464,15 +623,16 @@ def modulos(pre, std):
         }
         return f
 
-    # El escenario "sin preset" es el perfil por defecto del harness: no tiene
-    # los plugins ni el grupo de delegación del preset, y su persona es la del
-    # deployment (vacia en esta instalación: dsh-base monta personaPrefix: '').
-    default = {"id": "default", "nombre": "perfil por defecto",
-               "rasgos": dict(std["rasgos"], plugins=[], largo_prompt_persona=0,
-                              bytes_prompt_persona=0, suffix_persona="",
-                              herramientas=HERRAMIENTAS_BASE,
-                              grupos=2, delegacion_vaciada=False,
-                              delegacion=dict(DELEGACION["subagent"]))}
+    # El escenario "sin preset" es el preset `standard` que monta el roster: sus
+    # modulos, plugins, grupos y delegacion son LOS SUYOS, leidos de su fichero.
+    # Lo unico que cambia es la persona: el deployment aporta la suya (64 B) y el
+    # suffix resuelto. Antes esto se sobreescribia con una lista de herramientas
+    # escrita a mano y la tabla llegaba a declarar 13 modulos donde el preset
+    # monta 11 (metia `subagent`/`workflow`/`ralph` como si fueran herramientas).
+    default = {"id": std.get("id", PRESET_STANDARD),
+               "nombre": "perfil por defecto (preset `standard`)",
+               "rasgos": dict(std["rasgos"], largo_prompt_persona=0,
+                              bytes_prompt_persona=0, suffix_persona="")}
     return {"con_preset": filas(pre), "sin_preset": filas(default, es_default=True)}
 
 
@@ -483,8 +643,11 @@ def build_simulacion(pre, std):
     disco); los del preset que se muestra salen de sus ficheros. Nada se estima.
     """
     r_pre = pre["rasgos"]
+    r_std = std["rasgos"]
     mp = MEDICION["con_preset"]
     ms = MEDICION["sin_preset"]
+    # las partes de la seccion compuesta del preset (extension + guia)
+    sec_mp = mp["secciones"][2]["compuesta"]
     return {
         "titulo": "Simulación: mandar un mensaje en una sesión nueva",
         "intro": (
@@ -494,11 +657,11 @@ def build_simulacion(pre, std):
             "(las rutas están en cada columna): no son estimaciones."),
         "columnas": [
             {"id": "con_preset", "titulo": "Con un preset elegido",
-             "sub": f"ejemplo medido: `{mp['preset']}` · system prompt de {mp['total']:,} B".replace(",", "."),
+             "sub": f"ejemplo medido: `{mp['preset']}` · system prompt de {n(mp['total'])} B",
              "sesion": mp["sesion"], "total": mp["total"]},
             {"id": "sin_preset", "titulo": "Request normal, sin elegir preset",
              "sub": f"se compone con el default del roster: {ms['preset'].split(' (')[0]} · "
-                    f"system prompt de {ms['total']:,} B".replace(",", "."),
+                    f"system prompt de {n(ms['total'])} B",
              "sesion": ms["sesion"], "total": ms["total"]},
         ],
         "pasos": [
@@ -510,28 +673,33 @@ def build_simulacion(pre, std):
                             "(`agent-presets.default: standard` en el perfil web) y se monta ese."),
              "fuente": "preset.yml · dsh-web-app/cordis.patch.yml"},
             {"n": 1, "titulo": "Se compone el grafo de módulos",
-             "con_preset": (f"Se montan los módulos de `agent.cordis.yml`: persona, {len(r_pre['plugins'])} "
-                            f"plugins, {len(r_pre['herramientas'])} módulos de herramienta y "
-                            f"{r_pre['grupos']} grupos."),
-             "sin_preset": ("Se montan los módulos del preset `standard` (el que trae el paquete): persona, "
-                            "11 módulos de herramienta, 3 grupos y el grupo de delegación con `subagent`, "
-                            "`subagent_fork`, `workflow` y `ralph`. Sin plugins de política."),
+             "con_preset": (f"Se montan los módulos de `agent.cordis.yml` y de su base heredada: persona, "
+                            f"{len(r_pre['plugins'])} plugins de política, {len(r_pre['herramientas'])} módulos "
+                            f"de herramienta y {r_pre['grupos']} grupos. Su grupo de delegación se vacía a "
+                            "propósito: no monta `subagent`, `subagent_fork`, `workflow` ni `ralph`, que sí "
+                            "están en el preset por defecto."),
+             "sin_preset": (f"Se montan los módulos del preset `standard` (el que trae el paquete): persona, "
+                            f"{len(r_std['herramientas'])} módulos de herramienta, {r_std['grupos']} grupos y el "
+                            "grupo de delegación completo con `subagent`, `subagent_fork`, `workflow` y "
+                            "`ralph`. Sin plugins de política."),
              "fuente": "agent.cordis.yml"},
             {"n": 2, "titulo": "Se ensambla el system prompt",
-             "con_preset": (f"`deployment:persona-prefix` = {mp['secciones'][1]['bytes']:,} B del preset; "
-                            "además su extensión aporta "
-                            f"{mp['secciones'][2]['bytes']:,} B. Total medido: {mp['total']:,} B."
-                            ).replace(",", "."),
+             "con_preset": (f"`deployment:persona-prefix` = {n(mp['secciones'][1]['bytes'])} B: el `prefix` del "
+                            f"preset. Después, la sección del preset suma {n(mp['secciones'][2]['bytes'])} B y "
+                            "no es una sección suelta: la extensión registra orden 100 y las secciones de sus "
+                            f"módulos caen en el mismo tramo ({n(sec_mp[0]['bytes'])} B de extensión + "
+                            f"{n(sec_mp[1]['bytes'])} B de guía de herramientas). Total medido: "
+                            f"{n(mp['total'])} B."),
              "sin_preset": (f"`deployment:persona-prefix` = {ms['secciones'][1]['bytes']} B: la persona del "
                             f"preset `standard` («You are a coding agent…»). La guía de herramientas pesa "
-                            f"{ms['secciones'][2]['bytes']:,} B. Total medido: {ms['total']:,} B."
-                            ).replace(",", "."),
+                            f"{n(ms['secciones'][2]['bytes'])} B y ahí sí es la pieza más grande del prompt. "
+                            f"Total medido: {n(ms['total'])} B."),
              "fuente": "dsh-system-prompt · renderPrompt"},
-            {"n": 3, "titulo": "Mandas el mensaje",
+            {"n": 3, "titulo": "Mandás el mensaje",
              "con_preset": ("Lo que ve el modelo es: system prompt + instrucciones del proyecto + contexto "
                             "de entorno + historial + TU MENSAJE."),
-             "sin_preset": ("La misma forma, con el system prompt de 6.902 B. Tus ficheros NO viajan dentro: "
-                            "entran solo si el modelo llama a una herramienta."),
+             "sin_preset": (f"La misma forma, con el system prompt de {n(ms['total'])} B. Tus ficheros NO viajan "
+                            "dentro: entran solo si el modelo llama a una herramienta."),
              "fuente": "dsh-agent-loop"},
             {"n": 4, "titulo": "Primer request: dos mensajes aparte",
              "con_preset": ("Las instrucciones del proyecto (AGENTS.md, hasta 64 kB) y el contexto de entorno "
@@ -563,7 +731,10 @@ def build_simulacion(pre, std):
             "nota": ("Las secciones se interpolan y las vacías se descartan (`renderPrompt`). Con un preset, su "
                      "persona ocupa el mismo slot que la del deployment: la reemplaza, no se suma."),
             "medido": [dict(mp, etiqueta="con preset elegido"), dict(ms, etiqueta="sin elegir preset")],
-            "orden_posible": [dict(x) for x in ASSEMBLY],
+            # `secciones_prompt` es la que aporta `bytes_con_preset` /
+            # `bytes_sin_preset`: sin pasar por ella la tabla sale con la
+            # columna de bytes vacia.
+            "orden_posible": secciones_prompt(pre, std),
             "aparte": [
                 {"que": "Instrucciones del proyecto (AGENTS.md / CLAUDE.md)",
                  "como": "mensaje de rol usuario con el baseline durable", "bytes": "hasta 64 kB"},
@@ -588,7 +759,12 @@ def build_simulacion(pre, std):
 
 # ---------------------------------------------------------------- recoleccion
 if a.verifica:
-    raise SystemExit(1 if verifica() else 0)
+    print("== bytes del `prefix` de la persona: regex propia vs PyYAML ==")
+    f1 = verifica()
+    print()
+    print("== desglose del system prompt declarado vs las sesiones reales ==")
+    f2 = verifica_prompt()
+    raise SystemExit(1 if (f1 or f2) else 0)
 
 presets, por_id = [], {}
 for d in sorted(glob.glob(os.path.join(a.dir, "*"))):
@@ -602,15 +778,25 @@ for d in sorted(glob.glob(os.path.join(a.dir, "*"))):
 presets.sort(key=lambda p: (p["orden"] is None, p["orden"] or 0, p["nombre"]))
 
 simulacion = None
-if PRESET_ORQUESTADOR in por_id:
+if PRESET_SIMULADO in por_id:
+    # El preset `standard` viaja DENTRO del paquete dsh-agent-presets, no en
+    # ~/.dsh/.agent-presets. Se lee de ahi para que la columna "sin preset"
+    # describa el preset de verdad (11 modulos, 2 grupos) y no una copia a mano.
     std = por_id.get(PRESET_STANDARD)
     if std is None:
-        # El preset base del que hereda el educativo directo se llama «standard»
-        # dentro del propio fichero; si no está instalado suelto, se usa el
-        # preset educativo directo (que ES el base con la extensión encima).
-        std = next((p for p in presets if p["id"] == "hyperframes-educativo"), None)
+        ruta_std = os.path.join(a.dir_estandar, PRESET_STANDARD, "agent.cordis.yml")
+        if os.path.exists(ruta_std):
+            r = rasgos([ruta_std])
+            std = {"id": PRESET_STANDARD, "nombre": "standard (del paquete)", "rasgos": r,
+                   "es_del_paquete": True}
+        else:
+            print(f"  ! no se encontro el preset `{PRESET_STANDARD}` en {a.dir_estandar}: "
+                  "la simulacion queda sin la columna de comparacion")
     if std:
-        simulacion = build_simulacion(por_id[PRESET_ORQUESTADOR], std)
+        simulacion = build_simulacion(por_id[PRESET_SIMULADO], std)
+else:
+    print(f"  ! el preset `{PRESET_SIMULADO}` (el que se mide en la simulacion) no esta instalado: "
+          "no se genera la simulacion")
 
 doc = {
     "titulo": "Presets de DSH: cómo trabaja el agente",
