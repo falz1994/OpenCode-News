@@ -860,5 +860,40 @@
         "LongCat 2.5 Preview obligó a reinstalar el CLI a varios usuarios"
       ]
     ]
+  },
+  "titulares": {
+    "titulo": "Titulares (últimas 48 h)",
+    "columnas": [
+      "Cuándo",
+      "Titular",
+      "Detalle",
+      "Fuente"
+    ],
+    "filas": [
+      [
+        "15-oct",
+        "DeepSeek V4.1 Flash pasa a ser <b>gratis</b> en OpenCode",
+        "Modelo <code>deepseek-v4.1-flash-free</code>, «free for a limited time». La doc oficial dice que su proveedor aplica retención cero y no entrena con tus datos: la pega que la comunidad le supone a los modelos gratis no se cumple aquí. En Zen no cuesta nada pero se throttlea; en Go sigue gastando cuota mensual.",
+        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo (106 comentarios)</a>"
+      ],
+      [
+        "14-oct",
+        "Gemini 4 Argon entra en Go como <b>Contributor</b>",
+        "Nuevo en la tabla oficial: 30 $/mes (×3) y 120 $ en Go Plus. Es la variante «Contributor»: la doc marca <b>entrena = Yes</b> y retención «Not ZDR», o sea que tus prompts se usan para entrenar. A 4/20 $ por 1M rinde ~440 prompts al mes; la comunidad lo compara con Kimi K3 y avisa de que la cuota vuela.",
+        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+      ],
+      [
+        "14-oct",
+        "Subir el límite <b>no</b> devuelve la cuota ya gastada",
+        "El tope de DeepSeek pasó a 80 $/mes, pero es un porcentaje: si llevabas 30 $ de 60 (50 %), tras la subida tienes 40 $ de 80, no 50 $. Varios usuarios toparon el mes con esa confusión porque la UI dejó de mostrar el desglose y la doc no lo explica.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/\" target=\"_blank\" rel=\"noopener\">hilo (32↑)</a>"
+      ],
+      [
+        "13-oct",
+        "OpenCode v2.0.25 deja de preguntar por directorios externos",
+        "El ruleset por defecto elimina la regla <code>external_directory: ask</code>: el comodín pasa a permitir, así que los agentes ya no piden permiso para tocar rutas fuera del proyecto (Explore tampoco). No salió ni en las releases ni en el changelog: se supo leyendo el commit, y ya hay varios issues abiertos.",
+        "<a href=\"https://github.com/anomalyco/opencode/pull/53585\" target=\"_blank\" rel=\"noopener\">PR #53585</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5neba/im_bothered_by_the_recent_change_to_directory/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+      ]
+    ]
   }
 }

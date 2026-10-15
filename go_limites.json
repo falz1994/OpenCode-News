@@ -1,7 +1,7 @@
 {
  "titulo": "Uso y límites de OpenCode Go (oficial)",
  "fuente": "https://opencode.ai/v2/docs/console/go/",
- "actualizado": "2026-10-15 02:50 UTC",
+ "actualizado": "2026-10-15 15:22 UTC",
  "plan": {
   "nombre": "Go",
   "precio": "$10/mes",
@@ -619,18 +619,8 @@
   }
  ],
  "cambios": {
-  "nuevos": [
-   "Gemini 4 Argon Contributor"
-  ],
-  "fuera": [
-   "DeepSeek V4 Flash (Off-Peak)",
-   "DeepSeek V4 Flash (Peak)",
-   "DeepSeek V4 Flash Vision Exp (Off-Peak)",
-   "DeepSeek V4 Flash Vision Exp (Peak)"
-  ],
-  "modificados": [
-   "Cat Jam Free: entrena Yes → Not used",
-   "Cat Jam Free: retencion Not ZDR → 30 days"
-  ]
+  "nuevos": [],
+  "fuera": [],
+  "modificados": []
  }
 }

@@ -8,7 +8,7 @@ Uso:
   python3 index_datos.py
   python3 index_datos.py --noticias-dias 7
 """
-import argparse, collections, datetime, glob, json, os, re, sys
+import argparse, collections, datetime, glob, json, math, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ap = argparse.ArgumentParser()
@@ -111,20 +111,63 @@ for m in f["modelos"]:
     print(f"  {m['nombre']:<26} opiniones={total:<4} menciones={sum(menciones.values())}")
 
 # ---------------------------------------------------------------- noticias
+# Orden por "temperatura", no por score bruto: el score lo actualiza Arctic Shift con retraso
+# (los hilos de hoy siguen a 0-2↑ mientras ya tienen 100 comentarios), asi que ordenar por score
+# dejaba la seccion anclada en los hilos mas viejos de la ventana. La temperatura premia lo
+# reciente y usa los comentarios del propio volcado como señal de actividad.
 dias = f.get("noticias_dias", 12)
 top = f.get("noticias_top", 14)
+
+def actividad(t):
+    """(score, comentarios) reales del hilo, sin fiarse de num_comments (viene a 0)."""
+    coms = t.get("comments") or []
+    n = max(len(coms), t.get("num_comments") or 0)
+    s = t.get("score") or 0
+    if not s and coms:                       # score sin refrescar: el mejor comentario lo aproxima
+        s = max((c.get("score") or 0) for c in coms)
+    return s, n
+
+def temperatura(t):
+    s, n = actividad(t)
+    horas = max(1.0, (ahora.timestamp() - t["created_utc"]) / 3600)
+    return math.log10(1 + s + 2 * n) / (horas + 6) ** 0.7
+
 desde = (ahora - datetime.timedelta(days=dias)).timestamp()
 noticias = []
 for t in hilos.values():
-    if t["created_utc"] >= desde:
-        noticias.append({
-            "titulo": t["title"], "score": t.get("score") or 0,
-            "comentarios": t.get("num_comments") or 0,
-            "fecha": datetime.datetime.fromtimestamp(t["created_utc"], datetime.UTC).strftime("%Y-%m-%d %H:%M"),
-            "sub": t.get("subreddit") or "?", "url": t.get("permalink_url") or "",
-        })
-noticias.sort(key=lambda x: -x["score"])
+    if t["created_utc"] < desde:
+        continue
+    s, n = actividad(t)
+    noticias.append({
+        "titulo": t["title"], "score": s, "comentarios": n,
+        "fecha": datetime.datetime.fromtimestamp(t["created_utc"], datetime.UTC).strftime("%Y-%m-%d %H:%M"),
+        "sub": t.get("subreddit") or "?", "url": t.get("permalink_url") or "",
+        "temperatura": round(temperatura(t), 3),
+    })
+noticias.sort(key=lambda x: -x["temperatura"])
 f["noticias"] = noticias[:top]
+
+# Los comentarios son donde de verdad se cuece la noticia: se listan los mas votados de la
+# ventana corta, con el hilo del que salen y enlace directo al comentario.
+dias_com = f.get("comentarios_dias", 5)
+top_com = f.get("comentarios_top", 12)
+desde_com = (ahora - datetime.timedelta(days=dias_com)).timestamp()
+comentarios = []
+for t in hilos.values():
+    for c in t.get("comments") or []:
+        if c["created_utc"] < desde_com:
+            continue
+        comentarios.append({
+            "autor": c.get("author") or "[borrado]",
+            "score": c.get("score") or 0,
+            "texto": " ".join((c.get("body") or "").split()),
+            "fecha": datetime.datetime.fromtimestamp(c["created_utc"], datetime.UTC).strftime("%Y-%m-%d %H:%M"),
+            "sub": t.get("subreddit") or "?",
+            "hilo": t["title"],
+            "url": ("https://www.reddit.com" + c["permalink"]) if c.get("permalink") else (t.get("permalink_url") or ""),
+        })
+comentarios.sort(key=lambda x: -x["score"])
+f["comentarios"] = comentarios[:top_com]
 
 # ---------------------------------------------------------------- limites de Go
 ruta_go = os.path.join(HERE, "go_limites.json")
@@ -162,4 +205,5 @@ for nombre in ("datos.json", "datos.js"):
             json.dump(f, out, ensure_ascii=False, indent=1)
     print("escrito:", ruta)
 print(f"\nOK · {len(f['modelos'])} modelos · {len(noticias[:top])} noticias · "
+      f"{len(f['comentarios'])} comentarios destacados · "
       f"{f['meta']['hilos']} hilos · {n_coment} comentarios")

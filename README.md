@@ -57,8 +57,8 @@ vistazo cuándo entra o sale un modelo o cambia un precio.
 - **`index.html`** — matriz modelo × habilidad, **límites oficiales de Go con el multiplicador ×plan**,
   roles por presupuesto, precios, benchmarks, stealth y banderas rojas. Se abre con doble clic
   (usa `datos.js`) o servido por HTTP (recarga `datos.json`).
-- **`fuente.json`** — la fuente editable: valoraciones, roles, pegas y las tablas curadas.
-  Es lo único que hay que tocar a mano cuando cambie tu criterio.
+- **`fuente.json`** — la fuente editable: valoraciones, roles, pegas, los **titulares curados** y las
+  tablas curadas. Es lo único que hay que tocar a mano cuando cambie tu criterio.
 - **`go_limites.json`** — la otra fuente, scrapeada de la web oficial con `go_limites.py`.
 - **`datos.json` / `datos.js`** — salida generada. No editar a mano.
 
@@ -70,6 +70,24 @@ python3 -m http.server 8765     # opcional: http://127.0.0.1:8765/index.html
 
 Los recuentos de menciones por habilidad y el sentimiento (positivas/negativas) **se calculan
 solos** desde los volcados; las valoraciones `+++/++/+/–/✗` son criterio curado en `fuente.json`.
+
+### Noticias, titulares y comentarios
+
+Tres bloques, con tres niveles de curación distintos:
+
+| Bloque | De dónde sale | Cómo se ordena |
+|---|---|---|
+| **Titulares** | `titulares` en `fuente.json`, escrito a mano | orden curado; cada fila lleva fecha, detalle y enlace a la fuente oficial o al hilo |
+| **Noticias recientes** | volcados `hilos-*.json` | *temperatura*: `log10(1 + score + 2·comentarios) / (horas + 6)^0.7` |
+| **Comentarios más votados** | comentarios de los volcados | score del comentario, ventana corta (`comentarios_dias`) |
+
+La temperatura existe porque el `score` de Arctic Shift llega con retraso: los hilos de hoy siguen
+a 1-2↑ mientras ya tienen 100 comentarios, así que ordenar por score dejaba la sección anclada en
+los hilos más viejos de la ventana. Se usan los comentarios del propio volcado (no `num_comments`,
+que viene a 0) y, si el score no se ha refrescado, el del mejor comentario como aproximación.
+
+Ajustes en `fuente.json`: `noticias_dias` (ventana, 12), `noticias_top` (14), `comentarios_dias`
+(5) y `comentarios_top` (12).
 
 ### Criterios de UI
 
@@ -132,6 +150,10 @@ python3 noticias.py --subreddit opencodeCLI
 
 # informe de los 3 ejes sobre los volcados que ya tienes
 python3 informe.py --subreddit opencodeCLI --dias 30 --top 12 --citas 2
+
+# ciclo completo de actualización del dashboard
+python3 noticias.py --subreddit opencode && python3 noticias.py --subreddit opencodeCLI
+python3 go_limites.py && python3 index_datos.py
 ```
 
 ## Ficheros de datos
