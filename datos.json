@@ -100,25 +100,25 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 439,
+    "valor": 454,
     "docs": 28,
-    "codigo": 162,
+    "codigo": 167,
     "orquestacion": 79,
-    "backend": 198,
-    "tests": 92,
+    "backend": 200,
+    "tests": 95,
     "motion": 22,
     "planificacion": 42,
     "frontend": 9,
-    "debug": 17,
+    "debug": 18,
     "local": 19,
     "simples": 13,
     "research": 8,
     "vision": 14
    },
    "sentimiento": {
-    "pos": 335,
-    "neg": 224,
-    "total": 559,
+    "pos": 341,
+    "neg": 230,
+    "total": 571,
     "pct": 60
    }
   },
@@ -144,14 +144,14 @@
     "valor": 2
    },
    "menciones": {
-    "valor": 231,
-    "codigo": 109,
+    "valor": 234,
+    "codigo": 111,
     "backend": 42,
-    "tests": 60,
+    "tests": 64,
     "local": 12,
     "orquestacion": 34,
     "simples": 6,
-    "planificacion": 33,
+    "planificacion": 35,
     "frontend": 7,
     "motion": 11,
     "debug": 11,
@@ -160,9 +160,9 @@
     "vision": 3
    },
    "sentimiento": {
-    "pos": 192,
-    "neg": 122,
-    "total": 314,
+    "pos": 196,
+    "neg": 124,
+    "total": 320,
     "pct": 61
    }
   },
@@ -188,12 +188,12 @@
     "valor": 1
    },
    "menciones": {
-    "codigo": 53,
-    "tests": 34,
+    "codigo": 55,
+    "tests": 38,
     "local": 4,
-    "valor": 72,
-    "motion": 20,
-    "planificacion": 29,
+    "valor": 79,
+    "motion": 21,
+    "planificacion": 30,
     "orquestacion": 21,
     "research": 3,
     "backend": 7,
@@ -203,9 +203,9 @@
     "simples": 3
    },
    "sentimiento": {
-    "pos": 66,
-    "neg": 36,
-    "total": 102,
+    "pos": 68,
+    "neg": 37,
+    "total": 105,
     "pct": 65
    }
   },
@@ -231,10 +231,10 @@
     "valor": 1
    },
    "menciones": {
-    "valor": 37,
+    "valor": 41,
     "docs": 5,
     "planificacion": 9,
-    "tests": 7,
+    "tests": 8,
     "codigo": 18,
     "orquestacion": 9,
     "local": 1,
@@ -245,9 +245,9 @@
     "research": 1
    },
    "sentimiento": {
-    "pos": 32,
+    "pos": 33,
     "neg": 19,
-    "total": 51,
+    "total": 52,
     "pct": 63
    }
   },
@@ -275,9 +275,9 @@
    "menciones": {
     "codigo": 6,
     "tests": 11,
-    "valor": 38,
+    "valor": 39,
     "planificacion": 1,
-    "orquestacion": 7,
+    "orquestacion": 8,
     "motion": 1,
     "simples": 1,
     "backend": 2,
@@ -322,7 +322,7 @@
     "planificacion": 20,
     "valor": 118,
     "orquestacion": 30,
-    "docs": 13,
+    "docs": 14,
     "motion": 9,
     "vision": 1,
     "simples": 5,
@@ -330,10 +330,10 @@
     "debug": 1
    },
    "sentimiento": {
-    "pos": 107,
+    "pos": 108,
     "neg": 45,
-    "total": 152,
-    "pct": 70
+    "total": 153,
+    "pct": 71
    }
   },
   {
@@ -358,14 +358,14 @@
     "valor": 2
    },
    "menciones": {
-    "backend": 10,
+    "backend": 11,
     "research": 4,
     "planificacion": 30,
     "codigo": 39,
-    "tests": 33,
+    "tests": 35,
     "orquestacion": 26,
     "docs": 12,
-    "valor": 58,
+    "valor": 63,
     "motion": 9,
     "local": 2,
     "frontend": 2,
@@ -373,9 +373,9 @@
     "debug": 1
    },
    "sentimiento": {
-    "pos": 58,
-    "neg": 32,
-    "total": 90,
+    "pos": 59,
+    "neg": 33,
+    "total": 92,
     "pct": 64
    }
   },
@@ -402,23 +402,23 @@
    },
    "menciones": {
     "local": 3,
-    "tests": 16,
+    "tests": 17,
+    "backend": 20,
+    "debug": 3,
+    "valor": 25,
+    "docs": 8,
     "planificacion": 4,
     "codigo": 10,
+    "motion": 10,
     "frontend": 4,
-    "backend": 19,
     "research": 8,
-    "docs": 7,
-    "valor": 21,
-    "motion": 9,
-    "orquestacion": 2,
-    "debug": 2
+    "orquestacion": 2
    },
    "sentimiento": {
-    "pos": 31,
-    "neg": 14,
-    "total": 45,
-    "pct": 69
+    "pos": 32,
+    "neg": 18,
+    "total": 50,
+    "pct": 64
    }
   },
   {
@@ -443,15 +443,15 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 78,
-    "orquestacion": 30,
-    "simples": 4,
-    "backend": 15,
-    "codigo": 45,
+    "valor": 81,
+    "orquestacion": 31,
+    "simples": 5,
+    "backend": 16,
+    "codigo": 46,
     "docs": 12,
     "research": 4,
-    "tests": 27,
-    "planificacion": 11,
+    "planificacion": 12,
+    "tests": 28,
     "frontend": 12,
     "debug": 8,
     "motion": 7,
@@ -459,10 +459,10 @@
     "vision": 2
    },
    "sentimiento": {
-    "pos": 146,
+    "pos": 150,
     "neg": 65,
-    "total": 211,
-    "pct": 69
+    "total": 215,
+    "pct": 70
    }
   },
   {
@@ -487,26 +487,26 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 71,
-    "tests": 37,
+    "valor": 72,
+    "tests": 39,
     "motion": 10,
     "planificacion": 13,
-    "codigo": 41,
+    "codigo": 43,
     "orquestacion": 14,
     "frontend": 5,
     "docs": 3,
+    "research": 6,
+    "simples": 10,
     "backend": 7,
-    "research": 5,
     "local": 3,
-    "simples": 9,
     "vision": 2,
     "debug": 3
    },
    "sentimiento": {
-    "pos": 118,
-    "neg": 81,
-    "total": 199,
-    "pct": 59
+    "pos": 121,
+    "neg": 82,
+    "total": 203,
+    "pct": 60
    }
   },
   {
@@ -536,7 +536,7 @@
     "backend": 13,
     "valor": 26,
     "motion": 4,
-    "planificacion": 11,
+    "planificacion": 13,
     "tests": 14,
     "debug": 3,
     "frontend": 5,
@@ -546,9 +546,9 @@
    },
    "sentimiento": {
     "pos": 29,
-    "neg": 25,
-    "total": 54,
-    "pct": 54
+    "neg": 27,
+    "total": 56,
+    "pct": 52
    }
   },
   {
@@ -575,24 +575,24 @@
    "menciones": {
     "local": 37,
     "backend": 19,
-    "tests": 17,
+    "tests": 18,
     "debug": 3,
     "frontend": 2,
     "valor": 30,
+    "orquestacion": 14,
+    "docs": 3,
     "codigo": 23,
     "research": 3,
     "vision": 2,
     "planificacion": 4,
     "motion": 2,
-    "docs": 2,
-    "orquestacion": 13,
     "simples": 3
    },
    "sentimiento": {
     "pos": 43,
-    "neg": 22,
-    "total": 65,
-    "pct": 66
+    "neg": 23,
+    "total": 66,
+    "pct": 65
    }
   },
   {
@@ -663,13 +663,15 @@
    "menciones": {
     "backend": 8,
     "codigo": 1,
+    "tests": 2,
+    "simples": 1,
     "valor": 2
    },
    "sentimiento": {
-    "pos": 10,
+    "pos": 11,
     "neg": 10,
-    "total": 20,
-    "pct": 50
+    "total": 21,
+    "pct": 52
    }
   },
   {
@@ -694,8 +696,8 @@
     "valor": 3
    },
    "menciones": {
+    "tests": 7,
     "codigo": 4,
-    "tests": 5,
     "planificacion": 1,
     "research": 1,
     "valor": 5,
@@ -704,10 +706,10 @@
     "simples": 1
    },
    "sentimiento": {
-    "pos": 9,
+    "pos": 10,
     "neg": 14,
-    "total": 23,
-    "pct": 39
+    "total": 24,
+    "pct": 42
    }
   },
   {
@@ -778,9 +780,9 @@
    },
    "sentimiento": {
     "pos": 11,
-    "neg": 9,
-    "total": 20,
-    "pct": 55
+    "neg": 10,
+    "total": 21,
+    "pct": 52
    }
   },
   {
@@ -808,10 +810,10 @@
     "tests": 1
    },
    "sentimiento": {
-    "pos": 0,
+    "pos": 1,
     "neg": 0,
-    "total": 0,
-    "pct": null
+    "total": 1,
+    "pct": 100
    }
   },
   {
@@ -1259,14 +1261,6 @@
    "url": "https://www.reddit.com/r/opencode/comments/1wxjlar/openchamber_is_actually_pretty_good/"
   },
   {
-   "titulo": "Animated Horse - Space Bunny",
-   "score": 141,
-   "comentarios": 78,
-   "fecha": "2026-10-02 21:25",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1ww5o7y/animated_horse_space_bunny/"
-  },
-  {
    "titulo": "Step 5 Preview is FREE on OpenCode for a week 🔥",
    "score": 139,
    "comentarios": 18,
@@ -1289,14 +1283,6 @@
    "fecha": "2026-10-07 03:12",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1wzm1ah/exo_free_frontier_level_wow/"
-  },
-  {
-   "titulo": "Ling-3.1-flash is now FREE on OpenCode 🔥",
-   "score": 130,
-   "comentarios": 9,
-   "fecha": "2026-10-02 16:34",
-   "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1wvyfsz/ling31flash_is_now_free_on_opencode/"
   },
   {
    "titulo": "FIRST in my bloodline to get restricted from using muse spark",
@@ -1329,12 +1315,28 @@
    "fecha": "2026-10-07 06:45",
    "sub": "opencodeCLI",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1wzpm14/mistral_large_4_is_now_on_opencode_zen_50_off/"
+  },
+  {
+   "titulo": "they said the limits were 'generous' i think they meant there is no limit",
+   "score": 104,
+   "comentarios": 147,
+   "fecha": "2026-10-08 08:21",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x0lfxv/they_said_the_limits_were_generous_i_think_they/"
+  },
+  {
+   "titulo": "Whole month ruined by a misclick.",
+   "score": 97,
+   "comentarios": 49,
+   "fecha": "2026-10-05 06:30",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1wy1g7d/whole_month_ruined_by_a_misclick/"
   }
  ],
  "go_limites": {
   "titulo": "Uso y límites de OpenCode Go (oficial)",
   "fuente": "https://opencode.ai/v2/docs/console/go/",
-  "actualizado": "2026-10-13 20:57 UTC",
+  "actualizado": "2026-10-15 02:50 UTC",
   "plan": {
    "nombre": "Go",
    "precio": "$10/mes",
@@ -1497,8 +1499,8 @@
     "limite_plus": "Unlimited",
     "x_go_plus": "—",
     "req_mes": "Unlimited",
-    "entrena": "Yes",
-    "retencion": "Not ZDR"
+    "entrena": "Not used",
+    "retencion": "30 days"
    },
    {
     "modelo": "MiMo-V2.6-Flash",
@@ -1741,66 +1743,6 @@
     "retencion": "0 days*"
    },
    {
-    "modelo": "DeepSeek V4 Flash (Off-Peak)",
-    "entrada": "$0.15",
-    "salida": "$0.60",
-    "cache_lectura": "$0.003",
-    "cache_escritura": "—",
-    "limite_go": 30.0,
-    "limite_go_txt": "$30",
-    "x_plan": 3.0,
-    "limite_plus": 120.0,
-    "x_go_plus": 4.0,
-    "req_mes": "65,000",
-    "entrena": "Not used",
-    "retencion": "0 days*"
-   },
-   {
-    "modelo": "DeepSeek V4 Flash (Peak)",
-    "entrada": "$0.30",
-    "salida": "$1.20",
-    "cache_lectura": "$0.006",
-    "cache_escritura": "—",
-    "limite_go": 30.0,
-    "limite_go_txt": "$30",
-    "x_plan": 3.0,
-    "limite_plus": 120.0,
-    "x_go_plus": 4.0,
-    "req_mes": "65,000",
-    "entrena": "Not used",
-    "retencion": "0 days*"
-   },
-   {
-    "modelo": "DeepSeek V4 Flash Vision Exp (Off-Peak)",
-    "entrada": "$0.15",
-    "salida": "$0.60",
-    "cache_lectura": "$0.003",
-    "cache_escritura": "—",
-    "limite_go": 15.0,
-    "limite_go_txt": "$15",
-    "x_plan": 1.5,
-    "limite_plus": 60.0,
-    "x_go_plus": 4.0,
-    "req_mes": "32,500",
-    "entrena": "Not used",
-    "retencion": "0 days*"
-   },
-   {
-    "modelo": "DeepSeek V4 Flash Vision Exp (Peak)",
-    "entrada": "$0.30",
-    "salida": "$1.20",
-    "cache_lectura": "$0.006",
-    "cache_escritura": "—",
-    "limite_go": 15.0,
-    "limite_go_txt": "$15",
-    "x_plan": 1.5,
-    "limite_plus": 60.0,
-    "x_go_plus": 4.0,
-    "req_mes": "32,500",
-    "entrena": "Not used",
-    "retencion": "0 days*"
-   },
-   {
     "modelo": "Hy4 preview",
     "entrada": "$0.834",
     "salida": "$2.501",
@@ -1994,18 +1936,48 @@
     "req_mes": "19,230",
     "entrena": "Not used",
     "retencion": "30 days"
+   },
+   {
+    "modelo": "Gemini 4 Argon Contributor",
+    "entrada": "$4.00",
+    "salida": "$20.00",
+    "cache_lectura": "$0.20",
+    "cache_escritura": "—",
+    "limite_go": 30.0,
+    "limite_go_txt": "$30 $602x · Limited time",
+    "x_plan": 3.0,
+    "limite_plus": 120.0,
+    "x_go_plus": 4.0,
+    "req_mes": "—",
+    "entrena": "Yes",
+    "retencion": "Not ZDR"
    }
-  ]
+  ],
+  "cambios": {
+   "nuevos": [
+    "Gemini 4 Argon Contributor"
+   ],
+   "fuera": [
+    "DeepSeek V4 Flash (Off-Peak)",
+    "DeepSeek V4 Flash (Peak)",
+    "DeepSeek V4 Flash Vision Exp (Off-Peak)",
+    "DeepSeek V4 Flash Vision Exp (Peak)"
+   ],
+   "modificados": [
+    "Cat Jam Free: entrena Yes → Not used",
+    "Cat Jam Free: retencion Not ZDR → 30 days"
+   ]
+  }
  },
  "meta": {
-  "generado": "2026-10-13 21:02 UTC",
+  "generado": "2026-10-15 02:50 UTC",
   "subs": {
-   "opencode": 1629,
-   "opencodeCLI": 607
+   "opencode": 1729,
+   "opencodeCLI": 633
   },
-  "hilos": 2185,
-  "comentarios": 18407,
-  "unidades": 20592,
+  "hilos": 2271,
+  "comentarios": 18921,
+  "unidades": 21192,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }

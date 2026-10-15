@@ -44,6 +44,10 @@ la gente compara de verdad: **cuánto valor de uso da cada modelo por los $10 de
 Reglas: 5 h = 20% del límite mensual, semana = 50%, mes = 100%. DeepSeek tiene horas punta
 (01:00-04:00 y 06:00-10:00 UTC, L-V). Muse Spark Contributor y Cat Jam **entrenan con tus datos**.
 
+Cada ejecución **compara con el scrape anterior** y guarda el diff en `go_limites.json`
+(`cambios.nuevos` / `fuera` / `modificados`), que el dashboard muestra como aviso: así se ve de un
+vistazo cuándo entra o sale un modelo o cambia un precio.
+
 ## Dashboard
 
 - **`index.html`** — matriz modelo × habilidad, **límites oficiales de Go con el multiplicador ×plan**,

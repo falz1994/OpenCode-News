@@ -118,8 +118,38 @@ doc = {
     ],
     "filas": filas,
 }
-with open(os.path.join(HERE, "go_limites.json"), "w", encoding="utf-8") as f:
+
+# --- que ha cambiado desde el scrape anterior (la fuente es "viva") ---
+ruta = os.path.join(HERE, "go_limites.json")
+cambios = {"nuevos": [], "fuera": [], "modificados": []}
+if os.path.exists(ruta):
+    try:
+        prev = {f["modelo"]: f for f in json.load(open(ruta, encoding="utf-8"))["filas"]}
+        ahora = {f["modelo"]: f for f in filas}
+        cambios["nuevos"] = sorted(m for m in ahora if m not in prev)
+        cambios["fuera"] = sorted(m for m in prev if m not in ahora)
+        for m in sorted(ahora):
+            if m not in prev:
+                continue
+            for campo in ("entrada", "salida", "limite_go", "limite_plus", "req_mes", "entrena", "retencion"):
+                if prev[m].get(campo) != ahora[m].get(campo):
+                    cambios["modificados"].append(f"{m}: {campo} {prev[m].get(campo)} → {ahora[m].get(campo)}")
+    except Exception as e:
+        print("aviso: no se pudo comparar con el scrape anterior:", e)
+doc["cambios"] = cambios
+
+with open(ruta, "w", encoding="utf-8") as f:
     json.dump(doc, f, ensure_ascii=False, indent=1)
+
+if any(cambios.values()):
+    print(f"cambios: +{len(cambios['nuevos'])} nuevos, -{len(cambios['fuera'])} fuera, "
+          f"~{len(cambios['modificados'])} modificados")
+    for c in cambios["nuevos"]:
+        print("   + ", c)
+    for c in cambios["fuera"]:
+        print("   - ", c)
+    for c in cambios["modificados"]:
+        print("   ~ ", c)
 
 print(f"{len(filas)} modelos · fuente {URL}")
 print(f"{'modelo':<34}{'lim/mes':>9}{'xplan':>7}{'plus':>9}{'req/mes':>10}  entrena")

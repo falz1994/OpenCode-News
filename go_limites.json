@@ -1,7 +1,7 @@
 {
  "titulo": "Uso y límites de OpenCode Go (oficial)",
  "fuente": "https://opencode.ai/v2/docs/console/go/",
- "actualizado": "2026-10-13 20:57 UTC",
+ "actualizado": "2026-10-15 02:50 UTC",
  "plan": {
   "nombre": "Go",
   "precio": "$10/mes",
@@ -164,8 +164,8 @@
    "limite_plus": "Unlimited",
    "x_go_plus": "—",
    "req_mes": "Unlimited",
-   "entrena": "Yes",
-   "retencion": "Not ZDR"
+   "entrena": "Not used",
+   "retencion": "30 days"
   },
   {
    "modelo": "MiMo-V2.6-Flash",
@@ -408,66 +408,6 @@
    "retencion": "0 days*"
   },
   {
-   "modelo": "DeepSeek V4 Flash (Off-Peak)",
-   "entrada": "$0.15",
-   "salida": "$0.60",
-   "cache_lectura": "$0.003",
-   "cache_escritura": "—",
-   "limite_go": 30.0,
-   "limite_go_txt": "$30",
-   "x_plan": 3.0,
-   "limite_plus": 120.0,
-   "x_go_plus": 4.0,
-   "req_mes": "65,000",
-   "entrena": "Not used",
-   "retencion": "0 days*"
-  },
-  {
-   "modelo": "DeepSeek V4 Flash (Peak)",
-   "entrada": "$0.30",
-   "salida": "$1.20",
-   "cache_lectura": "$0.006",
-   "cache_escritura": "—",
-   "limite_go": 30.0,
-   "limite_go_txt": "$30",
-   "x_plan": 3.0,
-   "limite_plus": 120.0,
-   "x_go_plus": 4.0,
-   "req_mes": "65,000",
-   "entrena": "Not used",
-   "retencion": "0 days*"
-  },
-  {
-   "modelo": "DeepSeek V4 Flash Vision Exp (Off-Peak)",
-   "entrada": "$0.15",
-   "salida": "$0.60",
-   "cache_lectura": "$0.003",
-   "cache_escritura": "—",
-   "limite_go": 15.0,
-   "limite_go_txt": "$15",
-   "x_plan": 1.5,
-   "limite_plus": 60.0,
-   "x_go_plus": 4.0,
-   "req_mes": "32,500",
-   "entrena": "Not used",
-   "retencion": "0 days*"
-  },
-  {
-   "modelo": "DeepSeek V4 Flash Vision Exp (Peak)",
-   "entrada": "$0.30",
-   "salida": "$1.20",
-   "cache_lectura": "$0.006",
-   "cache_escritura": "—",
-   "limite_go": 15.0,
-   "limite_go_txt": "$15",
-   "x_plan": 1.5,
-   "limite_plus": 60.0,
-   "x_go_plus": 4.0,
-   "req_mes": "32,500",
-   "entrena": "Not used",
-   "retencion": "0 days*"
-  },
-  {
    "modelo": "Hy4 preview",
    "entrada": "$0.834",
    "salida": "$2.501",
@@ -661,6 +601,36 @@
    "req_mes": "19,230",
    "entrena": "Not used",
    "retencion": "30 days"
+  },
+  {
+   "modelo": "Gemini 4 Argon Contributor",
+   "entrada": "$4.00",
+   "salida": "$20.00",
+   "cache_lectura": "$0.20",
+   "cache_escritura": "—",
+   "limite_go": 30.0,
+   "limite_go_txt": "$30 $602x · Limited time",
+   "x_plan": 3.0,
+   "limite_plus": 120.0,
+   "x_go_plus": 4.0,
+   "req_mes": "—",
+   "entrena": "Yes",
+   "retencion": "Not ZDR"
   }
- ]
+ ],
+ "cambios": {
+  "nuevos": [
+   "Gemini 4 Argon Contributor"
+  ],
+  "fuera": [
+   "DeepSeek V4 Flash (Off-Peak)",
+   "DeepSeek V4 Flash (Peak)",
+   "DeepSeek V4 Flash Vision Exp (Off-Peak)",
+   "DeepSeek V4 Flash Vision Exp (Peak)"
+  ],
+  "modificados": [
+   "Cat Jam Free: entrena Yes → Not used",
+   "Cat Jam Free: retencion Not ZDR → 30 days"
+  ]
+ }
 }
