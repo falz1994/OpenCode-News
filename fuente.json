@@ -9,72 +9,86 @@
     {
       "id": "frontend",
       "nombre": "Frontend / UI",
-      "ayuda": "Interfaces, React/Vue, CSS, diseño web"
+      "ayuda": "Interfaces, React/Vue, CSS, diseño web",
+      "corto": "Frontend"
     },
     {
       "id": "backend",
       "nombre": "Backend / APIs",
-      "ayuda": "Servicios, bases de datos, endpoints"
+      "ayuda": "Servicios, bases de datos, endpoints",
+      "corto": "Backend"
     },
     {
       "id": "planificacion",
       "nombre": "Planificación",
-      "ayuda": "Arquitectura, specs y design docs"
+      "ayuda": "Arquitectura, specs y design docs",
+      "corto": "Planif."
     },
     {
       "id": "motion",
       "nombre": "Motion / Visual",
-      "ayuda": "Animación, vídeo, gráficos, 3D"
+      "ayuda": "Animación, vídeo, gráficos, 3D",
+      "corto": "Motion"
     },
     {
       "id": "codigo",
       "nombre": "Programación",
-      "ayuda": "Implementación y refactor"
+      "ayuda": "Implementación y refactor",
+      "corto": "Código"
     },
     {
       "id": "debug",
       "nombre": "Debugging",
-      "ayuda": "Cazar y arreglar bugs"
+      "ayuda": "Cazar y arreglar bugs",
+      "corto": "Debug"
     },
     {
       "id": "tests",
       "nombre": "Tests / Review",
-      "ayuda": "Tests, QA y revisión adversarial"
+      "ayuda": "Tests, QA y revisión adversarial",
+      "corto": "Tests"
     },
     {
       "id": "orquestacion",
       "nombre": "Orquestación",
-      "ayuda": "Routers, subagentes, contexto largo"
+      "ayuda": "Routers, subagentes, contexto largo",
+      "corto": "Orquest."
     },
     {
       "id": "docs",
       "nombre": "Escritura / Docs",
-      "ayuda": "Documentación, prosa, commits"
+      "ayuda": "Documentación, prosa, commits",
+      "corto": "Docs"
     },
     {
       "id": "research",
       "nombre": "Research / Datos",
-      "ayuda": "Búsqueda, scraping, traducción"
+      "ayuda": "Búsqueda, scraping, traducción",
+      "corto": "Research"
     },
     {
       "id": "vision",
       "nombre": "Visión / Imagen",
-      "ayuda": "Capturas, OCR, multimodal"
+      "ayuda": "Capturas, OCR, multimodal",
+      "corto": "Visión"
     },
     {
       "id": "local",
       "nombre": "Local / self-host",
-      "ayuda": "Ollama, llama.cpp, privacidad"
+      "ayuda": "Ollama, llama.cpp, privacidad",
+      "corto": "Local"
     },
     {
       "id": "simples",
       "nombre": "Tareas simples",
-      "ayuda": "Grunt work, boilerplate, commits"
+      "ayuda": "Grunt work, boilerplate, commits",
+      "corto": "Simples"
     },
     {
       "id": "valor",
       "nombre": "Calidad/precio",
-      "ayuda": "Valor dentro de OpenCode Go/Zen"
+      "ayuda": "Valor dentro de OpenCode Go/Zen",
+      "corto": "Valor"
     }
   ],
   "modelos": [

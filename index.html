@@ -16,7 +16,7 @@
     --r3:#1d4ed8;  --r3-txt:#ffffff;
     --r2:#1e3a8a;  --r2-txt:#dbe6ff;
     --r1:#232c39;  --r1-txt:#c9d4e2;
-    --r0:#171c23;  --r0-txt:#5c6675;
+    --r0:#171c23;  --r0-txt:#8b949e;
     --rm1:#6e1f1f; --rm1-txt:#ffd7d7;
     --pos:#3fb950; --neg:#f85149; --warn:#d29922;
   }
@@ -27,7 +27,7 @@
     --r3:#1d4ed8;  --r3-txt:#ffffff;
     --r2:#a9c4fb;  --r2-txt:#0b2a6b;
     --r1:#dfe6f0;  --r1-txt:#243040;
-    --r0:#eef1f5;  --r0-txt:#8b949e;
+    --r0:#eef1f5;  --r0-txt:#5b6673;
     --rm1:#f0b6b6; --rm1-txt:#6b1414;
     --pos:#1a7f37; --neg:#cf222e; --warn:#9a6700;
   }
@@ -53,7 +53,7 @@
   .wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-height:78vh}
   table{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
   caption{text-align:left;padding:10px 12px;color:var(--dim);font-size:12px}
-  th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  th,td{padding:6px 7px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
   thead th{position:sticky;top:0;background:var(--panel2);font-size:11.5px;text-transform:uppercase;
            letter-spacing:.04em;color:var(--dim);z-index:5;padding:0}
   thead th button{all:unset;display:block;width:100%;padding:8px 9px;cursor:pointer;
@@ -66,11 +66,15 @@
   td.c{text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
   td.c .n{display:block;font-weight:400;font-size:10px;opacity:.75}
   td.c.top{box-shadow:inset 0 0 0 2px var(--acc)}
+  td.rol,td.pega{white-space:normal;max-width:220px;line-height:1.35}
   .r3{background:var(--r3);color:var(--r3-txt)} .r2{background:var(--r2);color:var(--r2-txt)}
   .r1{background:var(--r1);color:var(--r1-txt)} .r0{background:var(--r0);color:var(--r0-txt)}
   .rm1{background:var(--rm1);color:var(--rm1-txt)}
   .leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--dim);margin:10px 0 0;align-items:center}
-  .leg b{display:inline-block;min-width:36px;text-align:center;border-radius:4px;padding:1px 5px;color:#fff}
+  .leg b{display:inline-block;min-width:36px;text-align:center;border-radius:4px;padding:1px 5px}
+  .leg b.r3{background:var(--r3);color:var(--r3-txt)} .leg b.r2{background:var(--r2);color:var(--r2-txt)}
+  .leg b.r1{background:var(--r1);color:var(--r1-txt)} .leg b.r0{background:var(--r0);color:var(--r0-txt)}
+  .leg b.rm1{background:var(--rm1);color:var(--rm1-txt)}
   .bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;min-width:60px;margin-top:3px}
   .bar i{display:block;height:100%;background:var(--pos)}
   .pos{color:var(--pos)} .neg{color:var(--neg)} .dim{color:var(--dim)} .warn{color:var(--warn)}
@@ -86,6 +90,15 @@
   ul.notas li{margin:3px 0}
   code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:12px}
   .fuente{font-size:12px;color:var(--dim);margin:6px 0 0}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .card h3{margin:0 0 8px;font-size:15px}
+  .card p{margin:6px 0;font-size:13px}
+  .card ul{margin:6px 0 6px 18px;padding:0;font-size:13px;color:var(--dim)}
+  .card ul li{margin:2px 0}
+  .card .evitar{color:var(--warn)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:2px 9px;font-size:11.5px;color:var(--dim)}
   .cambios{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--warn);
            border-radius:8px;padding:9px 12px;margin:0 0 10px;font-size:12.5px;color:var(--txt)}
   footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 22px;color:var(--dim);font-size:12px}
@@ -190,7 +203,8 @@ function pintaMatriz(){
   habs.forEach(h => {
     const activa = orden === h.id;
     tr.append(el("th", {scope:"col", "aria-sort": activa ? (asc ? "ascending" : "descending") : "none"},
-      el("button", {title: h.ayuda, onclick: () => ordenar(h.id)}, h.nombre + (activa ? (asc ? " ↑" : " ↓") : ""))));
+      el("button", {title: h.nombre + " — " + h.ayuda, "aria-label": h.nombre, onclick: () => ordenar(h.id)},
+         (h.corto || h.nombre) + (activa ? (asc ? " ↑" : " ↓") : ""))));
   });
   ["Sentimiento", "Rol ideal", "Pega principal"].forEach(c => tr.append(el("th", {scope:"col"}, c)));
   thead.append(tr); t.append(thead);
@@ -225,7 +239,7 @@ function pintaMatriz(){
         else tdS.append(el("span", {class: pct >= 60 ? "pos" : pct >= 45 ? "" : "neg"}, pct + "% "),
                         el("span", {class:"dim"}, `(+${s.pos}/-${s.neg})`),
                         el("div", {class:"bar"}, el("i", {style:`width:${pct}%`})));
-        r.append(tdS, el("td", {text:m.rol || ""}), el("td", {class:"dim", text:m.pega || ""}));
+        r.append(tdS, el("td", {class:"rol", text:m.rol || ""}), el("td", {class:"pega dim", text:m.pega || ""}));
         tb.append(r);
       });
   t.append(tb);
@@ -279,12 +293,53 @@ function tablaGo(){
   return cont;
 }
 
+function pintaPresets(){
+  const P = D.presets;
+  if (!P || !P.presets?.length) return null;
+  const cont = el("div");
+  cont.append(el("div", {class:"fuente", text:P.nota || ""}));
+  const cards = el("div", {class:"cards"});
+  P.presets.forEach(p => {
+    const r = p.rasgos || {};
+    const card = el("div", {class:"card"});
+    card.append(el("h3", {}, p.nombre + (p.orden ? " · preset " + p.orden : "")));
+    card.append(el("p", {class:"dim", text:p.descripcion}));
+    if ((p.cuando || []).length){
+      card.append(el("p", {}, el("b", {}, "Cuándo funciona")));
+      const ul = el("ul");
+      p.cuando.forEach(c => ul.append(el("li", {}, c)));
+      card.append(ul);
+    }
+    if (p.evitar) card.append(el("p", {class:"evitar", html:"<b>Evitar:</b> " + p.evitar}));
+    const chips = el("div", {class:"chips"});
+    [ r.persona_propia ? "persona propia (" + Math.round((r.largo_prompt_persona || 0)/1000) + " kB)" : null,
+      (r.herramientas || []).length + " herramientas",
+      r.read_only ? "raíz read-only" : "la raíz escribe",
+      r.watchdog ? "watchdog de jobs" : null,
+      r.observador_limites ? "observador de límites" : null,
+      r.delegacion_vaciada ? "sin delegación" : (r.grupos ? r.grupos + " grupos" : null),
+      p.hereda_de?.length ? "hereda de " + p.hereda_de.join(", ") : null,
+    ].filter(Boolean).forEach(c => chips.append(el("span", {class:"chip"}, c)));
+    card.append(chips);
+    cards.append(card);
+  });
+  cont.append(cards);
+  cont.append(el("div", {class:"fuente", html:
+    "Fuente: <code>" + P.fuente + "</code> · actualizado " + P.actualizado}));
+  return cont;
+}
+
 function pintaSecciones(){
   const cont = document.getElementById("secciones");
   cont.innerHTML = "";
   if (D.go_limites){
     cont.append(el("h2", {}, D.go_limites.titulo || "Uso y límites de OpenCode Go"));
     const tg = tablaGo(); if (tg) cont.append(tg);
+  }
+  const pres = pintaPresets();
+  if (pres){
+    cont.append(el("h2", {}, D.presets.titulo || "Presets de DSH"));
+    cont.append(pres);
   }
   const bloques = [
     [D.presupuestos?.titulo || "Stack recomendado según presupuesto", D.presupuestos],

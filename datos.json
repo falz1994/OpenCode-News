@@ -9,72 +9,86 @@
   {
    "id": "frontend",
    "nombre": "Frontend / UI",
-   "ayuda": "Interfaces, React/Vue, CSS, diseño web"
+   "ayuda": "Interfaces, React/Vue, CSS, diseño web",
+   "corto": "Frontend"
   },
   {
    "id": "backend",
    "nombre": "Backend / APIs",
-   "ayuda": "Servicios, bases de datos, endpoints"
+   "ayuda": "Servicios, bases de datos, endpoints",
+   "corto": "Backend"
   },
   {
    "id": "planificacion",
    "nombre": "Planificación",
-   "ayuda": "Arquitectura, specs y design docs"
+   "ayuda": "Arquitectura, specs y design docs",
+   "corto": "Planif."
   },
   {
    "id": "motion",
    "nombre": "Motion / Visual",
-   "ayuda": "Animación, vídeo, gráficos, 3D"
+   "ayuda": "Animación, vídeo, gráficos, 3D",
+   "corto": "Motion"
   },
   {
    "id": "codigo",
    "nombre": "Programación",
-   "ayuda": "Implementación y refactor"
+   "ayuda": "Implementación y refactor",
+   "corto": "Código"
   },
   {
    "id": "debug",
    "nombre": "Debugging",
-   "ayuda": "Cazar y arreglar bugs"
+   "ayuda": "Cazar y arreglar bugs",
+   "corto": "Debug"
   },
   {
    "id": "tests",
    "nombre": "Tests / Review",
-   "ayuda": "Tests, QA y revisión adversarial"
+   "ayuda": "Tests, QA y revisión adversarial",
+   "corto": "Tests"
   },
   {
    "id": "orquestacion",
    "nombre": "Orquestación",
-   "ayuda": "Routers, subagentes, contexto largo"
+   "ayuda": "Routers, subagentes, contexto largo",
+   "corto": "Orquest."
   },
   {
    "id": "docs",
    "nombre": "Escritura / Docs",
-   "ayuda": "Documentación, prosa, commits"
+   "ayuda": "Documentación, prosa, commits",
+   "corto": "Docs"
   },
   {
    "id": "research",
    "nombre": "Research / Datos",
-   "ayuda": "Búsqueda, scraping, traducción"
+   "ayuda": "Búsqueda, scraping, traducción",
+   "corto": "Research"
   },
   {
    "id": "vision",
    "nombre": "Visión / Imagen",
-   "ayuda": "Capturas, OCR, multimodal"
+   "ayuda": "Capturas, OCR, multimodal",
+   "corto": "Visión"
   },
   {
    "id": "local",
    "nombre": "Local / self-host",
-   "ayuda": "Ollama, llama.cpp, privacidad"
+   "ayuda": "Ollama, llama.cpp, privacidad",
+   "corto": "Local"
   },
   {
    "id": "simples",
    "nombre": "Tareas simples",
-   "ayuda": "Grunt work, boilerplate, commits"
+   "ayuda": "Grunt work, boilerplate, commits",
+   "corto": "Simples"
   },
   {
    "id": "valor",
    "nombre": "Calidad/precio",
-   "ayuda": "Valor dentro de OpenCode Go/Zen"
+   "ayuda": "Valor dentro de OpenCode Go/Zen",
+   "corto": "Valor"
   }
  ],
  "modelos": [
@@ -1969,8 +1983,173 @@
    ]
   }
  },
+ "presets": {
+  "titulo": "Presets de DSH: cómo trabaja el agente",
+  "fuente": "/home/devni/.dsh/.agent-presets",
+  "actualizado": "2026-10-15 04:01 UTC",
+  "nota": "Un preset no es un modelo: es la configuración con la que arranca la sesión (persona, instrucciones, herramientas, políticas y delegación). Se elige antes de crear la sesión.",
+  "presets": [
+   {
+    "id": "hyperframes-educativo",
+    "nombre": "HyperFrames Educativo",
+    "orden": 1,
+    "descripcion": "Producción educativa directa con HyperFrames. Usa exclusivamente el modelo principal seleccionado en la sesión: no monta OmniRoute, subagentes, workflows ni Ralph. Conserva permisos de producción y comparte con la variante orquestada el mismo lenguaje motion editorial, cámara narrativa, contratos de escena y biblioteca de composición.",
+    "cuando": [
+     "Piezas educativas cortas o medianas que querés cerrar de una tirada.",
+     "Cuando el modelo que ya elegiste en la sesión basta para producir y verificar.",
+     "Cuando NO querés depender del router local ni de cuota compartida."
+    ],
+    "evitar": "Producciones largas con muchas iteraciones de render: el modelo principal hace todo y su cuota se agota.",
+    "ruta": "/home/devni/.dsh/.agent-presets/hyperframes-educativo",
+    "hereda_de": [
+     "_shared/hyperframes-educativo/direct-base.cordis.yml"
+    ],
+    "rasgos": {
+     "persona_propia": true,
+     "largo_prompt_persona": 6890,
+     "instrucciones_max_bytes": 65536,
+     "plugins": [],
+     "herramientas": [
+      "ask-user",
+      "bash",
+      "fs",
+      "fs-search",
+      "goal",
+      "jobs",
+      "present",
+      "pwsh",
+      "skill",
+      "todo",
+      "web"
+     ],
+     "skills": [
+      "skill-filesystem",
+      "tool-skill"
+     ],
+     "grupos": 2,
+     "read_only": false,
+     "watchdog": false,
+     "observador_limites": false,
+     "menciona_omniroute": false,
+     "condicionales": [
+      "@deepseek-ai/dsh-tool-bash",
+      "@deepseek-ai/dsh-tool-pwsh"
+     ],
+     "delegacion_vaciada": true
+    }
+   },
+   {
+    "id": "hyperframes-orquestador-educativo",
+    "nombre": "HyperFrames Orquestador Educativo",
+    "orden": 2,
+    "descripcion": "Especialización audiovisual que hereda en vivo el preset general Orquestador. El modelo principal es el seleccionado en la sesión y permanece read-only; producción, edición y render se delegan a omniroute_code. Añade la capa compartida de HyperFrames Educativo: motion editorial, cámara narrativa, contratos de escena, biblioteca de composición y verificación visual. Los cambios futuros del Orquestador general se incorporan sin duplicar su configuración.",
+    "cuando": [
+     "Series o piezas educativas largas, con varias escenas y verificaciones visuales.",
+     "Cuando querés que el modelo principal dirija y verifique y que el render lo haga otro.",
+     "Cuando la cuota del modelo principal es escasa y hay que repartir el trabajo."
+    ],
+    "evitar": "Tareas de un solo paso: montar la orquestación cuesta más que hacerlas directamente.",
+    "ruta": "/home/devni/.dsh/.agent-presets/hyperframes-orquestador-educativo",
+    "hereda_de": [
+     "orchestrator/agent.cordis.yml"
+    ],
+    "rasgos": {
+     "persona_propia": true,
+     "largo_prompt_persona": 13094,
+     "instrucciones_max_bytes": 65536,
+     "plugins": [
+      "omniroute-limit-observer.js",
+      "orchestrator-job-watchdog.js",
+      "orchestrator-readonly-policy-v2.js",
+      "orchestrator-spawn-provider.js"
+     ],
+     "herramientas": [
+      "ask-user",
+      "bash",
+      "fs",
+      "fs-search",
+      "goal",
+      "jobs",
+      "present",
+      "pwsh",
+      "skill",
+      "subagent",
+      "todo",
+      "web"
+     ],
+     "skills": [
+      "skill-filesystem",
+      "tool-skill"
+     ],
+     "grupos": 3,
+     "read_only": true,
+     "watchdog": true,
+     "observador_limites": true,
+     "menciona_omniroute": true,
+     "condicionales": [
+      "@deepseek-ai/dsh-tool-bash",
+      "@deepseek-ai/dsh-tool-pwsh"
+     ],
+     "delegacion_vaciada": false
+    }
+   },
+   {
+    "id": "orchestrator",
+    "nombre": "Orquestador",
+    "orden": null,
+    "descripcion": "El agente principal orquesta, evalúa, analiza e integra en modo read-only y delega todo el trabajo pesado en un único subagente in-process: omniroute_code produce (combo `code` del router local OmniRoute: OpenCode/Zen → OpenRouter free → Gemini ×2, con failover del propio router; si llega a Gemini aplica razonamiento max). Un watchdog por código cierra los jobs que quedan sin señales de vida reales (escrituras, salida o una herramienta con deadline en vuelo), y bloquea esperas ciegas largas, comandos silenciosos y prompts con secretos. Un observador registra límites y pone cada modelo con error en cuarentena durante cinco horas.",
+    "cuando": [
+     "Trabajo pesado multi-archivo que conviene sacar del modelo principal (cuota, coste o paralelismo).",
+     "Investigación + implementación donde el root debe leer, comparar y decidir, no escribir.",
+     "Cuando querés la garantía de que la raíz no toca archivos: todo lo producido pasa por un hijo."
+    ],
+    "evitar": "Preguntas o cambios de una línea: la delegación añade latencia y el hijo no ve la conversación.",
+    "ruta": "/home/devni/.dsh/.agent-presets/orchestrator",
+    "hereda_de": [],
+    "rasgos": {
+     "persona_propia": true,
+     "largo_prompt_persona": 13094,
+     "instrucciones_max_bytes": 65536,
+     "plugins": [
+      "omniroute-limit-observer.js",
+      "orchestrator-job-watchdog.js",
+      "orchestrator-readonly-policy-v2.js",
+      "orchestrator-spawn-provider.js"
+     ],
+     "herramientas": [
+      "ask-user",
+      "bash",
+      "fs",
+      "fs-search",
+      "goal",
+      "jobs",
+      "present",
+      "pwsh",
+      "skill",
+      "subagent",
+      "todo",
+      "web"
+     ],
+     "skills": [
+      "skill-filesystem",
+      "tool-skill"
+     ],
+     "grupos": 3,
+     "read_only": true,
+     "watchdog": true,
+     "observador_limites": true,
+     "menciona_omniroute": true,
+     "condicionales": [
+      "@deepseek-ai/dsh-tool-bash",
+      "@deepseek-ai/dsh-tool-pwsh"
+     ],
+     "delegacion_vaciada": false
+    }
+   }
+  ]
+ },
  "meta": {
-  "generado": "2026-10-15 02:50 UTC",
+  "generado": "2026-10-15 04:02 UTC",
   "subs": {
    "opencode": 1729,
    "opencodeCLI": 633

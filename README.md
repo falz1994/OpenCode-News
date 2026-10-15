@@ -27,6 +27,7 @@ con datos en vez de con impresiones:
 | `especialidades.py` | Matriz modelo × dominio de tarea (frontend, backend, planning, motion, debug…) |
 | `index_datos.py` | Genera la fuente del dashboard: `datos.json` + `datos.js` a partir de `fuente.json` + volcados |
 | `go_limites.py` | Scrapea los **límites de uso oficiales de OpenCode Go** → `go_limites.json` (incluye el multiplicador ×plan) |
+| `presets.py` | Lee los presets de DSH (`~/.dsh/.agent-presets`) y genera `presets.json` para el frame de presets |
 
 ## Límites de OpenCode Go
 
@@ -77,6 +78,20 @@ solos** desde los volcados; las valoraciones `+++/++/+/–/✗` son criterio cur
 - Tema claro/oscuro con `prefers-color-scheme` y memoria en `localStorage`.
 - Accesibilidad: `caption`, `scope` en cabeceras y celdas, `aria-sort`, ordenación por teclado
   (las cabeceras son `<button>`) y `aria-label` con la valoración y las menciones.
+
+## Presets de DSH
+
+El dashboard incluye el frame **“Presets de DSH: cómo trabaja el agente”**: qué es cada preset, en qué
+escenarios funciona, cuándo evitarlo y sus rasgos (persona propia, nº de herramientas, read-only,
+watchdog, delegación, herencia). Se genera con `presets.py`, que lee `preset.yml` y resuelve la
+herencia de `agent.cordis.yml` (`inherit-composition.js` → `path`), ignorando los módulos `disabled`.
+
+- **`PRESETS.md`** — la simulación paso a paso: qué se carga y qué se manda al prompt al enviar un
+  mensaje **con preset seleccionado** frente a un **request normal** sin preset.
+
+```bash
+python3 presets.py              # refresca presets.json desde ~/.dsh/.agent-presets
+```
 
 ## Uso
 

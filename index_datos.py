@@ -133,6 +133,12 @@ if os.path.exists(ruta_go):
     print("  limites de Go:", len(f["go_limites"]["filas"]), "modelos ·",
           f["go_limites"].get("actualizado"))
 
+# ---------------------------------------------------------------- presets de DSH
+ruta_pre = os.path.join(HERE, "presets.json")
+if os.path.exists(ruta_pre):
+    f["presets"] = json.load(open(ruta_pre, encoding="utf-8"))
+    print("  presets de DSH:", len(f["presets"]["presets"]), "·", f["presets"].get("actualizado"))
+
 # ---------------------------------------------------------------- meta + salida
 n_coment = sum(len(t.get("comments") or []) for t in hilos.values())
 f["meta"] = {
