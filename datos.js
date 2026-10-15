@@ -1987,7 +1987,7 @@ window.DATOS = {
  "presets": {
   "titulo": "Presets de DSH: cómo trabaja el agente",
   "fuente": "/home/devni/.dsh/.agent-presets",
-  "actualizado": "2026-10-15 07:01 UTC",
+  "actualizado": "2026-10-15 08:01 UTC",
   "nota": "Un preset no es un modelo: es la configuración con la que arranca la sesión (persona, instrucciones, herramientas, políticas y delegación). Se elige antes de crear la sesión.",
   "que_es": {
    "titulo": "Qué es un preset y en qué escenarios funciona",
@@ -2252,8 +2252,8 @@ window.DATOS = {
     {
      "n": 6,
      "titulo": "Cuota y verificación",
-     "con_preset": "La verificación la hace la raíz leyendo evidencia.",
-     "sin_preset": "Una sola llamada al modelo de la sesión: sin router, sin failover y sin cuarentenas. La verificación la hacés vos.",
+     "con_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. La vía de delegación está vaciada: no hay ninguna herramienta para repartir el trabajo, así que la cuota que se gasta es la del modelo de la sesión. La verificación se hace leyendo evidencia del disco.",
+     "sin_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. El grupo de delegación está montado (`subagent`), pero sin plugins de política: solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se gasta es la del modelo de la sesión. La verificación la hacés vos.",
      "fuente": "plugins del preset"
     },
     {
@@ -2556,7 +2556,7 @@ window.DATOS = {
   }
  },
  "meta": {
-  "generado": "2026-10-15 07:01 UTC",
+  "generado": "2026-10-15 08:01 UTC",
   "subs": {
    "opencode": 1729,
    "opencodeCLI": 633

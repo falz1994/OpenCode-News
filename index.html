@@ -19,6 +19,14 @@
     --r0:#171c23;  --r0-txt:#8b949e;
     --rm1:#6e1f1f; --rm1-txt:#ffd7d7;
     --pos:#3fb950; --neg:#f85149; --warn:#d29922;
+
+    /* Medida de lectura. Es una sola para todo el dashboard: antes cada bloque
+       ponia su propio `max-width:110ch` sobre la CAJA, y como el `ch` se mide
+       con la tipografia del elemento, 110ch daba 856px en un bloque de 13px y
+       765px en uno de 12.5px. Tres bloques hermanos con tres anchos distintos y
+       ninguno igual al de las tarjetas. Ahora la medida se aplica al TEXTO y la
+       caja ocupa el ancho de la columna, como ya hacia `.card-preset .desc`. */
+    --medida:105ch;
   }
   /* ---------- tema claro ---------- */
   body.light{
@@ -104,12 +112,15 @@
 
   /* ---- presets: intro + tarjetas ---- */
   .intro{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
-         border-radius:10px;padding:12px 15px;margin:10px 0 16px;max-width:110ch}
-  .intro p{margin:0 0 8px;font-size:13px}
+         border-radius:10px;padding:12px 15px;margin:10px 0 16px}
+  .intro p{margin:0 0 8px;font-size:13px;max-width:var(--medida)}
   .intro p:last-child{margin-bottom:0}
   .intro .regla{color:var(--warn);font-weight:600}
   .grid-presets{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
-  .card-preset{display:grid;grid-template-columns:minmax(0,1fr) 224px;gap:6px 20px;align-items:start}
+  /* Una sola columna: todos los hijos de la tarjeta llevan `grid-column:1 / -1`,
+     asi que la segunda columna de 224px que habia aqui no la usaba nadie y solo
+     dejaba la columna 1 mas estrecha que su propio contenido. */
+  .card-preset{display:grid;grid-template-columns:minmax(0,1fr);gap:6px 20px;align-items:start}
   .card-preset .cab{grid-column:1 / -1;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
   .card-preset h3{margin:0;font-size:15px}
   .card-preset .badge{background:var(--panel2);border:1px solid var(--line);border-radius:99px;
@@ -127,7 +138,7 @@
   .card-preset .pie{grid-column:1 / -1;margin-top:8px}
 
   /* ---- simulacion ---- */
-  .sim-intro{color:var(--dim);font-size:13px;margin:10px 0 12px;max-width:110ch}
+  .sim-intro{color:var(--dim);font-size:13px;margin:10px 0 12px;max-width:var(--medida)}
   .sim{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1fr);gap:10px 18px;align-items:start}
   /* La celda se estira al alto de su fila: asi el divisor superior de las dos
      columnas cae exactamente a la misma altura. Con `align-items:start` la
@@ -179,8 +190,11 @@
   .lista-aparte li{border-top:1px solid var(--line);padding:8px 0;font-size:12.5px}
   .lista-aparte b{display:block;font-size:12.5px}
   .lista-aparte span{color:var(--dim);font-size:11.5px}
+  /* La caja ocupa el ancho de la columna (igual que las tarjetas y las tablas
+     del mismo frame) y el texto interior conserva la medida de lectura. */
   .nota-caja{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
-             border-radius:10px;padding:10px 13px;margin:12px 0 0;font-size:12.5px;color:var(--dim);max-width:110ch}
+             border-radius:10px;padding:10px 13px;margin:12px 0 0;font-size:12.5px;color:var(--dim)}
+  .nota-caja > *{max-width:var(--medida)}
 
   /* En pantallas angostas la grilla de 3 columnas no se lee: cada paso pasa a
      una sola columna y el rotulo del paso encabeza su bloque. */

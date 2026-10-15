@@ -158,7 +158,7 @@ herramientas: es la extensión de 16.789 B y la persona de 6.565 B.
 | 3 | Mandás el mensaje | system prompt + instrucciones del proyecto + contexto de entorno + historial + TU MENSAJE | la misma forma, con el otro system prompt |
 | 4 | Primer request | Se añaden los dos mensajes aparte (AGENTS.md y contexto de entorno) | los mismos dos mensajes: no dependen del preset |
 | 5 | Quién escribe | Según el preset: `Orquestador` deja la raíz en **read-only** y produce un hijo in-process (`omniroute_code`); `HyperFrames Educativo` vacía la delegación y produce el modelo principal | El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace |
-| 6 | Cuota y verificación | Según el preset: watchdog y observador de límites si los monta; la raíz verifica leyendo evidencia | Una sola llamada, sin router ni failover ni cuarentenas; la verificación la hacés vos |
+| 6 | Cuota y verificación | Se deriva de los rasgos medidos del preset: si monta watchdog y observador de límites, hay un plugin vigilando la cuota; si la vía de delegación está vaciada (`HyperFrames Educativo`) o montada sin plugins (`standard`), la cuota que se gasta es la del modelo de la sesión | Ningún plugin vigila la cuota: el default no trae plugins de política. El grupo de delegación está montado (`subagent`) pero solo se usa si el modelo lo llama; la verificación la hacés vos |
 
 ### El caso `Orquestador`, con sus números
 

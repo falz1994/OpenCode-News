@@ -41,6 +41,9 @@ python3 presets.py --verifica     # contrasta el desglose declarado contra las d
 | A10 | Divisores de la grilla de simulación desalineados entre columnas | **Falso** — defecto visual | Con `align-items:start`, las celdas de una misma fila medían 55 px y 75 px: el borde superior de la celda corta terminaba 20 px antes (pasos 1, 2, 3 y 4) | 2026-10-15 | `.sim .celda{align-self:stretch}`: las dos celdas de la fila miden lo mismo y el divisor cae a la misma altura |
 | A11 | Formato de miles inconsistente: `6.565 B` junto a `6,902 B` y `6902 bytes` | **Falso** — la misma cifra con tres formatos | `toLocaleString("es-ES")` del navegador no agrupa a 4 dígitos; además un `.replace(",", ".")` global sobre la frase convertía «Después, la sección» en «Después. la sección» | 2026-10-15 | Un solo formateador (`conMiles`/`bBytes`) en el bloque de presets; en Python, el helper `n()`. Medición en navegador: 0 formatos inconsistentes |
 | A12 | `presets.json` no se regeneraba tras editar el preset, y el frame mostraba a la vez el valor vivo (6,5 kB) y el de la sesión (6.565 B) | **Riesgo de contradicción** | `agent.cordis.yml` del preset educativo se editó el 2026-10-15 00:16; el fichero vivo mide 6.528 B mientras la sesión medida (11 oct) tenía 6.565 B | 2026-10-15 | La fila declara las dos cifras y a qué pertenece cada una: «6.474 caracteres … (6.528 B en el fichero de ahora; 6.565 B en la sesión medida)» |
+| A13 | `.intro`, `.sim-intro` y `.nota-caja` declaraban `max-width:110ch` **sobre la caja** | **Falso** — tres bloques hermanos con tres anchos distintos y ninguno igual al de la columna | Medido en navegador a 1600px: `.intro` 856px, `.sim-intro` 795px, `.nota-caja` 765px, mientras `.card-preset`, `.sim`, `.medido` y `.wrap` miden 1556px. Causa: `ch` se resuelve con la tipografía del propio elemento, así que el mismo `110ch` da 856px a 13px y 765px a 12.5px | 2026-10-15 | La medida se mueve al **texto** (`.intro p`, `.nota-caja > *`) con un solo token `--medida:105ch` en `:root`; la caja ocupa el ancho de la columna, como ya hacía `.card-preset .desc`. Los ocho bloques con marco miden ahora x=22 w=1556 |
+| A14 | `.card-preset` declaraba `grid-template-columns: minmax(0,1fr) 224px` | **Falso** — columna muerta | Los tres hijos de la tarjeta (`.cab`, `.desc`, `.cuerpo`) llevan `grid-column:1 / -1`, así que nadie usaba la segunda columna: solo dejaba la columna 1 en 1278px para un contenido que ocupa 1522px | 2026-10-15 | Una sola columna: `grid-template-columns:minmax(0,1fr)`. Medido: `card grid: 1522px` |
+| A15 | Paso 6 «Cuota y verificación»: la columna del default afirmaba distinguirse por ir «sin router, sin failover y sin cuarentenas» | **Falso en contexto** — el preset medido en la columna izquierda tampoco monta router | Rasgos medidos de `hyperframes-educativo`: `plugins=[]`, `watchdog=False`, `observador_limites=False`, `delegacion.via="ninguna"`, `carriles="el modelo de la sesión, sin router"`. El propio paso 5 de esa columna ya dice «sin router», así que el paso 6 presentaba como diferencia algo que los dos escenarios comparten | 2026-10-15 | El texto se **deriva de los rasgos medidos** con `paso_cuota()`: nombra si hay watchdog y observador, y distingue las tres vías reales (vaciada / montada sin plugins / montada con plugins). `PRESETS.md` sincronizado |
 
 ## B. Afirmaciones verificadas como correctas
 
@@ -79,5 +82,18 @@ python3 presets.py --verifica    # prefix vs PyYAML + desglose vs las dos sesion
 python3 presets.py               # regenera presets.json
 python3 index_datos.py           # lo mete en datos.json / datos.js
 python3 audita.py                # desbordes, contraste y solapes
+python3 barrido-presets.py       # alineacion del frame de presets: 6 anchos x 2 temas
 python3 captura.py --texto "Simulación" -o .rev/sim-final.png --alto 1150 --offset 130
 ```
+
+`audita.py` mira contraste, desbordes y solapes, y `.rev/mide.js` el header sticky, pero
+ninguno comparaba los anchos de los bloques **hermanos** del frame de presets: ahí es donde
+el `max-width` sobre la caja dejaba tres anchos distintos (A13). `mide-presets.js` mide
+los ocho bloques con marco contra la tarjeta, comprueba que la medida de lectura sea el mismo
+token en `ch` reales, y `barrido-presets.py` lo corre a 1600/1440/1280/1080/900/700 px en
+tema oscuro y claro. Estado actual: **0 problemas** en las 12 combinaciones.
+
+Las comprobaciones que dependen del modo de layout están condicionadas a propósito: por debajo
+de 1080px el cuerpo de la tarjeta y la grilla de simulación se pliegan a una columna, así que
+comparar la altura de sus columnas o la posición de los divisores daría un falso positivo. Un
+chequeo que grita cuando el layout cambia a propósito deja de usarse.

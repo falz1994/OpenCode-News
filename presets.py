@@ -636,6 +636,37 @@ def modulos(pre, std):
     return {"con_preset": filas(pre), "sin_preset": filas(default, es_default=True)}
 
 
+def paso_cuota(r, quien_verifica):
+    """Texto del paso «Cuota y verificación», derivado de los rasgos medidos.
+
+    Antes estaba escrito a mano y la columna del default afirmaba que se
+    distingue por ir «sin router, sin failover y sin cuarentenas». Con el preset
+    que se mide (`hyperframes-educativo`) eso no distingue nada: ese preset
+    tampoco monta router, y el paso 5 lo dice con sus propias palabras. Un texto
+    fijo sobre un preset que cambia acaba describiendo otro preset, que es
+    justamente el defecto que ya se corrigio en el paso 1. Aqui se deriva de los
+    rasgos para que siga siendo cierto si cambia el preset medido.
+    """
+    vig = [n for n, on in (("watchdog de jobs", r["watchdog"]),
+                           ("observador de límites", r["observador_limites"])) if on]
+    cuota = ("Monta " + " y ".join(vig) + ": hay un plugin que vigila la cuota."
+             if vig else
+             "No monta watchdog ni observador de límites: ningún plugin vigila la cuota.")
+    via = (r["delegacion"] or {}).get("via", "ninguna")
+    if via == "ninguna":
+        reparto = ("La vía de delegación está vaciada: no hay ninguna herramienta para repartir "
+                   "el trabajo, así que la cuota que se gasta es la del modelo de la sesión.")
+    elif r["plugins"]:
+        reparto = (f"El preset monta la vía de delegación (`{via}`) y sus plugins de política: "
+                   "el trabajo pesado lo hace un hijo, así que la cuota que se quema produciendo "
+                   "no es la del modelo de la sesión.")
+    else:
+        reparto = (f"El grupo de delegación está montado (`{via}`), pero sin plugins de política: "
+                   "solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se "
+                   "gasta es la del modelo de la sesión.")
+    return " ".join([cuota, reparto, quien_verifica])
+
+
 def build_simulacion(pre, std):
     """Traza de una sesion nueva: preset elegido frente a un request sin preset.
 
@@ -714,10 +745,8 @@ def build_simulacion(pre, std):
                             "sandbox del workspace. No hay pin read-only."),
              "fuente": "plugins del preset / sandbox"},
             {"n": 6, "titulo": "Cuota y verificación",
-             "con_preset": (("Watchdog y observador de límites activos. " if r_pre["watchdog"] else "")
-                            + "La verificación la hace la raíz leyendo evidencia."),
-             "sin_preset": ("Una sola llamada al modelo de la sesión: sin router, sin failover y sin "
-                            "cuarentenas. La verificación la hacés vos."),
+             "con_preset": paso_cuota(r_pre, "La verificación se hace leyendo evidencia del disco."),
+             "sin_preset": paso_cuota(r_std, "La verificación la hacés vos."),
              "fuente": "plugins del preset"},
             {"n": 7, "titulo": "¿Y si el preset elegido es «Standard»?",
              "con_preset": ("Elegir «Standard» a mano da exactamente la misma composición que no elegir nada: "
