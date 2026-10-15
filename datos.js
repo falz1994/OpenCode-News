@@ -2150,7 +2150,7 @@ window.DATOS = {
   ]
  },
  "meta": {
-  "generado": "2026-10-15 04:02 UTC",
+  "generado": "2026-10-15 04:06 UTC",
   "subs": {
    "opencode": 1729,
    "opencodeCLI": 633
