@@ -137,6 +137,11 @@ noticias = []
 for t in hilos.values():
     if t["created_utc"] < desde:
         continue
+    # Los titulos telegraficos ("RIP", "WTF IS GOING ON??") no dicen nada fuera del hilo: se
+    # exige un titulo que se explique solo o un cuerpo que lo haga.
+    titulo = t["title"].strip()
+    if len(titulo) < 16 and len((t.get("selftext") or "").strip()) < 40:
+        continue
     s, n = actividad(t)
     noticias.append({
         "titulo": t["title"], "score": s, "comentarios": n,

@@ -269,10 +269,10 @@
       }
     },
     {
-      "nombre": "Muse Spark 1.3",
-      "alias": "muse ?spark|muse ?1\\.3|\\bspark\\b",
+      "nombre": "Muse Spark 1.2/1.3",
+      "alias": "muse ?spark|muse ?1\\.[234]|\\bspark\\b",
       "rol": "Subagente rápido",
-      "pega": "Benchmaxxed y entrena con tus datos",
+      "pega": "Benchmaxxed, entrena con tus datos y el tier gratis se apagó el 17-oct",
       "r": {
         "frontend": 2,
         "backend": 2,
@@ -381,8 +381,8 @@
     {
       "nombre": "Step 5 Preview",
       "alias": "step ?5|stepfun",
-      "rol": "Alternativa gratis",
-      "pega": "Lento, se distrae y cae el endpoint",
+      "rol": "Alternativa de pago",
+      "pega": "Lento, se distrae y cae el endpoint; pasó a $15/mes el 16-oct",
       "r": {
         "frontend": 0,
         "backend": 1,
@@ -546,10 +546,10 @@
       [
         "$0 (free tier)",
         "Luna / Muse Spark",
-        "GLM 5.3 Flash (si entra)",
+        "GLM 5.3 Flash Free (ya dentro)",
         "MiMo 2.6 Flash Free · Ling 3.1",
-        "Muse Spark · Space Bunny",
-        "LongCat 2.5 · Step 5 · Cat Jam"
+        "Muse Spark 1.2/1.3 Contributor",
+        "GLM-5.3-Flash · DeepSeek V4.1 Flash · Beam · Nemotron 3.5 Super VL · MiMo Flash · LongCat 2.5 · LL Alpha"
       ],
       [
         "$10 (Go)",
@@ -853,7 +853,7 @@
       ],
       [
         "Seguridad",
-        "OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
+        "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado; rota tus claves. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
       ],
       [
         "Rompe-instalaciones",
@@ -862,7 +862,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (últimas 48 h)",
+    "titulo": "Titulares (15-17 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -871,28 +871,28 @@
     ],
     "filas": [
       [
-        "15-oct",
-        "DeepSeek V4.1 Flash pasa a ser <b>gratis</b> en OpenCode",
-        "Modelo <code>deepseek-v4.1-flash-free</code>, «free for a limited time». La doc oficial dice que su proveedor aplica retención cero y no entrena con tus datos: la pega que la comunidad le supone a los modelos gratis no se cumple aquí. En Zen no cuesta nada pero se throttlea; en Go sigue gastando cuota mensual.",
-        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo (106 comentarios)</a>"
+        "17-oct",
+        "OpenCode sufre una <b>brecha de seguridad</b>: 1,4 % de usuarios de Console",
+        "Comunicado oficial: «una brecha de seguridad anoche relacionada con un ataque de destilación a gran escala que afectó al 1,4 % de los usuarios de OpenCode Console», avisados por email, e incidente <b>en curso</b> sin más detalles. La comunidad reporta lo que el comunicado no dice: gasto no autorizado en cuentas de Anthropic (400 $ en un caso), 200.000 M de tokens consumidos en un plan Claude, claves reiniciadas y accesos al Console bloqueados. Las claves de terceros guardadas en Console son lo comprometido. <b>Rota tus claves.</b>",
+        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">hilo 66 comentarios</a>"
       ],
       [
-        "14-oct",
-        "Gemini 4 Argon entra en Go como <b>Contributor</b>",
-        "Nuevo en la tabla oficial: 30 $/mes (×3) y 120 $ en Go Plus. Es la variante «Contributor»: la doc marca <b>entrena = Yes</b> y retención «Not ZDR», o sea que tus prompts se usan para entrenar. A 4/20 $ por 1M rinde ~440 prompts al mes; la comunidad lo compara con Kimi K3 y avisa de que la cuota vuela.",
-        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+        "16-oct",
+        "GLM 5.3 Flash pasa a ser <b>gratis</b>: el hilo más votado del sub",
+        "804 ↑ y 159 comentarios en r/opencode. La doc oficial lo confirma: retención cero y <b>no</b> entrena con tus datos. Ojo con la letra pequeña: como DeepSeek V4.1 Flash Free, sirve 200K de contexto en vez del 1M del tier de pago, y los usuarios reportan «rate limit exceeded» al poco de empezar.",
+        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
       ],
       [
-        "14-oct",
-        "Subir el límite <b>no</b> devuelve la cuota ya gastada",
-        "El tope de DeepSeek pasó a 80 $/mes, pero es un porcentaje: si llevabas 30 $ de 60 (50 %), tras la subida tienes 40 $ de 80, no 50 $. Varios usuarios toparon el mes con esa confusión porque la UI dejó de mostrar el desglose y la doc no lo explica.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/\" target=\"_blank\" rel=\"noopener\">hilo (32↑)</a>"
+        "16-oct",
+        "<b>Beam Free</b> entra en OpenCode (1M de contexto)",
+        "Nuevo modelo gratis en Go y Zen con 1M de contexto según el anuncio. Es el único gratis, junto a LongCat 2.5, con límite ∞ en la tabla de Go. Su proveedor no entrena con tus datos pero <b>retiene 30 días</b> por seguridad, y no está disponible en una lista larga de países.",
+        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x7sph2/beam_is_now_available_for_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
       ],
       [
-        "13-oct",
-        "OpenCode v2.0.25 deja de preguntar por directorios externos",
-        "El ruleset por defecto elimina la regla <code>external_directory: ask</code>: el comodín pasa a permitir, así que los agentes ya no piden permiso para tocar rutas fuera del proyecto (Explore tampoco). No salió ni en las releases ni en el changelog: se supo leyendo el commit, y ya hay varios issues abiertos.",
-        "<a href=\"https://github.com/anomalyco/opencode/pull/53585\" target=\"_blank\" rel=\"noopener\">PR #53585</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5neba/im_bothered_by_the_recent_change_to_directory/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+        "16-oct",
+        "Barrido en Go: <b>fuera 6 modelos</b>, Step 5 Preview pasa a pago",
+        "Comparado con la tabla del 15-oct salen Cat Jam Free, Grok 4.6 (los dos tramos), Kimi K2.6, MiniMax M2.7 y Step 5 Preview Free, que reaparece como <b>Step 5 Preview de pago</b> ($15/mes, ×1.5). También se apaga el Muse Spark 1.3 gratis que usaba medio sub. La tabla de Go la refresca <code>go_limites.py</code> en cada pasada.",
+        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a>"
       ]
     ]
   }

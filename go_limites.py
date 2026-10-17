@@ -112,7 +112,7 @@ doc = {
         "El precio por token es el mismo en Go y en Go Plus; lo que cambia es el límite mensual.",
         "×plan = cuánto valor de uso te da cada modelo por los $10 del plan (x6 = $60).",
         "DeepSeek: horas punta 01:00-04:00 y 06:00-10:00 UTC de lunes a viernes; el resto (y fines de semana) es off-peak.",
-        "Modelos gratis por tiempo limitado (LongCat 2.5 Preview, Step 5 Preview, Cat Jam) no consumen límite.",
+        "Modelos gratis por tiempo limitado (LongCat 2.5 Preview, Beam) no consumen límite.",
         "Si agotas el límite puedes seguir con los modelos gratis, o activar «Use balance» para pagar por uso.",
         "«entrena» = sí significa que tus prompts y respuestas se usan para entrenar; retención en días.",
     ],

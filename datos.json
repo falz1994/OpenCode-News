@@ -114,25 +114,25 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 455,
-    "docs": 29,
-    "codigo": 168,
-    "orquestacion": 80,
-    "backend": 201,
-    "tests": 95,
-    "motion": 22,
-    "planificacion": 42,
-    "frontend": 9,
-    "debug": 18,
-    "local": 19,
-    "simples": 13,
-    "research": 8,
+    "valor": 480,
+    "docs": 33,
+    "codigo": 185,
+    "orquestacion": 93,
+    "backend": 222,
+    "tests": 106,
+    "motion": 29,
+    "planificacion": 47,
+    "frontend": 10,
+    "debug": 19,
+    "local": 22,
+    "simples": 15,
+    "research": 10,
     "vision": 14
    },
    "sentimiento": {
-    "pos": 342,
-    "neg": 235,
-    "total": 577,
+    "pos": 382,
+    "neg": 263,
+    "total": 645,
     "pct": 59
    }
   },
@@ -158,26 +158,26 @@
     "valor": 2
    },
    "menciones": {
-    "valor": 235,
-    "codigo": 111,
-    "backend": 42,
-    "tests": 64,
+    "valor": 240,
+    "codigo": 114,
+    "backend": 44,
+    "tests": 68,
     "local": 12,
-    "orquestacion": 34,
+    "orquestacion": 37,
     "simples": 6,
     "planificacion": 35,
-    "frontend": 7,
-    "motion": 11,
-    "debug": 11,
-    "docs": 12,
-    "research": 4,
-    "vision": 3
+    "frontend": 8,
+    "motion": 13,
+    "debug": 13,
+    "research": 6,
+    "vision": 4,
+    "docs": 12
    },
    "sentimiento": {
-    "pos": 197,
-    "neg": 125,
-    "total": 322,
-    "pct": 61
+    "pos": 212,
+    "neg": 141,
+    "total": 353,
+    "pct": 60
    }
   },
   {
@@ -202,24 +202,24 @@
     "valor": 1
    },
    "menciones": {
-    "codigo": 55,
-    "tests": 38,
+    "codigo": 61,
+    "tests": 42,
     "local": 4,
-    "valor": 82,
-    "motion": 21,
-    "planificacion": 30,
-    "orquestacion": 21,
-    "research": 3,
+    "valor": 87,
+    "motion": 23,
+    "planificacion": 35,
+    "orquestacion": 30,
+    "docs": 13,
+    "debug": 9,
+    "research": 4,
     "backend": 7,
-    "debug": 8,
-    "docs": 11,
     "frontend": 4,
     "simples": 3
    },
    "sentimiento": {
-    "pos": 70,
-    "neg": 37,
-    "total": 107,
+    "pos": 77,
+    "neg": 41,
+    "total": 118,
     "pct": 65
    }
   },
@@ -245,12 +245,12 @@
     "valor": 1
    },
    "menciones": {
-    "valor": 42,
+    "valor": 45,
     "docs": 5,
     "planificacion": 9,
-    "tests": 8,
-    "codigo": 18,
-    "orquestacion": 9,
+    "tests": 12,
+    "codigo": 23,
+    "orquestacion": 14,
     "local": 1,
     "motion": 6,
     "debug": 3,
@@ -259,10 +259,10 @@
     "research": 1
    },
    "sentimiento": {
-    "pos": 34,
+    "pos": 35,
     "neg": 19,
-    "total": 53,
-    "pct": 64
+    "total": 54,
+    "pct": 65
    }
   },
   {
@@ -287,22 +287,22 @@
     "valor": 2
    },
    "menciones": {
-    "codigo": 6,
-    "tests": 11,
-    "valor": 40,
+    "codigo": 8,
+    "tests": 12,
+    "valor": 44,
     "planificacion": 1,
-    "orquestacion": 8,
-    "motion": 1,
+    "orquestacion": 11,
+    "motion": 2,
+    "docs": 2,
     "simples": 1,
     "backend": 2,
     "research": 1,
-    "local": 1,
-    "docs": 1
+    "local": 1
    },
    "sentimiento": {
-    "pos": 22,
-    "neg": 7,
-    "total": 29,
+    "pos": 25,
+    "neg": 8,
+    "total": 33,
     "pct": 76
    }
   },
@@ -333,9 +333,9 @@
     "local": 1,
     "backend": 8,
     "research": 2,
-    "planificacion": 20,
-    "valor": 118,
-    "orquestacion": 30,
+    "planificacion": 21,
+    "valor": 126,
+    "orquestacion": 31,
     "docs": 14,
     "motion": 9,
     "vision": 1,
@@ -344,10 +344,10 @@
     "debug": 1
    },
    "sentimiento": {
-    "pos": 108,
-    "neg": 45,
-    "total": 153,
-    "pct": 71
+    "pos": 119,
+    "neg": 52,
+    "total": 171,
+    "pct": 70
    }
   },
   {
@@ -374,12 +374,12 @@
    "menciones": {
     "backend": 11,
     "research": 4,
-    "planificacion": 30,
-    "codigo": 39,
-    "tests": 35,
+    "planificacion": 31,
+    "codigo": 41,
+    "tests": 37,
     "orquestacion": 26,
     "docs": 12,
-    "valor": 63,
+    "valor": 69,
     "motion": 9,
     "local": 2,
     "frontend": 2,
@@ -387,9 +387,9 @@
     "debug": 1
    },
    "sentimiento": {
-    "pos": 59,
-    "neg": 33,
-    "total": 92,
+    "pos": 64,
+    "neg": 36,
+    "total": 100,
     "pct": 64
    }
   },
@@ -415,31 +415,31 @@
     "valor": 1
    },
    "menciones": {
-    "local": 3,
-    "tests": 17,
-    "backend": 20,
+    "local": 4,
+    "tests": 23,
+    "backend": 21,
     "debug": 4,
-    "valor": 25,
-    "docs": 9,
+    "valor": 29,
+    "codigo": 11,
+    "docs": 10,
+    "motion": 12,
     "research": 10,
     "planificacion": 4,
-    "codigo": 10,
-    "motion": 10,
     "frontend": 4,
     "orquestacion": 2
    },
    "sentimiento": {
-    "pos": 32,
-    "neg": 19,
-    "total": 51,
-    "pct": 63
+    "pos": 38,
+    "neg": 21,
+    "total": 59,
+    "pct": 64
    }
   },
   {
-   "nombre": "Muse Spark 1.3",
-   "alias": "muse ?spark|muse ?1\\.3|\\bspark\\b",
+   "nombre": "Muse Spark 1.2/1.3",
+   "alias": "muse ?spark|muse ?1\\.[234]|\\bspark\\b",
    "rol": "Subagente rápido",
-   "pega": "Benchmaxxed y entrena con tus datos",
+   "pega": "Benchmaxxed, entrena con tus datos y el tier gratis se apagó el 17-oct",
    "r": {
     "frontend": 2,
     "backend": 2,
@@ -457,26 +457,26 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 81,
-    "orquestacion": 31,
+    "valor": 87,
+    "orquestacion": 34,
     "simples": 5,
     "backend": 16,
-    "codigo": 46,
+    "codigo": 50,
     "docs": 12,
-    "research": 4,
-    "planificacion": 12,
-    "tests": 28,
-    "frontend": 12,
+    "research": 6,
+    "planificacion": 14,
+    "tests": 33,
+    "motion": 9,
+    "vision": 3,
+    "frontend": 14,
     "debug": 8,
-    "motion": 7,
-    "local": 3,
-    "vision": 2
+    "local": 3
    },
    "sentimiento": {
-    "pos": 151,
-    "neg": 68,
-    "total": 219,
-    "pct": 69
+    "pos": 177,
+    "neg": 73,
+    "total": 250,
+    "pct": 71
    }
   },
   {
@@ -501,26 +501,26 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 72,
-    "tests": 39,
-    "motion": 10,
+    "valor": 77,
+    "tests": 42,
+    "motion": 14,
     "planificacion": 13,
-    "codigo": 44,
-    "orquestacion": 14,
-    "frontend": 5,
-    "docs": 3,
-    "research": 6,
+    "codigo": 47,
+    "orquestacion": 15,
+    "frontend": 8,
+    "docs": 4,
+    "research": 7,
     "local": 4,
+    "backend": 10,
     "simples": 10,
-    "backend": 7,
     "vision": 2,
     "debug": 3
    },
    "sentimiento": {
-    "pos": 122,
-    "neg": 82,
-    "total": 204,
-    "pct": 60
+    "pos": 132,
+    "neg": 86,
+    "total": 218,
+    "pct": 61
    }
   },
   {
@@ -545,24 +545,24 @@
     "valor": 1
    },
    "menciones": {
-    "codigo": 34,
+    "codigo": 35,
     "orquestacion": 8,
     "backend": 13,
-    "valor": 26,
+    "valor": 29,
     "motion": 4,
     "planificacion": 13,
     "tests": 14,
-    "debug": 3,
+    "debug": 4,
     "frontend": 5,
-    "research": 2,
-    "local": 3,
-    "vision": 1
+    "vision": 2,
+    "research": 3,
+    "local": 3
    },
    "sentimiento": {
-    "pos": 29,
-    "neg": 27,
-    "total": 56,
-    "pct": 52
+    "pos": 31,
+    "neg": 31,
+    "total": 62,
+    "pct": 50
    }
   },
   {
@@ -587,7 +587,7 @@
     "valor": 2
    },
    "menciones": {
-    "local": 37,
+    "local": 39,
     "backend": 19,
     "tests": 18,
     "debug": 3,
@@ -597,16 +597,16 @@
     "docs": 3,
     "codigo": 23,
     "research": 3,
+    "planificacion": 6,
     "vision": 2,
-    "planificacion": 4,
     "motion": 2,
     "simples": 3
    },
    "sentimiento": {
     "pos": 43,
-    "neg": 23,
-    "total": 66,
-    "pct": 65
+    "neg": 24,
+    "total": 67,
+    "pct": 64
    }
   },
   {
@@ -632,32 +632,32 @@
    },
    "menciones": {
     "research": 1,
-    "valor": 24,
-    "backend": 8,
-    "tests": 24,
-    "motion": 8,
-    "planificacion": 2,
-    "local": 3,
-    "codigo": 35,
+    "valor": 27,
+    "backend": 9,
+    "tests": 28,
+    "motion": 12,
+    "planificacion": 4,
+    "local": 4,
+    "codigo": 37,
     "orquestacion": 9,
-    "docs": 9,
-    "frontend": 6,
-    "debug": 5,
+    "docs": 10,
+    "frontend": 8,
+    "debug": 6,
     "vision": 5,
     "simples": 2
    },
    "sentimiento": {
-    "pos": 60,
-    "neg": 43,
-    "total": 103,
-    "pct": 58
+    "pos": 77,
+    "neg": 51,
+    "total": 128,
+    "pct": 60
    }
   },
   {
    "nombre": "Step 5 Preview",
    "alias": "step ?5|stepfun",
-   "rol": "Alternativa gratis",
-   "pega": "Lento, se distrae y cae el endpoint",
+   "rol": "Alternativa de pago",
+   "pega": "Lento, se distrae y cae el endpoint; pasó a $15/mes el 16-oct",
    "r": {
     "frontend": 0,
     "backend": 1,
@@ -682,9 +682,9 @@
     "valor": 2
    },
    "sentimiento": {
-    "pos": 11,
-    "neg": 10,
-    "total": 21,
+    "pos": 13,
+    "neg": 12,
+    "total": 25,
     "pct": 52
    }
   },
@@ -711,19 +711,20 @@
    },
    "menciones": {
     "tests": 7,
+    "motion": 1,
+    "simples": 2,
     "codigo": 4,
     "planificacion": 1,
     "research": 1,
     "valor": 5,
     "frontend": 1,
-    "vision": 1,
-    "simples": 1
+    "vision": 1
    },
    "sentimiento": {
-    "pos": 10,
+    "pos": 11,
     "neg": 14,
-    "total": 24,
-    "pct": 42
+    "total": 25,
+    "pct": 44
    }
   },
   {
@@ -786,17 +787,18 @@
    },
    "menciones": {
     "codigo": 4,
+    "simples": 3,
+    "valor": 5,
+    "vision": 1,
     "backend": 3,
-    "valor": 4,
     "orquestacion": 2,
-    "tests": 1,
-    "simples": 1
+    "tests": 1
    },
    "sentimiento": {
-    "pos": 11,
+    "pos": 13,
     "neg": 10,
-    "total": 21,
-    "pct": 52
+    "total": 23,
+    "pct": 57
    }
   },
   {
@@ -821,13 +823,16 @@
     "valor": 3
    },
    "menciones": {
-    "tests": 1
+    "tests": 4,
+    "debug": 1,
+    "valor": 1,
+    "simples": 3
    },
    "sentimiento": {
-    "pos": 1,
-    "neg": 0,
-    "total": 1,
-    "pct": 100
+    "pos": 7,
+    "neg": 1,
+    "total": 8,
+    "pct": 88
    }
   },
   {
@@ -888,20 +893,20 @@
    "menciones": {
     "backend": 1,
     "local": 3,
-    "codigo": 11,
+    "codigo": 12,
     "orquestacion": 2,
     "tests": 7,
-    "valor": 17,
-    "debug": 1,
+    "valor": 18,
+    "debug": 2,
     "research": 1,
     "frontend": 1,
     "docs": 1
    },
    "sentimiento": {
-    "pos": 13,
-    "neg": 10,
-    "total": 23,
-    "pct": 57
+    "pos": 14,
+    "neg": 12,
+    "total": 26,
+    "pct": 54
    }
   }
  ],
@@ -918,10 +923,10 @@
    [
     "$0 (free tier)",
     "Luna / Muse Spark",
-    "GLM 5.3 Flash (si entra)",
+    "GLM 5.3 Flash Free (ya dentro)",
     "MiMo 2.6 Flash Free · Ling 3.1",
-    "Muse Spark · Space Bunny",
-    "LongCat 2.5 · Step 5 · Cat Jam"
+    "Muse Spark 1.2/1.3 Contributor",
+    "GLM-5.3-Flash · DeepSeek V4.1 Flash · Beam · Nemotron 3.5 Super VL · MiMo Flash · LongCat 2.5 · LL Alpha"
    ],
    [
     "$10 (Go)",
@@ -1225,7 +1230,7 @@
    ],
    [
     "Seguridad",
-    "OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
+    "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado; rota tus claves. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
    ],
    [
     "Rompe-instalaciones",
@@ -1234,7 +1239,7 @@
   ]
  },
  "titulares": {
-  "titulo": "Titulares (últimas 48 h)",
+  "titulo": "Titulares (15-17 oct)",
   "columnas": [
    "Cuándo",
    "Titular",
@@ -1243,157 +1248,157 @@
   ],
   "filas": [
    [
-    "15-oct",
-    "DeepSeek V4.1 Flash pasa a ser <b>gratis</b> en OpenCode",
-    "Modelo <code>deepseek-v4.1-flash-free</code>, «free for a limited time». La doc oficial dice que su proveedor aplica retención cero y no entrena con tus datos: la pega que la comunidad le supone a los modelos gratis no se cumple aquí. En Zen no cuesta nada pero se throttlea; en Go sigue gastando cuota mensual.",
-    "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo (106 comentarios)</a>"
+    "17-oct",
+    "OpenCode sufre una <b>brecha de seguridad</b>: 1,4 % de usuarios de Console",
+    "Comunicado oficial: «una brecha de seguridad anoche relacionada con un ataque de destilación a gran escala que afectó al 1,4 % de los usuarios de OpenCode Console», avisados por email, e incidente <b>en curso</b> sin más detalles. La comunidad reporta lo que el comunicado no dice: gasto no autorizado en cuentas de Anthropic (400 $ en un caso), 200.000 M de tokens consumidos en un plan Claude, claves reiniciadas y accesos al Console bloqueados. Las claves de terceros guardadas en Console son lo comprometido. <b>Rota tus claves.</b>",
+    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">hilo 66 comentarios</a>"
    ],
    [
-    "14-oct",
-    "Gemini 4 Argon entra en Go como <b>Contributor</b>",
-    "Nuevo en la tabla oficial: 30 $/mes (×3) y 120 $ en Go Plus. Es la variante «Contributor»: la doc marca <b>entrena = Yes</b> y retención «Not ZDR», o sea que tus prompts se usan para entrenar. A 4/20 $ por 1M rinde ~440 prompts al mes; la comunidad lo compara con Kimi K3 y avisa de que la cuota vuela.",
-    "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+    "16-oct",
+    "GLM 5.3 Flash pasa a ser <b>gratis</b>: el hilo más votado del sub",
+    "804 ↑ y 159 comentarios en r/opencode. La doc oficial lo confirma: retención cero y <b>no</b> entrena con tus datos. Ojo con la letra pequeña: como DeepSeek V4.1 Flash Free, sirve 200K de contexto en vez del 1M del tier de pago, y los usuarios reportan «rate limit exceeded» al poco de empezar.",
+    "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
    ],
    [
-    "14-oct",
-    "Subir el límite <b>no</b> devuelve la cuota ya gastada",
-    "El tope de DeepSeek pasó a 80 $/mes, pero es un porcentaje: si llevabas 30 $ de 60 (50 %), tras la subida tienes 40 $ de 80, no 50 $. Varios usuarios toparon el mes con esa confusión porque la UI dejó de mostrar el desglose y la doc no lo explica.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/\" target=\"_blank\" rel=\"noopener\">hilo (32↑)</a>"
+    "16-oct",
+    "<b>Beam Free</b> entra en OpenCode (1M de contexto)",
+    "Nuevo modelo gratis en Go y Zen con 1M de contexto según el anuncio. Es el único gratis, junto a LongCat 2.5, con límite ∞ en la tabla de Go. Su proveedor no entrena con tus datos pero <b>retiene 30 días</b> por seguridad, y no está disponible en una lista larga de países.",
+    "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x7sph2/beam_is_now_available_for_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
    ],
    [
-    "13-oct",
-    "OpenCode v2.0.25 deja de preguntar por directorios externos",
-    "El ruleset por defecto elimina la regla <code>external_directory: ask</code>: el comodín pasa a permitir, así que los agentes ya no piden permiso para tocar rutas fuera del proyecto (Explore tampoco). No salió ni en las releases ni en el changelog: se supo leyendo el commit, y ya hay varios issues abiertos.",
-    "<a href=\"https://github.com/anomalyco/opencode/pull/53585\" target=\"_blank\" rel=\"noopener\">PR #53585</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x5neba/im_bothered_by_the_recent_change_to_directory/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+    "16-oct",
+    "Barrido en Go: <b>fuera 6 modelos</b>, Step 5 Preview pasa a pago",
+    "Comparado con la tabla del 15-oct salen Cat Jam Free, Grok 4.6 (los dos tramos), Kimi K2.6, MiniMax M2.7 y Step 5 Preview Free, que reaparece como <b>Step 5 Preview de pago</b> ($15/mes, ×1.5). También se apaga el Muse Spark 1.3 gratis que usaba medio sub. La tabla de Go la refresca <code>go_limites.py</code> en cada pasada.",
+    "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a>"
    ]
   ]
  },
  "noticias": [
   {
-   "titulo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
+   "titulo": "They F’d up [BREACH]",
    "score": 1,
-   "comentarios": 106,
-   "fecha": "2026-10-15 07:47",
+   "comentarios": 66,
+   "fecha": "2026-10-17 14:14",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/",
-   "temperatura": 0.374
+   "url": "https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/",
+   "temperatura": 0.391
   },
   {
-   "titulo": "DeepSeek V4.1 Flash is available for FREE",
+   "titulo": "⚠️ OpenCode security breach",
    "score": 1,
-   "comentarios": 26,
-   "fecha": "2026-10-15 09:10",
+   "comentarios": 18,
+   "fecha": "2026-10-17 18:02",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6gt2y/deepseek_v41_flash_is_available_for_free/",
-   "temperatura": 0.299
+   "url": "https://www.reddit.com/r/opencode/comments/1x8gtvi/opencode_security_breach/",
+   "temperatura": 0.388
   },
   {
-   "titulo": "Cheepseek what ?",
+   "titulo": "WTF IS GOING ON??",
+   "score": 1,
+   "comentarios": 21,
+   "fecha": "2026-10-17 16:57",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8f8o6/wtf_is_going_on/",
+   "temperatura": 0.367
+  },
+  {
+   "titulo": "Haven't been able to login to OpenCode, any one?",
+   "score": 1,
+   "comentarios": 17,
+   "fecha": "2026-10-17 17:09",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8fjwa/havent_been_able_to_login_to_opencode_any_one/",
+   "temperatura": 0.353
+  },
+  {
+   "titulo": "Breach confirmed. Only 1.4% of console users affected.",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-17 18:01",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8gt28/breach_confirmed_only_14_of_console_users_affected/",
+   "temperatura": 0.295
+  },
+  {
+   "titulo": "Muse Spark 1.3 is gone, what's the best free model to use now?",
+   "score": 1,
+   "comentarios": 28,
+   "fecha": "2026-10-17 12:34",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x895ip/muse_spark_13_is_gone_whats_the_best_free_model/",
+   "temperatura": 0.294
+  },
+  {
+   "titulo": "Help me understand the limits",
+   "score": 1,
+   "comentarios": 9,
+   "fecha": "2026-10-17 17:04",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8ffi6/help_me_understand_the_limits/",
+   "temperatura": 0.293
+  },
+  {
+   "titulo": "Opencode va camino al desastre de la baja calidad",
+   "score": 1,
+   "comentarios": 6,
+   "fecha": "2026-10-17 16:58",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8f9ri/opencode_va_camino_al_desastre_de_la_baja_calidad/",
+   "temperatura": 0.256
+  },
+  {
+   "titulo": "🔥 DeepSeek V4.1 Flash-1017 is on Hugging Face (see benchmarks inside)",
+   "score": 1,
+   "comentarios": 36,
+   "fecha": "2026-10-17 08:18",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x84usg/deepseek_v41_flash1017_is_on_hugging_face_see/",
+   "temperatura": 0.255
+  },
+  {
+   "titulo": "Error: OpenCode's free tier can only be used from within OpenCode. Download it at https://opencode.ai and keep building.",
+   "score": 1,
+   "comentarios": 27,
+   "fecha": "2026-10-17 07:06",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x83oid/error_opencodes_free_tier_can_only_be_used_from/",
+   "temperatura": 0.228
+  },
+  {
+   "titulo": "Muse Spark 1.3 or DeepSeek V4.1 Flash?",
+   "score": 1,
+   "comentarios": 12,
+   "fecha": "2026-10-17 11:39",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8841r/muse_spark_13_or_deepseek_v41_flash/",
+   "temperatura": 0.225
+  },
+  {
+   "titulo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
+   "score": 804,
+   "comentarios": 159,
+   "fecha": "2026-10-16 06:57",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/",
+   "temperatura": 0.221
+  },
+  {
+   "titulo": "Fingerprinting Cat-Jam",
+   "score": 1,
+   "comentarios": 4,
+   "fecha": "2026-10-17 16:37",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8eqcq/fingerprinting_catjam/",
+   "temperatura": 0.217
+  },
+  {
+   "titulo": "Can someone explain the pricing model of the go plus subscription to me?",
    "score": 1,
    "comentarios": 5,
-   "fecha": "2026-10-15 07:54",
+   "fecha": "2026-10-17 15:32",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fn1n/cheepseek_what/",
-   "temperatura": 0.174
-  },
-  {
-   "titulo": "Deepseek is so slow nowadays",
-   "score": 2,
-   "comentarios": 3,
-   "fecha": "2026-10-15 08:00",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fqd0/deepseek_is_so_slow_nowadays/",
-   "temperatura": 0.155
-  },
-  {
-   "titulo": "How to download opencode desktop V2?",
-   "score": 1,
-   "comentarios": 14,
-   "fecha": "2026-10-14 19:36",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x60v3c/how_to_download_opencode_desktop_v2/",
-   "temperatura": 0.152
-  },
-  {
-   "titulo": "Gemini 4 Argon is now in OpenCode Go 🔥",
-   "score": 1,
-   "comentarios": 40,
-   "fecha": "2026-10-14 07:43",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5l5bm/gemini_4_argon_is_now_in_opencode_go/",
-   "temperatura": 0.151
-  },
-  {
-   "titulo": "Gemini 4 Argon is now in OpenCode Go 🔥",
-   "score": 1,
-   "comentarios": 37,
-   "fecha": "2026-10-14 07:43",
-   "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/",
-   "temperatura": 0.148
-  },
-  {
-   "titulo": "Experience Opencode v2 on termux",
-   "score": 1,
-   "comentarios": 20,
-   "fecha": "2026-10-14 12:56",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5qiki/experience_opencode_v2_on_termux/",
-   "temperatura": 0.142
-  },
-  {
-   "titulo": "What model is Space Bunny running right now? It's really good. We need to know.",
-   "score": 2,
-   "comentarios": 12,
-   "fecha": "2026-10-14 17:59",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5y9y6/what_model_is_space_bunny_running_right_now_its/",
-   "temperatura": 0.141
-  },
-  {
-   "titulo": "monthly opencode-go limit reached. Have I misunderstood the deepseek increase, i thought it went up to $80?",
-   "score": 32,
-   "comentarios": 9,
-   "fecha": "2026-10-14 10:12",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/",
-   "temperatura": 0.141
-  },
-  {
-   "titulo": "OpenCode 2 can now use my Android phone (free models, no account)",
-   "score": 16,
-   "comentarios": 17,
-   "fecha": "2026-10-14 10:03",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5na7d/opencode_2_can_now_use_my_android_phone_free/",
-   "temperatura": 0.141
-  },
-  {
-   "titulo": "How to know which model works best each repo?",
-   "score": 1,
-   "comentarios": 11,
-   "fecha": "2026-10-14 19:16",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x60c0d/how_to_know_which_model_works_best_each_repo/",
-   "temperatura": 0.14
-  },
-  {
-   "titulo": "but im using opencode already",
-   "score": 1,
-   "comentarios": 14,
-   "fecha": "2026-10-14 14:47",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x5t67g/but_im_using_opencode_already/",
-   "temperatura": 0.134
-  },
-  {
-   "titulo": "I'm bothered by the recent change to directory permissions and lack of transparent communication.",
-   "score": 22,
-   "comentarios": 9,
-   "fecha": "2026-10-14 10:10",
-   "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x5neba/im_bothered_by_the_recent_change_to_directory/",
-   "temperatura": 0.133
+   "url": "https://www.reddit.com/r/opencode/comments/1x8d4o8/can_someone_explain_the_pricing_model_of_the_go/",
+   "temperatura": 0.216
   }
  ],
  "comentarios": [
@@ -1407,6 +1412,15 @@
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/pgnbhae/"
   },
   {
+   "autor": "Mancho_United",
+   "score": 70,
+   "texto": "Only catch is that the context is 200k, not 1M. Which is usually the same for other models free variant. But this is great news!",
+   "fecha": "2026-10-15 08:04",
+   "sub": "opencodeCLI",
+   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguvx47/"
+  },
+  {
    "autor": "Melodic-Leather-5170",
    "score": 60,
    "texto": "you are the product",
@@ -1416,49 +1430,40 @@
    "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pguvjzi/"
   },
   {
-   "autor": "amethyst_mine",
-   "score": 48,
-   "texto": "i dont understand how lol, either its a quant or deepseek is doing some massive RL run and wants more data",
-   "fecha": "2026-10-12 09:42",
-   "sub": "opencode",
-   "hilo": "Operation Cheepseek Phase 3 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x3xim3/operation_cheepseek_phase_3/pfeyxbm/"
-  },
-  {
-   "autor": "migsperez",
-   "score": 46,
-   "texto": "Muse 1.4",
-   "fecha": "2026-10-12 17:08",
-   "sub": "opencode",
-   "hilo": "Meta introduced Muse Wonder - new frontier model 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x47gom/meta_introduced_muse_wonder_new_frontier_model/pfhemyr/"
-  },
-  {
-   "autor": "HyperWinX",
-   "score": 36,
-   "texto": "$80 of Q1 quant at 5tps💥",
-   "fecha": "2026-10-12 10:23",
+   "autor": "DebosBeachCruiser",
+   "score": 57,
+   "texto": "Operation FreeSeek",
+   "fecha": "2026-10-15 07:54",
    "sub": "opencodeCLI",
-   "hilo": "Operation Cheepseek Phase 3 🔥",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x3xigl/operation_cheepseek_phase_3/pff4328/"
+   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguurrc/"
   },
   {
-   "autor": "amethyst_mine",
-   "score": 35,
-   "texto": "openai's \"optimized inference\" is serving a terra model and renaming it to sol",
-   "fecha": "2026-10-12 09:44",
-   "sub": "opencode",
-   "hilo": "Operation Cheepseek Phase 3 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x3xim3/operation_cheepseek_phase_3/pfez8oe/"
+   "autor": "its_MrCuddles",
+   "score": 39,
+   "texto": "Apparently they don't want your money",
+   "fecha": "2026-10-15 08:09",
+   "sub": "opencodeCLI",
+   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguwjuo/"
   },
   {
-   "autor": "aimgorge",
-   "score": 32,
-   "texto": "My contributions being mostly insulting the piece of trash Muse 1.3 is",
-   "fecha": "2026-10-12 17:12",
-   "sub": "opencode",
-   "hilo": "Meta introduced Muse Wonder - new frontier model 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x47gom/meta_introduced_muse_wonder_new_frontier_model/pfhfneu/"
+   "autor": "EmbarrassedPoet9236",
+   "score": 30,
+   "texto": "What the hell",
+   "fecha": "2026-10-15 07:50",
+   "sub": "opencodeCLI",
+   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguu8v6/"
+  },
+  {
+   "autor": "IWBN",
+   "score": 30,
+   "texto": "Can anyone explain what game opencode is playing?",
+   "fecha": "2026-10-16 07:19",
+   "sub": "opencodeCLI",
+   "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x799jn/glm_53_flash_is_free_in_opencode/ph2arwv/"
   },
   {
    "autor": "Icy-Examination-9512",
@@ -1470,6 +1475,24 @@
    "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pgvj17v/"
   },
   {
+   "autor": "Least_Bodybuilder216",
+   "score": 28,
+   "texto": "Throw random free things and hope for the best",
+   "fecha": "2026-10-16 07:22",
+   "sub": "opencodeCLI",
+   "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x799jn/glm_53_flash_is_free_in_opencode/ph2b337/"
+  },
+  {
+   "autor": "No-Snow5789",
+   "score": 27,
+   "texto": "if it remains like this im happy",
+   "fecha": "2026-10-16 11:42",
+   "sub": "opencode",
+   "hilo": "OpenCode is at its peak",
+   "url": "https://www.reddit.com/r/opencode/comments/1x7dbzz/opencode_is_at_its_peak/ph3947n/"
+  },
+  {
    "autor": "xRebellion_",
    "score": 26,
    "texto": "So before the limit increase, assume you have spent 30$ (50% of overall limit) worth of DS. Then the limit increase happens. You end up with 40$ worth left (still 50% of overall limit), not 50$.",
@@ -1479,37 +1502,19 @@
    "url": "https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/pgnt1dn/"
   },
   {
-   "autor": "Artium99",
-   "score": 25,
-   "texto": "How???",
-   "fecha": "2026-10-15 07:49",
+   "autor": "Total-Management8023",
+   "score": 26,
+   "texto": "Damn. How do they afford this?",
+   "fecha": "2026-10-16 06:59",
    "sub": "opencode",
-   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pguu64t/"
-  },
-  {
-   "autor": "frank_pc",
-   "score": 24,
-   "texto": "Operation CheapSeek final stage?",
-   "fecha": "2026-10-15 10:01",
-   "sub": "opencode",
-   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pgvadcw/"
-  },
-  {
-   "autor": "xatey93152",
-   "score": 23,
-   "texto": "Wrapper of qwen 3.8",
-   "fecha": "2026-10-13 19:24",
-   "sub": "opencodeCLI",
-   "hilo": "Gemini 4 Argon now available in OpenCode 🔥",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x54ynu/gemini_4_argon_now_available_in_opencode/pgjkwd3/"
+   "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/ph28963/"
   }
  ],
  "go_limites": {
   "titulo": "Uso y límites de OpenCode Go (oficial)",
   "fuente": "https://opencode.ai/v2/docs/console/go/",
-  "actualizado": "2026-10-15 15:22 UTC",
+  "actualizado": "2026-10-17 19:27 UTC",
   "plan": {
    "nombre": "Go",
    "precio": "$10/mes",
@@ -1520,7 +1525,7 @@
    "El precio por token es el mismo en Go y en Go Plus; lo que cambia es el límite mensual.",
    "×plan = cuánto valor de uso te da cada modelo por los $10 del plan (x6 = $60).",
    "DeepSeek: horas punta 01:00-04:00 y 06:00-10:00 UTC de lunes a viernes; el resto (y fines de semana) es off-peak.",
-   "Modelos gratis por tiempo limitado (LongCat 2.5 Preview, Step 5 Preview, Cat Jam) no consumen límite.",
+   "Modelos gratis por tiempo limitado (LongCat 2.5 Preview, Beam) no consumen límite.",
    "Si agotas el límite puedes seguir con los modelos gratis, o activar «Use balance» para pagar por uso.",
    "«entrena» = sí significa que tus prompts y respuestas se usan para entrenar; retención en días."
   ],
@@ -1601,21 +1606,6 @@
     "retencion": "0 days"
    },
    {
-    "modelo": "Kimi K2.6",
-    "entrada": "$0.95",
-    "salida": "$4.00",
-    "cache_lectura": "$0.16",
-    "cache_escritura": "—",
-    "limite_go": 60.0,
-    "limite_go_txt": "$60",
-    "x_plan": 6.0,
-    "limite_plus": 240.0,
-    "x_go_plus": 4.0,
-    "req_mes": "5,750",
-    "entrena": "Not used",
-    "retencion": "0 days"
-   },
-   {
     "modelo": "LongCat-2.0",
     "entrada": "$0.30",
     "salida": "$1.20",
@@ -1646,22 +1636,22 @@
     "retencion": "0 days"
    },
    {
-    "modelo": "Step 5 Preview Free",
-    "entrada": "Free",
-    "salida": "Free",
-    "cache_lectura": "Free",
+    "modelo": "Step 5 Preview",
+    "entrada": "$1.00",
+    "salida": "$2.70",
+    "cache_lectura": "$0.10",
     "cache_escritura": "—",
-    "limite_go": "∞",
-    "limite_go_txt": "Unlimited",
-    "x_plan": "∞",
-    "limite_plus": "Unlimited",
-    "x_go_plus": "—",
-    "req_mes": "Unlimited",
+    "limite_go": 15.0,
+    "limite_go_txt": "$15 $604x · Limited time",
+    "x_plan": 1.5,
+    "limite_plus": 60.0,
+    "x_go_plus": 4.0,
+    "req_mes": "—",
     "entrena": "Not used",
     "retencion": "0 days"
    },
    {
-    "modelo": "Cat Jam Free",
+    "modelo": "Beam Free",
     "entrada": "Free",
     "salida": "Free",
     "cache_lectura": "Free",
@@ -1747,21 +1737,6 @@
     "limite_plus": 180.0,
     "x_go_plus": 3.0,
     "req_mes": "16,000",
-    "entrena": "Not used",
-    "retencion": "0 days"
-   },
-   {
-    "modelo": "MiniMax M2.7",
-    "entrada": "$0.30",
-    "salida": "$1.20",
-    "cache_lectura": "$0.06",
-    "cache_escritura": "$0.375",
-    "limite_go": 60.0,
-    "limite_go_txt": "$60",
-    "x_plan": 6.0,
-    "limite_plus": 240.0,
-    "x_go_plus": 4.0,
-    "req_mes": "17,000",
     "entrena": "Not used",
     "retencion": "0 days"
    },
@@ -1977,36 +1952,6 @@
    },
    {
     "modelo": "Grok 4.7 (> 200K tokens)",
-    "entrada": "$4.00",
-    "salida": "$12.00",
-    "cache_lectura": "$1.00",
-    "cache_escritura": "—",
-    "limite_go": 15.0,
-    "limite_go_txt": "$15",
-    "x_plan": 1.5,
-    "limite_plus": 60.0,
-    "x_go_plus": 4.0,
-    "req_mes": "845",
-    "entrena": "Not used",
-    "retencion": "30 days"
-   },
-   {
-    "modelo": "Grok 4.6 (≤ 200K tokens)",
-    "entrada": "$2.00",
-    "salida": "$6.00",
-    "cache_lectura": "$0.50",
-    "cache_escritura": "—",
-    "limite_go": 15.0,
-    "limite_go_txt": "$15",
-    "x_plan": 1.5,
-    "limite_plus": 60.0,
-    "x_go_plus": 4.0,
-    "req_mes": "845",
-    "entrena": "Not used",
-    "retencion": "30 days"
-   },
-   {
-    "modelo": "Grok 4.6 (> 200K tokens)",
     "entrada": "$4.00",
     "salida": "$12.00",
     "cache_lectura": "$1.00",
@@ -2704,14 +2649,14 @@
   }
  },
  "meta": {
-  "generado": "2026-10-15 15:28 UTC",
+  "generado": "2026-10-17 19:29 UTC",
   "subs": {
-   "opencode": 1777,
-   "opencodeCLI": 650
+   "opencode": 1976,
+   "opencodeCLI": 710
   },
-  "hilos": 2278,
-  "comentarios": 19174,
-  "unidades": 21452,
+  "hilos": 2530,
+  "comentarios": 21232,
+  "unidades": 23762,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }

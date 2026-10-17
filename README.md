@@ -38,15 +38,19 @@ con datos en vez de con impresiones:
 la gente compara de verdad: **cuánto valor de uso da cada modelo por los $10 del plan**.
 
 | Modelo | Límite/mes (Go) | ×plan | Go Plus | Peticiones/mes |
-|---|---|:--:|---|---|
+|---|---|---|:--:|---|---|
 | DeepSeek V4.1 Flash | $80 | **x8** | $160 | 173.330 |
-| GLM-5.3-Flash · GLM-5.2 · Kimi K2.7/K2.6 · MiMo-Flash · MiniMax · Hy3 · Muse Spark | $60 | **x6** | $120-240 | 4.300-226.600 |
-| Qwen3.8 Flash · Space Bunny · Hy4 · DeepSeek V4 Flash | $30 | x3 | $90-120 | 15.630-65.000 |
-| GPT 6 Luna · Claude Haiku 5.5 · Grok 4.7/4.6 · Kimi K3 · MiMo-Pro | $15 | x1.5 | $60 | 490-21.130 |
-| LongCat 2.5 · Step 5 · Cat Jam (Free) | ∞ | ∞ | ∞ | ilimitado |
+| GLM-5.3-Flash · GLM-5.2 · Kimi K2.7 Code · LongCat-2.0 · MiMo-V2.6/V2.5 · MiniMax M3 · Muse Spark 1.2/1.3 | $60 | **x6** | $120-240 | 4.300-226.600 |
+| Qwen3.8 Flash · Space Bunny · Hy4 · Gemini 4 Argon Contributor | $30 | x3 | $90-120 | 6.770-27.000 |
+| GPT 6 Luna · GPT 5.6 Luna · Claude Haiku 5.5 · Grok 4.7 · Kimi K3 · MiMo-Pro · Step 5 Preview · GLM-5.3 · Qwen3.8 Max | $15 | x1.5 | $60 | 490-21.130 |
+| LongCat 2.5 Preview · **Beam** (Free) | ∞ | ∞ | ∞ | ilimitado |
 
 Reglas: 5 h = 20% del límite mensual, semana = 50%, mes = 100%. DeepSeek tiene horas punta
-(01:00-04:00 y 06:00-10:00 UTC, L-V). Muse Spark Contributor y Cat Jam **entrenan con tus datos**.
+(01:00-04:00 y 06:00-10:00 UTC, L-V). Muse Spark Contributor y Gemini 4 Argon Contributor
+**entrenan con tus datos**; Beam Free no entrena pero retiene 30 días.
+
+La tabla es viva: el 16-oct salieron Cat Jam Free, Grok 4.6, Kimi K2.6, MiniMax M2.7 y
+Step 5 Preview Free (que reapareció como modelo de pago), y entraron Beam Free y el Step 5 de pago.
 
 Cada ejecución **compara con el scrape anterior** y guarda el diff en `go_limites.json`
 (`cambios.nuevos` / `fuera` / `modificados`), que el dashboard muestra como aviso: así se ve de un
