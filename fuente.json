@@ -841,7 +841,7 @@
       ],
       [
         "Límites opacos",
-        "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80)"
+        "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80). Desde el 18-oct el tier gratis además se cierra por IP (redes de datacenter) y por cliente (solo dentro de OpenCode), con errores 403 que la gente lee como baneo"
       ],
       [
         "Cuantización",
@@ -853,7 +853,7 @@
       ],
       [
         "Seguridad",
-        "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado; rota tus claves. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta; OpenChamber subió 1,86 GB a su relay"
+        "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado: OpenCode caducó las claves y solo avisó a los afectados. 18-oct: inyección de prompt en el espacio de trabajo y retirada de la cabecera x-opencode-endpoint-id, que decía qué proveedor servía cada petición. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta"
       ],
       [
         "Rompe-instalaciones",
@@ -862,7 +862,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (17-18 oct)",
+    "titulo": "Titulares (18 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -872,27 +872,27 @@
     "filas": [
       [
         "18-oct",
-        "Brecha de OpenCode: el daño real, usuario a usuario",
-        "El comunicado sigue sin cambiar (1,4 % de usuarios de Console, incidente en curso), pero el goteo de afectados dibuja lo que pasó: <b>400 $</b> de gasto no autorizado en una cuenta de Anthropic, <b>60 $</b> en una clave de Gemini, 200.000 M de tokens en un plan de Claude, cuentas de OpenAI <b>desactivadas</b> por actividad inusual y claves revocadas en bloque. Varios usuarios piden compensación; OpenCode no ha dicho nada de eso. <b>Rota tus claves y revisa el gasto.</b>",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">daños 101 comentarios</a>"
+        "Brecha: remediación a ciegas y cuentas bloqueadas",
+        "OpenCode ha <b>caducado las claves</b> del Console y ha movido la página de claves, pero solo avisó por email a los afectados: hay usuarios que se enteraron al ver la clave muerta, y otros llevan <b>dos días sin poder entrar</b> ni con login social. La afirmación más concreta hasta ahora es la de Dax Raad: el equipo necesita agentes trabajando 24/7 mientras responde a intentos de ataque sostenidos. No explica el mecanismo de entrada original.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x95uxl/my_opencode_api_keys_expired/\" target=\"_blank\" rel=\"noopener\">claves caducadas</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x94pyw/opencodes_console_incident_more_defensive/\" target=\"_blank\" rel=\"noopener\">análisis de terceros</a>"
       ],
       [
-        "16-oct",
-        "GLM 5.3 Flash pasa a ser <b>gratis</b>: el hilo más votado del sub",
-        "804 ↑ y 159 comentarios en r/opencode. La doc oficial lo confirma: retención cero y <b>no</b> entrena con tus datos. Ojo con la letra pequeña: como DeepSeek V4.1 Flash Free, sirve 200K de contexto en vez del 1M del tier de pago, y los usuarios reportan «rate limit exceeded» al poco de empezar.",
-        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+        "18-oct",
+        "El tier gratis se cierra por IP y por cliente",
+        "Dos puertas nuevas: el error <code>403</code> «OpenCode's free tier can only be used from within OpenCode» (el 2.0.32 bloquea clientes de terceros, y un usuario lo vio tras 3 h con subagentes) y «we've detected abusive traffic from this IP address», que deja fuera redes de datacenter enteras —reportado desde Azure (AS8075)—. La gente lo lee como un baneo; la comunidad dice que son capas de control nuevas, no cuentas baneadas.",
+        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8zn99/i_got_banned_from_opencodes_free_tier/\" target=\"_blank\" rel=\"noopener\">baneo del tier gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/\" target=\"_blank\" rel=\"noopener\">Azure bloqueado</a>"
       ],
       [
-        "16-oct",
-        "<b>Beam Free</b> entra en OpenCode (1M de contexto)",
-        "Nuevo modelo gratis en Go y Zen con 1M de contexto según el anuncio. Es el único gratis, junto a LongCat 2.5, con límite ∞ en la tabla de Go. Su proveedor no entrena con tus datos pero <b>retiene 30 días</b> por seguridad, y no está disponible en una lista larga de países.",
-        "<a href=\"https://opencode.ai/docs/zen/\" target=\"_blank\" rel=\"noopener\">docs/zen</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x7sph2/beam_is_now_available_for_free_in_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a>"
+        "18-oct",
+        "Ataques por prompt injection y menos transparencia del router",
+        "Dos frentes abiertos el mismo día: un usuario reporta una <b>inyección de prompt</b> con un email y la orden de «opera en su nombre» dentro del espacio de trabajo (el propio sub aclara que es un ataque distinto del de Console), y OpenCode deja de enviar la cabecera <code>x-opencode-endpoint-id</code>, que decía <b>qué proveedor real</b> servía cada petición. Sin esa cabecera ya no se puede auditar el enrutado ni los saltos de caché.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x8xsg4/opencode_users_are_now_victim_of_prompt_injection/\" target=\"_blank\" rel=\"noopener\">prompt injection</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
       ],
       [
-        "16-oct",
-        "Barrido en Go: <b>fuera 6 modelos</b>, Step 5 Preview pasa a pago",
-        "Comparado con la tabla del 15-oct salen Cat Jam Free, Grok 4.6 (los dos tramos), Kimi K2.6, MiniMax M2.7 y Step 5 Preview Free, que reaparece como <b>Step 5 Preview de pago</b> ($15/mes, ×1.5). También se apaga el Muse Spark 1.3 gratis que usaba medio sub. La tabla de Go la refresca <code>go_limites.py</code> en cada pasada.",
-        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">docs/go</a>"
+        "18-oct",
+        "DeepSeek 1017: aún sin fecha, y en el «horse test» gasta 10M de tokens",
+        "El modelo nuevo sigue <b>sin llegar</b> a Go ni al tier gratis y ya hay hilos preguntando cuándo. Con la prueba casera del caballo, el 1017 consumió <b>10M de tokens</b> creando una nube: más que cualquier modelo anterior con ese prompt. El free de 4.1 Flash, mientras, recibe críticas por hacer shell innecesario y dar salidas malas. OpenCode 2.0 se da por estabilizado en la 2.0.32 y retiró el compartir sesiones en la 1.19.1.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x983dz/deepseek_v41_1017_horse/\" target=\"_blank\" rel=\"noopener\">test del caballo</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8k7xj/deepseek_v41flash1017_released_when_will_it_be_in/\" target=\"_blank\" rel=\"noopener\">¿cuándo en Go?</a>"
       ]
     ]
   }
