@@ -862,7 +862,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (15-17 oct)",
+    "titulo": "Titulares (17-18 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -871,10 +871,10 @@
     ],
     "filas": [
       [
-        "17-oct",
-        "OpenCode sufre una <b>brecha de seguridad</b>: 1,4 % de usuarios de Console",
-        "Comunicado oficial: «una brecha de seguridad anoche relacionada con un ataque de destilación a gran escala que afectó al 1,4 % de los usuarios de OpenCode Console», avisados por email, e incidente <b>en curso</b> sin más detalles. La comunidad reporta lo que el comunicado no dice: gasto no autorizado en cuentas de Anthropic (400 $ en un caso), 200.000 M de tokens consumidos en un plan Claude, claves reiniciadas y accesos al Console bloqueados. Las claves de terceros guardadas en Console son lo comprometido. <b>Rota tus claves.</b>",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">hilo 66 comentarios</a>"
+        "18-oct",
+        "Brecha de OpenCode: el daño real, usuario a usuario",
+        "El comunicado sigue sin cambiar (1,4 % de usuarios de Console, incidente en curso), pero el goteo de afectados dibuja lo que pasó: <b>400 $</b> de gasto no autorizado en una cuenta de Anthropic, <b>60 $</b> en una clave de Gemini, 200.000 M de tokens en un plan de Claude, cuentas de OpenAI <b>desactivadas</b> por actividad inusual y claves revocadas en bloque. Varios usuarios piden compensación; OpenCode no ha dicho nada de eso. <b>Rota tus claves y revisa el gasto.</b>",
+        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">daños 101 comentarios</a>"
       ],
       [
         "16-oct",

@@ -114,25 +114,25 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 480,
+    "valor": 485,
     "docs": 33,
     "codigo": 185,
     "orquestacion": 93,
-    "backend": 222,
+    "backend": 223,
     "tests": 106,
     "motion": 29,
     "planificacion": 47,
     "frontend": 10,
-    "debug": 19,
-    "local": 22,
+    "debug": 20,
+    "local": 23,
     "simples": 15,
     "research": 10,
     "vision": 14
    },
    "sentimiento": {
-    "pos": 382,
-    "neg": 263,
-    "total": 645,
+    "pos": 389,
+    "neg": 269,
+    "total": 658,
     "pct": 59
    }
   },
@@ -158,10 +158,10 @@
     "valor": 2
    },
    "menciones": {
-    "valor": 240,
+    "valor": 241,
     "codigo": 114,
     "backend": 44,
-    "tests": 68,
+    "tests": 69,
     "local": 12,
     "orquestacion": 37,
     "simples": 6,
@@ -174,9 +174,9 @@
     "docs": 12
    },
    "sentimiento": {
-    "pos": 212,
-    "neg": 141,
-    "total": 353,
+    "pos": 216,
+    "neg": 147,
+    "total": 363,
     "pct": 60
    }
   },
@@ -202,14 +202,14 @@
     "valor": 1
    },
    "menciones": {
-    "codigo": 61,
-    "tests": 42,
+    "codigo": 63,
+    "tests": 44,
     "local": 4,
-    "valor": 87,
+    "valor": 90,
     "motion": 23,
     "planificacion": 35,
-    "orquestacion": 30,
-    "docs": 13,
+    "orquestacion": 31,
+    "docs": 14,
     "debug": 9,
     "research": 4,
     "backend": 7,
@@ -245,7 +245,7 @@
     "valor": 1
    },
    "menciones": {
-    "valor": 45,
+    "valor": 46,
     "docs": 5,
     "planificacion": 9,
     "tests": 12,
@@ -289,7 +289,7 @@
    "menciones": {
     "codigo": 8,
     "tests": 12,
-    "valor": 44,
+    "valor": 45,
     "planificacion": 1,
     "orquestacion": 11,
     "motion": 2,
@@ -300,10 +300,10 @@
     "local": 1
    },
    "sentimiento": {
-    "pos": 25,
-    "neg": 8,
-    "total": 33,
-    "pct": 76
+    "pos": 26,
+    "neg": 9,
+    "total": 35,
+    "pct": 74
    }
   },
   {
@@ -376,7 +376,7 @@
     "research": 4,
     "planificacion": 31,
     "codigo": 41,
-    "tests": 37,
+    "tests": 38,
     "orquestacion": 26,
     "docs": 12,
     "valor": 69,
@@ -388,9 +388,9 @@
    },
    "sentimiento": {
     "pos": 64,
-    "neg": 36,
-    "total": 100,
-    "pct": 64
+    "neg": 37,
+    "total": 101,
+    "pct": 63
    }
   },
   {
@@ -417,9 +417,9 @@
    "menciones": {
     "local": 4,
     "tests": 23,
-    "backend": 21,
+    "backend": 22,
     "debug": 4,
-    "valor": 29,
+    "valor": 30,
     "codigo": 11,
     "docs": 10,
     "motion": 12,
@@ -430,9 +430,9 @@
    },
    "sentimiento": {
     "pos": 38,
-    "neg": 21,
-    "total": 59,
-    "pct": 64
+    "neg": 22,
+    "total": 60,
+    "pct": 63
    }
   },
   {
@@ -457,25 +457,25 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 87,
+    "valor": 90,
     "orquestacion": 34,
     "simples": 5,
-    "backend": 16,
+    "backend": 17,
     "codigo": 50,
     "docs": 12,
     "research": 6,
     "planificacion": 14,
     "tests": 33,
-    "motion": 9,
+    "motion": 10,
     "vision": 3,
-    "frontend": 14,
+    "frontend": 15,
     "debug": 8,
     "local": 3
    },
    "sentimiento": {
-    "pos": 177,
-    "neg": 73,
-    "total": 250,
+    "pos": 179,
+    "neg": 74,
+    "total": 253,
     "pct": 71
    }
   },
@@ -501,12 +501,12 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 77,
+    "valor": 78,
     "tests": 42,
     "motion": 14,
     "planificacion": 13,
     "codigo": 47,
-    "orquestacion": 15,
+    "orquestacion": 16,
     "frontend": 8,
     "docs": 4,
     "research": 7,
@@ -517,10 +517,10 @@
     "debug": 3
    },
    "sentimiento": {
-    "pos": 132,
-    "neg": 86,
-    "total": 218,
-    "pct": 61
+    "pos": 134,
+    "neg": 90,
+    "total": 224,
+    "pct": 60
    }
   },
   {
@@ -548,10 +548,10 @@
     "codigo": 35,
     "orquestacion": 8,
     "backend": 13,
-    "valor": 29,
+    "valor": 31,
     "motion": 4,
     "planificacion": 13,
-    "tests": 14,
+    "tests": 15,
     "debug": 4,
     "frontend": 5,
     "vision": 2,
@@ -560,9 +560,9 @@
    },
    "sentimiento": {
     "pos": 31,
-    "neg": 31,
-    "total": 62,
-    "pct": 50
+    "neg": 32,
+    "total": 63,
+    "pct": 49
    }
   },
   {
@@ -638,7 +638,7 @@
     "motion": 12,
     "planificacion": 4,
     "local": 4,
-    "codigo": 37,
+    "codigo": 38,
     "orquestacion": 9,
     "docs": 10,
     "frontend": 8,
@@ -647,9 +647,9 @@
     "simples": 2
    },
    "sentimiento": {
-    "pos": 77,
-    "neg": 51,
-    "total": 128,
+    "pos": 79,
+    "neg": 53,
+    "total": 132,
     "pct": 60
    }
   },
@@ -1239,7 +1239,7 @@
   ]
  },
  "titulares": {
-  "titulo": "Titulares (15-17 oct)",
+  "titulo": "Titulares (17-18 oct)",
   "columnas": [
    "Cuándo",
    "Titular",
@@ -1248,10 +1248,10 @@
   ],
   "filas": [
    [
-    "17-oct",
-    "OpenCode sufre una <b>brecha de seguridad</b>: 1,4 % de usuarios de Console",
-    "Comunicado oficial: «una brecha de seguridad anoche relacionada con un ataque de destilación a gran escala que afectó al 1,4 % de los usuarios de OpenCode Console», avisados por email, e incidente <b>en curso</b> sin más detalles. La comunidad reporta lo que el comunicado no dice: gasto no autorizado en cuentas de Anthropic (400 $ en un caso), 200.000 M de tokens consumidos en un plan Claude, claves reiniciadas y accesos al Console bloqueados. Las claves de terceros guardadas en Console son lo comprometido. <b>Rota tus claves.</b>",
-    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">hilo 66 comentarios</a>"
+    "18-oct",
+    "Brecha de OpenCode: el daño real, usuario a usuario",
+    "El comunicado sigue sin cambiar (1,4 % de usuarios de Console, incidente en curso), pero el goteo de afectados dibuja lo que pasó: <b>400 $</b> de gasto no autorizado en una cuenta de Anthropic, <b>60 $</b> en una clave de Gemini, 200.000 M de tokens en un plan de Claude, cuentas de OpenAI <b>desactivadas</b> por actividad inusual y claves revocadas en bloque. Varios usuarios piden compensación; OpenCode no ha dicho nada de eso. <b>Rota tus claves y revisa el gasto.</b>",
+    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/\" target=\"_blank\" rel=\"noopener\">comunicado (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/\" target=\"_blank\" rel=\"noopener\">daños 101 comentarios</a>"
    ],
    [
     "16-oct",
@@ -1275,31 +1275,121 @@
  },
  "noticias": [
   {
-   "titulo": "They F’d up [BREACH]",
-   "score": 1,
-   "comentarios": 66,
-   "fecha": "2026-10-17 14:14",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/",
-   "temperatura": 0.391
-  },
-  {
    "titulo": "⚠️ OpenCode security breach",
    "score": 1,
-   "comentarios": 18,
+   "comentarios": 74,
    "fecha": "2026-10-17 18:02",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x8gtvi/opencode_security_breach/",
-   "temperatura": 0.388
+   "temperatura": 0.344
+  },
+  {
+   "titulo": "They F’d up [BREACH]",
+   "score": 1,
+   "comentarios": 101,
+   "fecha": "2026-10-17 14:14",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8bas3/they_fd_up_breach/",
+   "temperatura": 0.309
+  },
+  {
+   "titulo": "API key has expired ? (OpenCode desktop)",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-18 00:05",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8p3rj/api_key_has_expired_opencode_desktop/",
+   "temperatura": 0.284
+  },
+  {
+   "titulo": "Time to move? 2 Security issues in a week",
+   "score": 1,
+   "comentarios": 16,
+   "fecha": "2026-10-17 20:53",
+   "sub": "opencodeCLI",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/",
+   "temperatura": 0.284
+  },
+  {
+   "titulo": "opencode is insane",
+   "score": 1,
+   "comentarios": 19,
+   "fecha": "2026-10-17 19:37",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8j55b/opencode_is_insane/",
+   "temperatura": 0.276
   },
   {
    "titulo": "WTF IS GOING ON??",
    "score": 1,
-   "comentarios": 21,
+   "comentarios": 32,
    "fecha": "2026-10-17 16:57",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x8f8o6/wtf_is_going_on/",
-   "temperatura": 0.367
+   "temperatura": 0.273
+  },
+  {
+   "titulo": "Free Models Benchmarked",
+   "score": 1,
+   "comentarios": 15,
+   "fecha": "2026-10-17 19:56",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8jl8s/free_models_benchmarked/",
+   "temperatura": 0.264
+  },
+  {
+   "titulo": "Breach confirmed. Only 1.4% of console users affected.",
+   "score": 1,
+   "comentarios": 21,
+   "fecha": "2026-10-17 18:01",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8gt28/breach_confirmed_only_14_of_console_users_affected/",
+   "temperatura": 0.26
+  },
+  {
+   "titulo": "OpenCode security breach, rotate your keys",
+   "score": 1,
+   "comentarios": 19,
+   "fecha": "2026-10-17 17:57",
+   "sub": "opencodeCLI",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/",
+   "temperatura": 0.252
+  },
+  {
+   "titulo": "I’m suffering from success 😭",
+   "score": 1,
+   "comentarios": 5,
+   "fecha": "2026-10-17 23:57",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8ox7s/im_suffering_from_success/",
+   "temperatura": 0.251
+  },
+  {
+   "titulo": "Opencode GO Monthly Limit is a joke even on Muse / DS",
+   "score": 1,
+   "comentarios": 13,
+   "fecha": "2026-10-17 19:41",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8j8ah/opencode_go_monthly_limit_is_a_joke_even_on_muse/",
+   "temperatura": 0.25
+  },
+  {
+   "titulo": "When would be have deepseek 4.1 flash 1017 on go plan? thanks !",
+   "score": 1,
+   "comentarios": 14,
+   "fecha": "2026-10-17 18:52",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8i228/when_would_be_have_deepseek_41_flash_1017_on_go/",
+   "temperatura": 0.244
+  },
+  {
+   "titulo": "Muse Spark 1.3 is gone, what's the best free model to use now?",
+   "score": 1,
+   "comentarios": 39,
+   "fecha": "2026-10-17 12:34",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x895ip/muse_spark_13_is_gone_whats_the_best_free_model/",
+   "temperatura": 0.239
   },
   {
    "titulo": "Haven't been able to login to OpenCode, any one?",
@@ -1308,97 +1398,7 @@
    "fecha": "2026-10-17 17:09",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x8fjwa/havent_been_able_to_login_to_opencode_any_one/",
-   "temperatura": 0.353
-  },
-  {
-   "titulo": "Breach confirmed. Only 1.4% of console users affected.",
-   "score": 1,
-   "comentarios": 7,
-   "fecha": "2026-10-17 18:01",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8gt28/breach_confirmed_only_14_of_console_users_affected/",
-   "temperatura": 0.295
-  },
-  {
-   "titulo": "Muse Spark 1.3 is gone, what's the best free model to use now?",
-   "score": 1,
-   "comentarios": 28,
-   "fecha": "2026-10-17 12:34",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x895ip/muse_spark_13_is_gone_whats_the_best_free_model/",
-   "temperatura": 0.294
-  },
-  {
-   "titulo": "Help me understand the limits",
-   "score": 1,
-   "comentarios": 9,
-   "fecha": "2026-10-17 17:04",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8ffi6/help_me_understand_the_limits/",
-   "temperatura": 0.293
-  },
-  {
-   "titulo": "Opencode va camino al desastre de la baja calidad",
-   "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-17 16:58",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8f9ri/opencode_va_camino_al_desastre_de_la_baja_calidad/",
-   "temperatura": 0.256
-  },
-  {
-   "titulo": "🔥 DeepSeek V4.1 Flash-1017 is on Hugging Face (see benchmarks inside)",
-   "score": 1,
-   "comentarios": 36,
-   "fecha": "2026-10-17 08:18",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x84usg/deepseek_v41_flash1017_is_on_hugging_face_see/",
-   "temperatura": 0.255
-  },
-  {
-   "titulo": "Error: OpenCode's free tier can only be used from within OpenCode. Download it at https://opencode.ai and keep building.",
-   "score": 1,
-   "comentarios": 27,
-   "fecha": "2026-10-17 07:06",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x83oid/error_opencodes_free_tier_can_only_be_used_from/",
-   "temperatura": 0.228
-  },
-  {
-   "titulo": "Muse Spark 1.3 or DeepSeek V4.1 Flash?",
-   "score": 1,
-   "comentarios": 12,
-   "fecha": "2026-10-17 11:39",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8841r/muse_spark_13_or_deepseek_v41_flash/",
-   "temperatura": 0.225
-  },
-  {
-   "titulo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
-   "score": 804,
-   "comentarios": 159,
-   "fecha": "2026-10-16 06:57",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/",
-   "temperatura": 0.221
-  },
-  {
-   "titulo": "Fingerprinting Cat-Jam",
-   "score": 1,
-   "comentarios": 4,
-   "fecha": "2026-10-17 16:37",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8eqcq/fingerprinting_catjam/",
-   "temperatura": 0.217
-  },
-  {
-   "titulo": "Can someone explain the pricing model of the go plus subscription to me?",
-   "score": 1,
-   "comentarios": 5,
-   "fecha": "2026-10-17 15:32",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8d4o8/can_someone_explain_the_pricing_model_of_the_go/",
-   "temperatura": 0.216
+   "temperatura": 0.236
   }
  ],
  "comentarios": [
@@ -1437,6 +1437,15 @@
    "sub": "opencodeCLI",
    "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguurrc/"
+  },
+  {
+   "autor": "xAragon_",
+   "score": 49,
+   "texto": "Did you read the image you attached? Opus 5 is beating in im most benchmarks there. Also, it's Opus 5, not Opus 5.5.",
+   "fecha": "2026-10-17 08:34",
+   "sub": "opencodeCLI",
+   "hilo": "🔥DeepSeek V4.1 Flash-1017 is on Hugging Face (see benchmarks inside)",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x84uhs/deepseek_v41_flash1017_is_on_hugging_face_see/ph9pwtp/"
   },
   {
    "autor": "its_MrCuddles",
@@ -1500,21 +1509,12 @@
    "sub": "opencode",
    "hilo": "monthly opencode-go limit reached. Have I misunderstood the deepseek increase, i thought it went up to $80?",
    "url": "https://www.reddit.com/r/opencode/comments/1x5nfeo/monthly_opencodego_limit_reached_have_i/pgnt1dn/"
-  },
-  {
-   "autor": "Total-Management8023",
-   "score": 26,
-   "texto": "Damn. How do they afford this?",
-   "fecha": "2026-10-16 06:59",
-   "sub": "opencode",
-   "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x799zh/glm_53_flash_is_free_in_opencode/ph28963/"
   }
  ],
  "go_limites": {
   "titulo": "Uso y límites de OpenCode Go (oficial)",
   "fuente": "https://opencode.ai/v2/docs/console/go/",
-  "actualizado": "2026-10-17 19:27 UTC",
+  "actualizado": "2026-10-18 01:57 UTC",
   "plan": {
    "nombre": "Go",
    "precio": "$10/mes",
@@ -2649,14 +2649,14 @@
   }
  },
  "meta": {
-  "generado": "2026-10-17 19:29 UTC",
+  "generado": "2026-10-18 01:58 UTC",
   "subs": {
-   "opencode": 1976,
-   "opencodeCLI": 710
+   "opencode": 2078,
+   "opencodeCLI": 739
   },
-  "hilos": 2530,
-  "comentarios": 21232,
-  "unidades": 23762,
+  "hilos": 2553,
+  "comentarios": 21631,
+  "unidades": 24184,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }
