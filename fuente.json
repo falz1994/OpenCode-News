@@ -357,10 +357,10 @@
       }
     },
     {
-      "nombre": "Space Bunny = MiniMax M3.1",
+      "nombre": "Space Bunny (codename)",
       "alias": "space ?bunny|minimax|m3\\.1",
-      "rol": "One-shot creativo y vision",
-      "pega": "Desenmascarado como M3.1 Flash: gratis 3 dias, open weights el 23-oct, lento y token-ineficiente",
+      "rol": "Stealth: cambia de modelo por dentro",
+      "pega": "No es un modelo: lleva M3.1 Flash por dentro ahora, gratis 3 dias; antes era otro y cambia sin avisar. Lento y token-ineficiente",
       "r": {
         "frontend": 2,
         "backend": 1,
@@ -549,7 +549,7 @@
         "GLM 5.3 Flash Free",
         "DeepSeek 4.1 Flash Free · MiMo Flash Free",
         "GLM 5.3 Flash Free (adversarial)",
-        "DeepSeek · GLM 5.3 · MiniMax M3.1 · Beam · LongCat 2.5"
+        "DeepSeek · GLM 5.3 · MiniMax M3.1 Flash (3 dias) · Beam · LongCat 2.5"
       ],
       [
         "$10 (Go)",
@@ -776,8 +776,8 @@
     "filas": [
       [
         "Space Bunny",
-        "MiniMax M3.1 Flash (confirmado por MiniMax)",
-        "Los benchmarks de M3.1 coinciden con los que presento Space Bunny; la tabla de Go lo renombro"
+        "MiniMax M3.1 Flash en su version del 19-oct (no siempre el mismo)",
+        "Cambia de modelo tras el codename: la propia doc de Zen lo llama stealth y avisa de que rota; los benchmarks de M3.1 coinciden con los que se vieron bajo el nombre"
       ],
       [
         "Exo Free",

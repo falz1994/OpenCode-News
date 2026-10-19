@@ -611,10 +611,10 @@
    }
   },
   {
-   "nombre": "Space Bunny = MiniMax M3.1",
+   "nombre": "Space Bunny (codename)",
    "alias": "space ?bunny|minimax|m3\\.1",
-   "rol": "One-shot creativo y vision",
-   "pega": "Desenmascarado como M3.1 Flash: gratis 3 dias, open weights el 23-oct, lento y token-ineficiente",
+   "rol": "Stealth: cambia de modelo por dentro",
+   "pega": "No es un modelo: lleva M3.1 Flash por dentro ahora, gratis 3 dias; antes era otro y cambia sin avisar. Lento y token-ineficiente",
    "r": {
     "frontend": 2,
     "backend": 1,
@@ -927,7 +927,7 @@
     "GLM 5.3 Flash Free",
     "DeepSeek 4.1 Flash Free · MiMo Flash Free",
     "GLM 5.3 Flash Free (adversarial)",
-    "DeepSeek · GLM 5.3 · MiniMax M3.1 · Beam · LongCat 2.5"
+    "DeepSeek · GLM 5.3 · MiniMax M3.1 Flash (3 dias) · Beam · LongCat 2.5"
    ],
    [
     "$10 (Go)",
@@ -1154,8 +1154,8 @@
   "filas": [
    [
     "Space Bunny",
-    "MiniMax M3.1 Flash (confirmado por MiniMax)",
-    "Los benchmarks de M3.1 coinciden con los que presento Space Bunny; la tabla de Go lo renombro"
+    "MiniMax M3.1 Flash en su version del 19-oct (no siempre el mismo)",
+    "Cambia de modelo tras el codename: la propia doc de Zen lo llama stealth y avisa de que rota; los benchmarks de M3.1 coinciden con los que se vieron bajo el nombre"
    ],
    [
     "Exo Free",
@@ -1306,7 +1306,7 @@
    "fecha": "2026-10-19 15:23",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9ztax/bring_musespark_13_back/",
-   "temperatura": 0.336
+   "temperatura": 0.334
   },
   {
    "titulo": "MiniMax M3.1 Flash (Space Bunny 🚀) benchmarks... 😁",
@@ -1315,7 +1315,7 @@
    "fecha": "2026-10-19 11:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/",
-   "temperatura": 0.33
+   "temperatura": 0.328
   },
   {
    "titulo": "How much usage will I get on the 10$ plan?",
@@ -1324,7 +1324,7 @@
    "fecha": "2026-10-19 14:40",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9yov3/how_much_usage_will_i_get_on_the_10_plan/",
-   "temperatura": 0.27
+   "temperatura": 0.268
   },
   {
    "titulo": "What are some of the cool projects you have built on opencode?",
@@ -1333,7 +1333,7 @@
    "fecha": "2026-10-19 09:18",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9s496/what_are_some_of_the_cool_projects_you_have_built/",
-   "temperatura": 0.268
+   "temperatura": 0.266
   },
   {
    "titulo": "What is going on???",
@@ -1342,7 +1342,7 @@
    "fecha": "2026-10-19 13:37",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9x3yd/what_is_going_on/",
-   "temperatura": 0.259
+   "temperatura": 0.257
   },
   {
    "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
@@ -1351,7 +1351,7 @@
    "fecha": "2026-10-19 12:20",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
-   "temperatura": 0.255
+   "temperatura": 0.253
   },
   {
    "titulo": "Space Bunny Revealed",
@@ -1360,7 +1360,7 @@
    "fecha": "2026-10-19 10:43",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9ti3o/space_bunny_revealed/",
-   "temperatura": 0.249
+   "temperatura": 0.248
   },
   {
    "titulo": "\"AI will take over human j*bs\", meanwhile Al-",
@@ -1369,7 +1369,7 @@
    "fecha": "2026-10-19 15:33",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa02y7/ai_will_take_over_human_jbs_meanwhile_al/",
-   "temperatura": 0.24
+   "temperatura": 0.238
   },
   {
    "titulo": "Looking For More Models With Unlimited Use For Free",
@@ -1387,16 +1387,7 @@
    "fecha": "2026-10-19 11:12",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/",
-   "temperatura": 0.217
-  },
-  {
-   "titulo": "I made opencode v2 read my plan quota and type what I                                                       say",
-   "score": 1,
-   "comentarios": 7,
-   "fecha": "2026-10-19 11:36",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9uhoc/i_made_opencode_v2_read_my_plan_quota_and_type/",
-   "temperatura": 0.206
+   "temperatura": 0.216
   },
   {
    "titulo": "I cannot lie opencode is so much better than Claude code",
@@ -1405,7 +1396,7 @@
    "fecha": "2026-10-19 10:12",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
-   "temperatura": 0.206
+   "temperatura": 0.205
   },
   {
    "titulo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
@@ -1414,7 +1405,16 @@
    "fecha": "2026-10-18 21:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/",
-   "temperatura": 0.206
+   "temperatura": 0.205
+  },
+  {
+   "titulo": "I made opencode v2 read my plan quota and type what I                                                       say",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-19 11:36",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9uhoc/i_made_opencode_v2_read_my_plan_quota_and_type/",
+   "temperatura": 0.204
   },
   {
    "titulo": "which one is opencode best model ?",
@@ -1423,7 +1423,7 @@
    "fecha": "2026-10-19 07:35",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9qh5t/which_one_is_opencode_best_model/",
-   "temperatura": 0.194
+   "temperatura": 0.193
   }
  ],
  "comentarios": [
@@ -2674,7 +2674,7 @@
   }
  },
  "meta": {
-  "generado": "2026-10-19 18:06 UTC",
+  "generado": "2026-10-19 18:12 UTC",
   "subs": {
    "opencode": 2267,
    "opencodeCLI": 815
