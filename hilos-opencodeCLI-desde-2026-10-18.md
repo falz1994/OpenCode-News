@@ -1,5 +1,5 @@
-# r/opencodeCLI — hilos 2026-10-18 → 2026-10-19
-_Generado: 2026-10-18T20:10:01.620929+00:00 · 20 hilos · 9 comentarios · fuente: Arctic Shift_
+# r/opencodeCLI — hilos 2026-10-18 → 2026-10-20
+_Generado: 2026-10-19T00:11:07.396742+00:00 · 20 hilos · 32 comentarios · fuente: Arctic Shift_
 
 ## Microsoft azure network is banned??
 **u/Robert__Sinclair** · 2026-10-18 19:19 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1x9bs1j/microsoft_azure_network_is_banned/)
@@ -20,6 +20,29 @@ _Generado: 2026-10-18T20:10:01.620929+00:00 · 20 hilos · 9 comentarios · fuen
 **u/megablue** · 2026-10-18 17:56 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1x99omg/the_new_version_gave_plan_mode_too_much_freedom/)
 
 well, the plan mode figured out ways to modify files by calling the skill i just asked it to write. it went outside of the project directory and modified files that wasn't supposed to modify.
+
+**Comentarios:**
+
+- **u/tsangberg** (↑1, 2026-10-18 18:01): The only way to not risk having the model do things it shouldn't is to use a proper sandbox. Everything else is just asking the model to please behave.
+    
+    I made my own, feel free to be inspired or fork (it's CC0). There are many like it - and all of them will be better than plan mode :)
+    
+    [https://verified.technology/](https://verified.technology/)
+  - **u/megablue** (↑1, 2026-10-18 18:07): this is at least the 3rd or forth time i caught opencode cli's plan mode modify files that it wasn't supposed to...
+- **u/BrightAIFuture** (↑1, 2026-10-18 18:35): There are two separate issues here: containing damage and checking whether plan mode honours its advertised behaviour. A sandbox can contain an unexpected write; that does not establish that plan mode behaved correctly.
+    
+    
+    
+    For a reproducible test, I’d use a throwaway project and a harmless canary file in a sibling directory, then record which tool/skill attempted the write and whether it actually changed the file. Include the exact OpenCode version, relevant permission configuration and tool trace, with secrets removed. That gives maintainers something narrower than “the model ignored the rules” to investigate. Keep the real files isolated while testing.
+    
+    
+    
+    AI-assisted suggestion; I run Bright. I haven’t reproduced this report or established its cause.
+  - **u/megablue** (↑1, 2026-10-18 18:40): i asked it why, apparently it was my own fault, i wrote a new context management but the system prompt/notice got lost and never reinjected back to the context.
+    - **u/BrightAIFuture** (↑1, 2026-10-18 19:04): That narrows the next test to the context-manager transition. I’d compare the same harmless fixture with the stock context path and with your plugin, and check that the required notice is present before the first tool call after compaction/resume. The model’s explanation is a lead to verify, not proof of the failure path. If only the plugin run loses the notice, that is much stronger evidence about where to fix it. AI-assisted follow-up.
+- **u/plmtr** (↑1, 2026-10-18 22:43): I guess I've also learnt that less/carefully curated skills are better.
+    
+    And !skillNotToUse on the agents you need to curtail
 
 ---
 
@@ -82,6 +105,16 @@ Which separation has made the biggest practical difference in your own setup: cr
 
 
 Image: Bright editorial quote card; founder’s account, not independent forensics.
+
+**Comentarios:**
+
+- **u/veculus** (↑9, 2026-10-18 14:40): thanks claude
+- **u/dryadofelysium** (↑5, 2026-10-18 14:51): holy slop. the new OpenCode incident is due to a hole/security issue in their implementation of SSO/login with differnet providers that led to stolen API keys. nothing here has anything to do with (local) AI/LLM sandboxing or safeguards
+  - **u/BrightAIFuture** (↑0, 2026-10-18 15:14): Fair criticism of the framing. A local sandbox is not a remedy for provider keys exposed by a hosted service, and I’m not claiming OpenShell or agent permission prompts would have prevented this incident.
+      
+      
+      
+      I should have separated the immediate hosted-credential issue more clearly from the broader defensive-agent argument prompted by Raad’s later statement. The article does not establish the entry vector; it treats that as unresolved in the evidence reviewed. The concrete response to a key believed exposed is revocation at its issuer and review of usage. Local isolation addresses a separate risk.
 
 ---
 
@@ -153,6 +186,10 @@ If you need additional Information, let me know!
 
 And thanks <3
 
+**Comentarios:**
+
+- **u/SirRobinBlibs** (↑1, 2026-10-18 21:52): This is almost always context length, not permissions. Ollama's default context window is small, and OpenCode's system prompt plus tool definitions don't fit, so they get truncated. The model then only half-knows the tool format and writes the call out as text. Raise it, either with `OLLAMA_CONTEXT_LENGTH=32768` before `ollama serve` or with a Modelfile containing `PARAMETER num_ctx 32768`, then restart. Also make sure the model in your opencode.json is pointed at Ollama's OpenAI-compatible endpoint (`http://localhost:11434/v1`) with tool calling enabled for it. If it still flakes, try a larger quant. Small quants of coder models get much worse at structured tool calls.
+
 ---
 
 ## hi is anyone facing this
@@ -187,11 +224,35 @@ Has anyone else run into this? Is there some kind of hidden usage limit, or did 
 **Comentarios:**
 
 - **u/Strict-Prune-879** (↑1, 2026-10-18 10:16): déjà ces pas illimité ceux qui on l'abonnement opencode go la limite de mémoire est de 200 requêtes pas jour et pour ceux qui ne l'ont pas je ne sais pas ca doit etre très bas en sachant que selon les modèles ca puise plus vite.
-- **u/NorthExtreme9270** (↑1, 2026-10-18 10:50): Have same problem
+- **u/NorthExtreme9270** (↑0, 2026-10-18 10:50): Have same problem
 - **u/pungat_** (↑1, 2026-10-18 10:53): opencode adds a new layer to its free model checks, increasing the total from about ~4 layers to ~6.
-- **u/Ok_Necessary7506** (↑3, 2026-10-18 10:53): "banned"? Why do you think you're banned?
-- **u/lewwdsv1** (↑1, 2026-10-18 11:03): Not a ban.
+- **u/Ok_Necessary7506** (↑14, 2026-10-18 10:53): "banned"? Why do you think you're banned?
+  - **u/DarkStyleV** (↑-5, 2026-10-18 13:25): https://preview.redd.it/hcyqtxsy88wh1.png?width=1154&format=png&auto=webp&s=482384b0d9057357512633d0962d6b7e540312b5
+      
+      because they block my request by ip, for any free models
+    - **u/Ok_Necessary7506** (↑4, 2026-10-18 14:13): But this message is completely different from the one in your original post.
+- **u/lewwdsv1** (↑3, 2026-10-18 11:03): Not a ban.
 - **u/sirloindenial** (↑1, 2026-10-18 11:06): So this is in something other than opencode, then it makes sense. What's weird is you were still able to use it until today, cause they tighten it around 2-3 weeks ago for use in third party. Not a ban, you can test by opening opencode now.
+- **u/avinthakur080** (↑8, 2026-10-18 11:09): It is not a ban but likely a bug. I've seen it many times.
+    
+    Sometimes, it works after a restart, other times, it is more arrogant and demands a new session.
+  - **u/DarkStyleV** (↑0, 2026-10-18 13:26): https://preview.redd.it/33t51uc998wh1.png?width=1563&format=png&auto=webp&s=75684255425e73bf80516ceb33285bc6a8c0b6bc
+      
+      new session didn't help , reastart and resinstall aswell
+    - **u/avinthakur080** (↑1, 2026-10-18 13:28): [https://www.reddit.com/r/opencode/comments/1x92qoh/opencode\_error/](https://www.reddit.com/r/opencode/comments/1x92qoh/opencode_error/)
+        
+        Looks like a common issue.
+        
+        I am also getting the same. On restart, it worked for a few seconds but started giving this error after some time.
+      - **u/DarkStyleV** (↑1, 2026-10-18 13:30): Okay, then just need to wait, thx for the info
+- **u/ollm-tux** (↑0, 2026-10-18 11:13): never work free tiers with another harness, if u want free try orcarouter (have ds free now), openrouter and kilo
+- **u/CookieAway995** (↑-1, 2026-10-18 11:29): You are not banned your Ip is blacklisted, You can change ip and try
+- **u/imran-bd12** (↑0, 2026-10-18 11:35): facing same problem
+- **u/nkkfu** (↑1, 2026-10-18 13:38): Unity CLI? What do you mean? Is it possible to make changes in unity editor without the GUI?
+- **u/HyperWinX** (↑1, 2026-10-18 14:26): Bug*  
+    Not a ban
+- **u/Fantastic_Gate_6806** (↑0, 2026-10-18 15:02): Does opencode free tier actually works with lets say clsudd code? I thought we could only use opencode models within opencode?
+- **u/sascharobi** (↑1, 2026-10-18 15:37): Nowhere does it say "ban."
 
 ---
 
@@ -216,9 +277,9 @@ git: https://github.com/blendbunjaku/optimaizr
 
 **Comentarios:**
 
-- **u/Gargle-Loaf-Spunk** (↑0, 2026-10-18 02:10): No
-- **u/Soifon99** (↑2, 2026-10-18 06:53): if it works it looks interesting.  I understand the struggle of optimizing in a sea of new models and new home baked tools everyday.
-- **u/ozguru** (↑2, 2026-10-18 08:15): Looking cool.
+- **u/Gargle-Loaf-Spunk** (↑-3, 2026-10-18 02:10): No
+- **u/Soifon99** (↑3, 2026-10-18 06:53): if it works it looks interesting.  I understand the struggle of optimizing in a sea of new models and new home baked tools everyday.
+- **u/ozguru** (↑3, 2026-10-18 08:15): Looking cool.
 
 ---
 

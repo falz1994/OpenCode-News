@@ -1,5 +1,87 @@
-# r/opencode — hilos 2026-10-18 → 2026-10-19
-_Generado: 2026-10-18T20:10:18.247376+00:00 · 77 hilos · 410 comentarios · fuente: Arctic Shift_
+# r/opencode — hilos 2026-10-18 → 2026-10-20
+_Generado: 2026-10-19T00:11:13.711383+00:00 · 81 hilos · 525 comentarios · fuente: Arctic Shift_
+
+## Intel's Dokimi - measure what actually helps an agent
+**u/MMORPGDev** · 2026-10-18 22:21 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1x9g5iv/intels_dokimi_measure_what_actually_helps_an_agent/)
+
+---
+
+## They finally admit it. "the worst we do is to serve at lower tps"
+**u/pasteldebytes** · 2026-10-18 21:55 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/)
+
+I've written in the past that opencode is definitely slower than other providers. 
+
+Today, I posted about opencode hiding their inference headers, and I also noted that after today's deployment, I can't get over 90 to 100 tps. Well...we can see why. They are deploying their GPU rack, ditching inference providers and lowering performance to handle more volume. Clear as water.
+
+**Comentarios:**
+
+- **u/PossibilityUsual6262** (↑43, 2026-10-18 21:57): Seems decent solution, you know what speed you paying for and for what model.
+- **u/MessIsTransfer** (↑72, 2026-10-18 21:58): It’s a cheap subscription, what were you expecting?
+  - **u/dumbasPL** (↑9, 2026-10-18 22:05): Transparency
+    - **u/mimi_vx** (↑7, 2026-10-18 22:16): its transparent .. simply capacity problem. Nothing else
+    - **u/MessIsTransfer** (↑23, 2026-10-18 22:16): ok, i’ll give you that one. but a. why would it surprise you and b. you can literally measure this one.
+        
+        how can you be less transparent on something you can’t even hide?
+    - **u/danielv123** (↑2, 2026-10-18 22:44): I don't think any of the providers has tps as part of their official specs. You just get what you get.
+        
+        It's also very easy to see what you get at any time, so it's fairly transparent.
+    - **u/japherwocky** (↑4, 2026-10-18 23:17): lol they're being transparent?  they literally just told you, it wasn't a secret, take off the tin foil hat for a second.
+- **u/SimpleTeacher5046** (↑1, 2026-10-18 22:12): I don't think I would use opencode if I was running at maxing out every month. Just get Claude
+- **u/PatrickWTF** (↑15, 2026-10-18 22:14): Definitely a reasonable approach in my opinion. You look at 6.1 Sol coming out at like 35-40/tks in comparison and 90+ is reasonable imho. For $10 I have very little to complain about! Now if only DSV4.1 could stop hallucinating do much, but that's my only real complaint with it compared to Opus and Sol in the stack.
+- **u/Anaeijon** (↑6, 2026-10-18 22:15): I mean, technically all providers do that.
+    
+    They buy/rent a certain amount of TPUs, to host x parallel instances of the model and parallelize depending on the amount of requests.
+    
+    In theory: the more you pay for the service, the more money the provider gets to put into instances. The more instances, the less you have to share with others. Therefore, the more you pay, the faster your service becomes.
+    
+    It's not that complicated or surprising.
+  - **u/Pinery01** (↑2, 2026-10-18 23:23): This!
+- **u/ramonzitos** (↑9, 2026-10-18 22:16): what did you expect them to do when load increases? stop serving additional requests? lmao
+  - **u/Fresh_Sock8660** (↑4, 2026-10-18 22:32): Download more compute obvioisly.
+    - **u/samuelazers** (↑4, 2026-10-18 22:58): Stop! Downloading RAM is a crime.
+- **u/Friendly-Assistance3** (↑21, 2026-10-18 22:30): Bro discovered rate limiting exists lol. What did you expect 1000 tps?
+  - **u/surgicalcoder** (↑15, 2026-10-18 22:41): I want 5000 tps, 10m tok window, and I want it completely unlimited and free. No, in fact they should pay me to use it!
+  - **u/danielv123** (↑3, 2026-10-18 22:46): This isn't quite the same as rate limiting. LLM inference actually delivers very significantly increased aggregate throughput when served at a lower TPS - as in its like 100x cheaper to serve at batch processing seeds rather than the peak speed the hardware can do.
+  - **u/arielif1** (↑2, 2026-10-18 23:31): this isn't rate limiting, they just picked a different (read: more economical) point in the aggregate throughput to interactivity graph. There's a reason they give you 80 bucks of deepseek for 10 bucks of god's own cash.
+- **u/bb22k** (↑3, 2026-10-18 22:34): Literally every provider does this... It is better than seeing that the model is at capacity.
+    
+    I believe he was saying that they don't quantize models under the hood to inflate tps by sacrificing intelligence, which would just be scammy behavior
+- **u/Ariquitaun** (↑3, 2026-10-18 22:38): So? You're getting 80 quid of deepseek flash for 10. If that's all the compromise that is being made, it's a good one.
+  - **u/TechGearWhips** (↑1, 2026-10-18 22:48): Yea I’m totally fine with this
+- **u/maqifrnswa** (↑8, 2026-10-18 22:41): This was actually surprisingly positive outcome. I kind of assumed they used a mild quant. They're saying no, just throttled throughput, which is expected
+- **u/First_Inspection_478** (↑1, 2026-10-18 22:49): obviously the lower the tps sometimes, no surprise at all. are u expecting top-end tps for $10? lmao. so long as the quality isnt degrated, lower tps at the cost is fine
+- **u/Alive-Rough1432** (↑1, 2026-10-18 22:59): I swear command code does this, but like a lot...
+- **u/macaco3001** (↑1, 2026-10-18 23:01): I mean yeah? They never promised you a specific speed, they promised a specific model. You're talking as if they just admitted to using low quants or something
+- **u/ColonelKlanka** (↑1, 2026-10-18 23:12): Valid approach by opencode. No complaints on this.
+- **u/FewExplanation5433** (↑1, 2026-10-18 23:28): It makes sense to limit TPS for free users, but capping speeds for paying subscribers is unfair to those supporting the platform.
+- **u/IntrepidMindExplorer** (↑-1, 2026-10-18 23:33): Someone on the opencode team needs to do the deed and pull him off stage with the huge pole hook.
+    
+    Provide your customers/consumers with explanations of "things" first..then go back to shit-talking.
+- **u/ihateuall18** (↑1, 2026-10-18 23:36): Definitely a lie. During the v2 transition mess I can't recall which model if ds flash or glm 5.3 flash I was getting errors from other providers, I believe openinference?
+- **u/IAmFitzRoy** (↑1, 2026-10-18 23:45): If I see a long queue in the supermarket … I expect a lower TPS. 
+    
+    Not sure what is the surprise here.
+
+---
+
+## Mimo 2.6 Pro vs Deepseek
+**u/MDtoCome** · 2026-10-18 21:36 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1x9f4l6/mimo_26_pro_vs_deepseek/)
+
+[removed]
+
+---
+
+## I was feeling lazy last night, so I used OpenCode Harness with multiple models to try to install a Qubes OS VM with virt-manager.
+**u/RainyDayFeel** · 2026-10-18 20:10 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1x9d1w7/i_was_feeling_lazy_last_night_so_i_used_opencode/)
+
+I did not go well, left it running overnight and it burned some serious tokens, woke up after 6 hrs sleep still not done. It tried DeepSeek-V4.1-Flash, GLM-5.3-Flash and GPT-6 Sol, Qubes OS R4.0 still wont install, anyone else have similar?
+
+**Comentarios:**
+
+- **u/lincolnthalles** (↑1, 2026-10-18 21:16): Have you tried asking what the main blocker was? I bet it was permission.
+    virt-manager is rarely usable out of the box with a non-root user.
+
+---
 
 ## How is it even possible that I've been coding for 3 weeks for free without any restrictions
 **u/kubuntek** · 2026-10-18 19:27 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1x9bzrj/how_is_it_even_possible_that_ive_been_coding_for/)
@@ -7,6 +89,29 @@ _Generado: 2026-10-18T20:10:18.247376+00:00 · 77 hilos · 410 comentarios · fu
 Hi,
 
 How is it even possible that I've been coding with Opencode for 3 weeks for free without any restrictions. Am I the only one that has this privilege or what is the policy behind offering free models without restrictions?
+
+**Comentarios:**
+
+- **u/RepulsiveRaisin7** (↑6, 2026-10-18 19:29): There are daily rate limits
+  - **u/kubuntek** (↑1, 2026-10-18 19:30): Ok, the limits must be huge then.
+  - **u/OptimizedGamingHQ** (↑2, 2026-10-18 19:53): Some models are unlimited for a limited time, like Beam. You cannot run out of it.
+      
+      Likely cause the provider is giving it unlimited access in exchange for data perhaps.
+      
+      Other models are free with quotas though (most of them)
+    - **u/YoRt3m** (↑4, 2026-10-18 19:57): Beam should be limited to 0 requests. it just guess things and code with no regard to other parts of the workspace. it's pretty awful.
+      - **u/OptimizedGamingHQ** (↑1, 2026-10-18 20:03): Its so much better than some other models though like LongCat. Its not the worse of the bunch
+- **u/keratomalacian** (↑2, 2026-10-18 19:46): thats what im always thinking lol, i can make a model do an insane amount of work all day for free and ive never reached a rate limit ever
+- **u/GCP_Biryani** (↑8, 2026-10-18 19:49): If the product is free then you are the product
+  - **u/THenrich** (↑3, 2026-10-18 20:57): If you're vibe coding something, then there's nothing about you to be the product.   
+      All the code being created is by them. In this case who f cares!
+    - **u/Much-Researcher6135** (↑1, 2026-10-18 23:49): You could not be more wrong. The training data are: the session, the request, the guidance, the interaction, the user's choices and tastes, and the free use of the user's computer to test the new software. From the point of view of an AI research firm, these are invaluable.
+- **u/PayPalModApk** (↑1, 2026-10-18 20:59): The models usually are stealth models which are provided by whatever provider is hosting them, usually with a high daily token limit so its basically unlimited .
+- **u/papyszoo** (↑1, 2026-10-18 21:10): It's not without restrictions, I'm not allowed to use them anymore.
+  - **u/Much-Researcher6135** (↑1, 2026-10-18 23:50): what have you done
+      
+      fess up, you can tell us
+- **u/ichisay** (↑1, 2026-10-18 21:41): Estás trabajando solo un proyecto en tu tiempo libre?
 
 ---
 
@@ -21,6 +126,19 @@ Error: OpenCode's free models aren't available from your current network because
 $ curl ipinfo.io/org
 AS8075 Microsoft Corporation
 ```
+
+**Comentarios:**
+
+- **u/Aggravating-Push-207** (↑1, 2026-10-18 19:12): Yeah it says right there
+  - **u/Robert__Sinclair** (↑1, 2026-10-18 19:20): so glad to have a genius amongst us.
+- **u/Electrical_Bit4031** (↑2, 2026-10-18 19:38): any fixes yet, my home ip is getting this and I don’t use a vpn or a proxy
+  - **u/Robert__Sinclair** (↑1, 2026-10-18 21:06): I updated my post. You should write to opencode guys and explain them this fact:
+      
+      **Banning IPs or IP ranges is never a good idea: most adsl or 5g providers use a few IPs for all their customers, that means that is not an abuse by a single person but the combined traffic of everyone on that provider!**
+- **u/SpecialistOk6226** (↑1, 2026-10-18 20:14): OpenCode includes some detection of OpenCode free model usage across different harnesses, including local IP and endpoint tampering detection. I also asked OpenCode to configure the OpenCode Zen model so it would be available on the Hermes agent, e.g., through a localhost endpoint. It worked for a few hours, but after that, it indicated that OpenCode can only be used in the OpenCode harness.
+  - **u/Robert__Sinclair** (↑1, 2026-10-18 21:08): **Banning IPs or IP ranges is never a good idea: most adsl or 5g providers use a few IPs for all their customers, that means that is not an abuse by a single person but the combined traffic of everyone on that provider!**
+      
+      About *OpenCode can only be used in the OpenCode harness, it's their choice and the price to pay to have a few free models. There are ways to go around it but I won't post them here.*
 
 ---
 
@@ -43,7 +161,10 @@ Thanks!
 
 **Comentarios:**
 
-- **u/CharacterTension2896** (↑1, 2026-10-18 18:55): Ornith 1.5 9b or 35b a3b
+- **u/CharacterTension2896** (↑2, 2026-10-18 18:55): Ornith 1.5 9b or 35b a3b
+  - **u/Calm-Set6265** (↑1, 2026-10-18 19:53): Thanks!
+- **u/AdFun4897** (↑2, 2026-10-18 19:32): Use Qwen 3.8 flash next. With Strata
+  - **u/Calm-Set6265** (↑1, 2026-10-18 19:53): Thanks!
 
 ---
 
@@ -69,6 +190,12 @@ Is anyone else experiencing this issue? Any idea how to fix it?
 
 - **u/Pristine-Rub6918** (↑1, 2026-10-18 18:29): facing the same issue man. i have used deepseek for a while. today its saying Rate limit exceeded. Please try again later. is there any limit to use this model or something or am i doing anything wrong ?need help.
 - **u/Adventurous_Pin_2470** (↑1, 2026-10-18 18:31): No matter what the harness or model you are using you must monitor and be ready to interrupt and steer it. Sometimes a coding agent will run a command that takes time to execute but does will not automatically notify/awaken the agent when complete. For these scenarios you need to educate yourself on what's going on so you can instruct your agent to set timers to pro actively check instead of just waiting.
+  - **u/trashcoder999** (↑1, 2026-10-18 19:14): What I mean is that models can stop in the middle of their thinking process, and they won't resume generating tokens on their own, even if you wait indefinitely. No new thinking tokens are generated until I manually interrupt the process and send another prompt.
+      Models can also get stuck immediately after executing a command, or at pretty much any point during a task. Interrupting the process and sending a new message usually helps. Sometimes, even disconnecting and reconnecting to the internet seems to fix the issue.
+      This wasn't happening a while ago. I could simply give an agent a prompt, walk away from my computer for an hour, and come back to find the task completed, with the agent waiting for further instructions. Now, I can leave for a short while and come back to find the agent has been stuck for 20 minutes in the middle of generating thinking tokens, frozen halfway through a sentence.
+    - **u/trashcoder999** (↑1, 2026-10-18 19:16): Models can get stuck like this several times within just a few minutes. It happens very frequently. Could this be related to my internet connection, for example?
+    - **u/Adventurous_Pin_2470** (↑1, 2026-10-18 20:37): Locate where the transcript is saved and have and give the file path to and your feedback to the coding agent along with the GitHub to opencode so it can investigate and diagnose how the harness handles retries when the LLM API times out. Some models like GLM 5.3 and 5.3 flash spin out of control thinking for so long that it lasts longer than the window of time alotted for their output to come back. This problem can exist on either harness level of the provider level. In either case try to leave an Issue on GitHub for the maintainers to fix it.
+  - **u/Ctbhatia** (↑1, 2026-10-18 21:07): a stop rule in the prompt cuts a lot of that babysitting, something like try 2 fixes then stop and report. without a cap it keeps producing plausible edits forever
 
 ---
 
@@ -116,8 +243,10 @@ You can find more details [here](https://neobrain.alionix.com)
 
 **Comentarios:**
 
-- **u/AdFun4897** (↑1, 2026-10-18 18:03): “Claude, build me an html with a bunch of connected dots with colors that do nothing. No mistakes”
-  - **u/Emotional-Bag-3754** (↑1, 2026-10-18 18:50): Serio isso?
+- **u/AdFun4897** (↑-1, 2026-10-18 18:03): “Claude, build me an html with a bunch of connected dots with colors that do nothing. No mistakes”
+  - **u/Emotional-Bag-3754** (↑2, 2026-10-18 18:50): Serio isso?
+- **u/Abdulla582** (↑0, 2026-10-18 20:55): Bro, WTF u r a genius if this is true.
+  - **u/Birghtsidecheck** (↑1, 2026-10-18 21:43): Oh man thanks but I’m far from that 😅. it would be great if you could try it and share your thoughts. What i can tell you is that it’s working pretty good on my server with deepseek v4.1 flash and it is pretty much cheap compared to results and accuracy
 
 ---
 
@@ -147,9 +276,11 @@ It rarely runs out, works like a charm, and I've never had a single problem with
     
     And OpenCode does not publish which model that is.
 - **u/BlokZNCR** (↑1, 2026-10-18 17:21): Bigger Pickle
+  - **u/chikamakaleyley** (↑1, 2026-10-18 20:12): Doom Cucumba
 - **u/lincolnthalles** (↑1, 2026-10-18 17:26): It's a router model. It uses whatever has more available capacity and doesn't charge them extra.
     
     Sometimes, it points to a good model.
+- **u/pokatomnik** (↑1, 2026-10-18 21:33): What do you mean? This is a Big Pickle from Big Vegetables Inc. 228b MOE, 6-7b active.
 
 ---
 
@@ -209,10 +340,84 @@ The other horse posts for comparison:
     wow
 - **u/StackOwOFlow** (↑1, 2026-10-18 17:22): tell it to use the Muybridge race horse as reference
   - **u/migsperez** (↑1, 2026-10-18 17:27): Really helpful. I'll try it as a second prompt.
+  - **u/migsperez** (↑1, 2026-10-18 22:33): 40 million token, an hour and half.  [https://web.esuyo.com/horse-deepseek-v4.1-1017-prompt-2/](https://web.esuyo.com/horse-deepseek-v4.1-1017-prompt-2/)
+      
+      https://reddit.com/link/phl4rf3/video/1hi2sq0pyawh1/player
+      
+          You have done a wonderful job of working on this project.  
+          
+          I think the movement of the legs and the animation of the galloping needs further work.  
+          
+          Please look up https://en.wikipedia.org/wiki/The_Horse_in_Motion and search for "Muybridge race horse" there should be lots of useful information you can use as references to make improvements.
+          
+          There are images on the Wikipedia page which show the movement of a horse legs and body as it gallops at high speed.  Can you analyse each frame from inside the images to build your knowledge on how to improve the animation of the horse.
+          
+          Only focus changes to the horse, not the scenery. 
+          
+          ---
+          
+          Can you add pan and zoom, so that the user can interactively and freely move around the horse.
+    - **u/StackOwOFlow** (↑1, 2026-10-18 22:51): better but not quite there. it needs to decouple the front and back pairs, maybe ask it to stagger them?
+      - **u/migsperez** (↑1, 2026-10-18 23:07): Yeah that would be my prompt 3.     
+            
+          Generally I think it passed the benchmark test.  It did much better than other models, it has the tick of approval to be used in projects.  I'm looking forward to it being released on Opencode Go subscription.
 - **u/smartfon** (↑1, 2026-10-18 17:22): Put a cowboy on that horse. Let's see how long he lasts. That's your mechanics benchmarks.
 - **u/No-Craft-7979** (↑2, 2026-10-18 17:34): It’s like being a kindergarten puppet show all over again.
 - **u/PaxUX** (↑2, 2026-10-18 17:39): I've never seen a happier horse, tap dance through the open planes
+  - **u/Fresh_Sock8660** (↑2, 2026-10-18 20:36): Just missing a good song.
 - **u/ggPeti** (↑1, 2026-10-18 17:49): https://www.foddy.net/legacy/Athletics.html
+  - **u/sixincomefigure** (↑1, 2026-10-18 22:02): https://i.imgur.com/Je8WbUs.jpg
+- **u/marfzzz** (↑3, 2026-10-18 19:47): Generation ❌
+    Degeneration ✔️
+- **u/IllustratorSquare377** (↑2, 2026-10-18 19:49): I’m gonna call him Roach
+- **u/aimgorge** (↑1, 2026-10-18 20:05): Tried this on Opus 5.5 max. Yes I have way too much unused left on my plan
+    
+    [https://horse.frhom.eu/](https://horse.frhom.eu/)
+    
+    **Statistics**
+    
+    525,345 tokens  
+    53% used
+    
+    Session Token Summary — ↻ 96 turns
+    
+    **Metric                Value**  
+    ↑ in                  194  
+    ↓ out                 123.5K  
+    ≣ cache write         561.3K  
+    ≣ cache read          32.98M  
+    ∅ cache hit rate      98.3%  
+    ♦ think               284.3K  
+    **Σ total               33.95M**
+    
+    ◫ tools — 126 · 1 failed  
+    ↻ initiated — 1h15  
+    → busy — 1h08 · 43s/step
+  - **u/aimgorge** (↑1, 2026-10-18 20:12): https://reddit.com/link/phkawv3/video/p1dw9c7m9awh1/player
+    - **u/Planckarte** (↑1, 2026-10-18 20:34): How much that would be in api usage?
+      - **u/aimgorge** (↑1, 2026-10-18 21:07): Should be about $17,5
+- **u/jaykrown** (↑3, 2026-10-18 20:48): **LOL**
+    
+    Make it into a music video or something, 1 million views.
+- **u/ByteNomadOne** (↑1, 2026-10-18 21:26): It's super slow and I did not like what it did.
+    
+    Personally I'm back to GLM 5.3 Flash for now.
+  - **u/BreakElectronic324** (↑3, 2026-10-18 21:42): Same, DeepSeek is pretty underwhelming from my experience
+  - **u/migsperez** (↑2, 2026-10-18 22:43): I tested GLM 5.3 Flash a while back.  [http://web.esuyo.com/horse-glm-5.3-flash/](http://web.esuyo.com/horse-glm-5.3-flash/)  It was the most surprising result of all the mid level models.
+      
+      https://reddit.com/link/phl6lsa/video/lmln73md0bwh1/player
+    - **u/ByteNomadOne** (↑1, 2026-10-18 23:25): Thanks for sharing. That’s funny.
+        
+        It definitely writes better standard software than animating horses. 😄
+- **u/_BookBurner_** (↑1, 2026-10-18 21:30): :D as far as I can tell, the Qwen3.8 result looked better :D
+  - **u/migsperez** (↑1, 2026-10-18 22:45): I tried to get Qwen 3.8 FN to do it again, every time I tried it didn't reach the quality of that first creation.  No clue why.
+- **u/Infaix** (↑2, 2026-10-18 22:21): thats actual quite good
+- **u/Upstream1495** (↑2, 2026-10-18 22:32): What a crap. Exactly what I expected from DeepSeek 🤣🤣🤣
+- **u/shayanx45** (↑1, 2026-10-18 22:52): This means nothing without telling us what quant you used, what harness…
+  - **u/migsperez** (↑1, 2026-10-18 23:11): I used Openrouter which sent the requests to Deepseek.  Opencode was the harness.
+- **u/IAmFitzRoy** (↑1, 2026-10-18 23:52): LOL.  I FEEL this is DeepSeek horse.  
+    
+    It’s funny how we identify personalities to inanimate software.
 
 ---
 
@@ -255,6 +460,10 @@ It has been doing crazy unecessary Shell stuff, returns bad outputs, bad researc
     
 DeepSeek on OpenCode must not be the real v4.1 Flash. Something about it is fake. It's garbage.
 
+**Comentarios:**
+
+- **u/jarvis123451254** (↑1, 2026-10-18 21:39): True
+
 ---
 
 ## A piece of advice from someone who has tried literally every IA plan out there: Meta AI with O Muse Wonder Full 1.0 (the $200 plan) is the best AI and the best plan I’ve ever used in my life.
@@ -277,6 +486,8 @@ DeepSeek on OpenCode must not be the real v4.1 Flash. Something about it is fake
 **Comentarios:**
 
 - **u/Yao-Jian** (↑1, 2026-10-18 18:38): I took a little less time than you - ONE HOUR. I'm not sure if seeing your post brought me joy or evoked my sadness.
+- **u/Chromiell** (↑1, 2026-10-18 18:59): I honestly don't get how it can take you hours to deploy new API keys and find the root cause for Opencode not working: the first request you send to any model literally tells you that the API key has expired, it took me 2m at most to switch to a new key... It doesn't seem that dramatic to me.
+- **u/thomas29needles** (↑1, 2026-10-18 20:56): I do agree that in the new console the APIs have been moved to a completely unintuitive location. Took me some time to figure it out. Not half a day, though.
 
 ---
 
@@ -335,9 +546,12 @@ What a dumb ass change by these guys.
 - **u/AdFun4897** (↑12, 2026-10-18 15:15): Can someone confirm it feels better than gpt 5.6 sol, and not just on benchmarks?
   - **u/Saifl** (↑3, 2026-10-18 16:02): I think the hle is probably the biggest tell tale on whether or not its a good model
   - **u/ggPeti** (↑3, 2026-10-18 17:23): Massive DS flash user here, probably ~15B tokens beginning with v4. It's THE best in following instructions, bar none. But answering questions it's not very good at. It always provides wishy-washy, verbose, dilute answers, unless you harshly instruct it to pick a fucking yes or a no. But it's a very reliable coder, it follows existing style well, it picks up on coding patterns too. And it's top tier in large context handling.
+    - **u/Any-Ingenuity2770** (↑3, 2026-10-18 19:37): so it sounds like I can rely on DS for coding, but keep my general non-coding agent still on GLM-5.3-Flash, and swap to a bigger model for planning work.
+      - **u/Amarsir** (↑1, 2026-10-18 20:37): Which is how I treated them already. It's good when models remain strong in their niche.
 - **u/Reasonable_Bus2234** (↑15, 2026-10-18 15:29): Yeah, very deep model
   - **u/IgnisDa** (↑8, 2026-10-18 15:46): Deepest even
     - **u/Ace-_Ventura** (↑4, 2026-10-18 16:08): The deepest ever!
+  - **u/amo_pessoas_peladas** (↑1, 2026-10-18 22:24): Almost as if they're seeking some kind of depth. They should call it DepthSeek
 - **u/steroidchicken123** (↑3, 2026-10-18 15:31): hmm is it same size as the old flash though? i think its twice the size ?
   - **u/look** (↑2, 2026-10-18 16:20): Same size. 763B parameters. It is just updated weights; the same base model after a bit more training.
       
@@ -345,6 +559,8 @@ What a dumb ass change by these guys.
       
       https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
 - **u/Happypig375** (↑8, 2026-10-18 15:45): We are going to have BIG BEAUTIFUL Deep models, the DEEPEST you have seen! Believe me, nobody else goes as DEEP as me, and the disgusting fake news media would lie otherwise.
+  - **u/Darkoplax** (↑1, 2026-10-18 19:42): https://www.youtube.com/watch?v=vHD1aO-65fY
+  - **u/Ariquitaun** (↑1, 2026-10-18 21:57): The FAKE NEWS media doesn't want you to know DeepSeek just BEAT GPT Sol. 42.3 to 39.9. A TOTAL HUMILIATION!!! And 17 TIMES CHEAPER. CNN won't report it. They never do. DISGRACEFUL!!!
 - **u/andreagrandi** (↑3, 2026-10-18 16:31): Mmm yes this graph is...  
     Mmm no wait...  
     the uses is asking for the new model so maybe...  
@@ -369,7 +585,13 @@ What a dumb ass change by these guys.
     
     >So yes, I'm DeepSeek V4.1 Flash — but the model catalog exposes no -1017 build suffix, so I can't confirm that specific snapshot number. If 1017 refers to an internal build/date tag, I have no way to check that from here.
 - **u/YoRt3m** (↑1, 2026-10-18 18:16): Is it just me or this model is wasting way more tokens than previous versions?
-- **u/TestTxt** (↑1, 2026-10-18 18:31): They forgot Sol 6.1 and Opus 5.5 on this chart
+  - **u/ThaToneKidisCool112** (↑1, 2026-10-18 20:41): it’s not out in open code
+- **u/TestTxt** (↑2, 2026-10-18 18:31): They forgot Sol 6.1 and Opus 5.5 on this chart
+  - **u/No_Captain4899** (↑1, 2026-10-18 20:47): You already know that there are better than deepseek
+- **u/power10010** (↑1, 2026-10-18 22:06): Indeed good
+- **u/daniel-sousa-me** (↑1, 2026-10-18 23:33): Why the comparison with models one or two generations behind? 
+    
+    This seems to be roughly where Haiku 5.5 stands
 
 ---
 
@@ -544,9 +766,12 @@ When you receive the error "rate limit exceeded" switch to the "Tier 2" models
 - **u/Loud-Coach-2671** (↑1, 2026-10-18 14:15): Mimo is slow no?
 - **u/binhnohope** (↑1, 2026-10-18 14:29): is opencode working now? i just got error : Forbidden, OpenCode Free Model Gateway Detect Abuse Traffic
 - **u/Direct-Initiative344** (↑1, 2026-10-18 14:31): I am now using the beam as the worker they r like near 200t/s so and glm 5.3 as the master it is good setup glm understood to give full instructions so it is working for me now and I have changed the limit for all to 1 million from the config so it s pretty good setup and claude web version so co master if the glm don't understand or big changes it will ask for the claude and I do the copy pasting and then continue the work
+  - **u/OptimizedGamingHQ** (↑2, 2026-10-18 19:54): How are you using multiple agents with open go?
+      
+      Or do you mean you just have one on plan the other builder
 - **u/nickmullen_real** (↑3, 2026-10-18 14:59): in what cases are you using something like the tier 2 models? I have trouble trusting anything other than documentation questions about a repo, even then it feels like I'd prefer a smarter model
   - **u/ERROR_FOX_PG** (↑0, 2026-10-18 15:37): Si te gusta un modelo de nivel 2 no hay problema, es lo mismo, o si solo te quedaste sin límite en el nivel 1 y lo usas como alternativa, ambos funcionan igual
-  - **u/qustrolabe** (↑1, 2026-10-18 17:55): when you rate limited mid task that left few steps to finish beam can be pretty good
+  - **u/qustrolabe** (↑2, 2026-10-18 17:55): when you rate limited mid task that left few steps to finish beam can be pretty good
 - **u/GhostVPN** (↑1, 2026-10-18 16:43): i use Codex > Team Lead > Workers > promo > zen free > go free > standard child.
   - **u/OptimizedGamingHQ** (↑1, 2026-10-18 16:43): Elaborate
     - **u/GhostVPN** (↑1, 2026-10-18 17:01): Ich habe bulid me own orchestra
@@ -670,6 +895,8 @@ What do you think of the results? Does it match your experiences? Are there obvi
       
       write in f:/gamedev/aitest/tower/qwen38flash/ in HTML and show me when done.
     - **u/raw-power** (↑2, 2026-10-18 17:38): [https://codefile.io/f/BvthOVHjwZ](https://codefile.io/f/BvthOVHjwZ)  made in 23mins, tell you the model once you give it an accuracy grade.  this was one shot, no additional prompting
+      - **u/pikuray** (↑2, 2026-10-18 19:15): Maybe 1.5/5, no trojan horses, villager doesnt spawn, would always crash for me. Must be a free model.
+        - **u/raw-power** (↑1, 2026-10-18 19:18): Qwen3.8-Flash-Next-oQ4e-mtp on oMLX and via opencode tui
 - **u/YoRt3m** (↑1, 2026-10-18 13:39): Would be nice to see the results or at least screenshots. I tried making a few games using different models but rarely I get the result as I imagined.
   - **u/pikuray** (↑3, 2026-10-18 15:57): I can't attach images but ChatGPT Luna and Muse Spark had the best UI+graphics by far.
 - **u/UseMoreBandwith** (↑2, 2026-10-18 14:12): 'one shot' is a useless metric.   
@@ -698,6 +925,13 @@ I'm using Ollama to run local models. I have two GPUs in my PC and a dedicated O
     Along with my onw, self plug, project that manages my local stack https://unswarm.dev/
     
     Also, replace Ollama with llama.cpp for better resuls
+  - **u/Ctbhatia** (↑1, 2026-10-18 19:10): simpler to do it in config, since each agent takes its own model and each provider can carry its own baseURL.
+    - **u/JstAnthrReddtor** (↑1, 2026-10-18 22:34): I have multiple providers and models setup in the config file, with the providers using unique URLs. I can use any of those models for the initial agent, but I can't get that agent to spawn a sub agent that uses a different model. It always spawns the sub agents with the same model as the initial agent. Any advice on how to get that to work?
+    - **u/Atretador** (↑1, 2026-10-18 22:41): my proxy serves moslty to control what goes up and down on demand when it comes to local models, and aggregate all cloud APIs under one endpoint locally
+        
+        its mostly complementary and intended to make life easier when running local models in general
+        
+        for the sub agent configs, sure, thats the way you set them up on the config as per the doc
 
 ---
 
@@ -735,9 +969,12 @@ It happened at the same time as this breach i'm reading about this morning. Any 
 
 - **u/NearlyACosmologist** (↑2, 2026-10-18 12:43): Criminals use card number generators to generate valid number en masse, then try them all automatically until they hit one that actually exists.
     Then they buy things that can be resold, like gift cards or in this case ai tokens. They always use small, odd values, so many card owners don't notice them.
+  - **u/sarahgud1993** (↑1, 2026-10-18 22:38): Wouldn’t you need expiration and security code?
 - **u/DrinkClubMate** (↑1, 2026-10-18 15:05): did you use your credid card in an e-commerce website last two months ?
 - **u/AdFun4897** (↑1, 2026-10-18 15:18): Opencode just got hacked
-  - **u/JondeMLG** (↑1, 2026-10-18 18:02): There is nothing to hack as OP doesn’t have an account
+  - **u/JondeMLG** (↑3, 2026-10-18 18:02): There is nothing to hack as OP doesn’t have an account
+- **u/sarahgud1993** (↑1, 2026-10-18 22:36): This just happened to me as well. I’ve never used them but have ChatGPT. I am aware that they were hacked but I’ve never used their services that don’t have an account. (If I randomly used services once and don’t recall, it would not have been a service that costs money.)   
+    Mine was two charges in the amount of $10.77 - my card flagged it as fraud and called to ask if I made the purchase.
 
 ---
 
@@ -931,6 +1168,9 @@ Repo: https://github.com/tapeo/corami
     
     I make ThreadFox. If you want more people running coding agents on servers to find corami, our AI employee will post 3 helpful replies about it in relevant Reddit threads for you, free, no card. https://threadfox.vip/p/e2qrs/managed
 - **u/Gipetto** (↑1, 2026-10-18 17:08): Why not just use the opencode server feature? I’ll prefer the TUI if I’m on the server, but for remote work the web ui is just fine.
+  - **u/tapeo** (↑1, 2026-10-18 18:58): Yes and that's what the sync is for, with opencode serve alone the code lives on the server, so to get it elsewhere you commit and push. Corami keeps the folder on every client, uncommitted work included, so it's always there for your IDE and builds, server as source of truth
+    - **u/Gipetto** (↑1, 2026-10-18 19:40): Ah, yeah. I ditched IDEs a while back. For direct code edits I use Vim in tmux over SSH.
+      - **u/tapeo** (↑1, 2026-10-18 19:46): Tmux was an option but the local copy its useful on certain tasks like mobile builds need the machine that has Xcode or the emulator, plus the folder is there when the network isn't
 
 ---
 
@@ -1184,6 +1424,7 @@ Error: OpenCode's free tier can only be used from within OpenCode. Download it a
         > build · deepseek-v4.1-flash-free
         
         Hello
+- **u/Wrong-Bicycle-4319** (↑1, 2026-10-18 22:13): switching to mobile network instead of wi-fi works for me
 
 ---
 
@@ -1521,6 +1762,7 @@ Wondering if anyone would be interested in a open source application I built for
       - **u/Alanboooo** (↑1, 2026-10-18 07:40): How do you start widit, i always got refusal.. do i make like system prompt or sum?
         - **u/reddit_mini** (↑1, 2026-10-18 08:02): You need a jailbreak for it. I suggest you get one of the forks or original Frankenstein system prompts from the  @SillyTavernAi Subreddit.
     - **u/AdFun4897** (↑1, 2026-10-18 14:58): Idk how about get a  real girl?
+      - **u/Alanboooo** (↑1, 2026-10-18 19:29): I need it for creative writing for a commission i made haha. I ain't jorking to an AI text/video😭
 - **u/dbojan76** (↑4, 2026-10-18 05:24): I guess deepseek
 - **u/SnooWalruses6610** (↑9, 2026-10-18 05:25): GLM + Deepseek.
   - **u/Soggy-Industry2591** (↑3, 2026-10-18 06:10): which for plan and which for build
@@ -1534,6 +1776,7 @@ Wondering if anyone would be interested in a open source application I built for
             - **u/SnooWalruses6610** (↑2, 2026-10-18 13:23): caveman is a mixed bag. LLMs are trained to use natural language and caveman dumbs that down. it can help save on tokens but is also prone to introducing mistakes IME.
         - **u/_Nixo0_** (↑1, 2026-10-18 17:52): You can modify your configuration to force 1m limit
           - **u/simpleuss** (↑1, 2026-10-18 18:21): On free zen?
+            - **u/_Nixo0_** (↑1, 2026-10-18 21:52): Yes
     - **u/squirrelscrush** (↑2, 2026-10-18 09:06): Use a compression plugin and set limits on it.
       - **u/No-Selection2972** (↑1, 2026-10-18 10:43): What is a compression plugin?
         - **u/squirrelscrush** (↑3, 2026-10-18 12:04): A plugin that helps you to compress the context to not hit the limit. I use `opencode-dcp` that surgically edits the context to prevent cache invalidation.
@@ -1582,6 +1825,10 @@ Wondering if anyone would be interested in a open source application I built for
     - **u/ai_ton** (↑1, 2026-10-18 14:22): Obrigado pela dica 
         Vou já pesquisar
     - **u/holmedog** (↑1, 2026-10-18 14:24): Mind sharing the how?
+    - **u/mapcars** (↑1, 2026-10-18 21:17): Is this a theory or have you actually tried that? Because with a quick check I found this
+        
+        [https://github.com/decolua/9router/issues/3946](https://github.com/decolua/9router/issues/3946)
+    - **u/Upstream1495** (↑1, 2026-10-18 22:22): Thx 😊
   - **u/ai_ton** (↑2, 2026-10-18 14:22): Concordo com vc. 
       Ele resolveu duas situações em dois projetos distintos 
       Q nem o GPT ASTRA resolveu
@@ -1603,6 +1850,8 @@ Wondering if anyone would be interested in a open source application I built for
 - **u/PhaseTemporary** (↑1, 2026-10-18 15:53): Mimo is good
 - **u/One-Percentage-8695** (↑1, 2026-10-18 16:17): half the models dont work i get server errror code 500
 - **u/ribix_cube** (↑2, 2026-10-18 18:31): most people are using DeepSeek right now. I made a website to track the free models because I have the same question a lot https://opencode-free-models.vercel.app/
+- **u/touhami_dz** (↑1, 2026-10-18 23:03): for me i just stopped using opencode cuz the context window of the good makes them give dumb nad non complete results, it's unusable for me.
+- **u/DaskGateway** (↑1, 2026-10-18 23:38): Nice.....
 
 ---
 
@@ -1878,6 +2127,7 @@ Note: I've been trying to get past the spam filter but been struggling  so I've 
 
 - **u/2tacchi** (↑1, 2026-10-18 03:02): The website is [dailymorph.app](http://dailymorph.app) !
   - **u/EtsyCorn** (↑1, 2026-10-18 13:47): What happens when two comments have the same number of votes?
+    - **u/2tacchi** (↑1, 2026-10-18 22:01): earliest comment wins but if my own comments gonna win Ill veto and just have the second highest win
 - **u/investigatormaker** (↑1, 2026-10-18 04:27): The single long-running session is the best part: by day 7 the site shows what the agent remembers and what it quietly drops, like the copy option EtsyCorn noticed it skipped. A short daily note of which requests landed and which didn't would give people a reason to come back beyond voting.
     
     On the spam filter: the same post moving from community to community tends to look like spam to those filters, and every move resets your voters. One fixed home thread linked from the site, and elsewhere only a post about that day's change with a screenshot, should hold up better.

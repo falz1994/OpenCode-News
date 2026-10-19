@@ -77,6 +77,9 @@
   td.c .n{display:block;font-weight:400;font-size:10px;opacity:.75}
   td.c.top{box-shadow:inset 0 0 0 2px var(--acc)}
   td.rol,td.pega{white-space:normal;max-width:220px;line-height:1.35}
+  /* Banderas: la columna de detalle es prosa, no una etiqueta. Sin esto, una fila
+     larga (p. ej. la de seguridad) estira la tabla entera y obliga a scroll. */
+  td.detalle{white-space:normal;max-width:78ch;line-height:1.4;vertical-align:top}
   /* Titulares: tarjetas y no tabla — un titular con detalle largo en tabla obliga a
      scroll horizontal o a columnas que se pisan. */
   .titular{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);

@@ -829,40 +829,64 @@
     "filas": [
       [
         "Bucles y repeticiones",
-        "DeepSeek 4.1 repite bucles; MiMo 2.6 repite tool-calls idénticas; Muse 1.3 da 8 rondas de review sin terminar"
+        {
+          "class": "detalle",
+          "html": "DeepSeek 4.1 repite bucles; MiMo 2.6 repite tool-calls idénticas; Muse 1.3 da 8 rondas de review sin terminar"
+        }
       ],
       [
         "Datos de entrenamiento",
-        "Los modelos «Contributor» (Muse Spark) y Space Bunny entrenan con tus prompts según la doc de Go"
+        {
+          "class": "detalle",
+          "html": "Los modelos «Contributor» (Muse Spark) y Space Bunny entrenan con tus prompts según la doc de Go"
+        }
       ],
       [
         "Cuotas que se agotan",
-        "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"
+        {
+          "class": "detalle",
+          "html": "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"
+        }
       ],
       [
         "Límites opacos",
-        "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80). Desde el 18-oct el tier gratis además se cierra por IP (redes de datacenter) y por cliente (solo dentro de OpenCode), con errores 403 que la gente lee como baneo"
+        {
+          "class": "detalle",
+          "html": "El límite gratis de Zen no es público y varía; cambios de precio/límite sin anuncio (DeepSeek $60→$80). Desde el 18-oct el tier gratis además se cierra por IP (redes de datacenter) y por cliente (solo dentro de OpenCode), con errores 403 que la gente lee como baneo"
+        }
       ],
       [
         "Cuantización",
-        "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate es constante"
+        {
+          "class": "detalle",
+          "html": "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate es constante"
+        }
       ],
       [
         "Estabilidad",
-        "Endpoints caídos (Step 5), y 70-87 tok/s en Go frente a 270 t/s de la API directa de DeepSeek"
+        {
+          "class": "detalle",
+          "html": "Endpoints caídos (Step 5), y 70-87 tok/s en Go frente a 270 t/s de la API directa de DeepSeek"
+        }
       ],
       [
         "Seguridad",
-        "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado: OpenCode caducó las claves y solo avisó a los afectados. 18-oct: inyección de prompt en el espacio de trabajo y retirada de la cabecera x-opencode-endpoint-id, que decía qué proveedor servía cada petición. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta"
+        {
+          "class": "detalle",
+          "html": "17-oct: brecha en Console (ataque de destilación, 1,4 % de usuarios) con claves de terceros usadas y gasto no autorizado: OpenCode caducó las claves y solo avisó a los afectados. 18-oct: inyección de prompt en el espacio de trabajo y retirada de la cabecera x-opencode-endpoint-id, que decía qué proveedor servía cada petición. OpenCode Desktop 2.0.26 (Windows): el permiso external_directory no salta"
+        }
       ],
       [
         "Rompe-instalaciones",
-        "LongCat 2.5 Preview obligó a reinstalar el CLI a varios usuarios"
+        {
+          "class": "detalle",
+          "html": "LongCat 2.5 Preview obligó a reinstalar el CLI a varios usuarios"
+        }
       ]
     ]
   },
   "titulares": {
-    "titulo": "Titulares (18 oct)",
+    "titulo": "Titulares (18-19 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -889,10 +913,10 @@
         "<a href=\"https://www.reddit.com/r/opencode/comments/1x8xsg4/opencode_users_are_now_victim_of_prompt_injection/\" target=\"_blank\" rel=\"noopener\">prompt injection</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
       ],
       [
-        "18-oct",
-        "DeepSeek 1017: aún sin fecha, y en el «horse test» gasta 10M de tokens",
-        "El modelo nuevo sigue <b>sin llegar</b> a Go ni al tier gratis y ya hay hilos preguntando cuándo. Con la prueba casera del caballo, el 1017 consumió <b>10M de tokens</b> creando una nube: más que cualquier modelo anterior con ese prompt. El free de 4.1 Flash, mientras, recibe críticas por hacer shell innecesario y dar salidas malas. OpenCode 2.0 se da por estabilizado en la 2.0.32 y retiró el compartir sesiones en la 1.19.1.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x983dz/deepseek_v41_1017_horse/\" target=\"_blank\" rel=\"noopener\">test del caballo</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8k7xj/deepseek_v41flash1017_released_when_will_it_be_in/\" target=\"_blank\" rel=\"noopener\">¿cuándo en Go?</a>"
+        "19-oct",
+        "OpenCode admite que <b>frena la velocidad</b> en vez de recortar el modelo",
+        "«Lo peor que hacemos es servir a menos tps». Con eso sobre la mesa, la comunidad lo lee como un buen compromiso: prefieren velocidad limitada a que sirvan una cuantización peor. El contexto técnico es que la inferencia por lotes rinde mucho más agregado a menos tps, y que ningún proveedor promete tps. El mismo usuario que destapó la retirada de la cabecera <code>x-opencode-endpoint-id</code> reporta que ya no pasa de <b>90-100 tps</b> y que están montando rack propio. Sigue sin haber fecha para DeepSeek 1017.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/\" target=\"_blank\" rel=\"noopener\">hilo (30 comentarios)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
       ]
     ]
   }
