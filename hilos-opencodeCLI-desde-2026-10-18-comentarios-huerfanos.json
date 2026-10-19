@@ -2,8 +2,8 @@
  "meta": {
   "subreddit": "opencodeCLI",
   "range": "2026-10-18 .. 2026-10-20",
-  "fetched_at": "2026-10-19T00:11:07.396742+00:00",
-  "posts": 20,
+  "fetched_at": "2026-10-19T13:25:34.952115+00:00",
+  "posts": 45,
   "comments": 50,
   "source": "arctic-shift.photon-reddit.com",
   "nota": "hilos fuera del rango"
@@ -66,7 +66,7 @@
    "created_utc": 1792352412,
    "permalink": "/r/opencodeCLI/comments/1x8gtjg/opencode_security_breach/phk3faz/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T19:40:12+00:00"
   },
   {
@@ -96,7 +96,7 @@
    "created_utc": 1792341648,
    "permalink": "/r/opencodeCLI/comments/1x8mmer/never_used_opencode_before_will_definitely_never/phix4qu/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T16:40:48+00:00"
   },
   {
@@ -156,7 +156,7 @@
    "created_utc": 1792332285,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phhyjqy/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T14:04:45+00:00"
   },
   {
@@ -171,7 +171,7 @@
    "created_utc": 1792325760,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phheu54/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-18T12:16:00+00:00"
   },
   {
@@ -216,7 +216,7 @@
    "created_utc": 1792321683,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phh551a/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T11:08:03+00:00"
   },
   {
@@ -246,7 +246,7 @@
    "created_utc": 1792318387,
    "permalink": "/r/opencodeCLI/comments/1x8mmer/never_used_opencode_before_will_definitely_never/phgy85l/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T10:13:07+00:00"
   },
   {
@@ -276,7 +276,7 @@
    "created_utc": 1792316760,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phgv03c/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T09:46:00+00:00"
   },
   {
@@ -291,7 +291,7 @@
    "created_utc": 1792316468,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phgufew/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T09:41:08+00:00"
   },
   {
@@ -321,7 +321,7 @@
    "created_utc": 1792314484,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phgqjuh/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T09:08:04+00:00"
   },
   {
@@ -336,7 +336,7 @@
    "created_utc": 1792312653,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phgmy63/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T08:37:33+00:00"
   },
   {
@@ -396,7 +396,7 @@
    "created_utc": 1792308036,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phgdrh0/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T07:20:36+00:00"
   },
   {
@@ -411,7 +411,7 @@
    "created_utc": 1792306493,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phgakoa/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T06:54:53+00:00"
   },
   {
@@ -426,7 +426,7 @@
    "created_utc": 1792301783,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phg0neq/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T05:36:23+00:00"
   },
   {
@@ -441,7 +441,7 @@
    "created_utc": 1792301617,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phg0ae4/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T05:33:37+00:00"
   },
   {
@@ -486,7 +486,7 @@
    "created_utc": 1792298594,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phftjxq/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T04:43:14+00:00"
   },
   {
@@ -546,7 +546,7 @@
    "created_utc": 1792294868,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phfkfdz/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T03:41:08+00:00"
   },
   {
@@ -576,22 +576,22 @@
    "created_utc": 1792293978,
    "permalink": "/r/opencodeCLI/comments/1x8anzr/im_rally_liking_opencode_in_cli_thanks/phfi3ag/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T03:26:18+00:00"
   },
   {
    "id": "phfd5un",
    "author": "blastradii",
    "body": "What if I’m just using OpenCode without logging in? ",
-   "score": 3,
-   "ups": 3,
+   "score": 4,
+   "ups": 4,
    "downs": 0,
    "parent_id": "t3_1x8gp72",
    "link_id": "t3_1x8gp72",
    "created_utc": 1792292171,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phfd5un/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T02:56:11+00:00"
   },
   {
@@ -606,7 +606,7 @@
    "created_utc": 1792289731,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phf69v0/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T02:15:31+00:00"
   },
   {
@@ -636,7 +636,7 @@
    "created_utc": 1792287801,
    "permalink": "/r/opencodeCLI/comments/1x8kxw2/time_to_move_2_security_issues_in_a_week/phf0siz/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T01:43:21+00:00"
   },
   {
@@ -666,7 +666,7 @@
    "created_utc": 1792284563,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/pherhdz/",
    "edited": 1792284790,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T00:49:23+00:00"
   },
   {
@@ -681,22 +681,22 @@
    "created_utc": 1792284540,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/pherf07/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T00:49:00+00:00"
   },
   {
    "id": "pheprzr",
    "author": "jerieljan",
    "body": "There's three ways you can auth OpenAI on OpenCode:\n- `/connect` -> Login with ChatGPT\n- `/connect` -> API Key\n- OpenAI Platform -> New Key -> OpenCode Console -> Connect Provider\n\nIt's the third one that's affected. The third route is intended for people who want to BYOK and have their provider accounts charged instead of OpenCode Zen and just want to use OpenCode as a gateway.\n \nThe second one afaik stores the API key locally on the database or on opencode.json (v1).",
-   "score": 9,
-   "ups": 9,
+   "score": 10,
+   "ups": 10,
    "downs": 0,
    "parent_id": "t1_phcp6oz",
    "link_id": "t3_1x8gp72",
    "created_utc": 1792283978,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/pheprzr/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T00:39:38+00:00"
   },
   {
@@ -711,7 +711,7 @@
    "created_utc": 1792283873,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phepgvv/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T00:37:53+00:00"
   },
   {
@@ -726,7 +726,7 @@
    "created_utc": 1792283148,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phenc1z/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-18T00:25:48+00:00"
   },
   {
@@ -741,22 +741,22 @@
    "created_utc": 1792281739,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/phej6r8/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-18T00:02:19+00:00"
   },
   {
    "id": "pheixtj",
    "author": "thecstep",
    "body": "The $10 tier stretches way further right now because DS4.1 gives you about $80 worth of compute. That’s enough to generate tens of or even thousands of simple HTML sites without breaking a sweat. They definitely tightened the free usage limits.\n\nFor your workflow, Muse 1.3 Contributor + DS4.1 on the $10 plan is basically “practically unlimited.” ",
-   "score": 5,
-   "ups": 5,
+   "score": 6,
+   "ups": 6,
    "downs": 0,
    "parent_id": "t3_1x8osv2",
    "link_id": "t3_1x8osv2",
    "created_utc": 1792281654,
    "permalink": "/r/opencodeCLI/comments/1x8osv2/a_beginner_could_use_some_help/pheixtj/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-18T00:00:54+00:00"
   }
  ]

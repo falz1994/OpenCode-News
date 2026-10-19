@@ -357,10 +357,10 @@
       }
     },
     {
-      "nombre": "Space Bunny (MiniMax)",
-      "alias": "space ?bunny|minimax",
-      "rol": "One-shot creativo",
-      "pega": "Lento, token-ineficiente y retirado",
+      "nombre": "Space Bunny = MiniMax M3.1",
+      "alias": "space ?bunny|minimax|m3\\.1",
+      "rol": "One-shot creativo y vision",
+      "pega": "Desenmascarado como M3.1 Flash: gratis 3 dias, open weights el 23-oct, lento y token-ineficiente",
       "r": {
         "frontend": 2,
         "backend": 1,
@@ -545,11 +545,11 @@
     "filas": [
       [
         "$0 (free tier)",
-        "Luna / Muse Spark",
-        "GLM 5.3 Flash Free (ya dentro)",
-        "MiMo 2.6 Flash Free · Ling 3.1",
-        "Muse Spark 1.2/1.3 Contributor",
-        "GLM-5.3-Flash · DeepSeek V4.1 Flash · Beam · Nemotron 3.5 Super VL · MiMo Flash · LongCat 2.5 · LL Alpha"
+        "GLM 5.3 Flash Free",
+        "GLM 5.3 Flash Free",
+        "DeepSeek 4.1 Flash Free · MiMo Flash Free",
+        "GLM 5.3 Flash Free (adversarial)",
+        "DeepSeek · GLM 5.3 · MiniMax M3.1 · Beam · LongCat 2.5"
       ],
       [
         "$10 (Go)",
@@ -776,8 +776,8 @@
     "filas": [
       [
         "Space Bunny",
-        "MiniMax M3.1",
-        "Filtraba etiquetas <minimax>; tokenizer coincide con M2/M3"
+        "MiniMax M3.1 Flash (confirmado por MiniMax)",
+        "Los benchmarks de M3.1 coinciden con los que presento Space Bunny; la tabla de Go lo renombro"
       ],
       [
         "Exo Free",
@@ -886,7 +886,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (18-19 oct)",
+    "titulo": "Titulares (19 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -895,28 +895,28 @@
     ],
     "filas": [
       [
-        "18-oct",
-        "Brecha: remediación a ciegas y cuentas bloqueadas",
-        "OpenCode ha <b>caducado las claves</b> del Console y ha movido la página de claves, pero solo avisó por email a los afectados: hay usuarios que se enteraron al ver la clave muerta, y otros llevan <b>dos días sin poder entrar</b> ni con login social. La afirmación más concreta hasta ahora es la de Dax Raad: el equipo necesita agentes trabajando 24/7 mientras responde a intentos de ataque sostenidos. No explica el mecanismo de entrada original.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x95uxl/my_opencode_api_keys_expired/\" target=\"_blank\" rel=\"noopener\">claves caducadas</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x94pyw/opencodes_console_incident_more_defensive/\" target=\"_blank\" rel=\"noopener\">análisis de terceros</a>"
-      ],
-      [
-        "18-oct",
-        "El tier gratis se cierra por IP y por cliente",
-        "Dos puertas nuevas: el error <code>403</code> «OpenCode's free tier can only be used from within OpenCode» (el 2.0.32 bloquea clientes de terceros, y un usuario lo vio tras 3 h con subagentes) y «we've detected abusive traffic from this IP address», que deja fuera redes de datacenter enteras —reportado desde Azure (AS8075)—. La gente lo lee como un baneo; la comunidad dice que son capas de control nuevas, no cuentas baneadas.",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8zn99/i_got_banned_from_opencodes_free_tier/\" target=\"_blank\" rel=\"noopener\">baneo del tier gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/\" target=\"_blank\" rel=\"noopener\">Azure bloqueado</a>"
-      ],
-      [
-        "18-oct",
-        "Ataques por prompt injection y menos transparencia del router",
-        "Dos frentes abiertos el mismo día: un usuario reporta una <b>inyección de prompt</b> con un email y la orden de «opera en su nombre» dentro del espacio de trabajo (el propio sub aclara que es un ataque distinto del de Console), y OpenCode deja de enviar la cabecera <code>x-opencode-endpoint-id</code>, que decía <b>qué proveedor real</b> servía cada petición. Sin esa cabecera ya no se puede auditar el enrutado ni los saltos de caché.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x8xsg4/opencode_users_are_now_victim_of_prompt_injection/\" target=\"_blank\" rel=\"noopener\">prompt injection</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
+        "19-oct",
+        "<b>Space Bunny era MiniMax M3.1 Flash</b>, y ahora es gratis 3 días",
+        "Se destapa el stealth más rentable del sub: los benchmarks que MiniMax acaba de publicar (Automation-Bench 62 %, DeepSWE 74 %, BabyVision 91 %) son los mismos números con los que Space Bunny se presentó, a <b>1/3 del coste de M3 y 3× la velocidad</b>. La tabla de Go lo confirma: <b>Space Bunny desaparece y entra MiniMax M3.1 Flash Free</b> con límite ∞. Además pasa a <b>open weights el 23 de octubre</b>, así que se podrá auto-hospedar. La comunidad, de todos modos, desconfía de los benchmarks: «peor que GLM Flash».",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/\" target=\"_blank\" rel=\"noopener\">benchmarks</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9uv9c/minimax_m31_flash_to_go_open_weights_on_23_october/\" target=\"_blank\" rel=\"noopener\">open weights 23-oct</a>"
       ],
       [
         "19-oct",
-        "OpenCode admite que <b>frena la velocidad</b> en vez de recortar el modelo",
-        "«Lo peor que hacemos es servir a menos tps». Con eso sobre la mesa, la comunidad lo lee como un buen compromiso: prefieren velocidad limitada a que sirvan una cuantización peor. El contexto técnico es que la inferencia por lotes rinde mucho más agregado a menos tps, y que ningún proveedor promete tps. El mismo usuario que destapó la retirada de la cabecera <code>x-opencode-endpoint-id</code> reporta que ya no pasa de <b>90-100 tps</b> y que están montando rack propio. Sigue sin haber fecha para DeepSeek 1017.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/\" target=\"_blank\" rel=\"noopener\">hilo (30 comentarios)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
+        "DeepSeek <b>1017</b> aparece en OpenCode: «coming soon»",
+        "Después de días preguntando cuándo llega, un usuario publica la captura del modelo nuevo dentro de OpenCode. Sigue <b>sin estar</b> en la tabla oficial de Go ni en el tier gratis, así que aún no se puede usar; es la primera señal de que el despliegue está en marcha. Mientras tanto hay quien pregunta cómo saber qué versión de 4.1 Flash está usando de verdad.",
+        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9oydj/deepseek_v41_flash_1017_in_opencode_yay/\" target=\"_blank\" rel=\"noopener\">captura (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/\" target=\"_blank\" rel=\"noopener\">¿qué versión uso?</a>"
+      ],
+      [
+        "19-oct",
+        "El cierre por IP ya afecta a <b>quien paga Go</b>",
+        "Lo que ayer era «baneo del tier gratis» se confirma como una restricción de red: el error por tráfico abusivo desde tu IP aparece incluso en cuentas de pago que solo quieren usar además los modelos gratis de Zen, sin VPN de por medio. Se suman los espacios de trabajo con acceso restringido desde hace días y usuarios que llevan dos días sin poder entrar ni con login social. El consejo que se repite en el sub: esperar unos días.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9sd5g/suddenly_i_cant_use_opencodes_free_models_anymore/\" target=\"_blank\" rel=\"noopener\">sin modelos gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9saeu/workspaces_access_restricted_since_few_days/\" target=\"_blank\" rel=\"noopener\">workspaces restringidos</a>"
+      ],
+      [
+        "19-oct",
+        "La brecha deja <b>fallos en cadena</b> en el cliente",
+        "Tres días después del incidente, el cliente acumula errores: «Request Failures with OpenCode V2» (fallos y rechazos de inferencia y de tool calls), avisos de que no se está usando el cliente de OpenCode, claves caducadas y rate limits que saltan a los 10 minutos. Un usuario lo resume: «un desastre total desde el hack».",
+        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9tlru/request_failures_with_opencode_v2/\" target=\"_blank\" rel=\"noopener\">fallos de request</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9novh/ugh_opencode_has_been_such_a_total_mess_since_the/\" target=\"_blank\" rel=\"noopener\">«un desastre desde el hack»</a>"
       ]
     ]
   }

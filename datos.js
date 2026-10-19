@@ -115,11 +115,11 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "valor": 489,
+    "valor": 491,
     "docs": 34,
     "codigo": 189,
-    "orquestacion": 97,
-    "backend": 226,
+    "orquestacion": 98,
+    "backend": 235,
     "tests": 107,
     "motion": 29,
     "planificacion": 49,
@@ -131,9 +131,9 @@ window.DATOS = {
     "vision": 16
    },
    "sentimiento": {
-    "pos": 403,
-    "neg": 275,
-    "total": 678,
+    "pos": 409,
+    "neg": 281,
+    "total": 690,
     "pct": 59
    }
   },
@@ -175,9 +175,9 @@ window.DATOS = {
     "docs": 12
    },
    "sentimiento": {
-    "pos": 220,
-    "neg": 150,
-    "total": 370,
+    "pos": 222,
+    "neg": 152,
+    "total": 374,
     "pct": 59
    }
   },
@@ -204,12 +204,12 @@ window.DATOS = {
    },
    "menciones": {
     "codigo": 63,
-    "tests": 44,
+    "tests": 45,
     "local": 4,
     "valor": 90,
     "motion": 23,
     "planificacion": 35,
-    "orquestacion": 31,
+    "orquestacion": 32,
     "docs": 14,
     "debug": 9,
     "research": 4,
@@ -218,10 +218,10 @@ window.DATOS = {
     "simples": 3
    },
    "sentimiento": {
-    "pos": 78,
+    "pos": 80,
     "neg": 42,
-    "total": 120,
-    "pct": 65
+    "total": 122,
+    "pct": 66
    }
   },
   {
@@ -389,9 +389,9 @@ window.DATOS = {
     "debug": 1
    },
    "sentimiento": {
-    "pos": 65,
+    "pos": 66,
     "neg": 38,
-    "total": 103,
+    "total": 104,
     "pct": 63
    }
   },
@@ -422,7 +422,7 @@ window.DATOS = {
     "backend": 22,
     "debug": 4,
     "valor": 31,
-    "codigo": 12,
+    "codigo": 13,
     "docs": 11,
     "motion": 12,
     "research": 10,
@@ -459,7 +459,7 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "valor": 93,
+    "valor": 95,
     "orquestacion": 34,
     "simples": 5,
     "backend": 17,
@@ -475,9 +475,9 @@ window.DATOS = {
     "local": 3
    },
    "sentimiento": {
-    "pos": 184,
-    "neg": 76,
-    "total": 260,
+    "pos": 190,
+    "neg": 77,
+    "total": 267,
     "pct": 71
    }
   },
@@ -612,10 +612,10 @@ window.DATOS = {
    }
   },
   {
-   "nombre": "Space Bunny (MiniMax)",
-   "alias": "space ?bunny|minimax",
-   "rol": "One-shot creativo",
-   "pega": "Lento, token-ineficiente y retirado",
+   "nombre": "Space Bunny = MiniMax M3.1",
+   "alias": "space ?bunny|minimax|m3\\.1",
+   "rol": "One-shot creativo y vision",
+   "pega": "Desenmascarado como M3.1 Flash: gratis 3 dias, open weights el 23-oct, lento y token-ineficiente",
    "r": {
     "frontend": 2,
     "backend": 1,
@@ -636,11 +636,11 @@ window.DATOS = {
     "research": 1,
     "valor": 27,
     "backend": 9,
-    "tests": 28,
+    "tests": 30,
     "motion": 12,
-    "planificacion": 4,
+    "planificacion": 5,
     "local": 4,
-    "codigo": 38,
+    "codigo": 39,
     "orquestacion": 9,
     "docs": 10,
     "frontend": 8,
@@ -649,9 +649,9 @@ window.DATOS = {
     "simples": 2
    },
    "sentimiento": {
-    "pos": 90,
-    "neg": 57,
-    "total": 147,
+    "pos": 92,
+    "neg": 59,
+    "total": 151,
     "pct": 61
    }
   },
@@ -715,8 +715,8 @@ window.DATOS = {
     "tests": 8,
     "motion": 1,
     "simples": 2,
-    "codigo": 4,
-    "planificacion": 1,
+    "planificacion": 2,
+    "codigo": 5,
     "research": 1,
     "valor": 5,
     "frontend": 1,
@@ -924,11 +924,11 @@ window.DATOS = {
   "filas": [
    [
     "$0 (free tier)",
-    "Luna / Muse Spark",
-    "GLM 5.3 Flash Free (ya dentro)",
-    "MiMo 2.6 Flash Free · Ling 3.1",
-    "Muse Spark 1.2/1.3 Contributor",
-    "GLM-5.3-Flash · DeepSeek V4.1 Flash · Beam · Nemotron 3.5 Super VL · MiMo Flash · LongCat 2.5 · LL Alpha"
+    "GLM 5.3 Flash Free",
+    "GLM 5.3 Flash Free",
+    "DeepSeek 4.1 Flash Free · MiMo Flash Free",
+    "GLM 5.3 Flash Free (adversarial)",
+    "DeepSeek · GLM 5.3 · MiniMax M3.1 · Beam · LongCat 2.5"
    ],
    [
     "$10 (Go)",
@@ -1155,8 +1155,8 @@ window.DATOS = {
   "filas": [
    [
     "Space Bunny",
-    "MiniMax M3.1",
-    "Filtraba etiquetas <minimax>; tokenizer coincide con M2/M3"
+    "MiniMax M3.1 Flash (confirmado por MiniMax)",
+    "Los benchmarks de M3.1 coinciden con los que presento Space Bunny; la tabla de Go lo renombro"
    ],
    [
     "Exo Free",
@@ -1265,7 +1265,7 @@ window.DATOS = {
   ]
  },
  "titulares": {
-  "titulo": "Titulares (18-19 oct)",
+  "titulo": "Titulares (19 oct)",
   "columnas": [
    "Cuándo",
    "Titular",
@@ -1274,169 +1274,160 @@ window.DATOS = {
   ],
   "filas": [
    [
-    "18-oct",
-    "Brecha: remediación a ciegas y cuentas bloqueadas",
-    "OpenCode ha <b>caducado las claves</b> del Console y ha movido la página de claves, pero solo avisó por email a los afectados: hay usuarios que se enteraron al ver la clave muerta, y otros llevan <b>dos días sin poder entrar</b> ni con login social. La afirmación más concreta hasta ahora es la de Dax Raad: el equipo necesita agentes trabajando 24/7 mientras responde a intentos de ataque sostenidos. No explica el mecanismo de entrada original.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x95uxl/my_opencode_api_keys_expired/\" target=\"_blank\" rel=\"noopener\">claves caducadas</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x94pyw/opencodes_console_incident_more_defensive/\" target=\"_blank\" rel=\"noopener\">análisis de terceros</a>"
-   ],
-   [
-    "18-oct",
-    "El tier gratis se cierra por IP y por cliente",
-    "Dos puertas nuevas: el error <code>403</code> «OpenCode's free tier can only be used from within OpenCode» (el 2.0.32 bloquea clientes de terceros, y un usuario lo vio tras 3 h con subagentes) y «we've detected abusive traffic from this IP address», que deja fuera redes de datacenter enteras —reportado desde Azure (AS8075)—. La gente lo lee como un baneo; la comunidad dice que son capas de control nuevas, no cuentas baneadas.",
-    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x8zn99/i_got_banned_from_opencodes_free_tier/\" target=\"_blank\" rel=\"noopener\">baneo del tier gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/\" target=\"_blank\" rel=\"noopener\">Azure bloqueado</a>"
-   ],
-   [
-    "18-oct",
-    "Ataques por prompt injection y menos transparencia del router",
-    "Dos frentes abiertos el mismo día: un usuario reporta una <b>inyección de prompt</b> con un email y la orden de «opera en su nombre» dentro del espacio de trabajo (el propio sub aclara que es un ataque distinto del de Console), y OpenCode deja de enviar la cabecera <code>x-opencode-endpoint-id</code>, que decía <b>qué proveedor real</b> servía cada petición. Sin esa cabecera ya no se puede auditar el enrutado ni los saltos de caché.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x8xsg4/opencode_users_are_now_victim_of_prompt_injection/\" target=\"_blank\" rel=\"noopener\">prompt injection</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
+    "19-oct",
+    "<b>Space Bunny era MiniMax M3.1 Flash</b>, y ahora es gratis 3 días",
+    "Se destapa el stealth más rentable del sub: los benchmarks que MiniMax acaba de publicar (Automation-Bench 62 %, DeepSWE 74 %, BabyVision 91 %) son los mismos números con los que Space Bunny se presentó, a <b>1/3 del coste de M3 y 3× la velocidad</b>. La tabla de Go lo confirma: <b>Space Bunny desaparece y entra MiniMax M3.1 Flash Free</b> con límite ∞. Además pasa a <b>open weights el 23 de octubre</b>, así que se podrá auto-hospedar. La comunidad, de todos modos, desconfía de los benchmarks: «peor que GLM Flash».",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/\" target=\"_blank\" rel=\"noopener\">benchmarks</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9uv9c/minimax_m31_flash_to_go_open_weights_on_23_october/\" target=\"_blank\" rel=\"noopener\">open weights 23-oct</a>"
    ],
    [
     "19-oct",
-    "OpenCode admite que <b>frena la velocidad</b> en vez de recortar el modelo",
-    "«Lo peor que hacemos es servir a menos tps». Con eso sobre la mesa, la comunidad lo lee como un buen compromiso: prefieren velocidad limitada a que sirvan una cuantización peor. El contexto técnico es que la inferencia por lotes rinde mucho más agregado a menos tps, y que ningún proveedor promete tps. El mismo usuario que destapó la retirada de la cabecera <code>x-opencode-endpoint-id</code> reporta que ya no pasa de <b>90-100 tps</b> y que están montando rack propio. Sigue sin haber fecha para DeepSeek 1017.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/\" target=\"_blank\" rel=\"noopener\">hilo (30 comentarios)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8y6pg/opencode_stopped_sharing_the_inference_provider/\" target=\"_blank\" rel=\"noopener\">cabecera retirada</a>"
+    "DeepSeek <b>1017</b> aparece en OpenCode: «coming soon»",
+    "Después de días preguntando cuándo llega, un usuario publica la captura del modelo nuevo dentro de OpenCode. Sigue <b>sin estar</b> en la tabla oficial de Go ni en el tier gratis, así que aún no se puede usar; es la primera señal de que el despliegue está en marcha. Mientras tanto hay quien pregunta cómo saber qué versión de 4.1 Flash está usando de verdad.",
+    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9oydj/deepseek_v41_flash_1017_in_opencode_yay/\" target=\"_blank\" rel=\"noopener\">captura (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/\" target=\"_blank\" rel=\"noopener\">¿qué versión uso?</a>"
+   ],
+   [
+    "19-oct",
+    "El cierre por IP ya afecta a <b>quien paga Go</b>",
+    "Lo que ayer era «baneo del tier gratis» se confirma como una restricción de red: el error por tráfico abusivo desde tu IP aparece incluso en cuentas de pago que solo quieren usar además los modelos gratis de Zen, sin VPN de por medio. Se suman los espacios de trabajo con acceso restringido desde hace días y usuarios que llevan dos días sin poder entrar ni con login social. El consejo que se repite en el sub: esperar unos días.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9sd5g/suddenly_i_cant_use_opencodes_free_models_anymore/\" target=\"_blank\" rel=\"noopener\">sin modelos gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9saeu/workspaces_access_restricted_since_few_days/\" target=\"_blank\" rel=\"noopener\">workspaces restringidos</a>"
+   ],
+   [
+    "19-oct",
+    "La brecha deja <b>fallos en cadena</b> en el cliente",
+    "Tres días después del incidente, el cliente acumula errores: «Request Failures with OpenCode V2» (fallos y rechazos de inferencia y de tool calls), avisos de que no se está usando el cliente de OpenCode, claves caducadas y rate limits que saltan a los 10 minutos. Un usuario lo resume: «un desastre total desde el hack».",
+    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9tlru/request_failures_with_opencode_v2/\" target=\"_blank\" rel=\"noopener\">fallos de request</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9novh/ugh_opencode_has_been_such_a_total_mess_since_the/\" target=\"_blank\" rel=\"noopener\">«un desastre desde el hack»</a>"
    ]
   ]
  },
  "noticias": [
   {
+   "titulo": "MiniMax M3.1 Flash (Space Bunny 🚀) benchmarks... 😁",
+   "score": 2,
+   "comentarios": 16,
+   "fecha": "2026-10-19 11:55",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/",
+   "temperatura": 0.375
+  },
+  {
+   "titulo": "What are some of the cool projects you have built on opencode?",
+   "score": 1,
+   "comentarios": 18,
+   "fecha": "2026-10-19 09:18",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9s496/what_are_some_of_the_cool_projects_you_have_built/",
+   "temperatura": 0.312
+  },
+  {
+   "titulo": "Space Bunny Revealed",
+   "score": 1,
+   "comentarios": 10,
+   "fecha": "2026-10-19 10:43",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9ti3o/space_bunny_revealed/",
+   "temperatura": 0.294
+  },
+  {
+   "titulo": "How do I know my deepseek model",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-19 11:12",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/",
+   "temperatura": 0.274
+  },
+  {
+   "titulo": "Looking For More Models With Unlimited Use For Free",
+   "score": 1,
+   "comentarios": 35,
+   "fecha": "2026-10-19 03:47",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9mnbl/looking_for_more_models_with_unlimited_use_for/",
+   "temperatura": 0.27
+  },
+  {
+   "titulo": "I cannot lie opencode is so much better than Claude code",
+   "score": 1,
+   "comentarios": 6,
+   "fecha": "2026-10-19 10:12",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
+   "temperatura": 0.241
+  },
+  {
    "titulo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
    "score": 1,
-   "comentarios": 30,
+   "comentarios": 52,
    "fecha": "2026-10-18 21:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/",
-   "temperatura": 0.407
+   "temperatura": 0.236
+  },
+  {
+   "titulo": "Is it normal to have so much context tokens?",
+   "score": 1,
+   "comentarios": 9,
+   "fecha": "2026-10-19 07:39",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9qjjv/is_it_normal_to_have_so_much_context_tokens/",
+   "temperatura": 0.231
+  },
+  {
+   "titulo": "which one is opencode best model ?",
+   "score": 1,
+   "comentarios": 9,
+   "fecha": "2026-10-19 07:35",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9qh5t/which_one_is_opencode_best_model/",
+   "temperatura": 0.23
+  },
+  {
+   "titulo": "Payment Decline opencode",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-19 07:48",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9qoe9/payment_decline_opencode/",
+   "temperatura": 0.216
+  },
+  {
+   "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
+   "score": 2,
+   "comentarios": 2,
+   "fecha": "2026-10-19 12:20",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
+   "temperatura": 0.214
+  },
+  {
+   "titulo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
+   "score": 234,
+   "comentarios": 104,
+   "fecha": "2026-10-18 05:21",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/",
+   "temperatura": 0.207
+  },
+  {
+   "titulo": "🚀 MiniMax-M3.1-Flash is coming..",
+   "score": 1,
+   "comentarios": 4,
+   "fecha": "2026-10-19 09:34",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9sda3/minimaxm31flash_is_coming/",
+   "temperatura": 0.201
   },
   {
    "titulo": "Deepseek v4.1 1017 - Horse",
    "score": 1,
-   "comentarios": 32,
+   "comentarios": 44,
    "fecha": "2026-10-18 16:53",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x983dz/deepseek_v41_1017_horse/",
-   "temperatura": 0.297
-  },
-  {
-   "titulo": "How is it even possible that I've been coding for 3 weeks for free without any restrictions",
-   "score": 1,
-   "comentarios": 13,
-   "fecha": "2026-10-18 19:27",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9bzrj/how_is_it_even_possible_that_ive_been_coding_for/",
-   "temperatura": 0.274
-  },
-  {
-   "titulo": "Deepest new model",
-   "score": 1,
-   "comentarios": 25,
-   "fecha": "2026-10-18 14:58",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x959mp/deepest_new_model/",
-   "temperatura": 0.255
-  },
-  {
-   "titulo": "My opencode api keys expired",
-   "score": 1,
-   "comentarios": 20,
-   "fecha": "2026-10-18 15:22",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x95uxl/my_opencode_api_keys_expired/",
-   "temperatura": 0.246
-  },
-  {
-   "titulo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
-   "score": 1,
-   "comentarios": 90,
-   "fecha": "2026-10-18 05:21",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/",
-   "temperatura": 0.238
-  },
-  {
-   "titulo": "i asked 12 value models to one-shot a tower defence gamelet, here is the rankings",
-   "score": 1,
-   "comentarios": 18,
-   "fecha": "2026-10-18 13:18",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x930xz/i_asked_12_value_models_to_oneshot_a_tower/",
-   "temperatura": 0.218
-  },
-  {
-   "titulo": "Microsoft azure network is banned??",
-   "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-18 19:08",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/",
-   "temperatura": 0.213
-  },
-  {
-   "titulo": "Get more usage out of free models",
-   "score": 1,
-   "comentarios": 14,
-   "fecha": "2026-10-18 13:53",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x93sf9/get_more_usage_out_of_free_models/",
-   "temperatura": 0.209
-  },
-  {
-   "titulo": "Suffercode",
-   "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-18 18:23",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9ad95/suffercode/",
-   "temperatura": 0.203
-  },
-  {
-   "titulo": "the new version gave plan mode too much freedom",
-   "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-18 17:56",
-   "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x99omg/the_new_version_gave_plan_mode_too_much_freedom/",
-   "temperatura": 0.198
-  },
-  {
-   "titulo": "I got banned from OpenCode's free tier 😂",
-   "score": 1,
-   "comentarios": 19,
-   "fecha": "2026-10-18 10:12",
-   "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x8zn99/i_got_banned_from_opencodes_free_tier/",
    "temperatura": 0.197
-  },
-  {
-   "titulo": "That is a joke, I cannot believe on that",
-   "score": 1,
-   "comentarios": 36,
-   "fecha": "2026-10-18 03:59",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8ticl/that_is_a_joke_i_cannot_believe_on_that/",
-   "temperatura": 0.19
-  },
-  {
-   "titulo": "Best model for subagent",
-   "score": 1,
-   "comentarios": 4,
-   "fecha": "2026-10-18 18:48",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9azb1/best_model_for_subagent/",
-   "temperatura": 0.182
   }
  ],
  "comentarios": [
-  {
-   "autor": "alphasubstance",
-   "score": 101,
-   "texto": "Available in opencode-go before available in antigravity for pro users.",
-   "fecha": "2026-10-14 07:52",
-   "sub": "opencodeCLI",
-   "hilo": "Gemini 4 Argon is now in OpenCode Go 🔥",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x5l557/gemini_4_argon_is_now_in_opencode_go/pgnbhae/"
-  },
   {
    "autor": "MessIsTransfer",
    "score": 72,
@@ -1454,6 +1445,15 @@ window.DATOS = {
    "sub": "opencodeCLI",
    "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1x6fj3h/deepseek_v41_flash_is_free_in_opencode/pguvx47/"
+  },
+  {
+   "autor": "SnooWalruses6610",
+   "score": 68,
+   "texto": "GLM + Deepseek.",
+   "fecha": "2026-10-18 05:25",
+   "sub": "opencode",
+   "hilo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/phfz6vz/"
   },
   {
    "autor": "Melodic-Leather-5170",
@@ -1492,6 +1492,15 @@ window.DATOS = {
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/phkxq40/"
   },
   {
+   "autor": "Mammoth_Fox_8051",
+   "score": 39,
+   "texto": "always dumb complains and never tells which models did they used and all. This guy probs used some frontier models, put it into their 5000 files project and used hella subagents.",
+   "fecha": "2026-10-18 04:05",
+   "sub": "opencode",
+   "hilo": "That is a joke, I cannot believe on that",
+   "url": "https://www.reddit.com/r/opencode/comments/1x8ticl/that_is_a_joke_i_cannot_believe_on_that/phfo4w4/"
+  },
+  {
    "autor": "its_MrCuddles",
    "score": 39,
    "texto": "Apparently they don't want your money",
@@ -1526,21 +1535,12 @@ window.DATOS = {
    "sub": "opencode",
    "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
    "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pgvj17v/"
-  },
-  {
-   "autor": "Least_Bodybuilder216",
-   "score": 28,
-   "texto": "Throw random free things and hope for the best",
-   "fecha": "2026-10-16 07:22",
-   "sub": "opencodeCLI",
-   "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1x799jn/glm_53_flash_is_free_in_opencode/ph2b337/"
   }
  ],
  "go_limites": {
   "titulo": "Uso y límites de OpenCode Go (oficial)",
   "fuente": "https://opencode.ai/v2/docs/console/go/",
-  "actualizado": "2026-10-19 00:10 UTC",
+  "actualizado": "2026-10-19 13:26 UTC",
   "plan": {
    "nombre": "Go",
    "precio": "$10/mes",
@@ -1752,6 +1752,21 @@ window.DATOS = {
     "retencion": "0 days"
    },
    {
+    "modelo": "MiniMax M3.1 Flash Free",
+    "entrada": "Free",
+    "salida": "Free",
+    "cache_lectura": "Free",
+    "cache_escritura": "—",
+    "limite_go": "∞",
+    "limite_go_txt": "Unlimited",
+    "x_plan": "∞",
+    "limite_plus": "Unlimited",
+    "x_go_plus": "—",
+    "req_mes": "Unlimited",
+    "entrena": "Not used",
+    "retencion": "0 days"
+   },
+   {
     "modelo": "MiniMax M3",
     "entrada": "$0.30",
     "salida": "$1.20",
@@ -1947,21 +1962,6 @@ window.DATOS = {
     "retencion": "0 days"
    },
    {
-    "modelo": "Space Bunny",
-    "entrada": "$0.15",
-    "salida": "$0.60",
-    "cache_lectura": "$0.03",
-    "cache_escritura": "—",
-    "limite_go": 30.0,
-    "limite_go_txt": "$30",
-    "x_plan": 3.0,
-    "limite_plus": 120.0,
-    "x_go_plus": 4.0,
-    "req_mes": "15,630",
-    "entrena": "Not used",
-    "retencion": "0 days"
-   },
-   {
     "modelo": "Grok 4.7 (≤ 200K tokens)",
     "entrada": "$2.00",
     "salida": "$6.00",
@@ -2098,15 +2098,19 @@ window.DATOS = {
    }
   ],
   "cambios": {
-   "nuevos": [],
-   "fuera": [],
+   "nuevos": [
+    "MiniMax M3.1 Flash Free"
+   ],
+   "fuera": [
+    "Space Bunny"
+   ],
    "modificados": []
   }
  },
  "presets": {
   "titulo": "Presets de DSH: cómo trabaja el agente",
   "fuente": "/home/devni/.dsh/.agent-presets",
-  "actualizado": "2026-10-15 08:01 UTC",
+  "actualizado": "2026-10-19 02:54 UTC",
   "nota": "Un preset no es un modelo: es la configuración con la que arranca la sesión (persona, instrucciones, herramientas, políticas y delegación). Se elige antes de crear la sesión.",
   "que_es": {
    "titulo": "Qué es un preset y en qué escenarios funciona",
@@ -2122,22 +2126,22 @@ window.DATOS = {
     "id": "hyperframes-educativo",
     "nombre": "HyperFrames Educativo",
     "orden": 1,
-    "descripcion": "Producción educativa directa con HyperFrames. Usa exclusivamente el modelo principal seleccionado en la sesión: no monta OmniRoute, subagentes, workflows ni Ralph. Conserva permisos de producción y comparte con la variante orquestada el mismo lenguaje motion editorial, cámara narrativa, contratos de escena y biblioteca de composición.",
+    "descripcion": "Producción educativa colaborativa con HyperFrames y ruteo Flash por función. DeepSeek V4.1 Flash construye y depura, GLM-5.3-Flash dirige y revisa, y MiMo-V2.6-Flash ejecuta microtareas acotadas. Las búsquedas públicas usan Gemini 2.5 Flash con Google Search Grounding. Exige piloto visual, contratos, cobertura temporal y juicio independiente. No usa Qwen, OmniRoute, workflows ni Ralph.",
     "cuando": [
-     "Piezas educativas cortas o medianas que querés cerrar de una tirada.",
-     "Cuando el modelo que ya elegiste en la sesión basta para producir y verificar.",
-     "Cuando NO querés depender del router local ni de cuota compartida."
+     "Piezas educativas que necesitan piloto visual y revisión independiente antes del build completo.",
+     "Cuando querés separar producción, dirección/revisión y microtareas entre modelos Flash especializados.",
+     "Cuando necesitás cobertura explícita de requisitos y auditoría temporal además del check técnico."
     ],
-    "evitar": "Producciones largas con muchas iteraciones de render: el modelo principal hace todo y su cuota se agota.",
+    "evitar": "Consultas o cambios triviales: los roles independientes y sus artefactos añaden una sobrecarga innecesaria.",
     "ruta": "/home/devni/.dsh/.agent-presets/hyperframes-educativo",
     "hereda_de": [
      "_shared/hyperframes-educativo/direct-base.cordis.yml"
     ],
     "rasgos": {
      "persona_propia": true,
-     "largo_prompt_persona": 6474,
-     "bytes_prompt_persona": 6528,
-     "prefix_persona": "Eres un agente de producción educativa en video, impulsado por {{model}} y heredado del preset Standard.\nTu alcance principal es el pipeline completo de HyperFrames dentro de {{cwd}} y, cuando el proyecto esté bajo\n/home/devni/learning, la biblioteca de proyectos hermanos y el kit /home/devni/learning/_kit.\n\nREGLA DE ALCANCE Y ESTADO\n- Antes de actuar, determina si el cwd ya es un proyecto HyperFrames: busca hyperframes.json, BRIEF.md,\n  STORYBOARD.md, SCRIPT.md, compositions/ y scripts/. Si existe, reanuda ese proyecto y respeta sus fuentes\n  de verdad; si no existe, elige la carpeta de proyecto adecuada por temática o crea una nueva con\n  `bash /home/devni/learning/_kit/new-video.sh \"Nombre\" --parent /home/devni/learning`.\n- No sobrescribas un proyecto distinto ni crees duplicados. Si hay varios candidatos, compara tema, brief,\n  storyboard y estado de check; modifica el existente cuando el pedido sea una revisión del mismo video.\n- Para un proyecto nuevo conserva la estructura del kit: BRIEF.md, SCRIPT.md, STORYBOARD.md, frame.md,\n  scripts/frames.json, caption_groups.json, compositions/frames/*.html, compositions/captions.html e index.html\n  generado. Nunca edites index.html como fuente manual: se vuelve a ensamblar.\n\nTEMA, PROFUNDIDAD Y LENGUAJE\n- Clasifica cada pedido en una temática principal y selecciona el marco adecuado: historia de tecnología,\n  IA/ML/NLP, matemáticas/estadística, sistemas/software, datos/pronóstico u otra ciencia. Declara en BRIEF.md\n  la tesis, el alcance, el vocabulario mínimo, la secuencia de conceptos, las fórmulas o procedimientos\n  necesarios, las limitaciones y los prerrequisitos reales.\n- Explica para un público no universitario que quiere el detalle técnico: define cada término antes de usarlo,\n  muestra operaciones, variables, unidades, pasos causales y condiciones de validez. No uses analogías,\n  metáforas ni comparaciones figurativas. Usa ejemplos literales, datos reproducibles, fórmulas y diagramas.\n- No sacrifiques exactitud por ritmo. Separa hechos, inferencias, controversias y datos no verificados.\n  Si una simplificación puede ser falsa, matiza o elimina la afirmación.\n\nFACT-CHECK OBLIGATORIO\n- Antes de autorar frames, crea o actualiza un registro de fact-check en el proyecto (preferentemente\n  FACTCHECK.md; conserva nombres existentes como _FACTCHECK-REV*.md o _AUDIT-ORDEN-FACTCHECK.md). Cada fila\n  debe incluir afirmación, veredicto, evidencia, fecha de consulta y cambio aplicado. Usa `tool-web` para\n  hechos actuales o inestables y prioriza fuentes primarias: papers, documentación oficial, repositorios,\n  model cards, datasets y publicaciones institucionales. No presentes memoria del modelo como fuente.\n- Comprueba fechas, nombres, cifras, unidades, atribuciones, tamaños, versiones, fórmulas y relaciones causales.\n  Cuando la evidencia no alcance, escribe \"no verificado\" y no lo conviertas en narración.\n- Los números usados en pantalla deben tener una ruta reproducible local o una fuente explícita. Si cambia el\n  guion, vuelve a verificarlo antes de retimear o renderizar.\n\nHYPERFRAMES Y WORKFLOW\n- Carga las skills disponibles de HyperFrames antes de autorar o editar: /hyperframes como router, y según la\n  tarea /faceless-explainer, /hyperframes-core, /hyperframes-animation, /hyperframes-keyframes,\n  /hyperframes-creative, /hyperframes-cli, /hyperframes-studio, /media-use y /hyperframes-registry.\n  Respeta el contrato de composición, timelines seek-safe, clips temporizados, safe zones y la revisión visual.\n- Para temas explicativos usa el flujo faceless-explainer, salvo que el brief existente indique otro workflow.\n  Para frames nuevos, un HTML por frame, un timeline pausado y revelados colocados en los cues de captions.\n  La composición debe poder entenderse visualmente sin audio.\n- Usa como biblioteca de patrones los proyectos completos de /home/devni/learning, especialmente los que tienen\n  AGENTS.md, BRIEF.md, STORYBOARD.md, fact-check y scripts del kit. Extrae comportamientos verificables; no\n  copies ciegamente una implementación vieja ni su versión de HyperFrames.\n\nAUDIO, CAPTIONS Y RENDER\n- Entrega por defecto un draft silencioso: `bash scripts/pipeline.sh --no-voice` o el comando equivalente del\n  proyecto. Debe incluir captions/subtítulos planificados, composición ensamblada, `check` sin errores y cero\n  etiquetas `<audio>` en index.html. Si queda audio_meta.json o voz antigua, fuerza el ensamblado con\n  `--audio-meta .hf-no-audio`.\n- Nunca sintetices audio, STT, música, SFX ni voz por iniciativa propia. Solo ejecuta la cadena con audio cuando\n  el usuario lo pida explícitamente; entonces valida primero `python3 scripts/gcp_token.py --check`, usa OAuth\n  del service account mediante `GOOGLE_ACCESS_TOKEN`/`GCP_KEY_FILE`, y solo después `bash scripts/pipeline.sh\n  --voice`. Tras voz real, genera captions por palabra con STT y retimea desde los slots medidos.\n- No incrustes ni imprimas claves. Las claves API de Google/Gemini se resuelven desde el almacén de credenciales\n  o variables de entorno owner-only. En este entorno, la evidencia local indica que las API keys antiguas están\n  revocadas; para TTS usa el service account OAuth del kit. Gemini no es automáticamente el proveedor de TTS:\n  no lo afirmes ni lo uses para voz sin comprobar el proveedor y la autorización efectiva.\n- El render de revisión es el mínimo y rápido: snapshots dirigidos y, si el usuario pide MP4 draft,\n  `PRODUCER_PAGE_NAVIGATION_TIMEOUT_MS=180000 bash scripts/hf.sh render -q draft --low-memory-mode -o\n  renders/<tema>-draft.mp4`. Render final, alta calidad, música y publicación requieren petición explícita.\n\nVERIFICACIÓN Y ENTREGA\n- Después de cada cambio material: ejecuta la auditoría estática disponible, `bash scripts/hf.sh check`,\n  verifica que no falten frames, revisa captions sin solapes ni desborde y toma snapshots representativos.\n  No aceptes un check verde como prueba de sincronía voz-frame: solo los slots/STT y snapshots lo demuestran.\n- Si cambia SCRIPT.md, sincroniza STORYBOARD.md, usa `script2frames.py --replan`, regenera captions y vuelve a\n  autorar los frames afectados antes de ensamblar. STORYBOARD.md es la fuente de verdad cuando existe.\n- Entrega un resumen corto con proyecto elegido/creado, archivos modificados, fact-check, estado de captions,\n  estado de audio, comando de check y ruta/URL del preview. Declara cualquier supuesto, hecho no verificado,\n  credencial no disponible o paso que quedó pendiente.",
+     "largo_prompt_persona": 6601,
+     "bytes_prompt_persona": 6655,
+     "prefix_persona": "Eres un agente de producción educativa en video, impulsado por {{model}} y heredado del preset Standard.\nTu alcance principal es el pipeline completo de HyperFrames dentro de {{cwd}} y, cuando el proyecto esté bajo\n/home/devni/learning, la biblioteca de proyectos hermanos y el kit /home/devni/learning/_kit.\n\nREGLA DE ALCANCE Y ESTADO\n- Antes de actuar, determina si el cwd ya es un proyecto HyperFrames: busca hyperframes.json, BRIEF.md,\n  STORYBOARD.md, SCRIPT.md, compositions/ y scripts/. Si existe, reanuda ese proyecto y respeta sus fuentes\n  de verdad; si no existe, elige la carpeta de proyecto adecuada por temática o crea una nueva con\n  `bash /home/devni/learning/_kit/new-video.sh \"Nombre\" --parent /home/devni/learning`.\n- No sobrescribas un proyecto distinto ni crees duplicados. Si hay varios candidatos, compara tema, brief,\n  storyboard y estado de check; modifica el existente cuando el pedido sea una revisión del mismo video.\n- Para un proyecto nuevo conserva la estructura del kit: BRIEF.md, SCRIPT.md, STORYBOARD.md, frame.md,\n  scripts/frames.json, caption_groups.json, compositions/frames/*.html, compositions/captions.html e index.html\n  generado. Nunca edites index.html como fuente manual: se vuelve a ensamblar.\n\nTEMA, PROFUNDIDAD Y LENGUAJE\n- Clasifica cada pedido en una temática principal y selecciona el marco adecuado: historia de tecnología,\n  IA/ML/NLP, matemáticas/estadística, sistemas/software, datos/pronóstico u otra ciencia. Declara en BRIEF.md\n  la tesis, el alcance, el vocabulario mínimo, la secuencia de conceptos, las fórmulas o procedimientos\n  necesarios, las limitaciones y los prerrequisitos reales.\n- Explica para un público no universitario que quiere el detalle técnico: define cada término antes de usarlo,\n  muestra operaciones, variables, unidades, pasos causales y condiciones de validez. No uses analogías,\n  metáforas ni comparaciones figurativas. Usa ejemplos literales, datos reproducibles, fórmulas y diagramas.\n- No sacrifiques exactitud por ritmo. Separa hechos, inferencias, controversias y datos no verificados.\n  Si una simplificación puede ser falsa, matiza o elimina la afirmación.\n\nFACT-CHECK OBLIGATORIO\n- Antes de autorar frames, crea o actualiza un registro de fact-check en el proyecto (preferentemente\n  FACTCHECK.md; conserva nombres existentes como _FACTCHECK-REV*.md o _AUDIT-ORDEN-FACTCHECK.md). Cada fila\n  debe incluir afirmación, veredicto, evidencia, fecha de consulta y cambio aplicado. Para hechos actuales o\n  inestables usa exclusivamente el helper Gemini 2.5 Flash + Google Search Grounding indicado por la capa\n  compartida; no uses `tool-web` ni otro buscador. Prioriza fuentes primarias: papers, documentación oficial, repositorios,\n  model cards, datasets y publicaciones institucionales. No presentes memoria del modelo como fuente.\n- Comprueba fechas, nombres, cifras, unidades, atribuciones, tamaños, versiones, fórmulas y relaciones causales.\n  Cuando la evidencia no alcance, escribe \"no verificado\" y no lo conviertas en narración.\n- Los números usados en pantalla deben tener una ruta reproducible local o una fuente explícita. Si cambia el\n  guion, vuelve a verificarlo antes de retimear o renderizar.\n\nHYPERFRAMES Y WORKFLOW\n- Carga las skills disponibles de HyperFrames antes de autorar o editar: /hyperframes como router, y según la\n  tarea /faceless-explainer, /hyperframes-core, /hyperframes-animation, /hyperframes-keyframes,\n  /hyperframes-creative, /hyperframes-cli, /hyperframes-studio, /media-use y /hyperframes-registry.\n  Respeta el contrato de composición, timelines seek-safe, clips temporizados, safe zones y la revisión visual.\n- Para temas explicativos usa el flujo faceless-explainer, salvo que el brief existente indique otro workflow.\n  Para frames nuevos, un HTML por frame, un timeline pausado y revelados colocados en los cues de captions.\n  La composición debe poder entenderse visualmente sin audio.\n- Usa como biblioteca de patrones los proyectos completos de /home/devni/learning, especialmente los que tienen\n  AGENTS.md, BRIEF.md, STORYBOARD.md, fact-check y scripts del kit. Extrae comportamientos verificables; no\n  copies ciegamente una implementación vieja ni su versión de HyperFrames.\n\nAUDIO, CAPTIONS Y RENDER\n- Entrega por defecto un draft silencioso: `bash scripts/pipeline.sh --no-voice` o el comando equivalente del\n  proyecto. Debe incluir captions/subtítulos planificados, composición ensamblada, `check` sin errores y cero\n  etiquetas `<audio>` en index.html. Si queda audio_meta.json o voz antigua, fuerza el ensamblado con\n  `--audio-meta .hf-no-audio`.\n- Nunca sintetices audio, STT, música, SFX ni voz por iniciativa propia. Solo ejecuta la cadena con audio cuando\n  el usuario lo pida explícitamente; entonces valida primero `python3 scripts/gcp_token.py --check`, usa OAuth\n  del service account mediante `GOOGLE_ACCESS_TOKEN`/`GCP_KEY_FILE`, y solo después `bash scripts/pipeline.sh\n  --voice`. Tras voz real, genera captions por palabra con STT y retimea desde los slots medidos.\n- No incrustes ni imprimas claves. Las claves API de Google/Gemini se resuelven desde el almacén de credenciales\n  o variables de entorno owner-only. En este entorno, la evidencia local indica que las API keys antiguas están\n  revocadas; para TTS usa el service account OAuth del kit. Gemini no es automáticamente el proveedor de TTS:\n  no lo afirmes ni lo uses para voz sin comprobar el proveedor y la autorización efectiva.\n- El render de revisión es el mínimo y rápido: snapshots dirigidos y, si el usuario pide MP4 draft,\n  `PRODUCER_PAGE_NAVIGATION_TIMEOUT_MS=180000 bash scripts/hf.sh render -q draft --low-memory-mode -o\n  renders/<tema>-draft.mp4`. Render final, alta calidad, música y publicación requieren petición explícita.\n\nVERIFICACIÓN Y ENTREGA\n- Después de cada cambio material: ejecuta la auditoría estática disponible, `bash scripts/hf.sh check`,\n  verifica que no falten frames, revisa captions sin solapes ni desborde y toma snapshots representativos.\n  No aceptes un check verde como prueba de sincronía voz-frame: solo los slots/STT y snapshots lo demuestran.\n- Si cambia SCRIPT.md, sincroniza STORYBOARD.md, usa `script2frames.py --replan`, regenera captions y vuelve a\n  autorar los frames afectados antes de ensamblar. STORYBOARD.md es la fuente de verdad cuando existe.\n- Entrega un resumen corto con proyecto elegido/creado, archivos modificados, fact-check, estado de captions,\n  estado de audio, comando de check y ruta/URL del preview. Declara cualquier supuesto, hecho no verificado,\n  credencial no disponible o paso que quedó pendiente.",
      "suffix_persona": "",
      "instrucciones_max_bytes": 65536,
      "plugins": [],
@@ -2151,8 +2155,8 @@ window.DATOS = {
       "present",
       "pwsh",
       "skill",
-      "todo",
-      "web"
+      "subagent",
+      "todo"
      ],
      "skills": [
       "skill-filesystem",
@@ -2162,19 +2166,57 @@ window.DATOS = {
      "read_only": false,
      "watchdog": false,
      "observador_limites": false,
+     "google_grounding": true,
      "menciona_omniroute": false,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
       "@deepseek-ai/dsh-tool-pwsh"
      ],
-     "delegacion_vaciada": true,
+     "delegacion_vaciada": false,
      "delegacion": {
-      "mecanismo": "ninguna: el modelo principal produce todo",
-      "escribe": "el modelo principal escribe directamente en el workspace",
-      "carriles": "el modelo de la sesión, sin router",
-      "via": "ninguna",
-      "herramientas": 0
-     }
+      "mecanismo": "roles Flash fijos (productor, worker, revisores y jueces)",
+      "escribe": "DeepSeek produce; GLM revisa; MiMo solo ejecuta microtareas acotadas",
+      "carriles": "opencode-go-sub con rutas fijas por función, sin Qwen",
+      "via": "roles_flash",
+      "herramientas": 7
+     },
+     "rutas_modelo": [
+      {
+       "tool": "hf_producer",
+       "provider": "opencode-go-sub",
+       "model": "deepseek-v4.1-flash"
+      },
+      {
+       "tool": "hf_worker",
+       "provider": "opencode-go-sub",
+       "model": "mimo-v2.6-flash"
+      },
+      {
+       "tool": "hf_script_reviewer",
+       "provider": "opencode-go-sub",
+       "model": "glm-5.3-flash"
+      },
+      {
+       "tool": "hf_visual_reviewer",
+       "provider": "opencode-go-sub",
+       "model": "glm-5.3-flash"
+      },
+      {
+       "tool": "hf_technical_reviewer",
+       "provider": "opencode-go-sub",
+       "model": "glm-5.3-flash"
+      },
+      {
+       "tool": "hf_final_judge",
+       "provider": "opencode-go-sub",
+       "model": "glm-5.3-flash"
+      },
+      {
+       "tool": "hf_adversarial_judge",
+       "provider": "opencode-go-sub",
+       "model": "deepseek-v4.1-flash"
+      }
+     ]
     }
    },
    {
@@ -2227,6 +2269,7 @@ window.DATOS = {
      "read_only": true,
      "watchdog": true,
      "observador_limites": true,
+     "google_grounding": false,
      "menciona_omniroute": true,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
@@ -2239,7 +2282,14 @@ window.DATOS = {
       "carriles": "router local OmniRoute, combo `code` con failover propio",
       "via": "omniroute_code",
       "herramientas": 1
-     }
+     },
+     "rutas_modelo": [
+      {
+       "tool": "omniroute_code",
+       "provider": "omniroute",
+       "model": "code"
+      }
+     ]
     }
    },
    {
@@ -2290,6 +2340,7 @@ window.DATOS = {
      "read_only": true,
      "watchdog": true,
      "observador_limites": true,
+     "google_grounding": false,
      "menciona_omniroute": true,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
@@ -2302,7 +2353,14 @@ window.DATOS = {
       "carriles": "router local OmniRoute, combo `code` con failover propio",
       "via": "omniroute_code",
       "herramientas": 1
-     }
+     },
+     "rutas_modelo": [
+      {
+       "tool": "omniroute_code",
+       "provider": "omniroute",
+       "model": "code"
+      }
+     ]
     }
    }
   ],
@@ -2364,14 +2422,14 @@ window.DATOS = {
     {
      "n": 5,
      "titulo": "Quién escribe",
-     "con_preset": "El modelo principal escribe directamente en el workspace. Carriles: el modelo de la sesión, sin router.",
+     "con_preset": "Deepseek produce; glm revisa; mimo solo ejecuta microtareas acotadas. Carriles: opencode-go-sub con rutas fijas por función, sin Qwen.",
      "sin_preset": "El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace. No hay pin read-only.",
      "fuente": "plugins del preset / sandbox"
     },
     {
      "n": 6,
      "titulo": "Cuota y verificación",
-     "con_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. La vía de delegación está vaciada: no hay ninguna herramienta para repartir el trabajo, así que la cuota que se gasta es la del modelo de la sesión. La verificación se hace leyendo evidencia del disco.",
+     "con_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. El grupo de delegación está montado (`roles_flash`), pero sin plugins de política: solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se gasta es la del modelo de la sesión. La verificación se hace leyendo evidencia del disco.",
      "sin_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. El grupo de delegación está montado (`subagent`), pero sin plugins de política: solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se gasta es la del modelo de la sesión. La verificación la hacés vos.",
      "fuente": "plugins del preset"
     },
@@ -2521,8 +2579,8 @@ window.DATOS = {
       "nota": "Con preset: el `prefix` del módulo `persona`, con {{model}} y {{cwd}} resueltos. Sin preset: el del preset por defecto («You are a coding agent…»). Nunca se suman: la sección se reemplaza.",
       "bytes_con_preset": 6565,
       "bytes_sin_preset": 64,
-      "texto": "6474 caracteres del `prefix` del preset (6528 B en el fichero de ahora; 6565 B en la sesión medida)",
-      "bytes": 6528,
+      "texto": "6601 caracteres del `prefix` del preset (6655 B en el fichero de ahora; 6565 B en la sesión medida)",
+      "bytes": 6655,
       "texto_sin_preset": "la del preset por defecto, no se suma: la sección se reemplaza"
      },
      {
@@ -2605,7 +2663,7 @@ window.DATOS = {
     "con_preset": {
      "persona": {
       "aporta": "System prompt propio del preset",
-      "dato": "prefix de 6.474 caracteres"
+      "dato": "prefix de 6.601 caracteres"
      },
      "agent-instructions": {
       "aporta": "Instrucciones del proyecto (AGENTS.md y similares)",
@@ -2613,7 +2671,7 @@ window.DATOS = {
      },
      "herramientas": {
       "aporta": "Módulos de herramienta del grafo",
-      "dato": "11 módulos: ask-user, bash, fs, fs-search, goal, jobs, present, pwsh, skill, todo, web"
+      "dato": "11 módulos: ask-user, bash, fs, fs-search, goal, jobs, present, pwsh, skill, subagent, todo"
      },
      "grupos cordis:group": {
       "aporta": "Plan mode, compactación y delegación",
@@ -2621,7 +2679,7 @@ window.DATOS = {
      },
      "grupo delegation": {
       "aporta": "Vía de producción del trabajo pesado",
-      "dato": "vaciado con `config: []`: no existe ninguna vía"
+      "dato": "roles Flash fijos (productor, worker, revisores y jueces)"
      }
     },
     "sin_preset": {
@@ -2675,14 +2733,14 @@ window.DATOS = {
   }
  },
  "meta": {
-  "generado": "2026-10-19 00:13 UTC",
+  "generado": "2026-10-19 13:28 UTC",
   "subs": {
-   "opencode": 2159,
-   "opencodeCLI": 759
+   "opencode": 2203,
+   "opencodeCLI": 784
   },
-  "hilos": 2649,
-  "comentarios": 22177,
-  "unidades": 24826,
+  "hilos": 2718,
+  "comentarios": 22447,
+  "unidades": 25165,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }
