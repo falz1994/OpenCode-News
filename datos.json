@@ -1306,7 +1306,7 @@
    "fecha": "2026-10-19 11:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/",
-   "temperatura": 0.375
+   "temperatura": 0.352
   },
   {
    "titulo": "What are some of the cool projects you have built on opencode?",
@@ -1315,7 +1315,7 @@
    "fecha": "2026-10-19 09:18",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9s496/what_are_some_of_the_cool_projects_you_have_built/",
-   "temperatura": 0.312
+   "temperatura": 0.297
   },
   {
    "titulo": "Space Bunny Revealed",
@@ -1324,16 +1324,7 @@
    "fecha": "2026-10-19 10:43",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9ti3o/space_bunny_revealed/",
-   "temperatura": 0.294
-  },
-  {
-   "titulo": "How do I know my deepseek model",
-   "score": 1,
-   "comentarios": 7,
-   "fecha": "2026-10-19 11:12",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/",
-   "temperatura": 0.274
+   "temperatura": 0.278
   },
   {
    "titulo": "Looking For More Models With Unlimited Use For Free",
@@ -1342,16 +1333,16 @@
    "fecha": "2026-10-19 03:47",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9mnbl/looking_for_more_models_with_unlimited_use_for/",
-   "temperatura": 0.27
+   "temperatura": 0.262
   },
   {
-   "titulo": "I cannot lie opencode is so much better than Claude code",
+   "titulo": "How do I know my deepseek model",
    "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-19 10:12",
+   "comentarios": 7,
+   "fecha": "2026-10-19 11:12",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
-   "temperatura": 0.241
+   "url": "https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/",
+   "temperatura": 0.259
   },
   {
    "titulo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
@@ -1360,7 +1351,16 @@
    "fecha": "2026-10-18 21:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/",
-   "temperatura": 0.236
+   "temperatura": 0.231
+  },
+  {
+   "titulo": "I cannot lie opencode is so much better than Claude code",
+   "score": 1,
+   "comentarios": 6,
+   "fecha": "2026-10-19 10:12",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
+   "temperatura": 0.229
   },
   {
    "titulo": "Is it normal to have so much context tokens?",
@@ -1369,7 +1369,7 @@
    "fecha": "2026-10-19 07:39",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9qjjv/is_it_normal_to_have_so_much_context_tokens/",
-   "temperatura": 0.231
+   "temperatura": 0.222
   },
   {
    "titulo": "which one is opencode best model ?",
@@ -1378,7 +1378,7 @@
    "fecha": "2026-10-19 07:35",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9qh5t/which_one_is_opencode_best_model/",
-   "temperatura": 0.23
+   "temperatura": 0.221
   },
   {
    "titulo": "Payment Decline opencode",
@@ -1387,16 +1387,7 @@
    "fecha": "2026-10-19 07:48",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9qoe9/payment_decline_opencode/",
-   "temperatura": 0.216
-  },
-  {
-   "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
-   "score": 2,
-   "comentarios": 2,
-   "fecha": "2026-10-19 12:20",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
-   "temperatura": 0.214
+   "temperatura": 0.207
   },
   {
    "titulo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
@@ -1405,16 +1396,16 @@
    "fecha": "2026-10-18 05:21",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/",
-   "temperatura": 0.207
+   "temperatura": 0.204
   },
   {
-   "titulo": "🚀 MiniMax-M3.1-Flash is coming..",
-   "score": 1,
-   "comentarios": 4,
-   "fecha": "2026-10-19 09:34",
+   "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
+   "score": 2,
+   "comentarios": 2,
+   "fecha": "2026-10-19 12:20",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9sda3/minimaxm31flash_is_coming/",
-   "temperatura": 0.201
+   "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
+   "temperatura": 0.2
   },
   {
    "titulo": "Deepseek v4.1 1017 - Horse",
@@ -1423,7 +1414,16 @@
    "fecha": "2026-10-18 16:53",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x983dz/deepseek_v41_1017_horse/",
-   "temperatura": 0.197
+   "temperatura": 0.193
+  },
+  {
+   "titulo": "🚀 MiniMax-M3.1-Flash is coming..",
+   "score": 1,
+   "comentarios": 4,
+   "fecha": "2026-10-19 09:34",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9sda3/minimaxm31flash_is_coming/",
+   "temperatura": 0.191
   }
  ],
  "comentarios": [
@@ -2109,7 +2109,7 @@
  "presets": {
   "titulo": "Presets de DSH: cómo trabaja el agente",
   "fuente": "/home/devni/.dsh/.agent-presets",
-  "actualizado": "2026-10-19 02:54 UTC",
+  "actualizado": "2026-10-15 08:01 UTC",
   "nota": "Un preset no es un modelo: es la configuración con la que arranca la sesión (persona, instrucciones, herramientas, políticas y delegación). Se elige antes de crear la sesión.",
   "que_es": {
    "titulo": "Qué es un preset y en qué escenarios funciona",
@@ -2125,22 +2125,22 @@
     "id": "hyperframes-educativo",
     "nombre": "HyperFrames Educativo",
     "orden": 1,
-    "descripcion": "Producción educativa colaborativa con HyperFrames y ruteo Flash por función. DeepSeek V4.1 Flash construye y depura, GLM-5.3-Flash dirige y revisa, y MiMo-V2.6-Flash ejecuta microtareas acotadas. Las búsquedas públicas usan Gemini 2.5 Flash con Google Search Grounding. Exige piloto visual, contratos, cobertura temporal y juicio independiente. No usa Qwen, OmniRoute, workflows ni Ralph.",
+    "descripcion": "Producción educativa directa con HyperFrames. Usa exclusivamente el modelo principal seleccionado en la sesión: no monta OmniRoute, subagentes, workflows ni Ralph. Conserva permisos de producción y comparte con la variante orquestada el mismo lenguaje motion editorial, cámara narrativa, contratos de escena y biblioteca de composición.",
     "cuando": [
-     "Piezas educativas que necesitan piloto visual y revisión independiente antes del build completo.",
-     "Cuando querés separar producción, dirección/revisión y microtareas entre modelos Flash especializados.",
-     "Cuando necesitás cobertura explícita de requisitos y auditoría temporal además del check técnico."
+     "Piezas educativas cortas o medianas que querés cerrar de una tirada.",
+     "Cuando el modelo que ya elegiste en la sesión basta para producir y verificar.",
+     "Cuando NO querés depender del router local ni de cuota compartida."
     ],
-    "evitar": "Consultas o cambios triviales: los roles independientes y sus artefactos añaden una sobrecarga innecesaria.",
+    "evitar": "Producciones largas con muchas iteraciones de render: el modelo principal hace todo y su cuota se agota.",
     "ruta": "/home/devni/.dsh/.agent-presets/hyperframes-educativo",
     "hereda_de": [
      "_shared/hyperframes-educativo/direct-base.cordis.yml"
     ],
     "rasgos": {
      "persona_propia": true,
-     "largo_prompt_persona": 6601,
-     "bytes_prompt_persona": 6655,
-     "prefix_persona": "Eres un agente de producción educativa en video, impulsado por {{model}} y heredado del preset Standard.\nTu alcance principal es el pipeline completo de HyperFrames dentro de {{cwd}} y, cuando el proyecto esté bajo\n/home/devni/learning, la biblioteca de proyectos hermanos y el kit /home/devni/learning/_kit.\n\nREGLA DE ALCANCE Y ESTADO\n- Antes de actuar, determina si el cwd ya es un proyecto HyperFrames: busca hyperframes.json, BRIEF.md,\n  STORYBOARD.md, SCRIPT.md, compositions/ y scripts/. Si existe, reanuda ese proyecto y respeta sus fuentes\n  de verdad; si no existe, elige la carpeta de proyecto adecuada por temática o crea una nueva con\n  `bash /home/devni/learning/_kit/new-video.sh \"Nombre\" --parent /home/devni/learning`.\n- No sobrescribas un proyecto distinto ni crees duplicados. Si hay varios candidatos, compara tema, brief,\n  storyboard y estado de check; modifica el existente cuando el pedido sea una revisión del mismo video.\n- Para un proyecto nuevo conserva la estructura del kit: BRIEF.md, SCRIPT.md, STORYBOARD.md, frame.md,\n  scripts/frames.json, caption_groups.json, compositions/frames/*.html, compositions/captions.html e index.html\n  generado. Nunca edites index.html como fuente manual: se vuelve a ensamblar.\n\nTEMA, PROFUNDIDAD Y LENGUAJE\n- Clasifica cada pedido en una temática principal y selecciona el marco adecuado: historia de tecnología,\n  IA/ML/NLP, matemáticas/estadística, sistemas/software, datos/pronóstico u otra ciencia. Declara en BRIEF.md\n  la tesis, el alcance, el vocabulario mínimo, la secuencia de conceptos, las fórmulas o procedimientos\n  necesarios, las limitaciones y los prerrequisitos reales.\n- Explica para un público no universitario que quiere el detalle técnico: define cada término antes de usarlo,\n  muestra operaciones, variables, unidades, pasos causales y condiciones de validez. No uses analogías,\n  metáforas ni comparaciones figurativas. Usa ejemplos literales, datos reproducibles, fórmulas y diagramas.\n- No sacrifiques exactitud por ritmo. Separa hechos, inferencias, controversias y datos no verificados.\n  Si una simplificación puede ser falsa, matiza o elimina la afirmación.\n\nFACT-CHECK OBLIGATORIO\n- Antes de autorar frames, crea o actualiza un registro de fact-check en el proyecto (preferentemente\n  FACTCHECK.md; conserva nombres existentes como _FACTCHECK-REV*.md o _AUDIT-ORDEN-FACTCHECK.md). Cada fila\n  debe incluir afirmación, veredicto, evidencia, fecha de consulta y cambio aplicado. Para hechos actuales o\n  inestables usa exclusivamente el helper Gemini 2.5 Flash + Google Search Grounding indicado por la capa\n  compartida; no uses `tool-web` ni otro buscador. Prioriza fuentes primarias: papers, documentación oficial, repositorios,\n  model cards, datasets y publicaciones institucionales. No presentes memoria del modelo como fuente.\n- Comprueba fechas, nombres, cifras, unidades, atribuciones, tamaños, versiones, fórmulas y relaciones causales.\n  Cuando la evidencia no alcance, escribe \"no verificado\" y no lo conviertas en narración.\n- Los números usados en pantalla deben tener una ruta reproducible local o una fuente explícita. Si cambia el\n  guion, vuelve a verificarlo antes de retimear o renderizar.\n\nHYPERFRAMES Y WORKFLOW\n- Carga las skills disponibles de HyperFrames antes de autorar o editar: /hyperframes como router, y según la\n  tarea /faceless-explainer, /hyperframes-core, /hyperframes-animation, /hyperframes-keyframes,\n  /hyperframes-creative, /hyperframes-cli, /hyperframes-studio, /media-use y /hyperframes-registry.\n  Respeta el contrato de composición, timelines seek-safe, clips temporizados, safe zones y la revisión visual.\n- Para temas explicativos usa el flujo faceless-explainer, salvo que el brief existente indique otro workflow.\n  Para frames nuevos, un HTML por frame, un timeline pausado y revelados colocados en los cues de captions.\n  La composición debe poder entenderse visualmente sin audio.\n- Usa como biblioteca de patrones los proyectos completos de /home/devni/learning, especialmente los que tienen\n  AGENTS.md, BRIEF.md, STORYBOARD.md, fact-check y scripts del kit. Extrae comportamientos verificables; no\n  copies ciegamente una implementación vieja ni su versión de HyperFrames.\n\nAUDIO, CAPTIONS Y RENDER\n- Entrega por defecto un draft silencioso: `bash scripts/pipeline.sh --no-voice` o el comando equivalente del\n  proyecto. Debe incluir captions/subtítulos planificados, composición ensamblada, `check` sin errores y cero\n  etiquetas `<audio>` en index.html. Si queda audio_meta.json o voz antigua, fuerza el ensamblado con\n  `--audio-meta .hf-no-audio`.\n- Nunca sintetices audio, STT, música, SFX ni voz por iniciativa propia. Solo ejecuta la cadena con audio cuando\n  el usuario lo pida explícitamente; entonces valida primero `python3 scripts/gcp_token.py --check`, usa OAuth\n  del service account mediante `GOOGLE_ACCESS_TOKEN`/`GCP_KEY_FILE`, y solo después `bash scripts/pipeline.sh\n  --voice`. Tras voz real, genera captions por palabra con STT y retimea desde los slots medidos.\n- No incrustes ni imprimas claves. Las claves API de Google/Gemini se resuelven desde el almacén de credenciales\n  o variables de entorno owner-only. En este entorno, la evidencia local indica que las API keys antiguas están\n  revocadas; para TTS usa el service account OAuth del kit. Gemini no es automáticamente el proveedor de TTS:\n  no lo afirmes ni lo uses para voz sin comprobar el proveedor y la autorización efectiva.\n- El render de revisión es el mínimo y rápido: snapshots dirigidos y, si el usuario pide MP4 draft,\n  `PRODUCER_PAGE_NAVIGATION_TIMEOUT_MS=180000 bash scripts/hf.sh render -q draft --low-memory-mode -o\n  renders/<tema>-draft.mp4`. Render final, alta calidad, música y publicación requieren petición explícita.\n\nVERIFICACIÓN Y ENTREGA\n- Después de cada cambio material: ejecuta la auditoría estática disponible, `bash scripts/hf.sh check`,\n  verifica que no falten frames, revisa captions sin solapes ni desborde y toma snapshots representativos.\n  No aceptes un check verde como prueba de sincronía voz-frame: solo los slots/STT y snapshots lo demuestran.\n- Si cambia SCRIPT.md, sincroniza STORYBOARD.md, usa `script2frames.py --replan`, regenera captions y vuelve a\n  autorar los frames afectados antes de ensamblar. STORYBOARD.md es la fuente de verdad cuando existe.\n- Entrega un resumen corto con proyecto elegido/creado, archivos modificados, fact-check, estado de captions,\n  estado de audio, comando de check y ruta/URL del preview. Declara cualquier supuesto, hecho no verificado,\n  credencial no disponible o paso que quedó pendiente.",
+     "largo_prompt_persona": 6474,
+     "bytes_prompt_persona": 6528,
+     "prefix_persona": "Eres un agente de producción educativa en video, impulsado por {{model}} y heredado del preset Standard.\nTu alcance principal es el pipeline completo de HyperFrames dentro de {{cwd}} y, cuando el proyecto esté bajo\n/home/devni/learning, la biblioteca de proyectos hermanos y el kit /home/devni/learning/_kit.\n\nREGLA DE ALCANCE Y ESTADO\n- Antes de actuar, determina si el cwd ya es un proyecto HyperFrames: busca hyperframes.json, BRIEF.md,\n  STORYBOARD.md, SCRIPT.md, compositions/ y scripts/. Si existe, reanuda ese proyecto y respeta sus fuentes\n  de verdad; si no existe, elige la carpeta de proyecto adecuada por temática o crea una nueva con\n  `bash /home/devni/learning/_kit/new-video.sh \"Nombre\" --parent /home/devni/learning`.\n- No sobrescribas un proyecto distinto ni crees duplicados. Si hay varios candidatos, compara tema, brief,\n  storyboard y estado de check; modifica el existente cuando el pedido sea una revisión del mismo video.\n- Para un proyecto nuevo conserva la estructura del kit: BRIEF.md, SCRIPT.md, STORYBOARD.md, frame.md,\n  scripts/frames.json, caption_groups.json, compositions/frames/*.html, compositions/captions.html e index.html\n  generado. Nunca edites index.html como fuente manual: se vuelve a ensamblar.\n\nTEMA, PROFUNDIDAD Y LENGUAJE\n- Clasifica cada pedido en una temática principal y selecciona el marco adecuado: historia de tecnología,\n  IA/ML/NLP, matemáticas/estadística, sistemas/software, datos/pronóstico u otra ciencia. Declara en BRIEF.md\n  la tesis, el alcance, el vocabulario mínimo, la secuencia de conceptos, las fórmulas o procedimientos\n  necesarios, las limitaciones y los prerrequisitos reales.\n- Explica para un público no universitario que quiere el detalle técnico: define cada término antes de usarlo,\n  muestra operaciones, variables, unidades, pasos causales y condiciones de validez. No uses analogías,\n  metáforas ni comparaciones figurativas. Usa ejemplos literales, datos reproducibles, fórmulas y diagramas.\n- No sacrifiques exactitud por ritmo. Separa hechos, inferencias, controversias y datos no verificados.\n  Si una simplificación puede ser falsa, matiza o elimina la afirmación.\n\nFACT-CHECK OBLIGATORIO\n- Antes de autorar frames, crea o actualiza un registro de fact-check en el proyecto (preferentemente\n  FACTCHECK.md; conserva nombres existentes como _FACTCHECK-REV*.md o _AUDIT-ORDEN-FACTCHECK.md). Cada fila\n  debe incluir afirmación, veredicto, evidencia, fecha de consulta y cambio aplicado. Usa `tool-web` para\n  hechos actuales o inestables y prioriza fuentes primarias: papers, documentación oficial, repositorios,\n  model cards, datasets y publicaciones institucionales. No presentes memoria del modelo como fuente.\n- Comprueba fechas, nombres, cifras, unidades, atribuciones, tamaños, versiones, fórmulas y relaciones causales.\n  Cuando la evidencia no alcance, escribe \"no verificado\" y no lo conviertas en narración.\n- Los números usados en pantalla deben tener una ruta reproducible local o una fuente explícita. Si cambia el\n  guion, vuelve a verificarlo antes de retimear o renderizar.\n\nHYPERFRAMES Y WORKFLOW\n- Carga las skills disponibles de HyperFrames antes de autorar o editar: /hyperframes como router, y según la\n  tarea /faceless-explainer, /hyperframes-core, /hyperframes-animation, /hyperframes-keyframes,\n  /hyperframes-creative, /hyperframes-cli, /hyperframes-studio, /media-use y /hyperframes-registry.\n  Respeta el contrato de composición, timelines seek-safe, clips temporizados, safe zones y la revisión visual.\n- Para temas explicativos usa el flujo faceless-explainer, salvo que el brief existente indique otro workflow.\n  Para frames nuevos, un HTML por frame, un timeline pausado y revelados colocados en los cues de captions.\n  La composición debe poder entenderse visualmente sin audio.\n- Usa como biblioteca de patrones los proyectos completos de /home/devni/learning, especialmente los que tienen\n  AGENTS.md, BRIEF.md, STORYBOARD.md, fact-check y scripts del kit. Extrae comportamientos verificables; no\n  copies ciegamente una implementación vieja ni su versión de HyperFrames.\n\nAUDIO, CAPTIONS Y RENDER\n- Entrega por defecto un draft silencioso: `bash scripts/pipeline.sh --no-voice` o el comando equivalente del\n  proyecto. Debe incluir captions/subtítulos planificados, composición ensamblada, `check` sin errores y cero\n  etiquetas `<audio>` en index.html. Si queda audio_meta.json o voz antigua, fuerza el ensamblado con\n  `--audio-meta .hf-no-audio`.\n- Nunca sintetices audio, STT, música, SFX ni voz por iniciativa propia. Solo ejecuta la cadena con audio cuando\n  el usuario lo pida explícitamente; entonces valida primero `python3 scripts/gcp_token.py --check`, usa OAuth\n  del service account mediante `GOOGLE_ACCESS_TOKEN`/`GCP_KEY_FILE`, y solo después `bash scripts/pipeline.sh\n  --voice`. Tras voz real, genera captions por palabra con STT y retimea desde los slots medidos.\n- No incrustes ni imprimas claves. Las claves API de Google/Gemini se resuelven desde el almacén de credenciales\n  o variables de entorno owner-only. En este entorno, la evidencia local indica que las API keys antiguas están\n  revocadas; para TTS usa el service account OAuth del kit. Gemini no es automáticamente el proveedor de TTS:\n  no lo afirmes ni lo uses para voz sin comprobar el proveedor y la autorización efectiva.\n- El render de revisión es el mínimo y rápido: snapshots dirigidos y, si el usuario pide MP4 draft,\n  `PRODUCER_PAGE_NAVIGATION_TIMEOUT_MS=180000 bash scripts/hf.sh render -q draft --low-memory-mode -o\n  renders/<tema>-draft.mp4`. Render final, alta calidad, música y publicación requieren petición explícita.\n\nVERIFICACIÓN Y ENTREGA\n- Después de cada cambio material: ejecuta la auditoría estática disponible, `bash scripts/hf.sh check`,\n  verifica que no falten frames, revisa captions sin solapes ni desborde y toma snapshots representativos.\n  No aceptes un check verde como prueba de sincronía voz-frame: solo los slots/STT y snapshots lo demuestran.\n- Si cambia SCRIPT.md, sincroniza STORYBOARD.md, usa `script2frames.py --replan`, regenera captions y vuelve a\n  autorar los frames afectados antes de ensamblar. STORYBOARD.md es la fuente de verdad cuando existe.\n- Entrega un resumen corto con proyecto elegido/creado, archivos modificados, fact-check, estado de captions,\n  estado de audio, comando de check y ruta/URL del preview. Declara cualquier supuesto, hecho no verificado,\n  credencial no disponible o paso que quedó pendiente.",
      "suffix_persona": "",
      "instrucciones_max_bytes": 65536,
      "plugins": [],
@@ -2154,8 +2154,8 @@
       "present",
       "pwsh",
       "skill",
-      "subagent",
-      "todo"
+      "todo",
+      "web"
      ],
      "skills": [
       "skill-filesystem",
@@ -2165,57 +2165,19 @@
      "read_only": false,
      "watchdog": false,
      "observador_limites": false,
-     "google_grounding": true,
      "menciona_omniroute": false,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
       "@deepseek-ai/dsh-tool-pwsh"
      ],
-     "delegacion_vaciada": false,
+     "delegacion_vaciada": true,
      "delegacion": {
-      "mecanismo": "roles Flash fijos (productor, worker, revisores y jueces)",
-      "escribe": "DeepSeek produce; GLM revisa; MiMo solo ejecuta microtareas acotadas",
-      "carriles": "opencode-go-sub con rutas fijas por función, sin Qwen",
-      "via": "roles_flash",
-      "herramientas": 7
-     },
-     "rutas_modelo": [
-      {
-       "tool": "hf_producer",
-       "provider": "opencode-go-sub",
-       "model": "deepseek-v4.1-flash"
-      },
-      {
-       "tool": "hf_worker",
-       "provider": "opencode-go-sub",
-       "model": "mimo-v2.6-flash"
-      },
-      {
-       "tool": "hf_script_reviewer",
-       "provider": "opencode-go-sub",
-       "model": "glm-5.3-flash"
-      },
-      {
-       "tool": "hf_visual_reviewer",
-       "provider": "opencode-go-sub",
-       "model": "glm-5.3-flash"
-      },
-      {
-       "tool": "hf_technical_reviewer",
-       "provider": "opencode-go-sub",
-       "model": "glm-5.3-flash"
-      },
-      {
-       "tool": "hf_final_judge",
-       "provider": "opencode-go-sub",
-       "model": "glm-5.3-flash"
-      },
-      {
-       "tool": "hf_adversarial_judge",
-       "provider": "opencode-go-sub",
-       "model": "deepseek-v4.1-flash"
-      }
-     ]
+      "mecanismo": "ninguna: el modelo principal produce todo",
+      "escribe": "el modelo principal escribe directamente en el workspace",
+      "carriles": "el modelo de la sesión, sin router",
+      "via": "ninguna",
+      "herramientas": 0
+     }
     }
    },
    {
@@ -2268,7 +2230,6 @@
      "read_only": true,
      "watchdog": true,
      "observador_limites": true,
-     "google_grounding": false,
      "menciona_omniroute": true,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
@@ -2281,14 +2242,7 @@
       "carriles": "router local OmniRoute, combo `code` con failover propio",
       "via": "omniroute_code",
       "herramientas": 1
-     },
-     "rutas_modelo": [
-      {
-       "tool": "omniroute_code",
-       "provider": "omniroute",
-       "model": "code"
-      }
-     ]
+     }
     }
    },
    {
@@ -2339,7 +2293,6 @@
      "read_only": true,
      "watchdog": true,
      "observador_limites": true,
-     "google_grounding": false,
      "menciona_omniroute": true,
      "condicionales": [
       "@deepseek-ai/dsh-tool-bash",
@@ -2352,14 +2305,7 @@
       "carriles": "router local OmniRoute, combo `code` con failover propio",
       "via": "omniroute_code",
       "herramientas": 1
-     },
-     "rutas_modelo": [
-      {
-       "tool": "omniroute_code",
-       "provider": "omniroute",
-       "model": "code"
-      }
-     ]
+     }
     }
    }
   ],
@@ -2421,14 +2367,14 @@
     {
      "n": 5,
      "titulo": "Quién escribe",
-     "con_preset": "Deepseek produce; glm revisa; mimo solo ejecuta microtareas acotadas. Carriles: opencode-go-sub con rutas fijas por función, sin Qwen.",
+     "con_preset": "El modelo principal escribe directamente en el workspace. Carriles: el modelo de la sesión, sin router.",
      "sin_preset": "El modelo principal escribe directamente: `write`, `edit` y `bash` van al sandbox del workspace. No hay pin read-only.",
      "fuente": "plugins del preset / sandbox"
     },
     {
      "n": 6,
      "titulo": "Cuota y verificación",
-     "con_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. El grupo de delegación está montado (`roles_flash`), pero sin plugins de política: solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se gasta es la del modelo de la sesión. La verificación se hace leyendo evidencia del disco.",
+     "con_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. La vía de delegación está vaciada: no hay ninguna herramienta para repartir el trabajo, así que la cuota que se gasta es la del modelo de la sesión. La verificación se hace leyendo evidencia del disco.",
      "sin_preset": "No monta watchdog ni observador de límites: ningún plugin vigila la cuota. El grupo de delegación está montado (`subagent`), pero sin plugins de política: solo se usa si el modelo decide llamarlo. Si no lo llama, la cuota que se gasta es la del modelo de la sesión. La verificación la hacés vos.",
      "fuente": "plugins del preset"
     },
@@ -2578,8 +2524,8 @@
       "nota": "Con preset: el `prefix` del módulo `persona`, con {{model}} y {{cwd}} resueltos. Sin preset: el del preset por defecto («You are a coding agent…»). Nunca se suman: la sección se reemplaza.",
       "bytes_con_preset": 6565,
       "bytes_sin_preset": 64,
-      "texto": "6601 caracteres del `prefix` del preset (6655 B en el fichero de ahora; 6565 B en la sesión medida)",
-      "bytes": 6655,
+      "texto": "6474 caracteres del `prefix` del preset (6528 B en el fichero de ahora; 6565 B en la sesión medida)",
+      "bytes": 6528,
       "texto_sin_preset": "la del preset por defecto, no se suma: la sección se reemplaza"
      },
      {
@@ -2662,7 +2608,7 @@
     "con_preset": {
      "persona": {
       "aporta": "System prompt propio del preset",
-      "dato": "prefix de 6.601 caracteres"
+      "dato": "prefix de 6.474 caracteres"
      },
      "agent-instructions": {
       "aporta": "Instrucciones del proyecto (AGENTS.md y similares)",
@@ -2670,7 +2616,7 @@
      },
      "herramientas": {
       "aporta": "Módulos de herramienta del grafo",
-      "dato": "11 módulos: ask-user, bash, fs, fs-search, goal, jobs, present, pwsh, skill, subagent, todo"
+      "dato": "11 módulos: ask-user, bash, fs, fs-search, goal, jobs, present, pwsh, skill, todo, web"
      },
      "grupos cordis:group": {
       "aporta": "Plan mode, compactación y delegación",
@@ -2678,7 +2624,7 @@
      },
      "grupo delegation": {
       "aporta": "Vía de producción del trabajo pesado",
-      "dato": "roles Flash fijos (productor, worker, revisores y jueces)"
+      "dato": "vaciado con `config: []`: no existe ninguna vía"
      }
     },
     "sin_preset": {
@@ -2732,7 +2678,7 @@
   }
  },
  "meta": {
-  "generado": "2026-10-19 13:28 UTC",
+  "generado": "2026-10-19 14:10 UTC",
   "subs": {
    "opencode": 2203,
    "opencodeCLI": 784
