@@ -1,0 +1,88 @@
+{
+ "meta": {
+  "subreddit": "opencodeCLI",
+  "range": "2026-10-19 .. 2026-10-20",
+  "fetched_at": "2026-10-19T18:05:20.097956+00:00",
+  "posts": 31,
+  "comments": 5,
+  "source": "arctic-shift.photon-reddit.com",
+  "nota": "hilos fuera del rango"
+ },
+ "comments": [
+  {
+   "id": "phod8j8",
+   "author": "TripleMellowed",
+   "body": "They don’t like Indians. ",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phh3b2o",
+   "link_id": "t3_1x8zn99",
+   "created_utc": 1792409981,
+   "permalink": "/r/opencodeCLI/comments/1x8zn99/i_got_banned_from_opencodes_free_tier/phod8j8/",
+   "edited": false,
+   "depth": 1,
+   "created_iso": "2026-10-19T11:39:41+00:00"
+  },
+  {
+   "id": "phnoxi8",
+   "author": "HyperWinX",
+   "body": "Have to agree, especially after buying my first Claude sub for testing. DS is enough for me, but not enough for those who dont put any thinking into the task they are doing",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phmxncz",
+   "link_id": "t3_1x95i6y",
+   "created_utc": 1792398752,
+   "permalink": "/r/opencodeCLI/comments/1x95i6y/deepest_new_model/phnoxi8/",
+   "edited": false,
+   "depth": 1,
+   "created_iso": "2026-10-19T08:32:32+00:00"
+  },
+  {
+   "id": "phnd37p",
+   "author": "xapep",
+   "body": "For small, well-scoped feature edits the model axis matters less than two things: how reliably it follows instructions and formats tool calls in your harness, and what it does once a session grows past a few dozen files. Luna feeling sharper is usually those two, not raw intelligence. So instead of chasing releases, aim at the failure you actually saw: DeepSeek's sparse attention starts strong and drifts on long threads, which matches your experience, and short, well-scoped tasks fix most of it.  \n  \nOn the open-weight side I'd A/B GLM 5.3 Flash as the daily driver for your Java and Node work, it's the one I'd reach for first for scoped edits, and keep DeepSeek V4.1 Flash for bulk. Qwen 3.8 stays fine for planning. Honest tip: run one real feature from your repo through each and count fixups, that beats any benchmark thread for picking a daily model.  \n  \nI run an EU-hosted inference API that serves GLM 5.3 and DeepSeek V4.1 Flash (Entrim), but opencode has both built in, so you can test the split there before deciding anything.",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x7gpex",
+   "link_id": "t3_1x7gpex",
+   "created_utc": 1792392729,
+   "permalink": "/r/opencodeCLI/comments/1x7gpex/i_realized_i_only_use_gpt56_luna_any_advice/phnd37p/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-19T06:52:09+00:00"
+  },
+  {
+   "id": "phmxncz",
+   "author": "VirtualNorth1279",
+   "body": "It can use the terminal and write bash alright, but it sucks compared to any of the Claude models.",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x95i6y",
+   "link_id": "t3_1x95i6y",
+   "created_utc": 1792385405,
+   "permalink": "/r/opencodeCLI/comments/1x95i6y/deepest_new_model/phmxncz/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-19T04:50:05+00:00"
+  },
+  {
+   "id": "phmlmn8",
+   "author": "Yayman123",
+   "body": "Luna or Deepseek 4.1-Flash meet 95% of my needs. I mean these things literally rival \"top of the line\" frontier models from just a year ago for really cheap.",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x7gpex",
+   "link_id": "t3_1x7gpex",
+   "created_utc": 1792380482,
+   "permalink": "/r/opencodeCLI/comments/1x7gpex/i_realized_i_only_use_gpt56_luna_any_advice/phmlmn8/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-19T03:28:02+00:00"
+  }
+ ]
+}

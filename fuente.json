@@ -886,7 +886,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (19 oct)",
+    "titulo": "Titulares (19 oct, tarde)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -896,27 +896,27 @@
     "filas": [
       [
         "19-oct",
-        "<b>Space Bunny era MiniMax M3.1 Flash</b>, y ahora es gratis 3 días",
-        "Se destapa el stealth más rentable del sub: los benchmarks que MiniMax acaba de publicar (Automation-Bench 62 %, DeepSWE 74 %, BabyVision 91 %) son los mismos números con los que Space Bunny se presentó, a <b>1/3 del coste de M3 y 3× la velocidad</b>. La tabla de Go lo confirma: <b>Space Bunny desaparece y entra MiniMax M3.1 Flash Free</b> con límite ∞. Además pasa a <b>open weights el 23 de octubre</b>, así que se podrá auto-hospedar. La comunidad, de todos modos, desconfía de los benchmarks: «peor que GLM Flash».",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/\" target=\"_blank\" rel=\"noopener\">benchmarks</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9uv9c/minimax_m31_flash_to_go_open_weights_on_23_october/\" target=\"_blank\" rel=\"noopener\">open weights 23-oct</a>"
+        "<b>DeepSeek 1017 ya está</b> en Go y en el tier gratis",
+        "A las 16:35 el sub da por hecho que <b>deepseek-v4.1-flash</b> y su variante free pasan a la versión 1017: es el mismo id de modelo, así que se actualiza sin tocar la configuración de nadie. No lo anuncia el changelog (sigue en v2.0.32 del 16-oct); lo confirman dos hilos a la vez y encaja con el estado de la web, que hoy marca «slow responses» en pay-as-you-go por deepseek-v4-flash.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xa1qy7/deepseek_v41_flash_updated_to_1017_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">hilo (Go y Free)</a>"
       ],
       [
         "19-oct",
-        "DeepSeek <b>1017</b> aparece en OpenCode: «coming soon»",
-        "Después de días preguntando cuándo llega, un usuario publica la captura del modelo nuevo dentro de OpenCode. Sigue <b>sin estar</b> en la tabla oficial de Go ni en el tier gratis, así que aún no se puede usar; es la primera señal de que el despliegue está en marcha. Mientras tanto hay quien pregunta cómo saber qué versión de 4.1 Flash está usando de verdad.",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9oydj/deepseek_v41_flash_1017_in_opencode_yay/\" target=\"_blank\" rel=\"noopener\">captura (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/\" target=\"_blank\" rel=\"noopener\">¿qué versión uso?</a>"
+        "El <b>tier gratis</b> cambia de forma tres veces en un día",
+        "MiniMax M3.1 Flash entra gratis (3 días), pero a la vez aparece un mensaje nuevo, «Your free limit has been exceeded», que le salta incluso a quien <b>no usaba</b> los modelos gratis: había gastado su cuota con OpenAI y al pasarse a un modelo free se topó con otro límite distinto. Se suma el bloqueo por IP y el de cliente del día anterior, y en r/opencodeCLI alguien reporta que ahora se le agota el límite en <b>30 minutos</b> cuando antes le duraba todo el día.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9zlvg/free_limit_exceeded_on_opencode_without_even/\" target=\"_blank\" rel=\"noopener\">free limit exceeded</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1xa38c4/what_to_do_to_improve_usage_burn_limit_in_30_min/\" target=\"_blank\" rel=\"noopener\">30 min de límite</a>"
       ],
       [
         "19-oct",
-        "El cierre por IP ya afecta a <b>quien paga Go</b>",
-        "Lo que ayer era «baneo del tier gratis» se confirma como una restricción de red: el error por tráfico abusivo desde tu IP aparece incluso en cuentas de pago que solo quieren usar además los modelos gratis de Zen, sin VPN de por medio. Se suman los espacios de trabajo con acceso restringido desde hace días y usuarios que llevan dos días sin poder entrar ni con login social. El consejo que se repite en el sub: esperar unos días.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9sd5g/suddenly_i_cant_use_opencodes_free_models_anymore/\" target=\"_blank\" rel=\"noopener\">sin modelos gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9saeu/workspaces_access_restricted_since_few_days/\" target=\"_blank\" rel=\"noopener\">workspaces restringidos</a>"
+        "El caballo de Space Bunny, repetido en <b>M3.1 Flash</b>: 27,8 M de tokens y ~0,50 $",
+        "Con el stealth ya desenmascarado, un usuario repite el prompt del caballo sobre el modelo publicado (variante max) sin retoques: <b>184 turnos, 184 tool calls, 37 minutos de reloj y 27,8 M de tokens</b>, de los cuales 27,6 M son lectura de caché. Al precio de API sale por unos <b>50 céntimos</b>. Es la medición más limpia que hay del coste real de una pieza 3D generada por agente.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xa1y6t/reran_the_space_bunny_horse_prompt_on_released/\" target=\"_blank\" rel=\"noopener\">medición completa</a>"
       ],
       [
         "19-oct",
-        "La brecha deja <b>fallos en cadena</b> en el cliente",
-        "Tres días después del incidente, el cliente acumula errores: «Request Failures with OpenCode V2» (fallos y rechazos de inferencia y de tool calls), avisos de que no se está usando el cliente de OpenCode, claves caducadas y rate limits que saltan a los 10 minutos. Un usuario lo resume: «un desastre total desde el hack».",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9tlru/request_failures_with_opencode_v2/\" target=\"_blank\" rel=\"noopener\">fallos de request</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9novh/ugh_opencode_has_been_such_a_total_mess_since_the/\" target=\"_blank\" rel=\"noopener\">«un desastre desde el hack»</a>"
+        "Otra vez a petición: <b>«Bring muse-spark 1.3 back»</b>",
+        "Dos hilos piden recuperar Muse Spark 1.3, retirado por costes de hosting y errores de API. La respuesta más votada es la que ya cierra el debate: <b>sigue en Go</b>, pero como Contributor de pago ($60/mes y entrenando con tus datos), que es justo lo que se apagó del tier gratis. Mientras tanto Muse Spark Open (open-weight) está en Hugging Face y la comunidad debate si merece la pena.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x9ztax/bring_musespark_13_back/\" target=\"_blank\" rel=\"noopener\">petición</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x6rkni/meta_is_releasing_muse_spark_open_openweight/\" target=\"_blank\" rel=\"noopener\">Muse Spark Open</a>"
       ]
     ]
   }

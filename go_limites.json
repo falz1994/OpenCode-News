@@ -1,7 +1,7 @@
 {
  "titulo": "Uso y límites de OpenCode Go (oficial)",
  "fuente": "https://opencode.ai/v2/docs/console/go/",
- "actualizado": "2026-10-19 13:26 UTC",
+ "actualizado": "2026-10-19 18:05 UTC",
  "plan": {
   "nombre": "Go",
   "precio": "$10/mes",
@@ -559,12 +559,8 @@
   }
  ],
  "cambios": {
-  "nuevos": [
-   "MiniMax M3.1 Flash Free"
-  ],
-  "fuera": [
-   "Space Bunny"
-  ],
+  "nuevos": [],
+  "fuera": [],
   "modificados": []
  }
 }

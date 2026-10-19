@@ -115,15 +115,15 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "valor": 491,
-    "docs": 34,
-    "codigo": 189,
+    "valor": 492,
+    "docs": 35,
+    "codigo": 192,
     "orquestacion": 98,
-    "backend": 235,
-    "tests": 107,
+    "backend": 237,
+    "tests": 108,
     "motion": 29,
     "planificacion": 49,
-    "frontend": 10,
+    "frontend": 11,
     "debug": 20,
     "local": 24,
     "simples": 15,
@@ -131,9 +131,9 @@ window.DATOS = {
     "vision": 16
    },
    "sentimiento": {
-    "pos": 409,
-    "neg": 281,
-    "total": 690,
+    "pos": 419,
+    "neg": 286,
+    "total": 705,
     "pct": 59
    }
   },
@@ -159,15 +159,15 @@ window.DATOS = {
     "valor": 2
    },
    "menciones": {
-    "valor": 247,
-    "codigo": 116,
-    "backend": 45,
+    "valor": 248,
+    "codigo": 118,
+    "backend": 46,
     "tests": 69,
     "local": 12,
     "orquestacion": 38,
     "simples": 6,
     "planificacion": 38,
-    "frontend": 8,
+    "frontend": 9,
     "motion": 13,
     "debug": 13,
     "research": 6,
@@ -175,10 +175,10 @@ window.DATOS = {
     "docs": 12
    },
    "sentimiento": {
-    "pos": 222,
+    "pos": 226,
     "neg": 152,
-    "total": 374,
-    "pct": 59
+    "total": 378,
+    "pct": 60
    }
   },
   {
@@ -203,25 +203,25 @@ window.DATOS = {
     "valor": 1
    },
    "menciones": {
-    "codigo": 63,
+    "codigo": 65,
     "tests": 45,
     "local": 4,
-    "valor": 90,
+    "valor": 91,
     "motion": 23,
     "planificacion": 35,
     "orquestacion": 32,
     "docs": 14,
     "debug": 9,
     "research": 4,
+    "frontend": 5,
     "backend": 7,
-    "frontend": 4,
     "simples": 3
    },
    "sentimiento": {
-    "pos": 80,
-    "neg": 42,
-    "total": 122,
-    "pct": 66
+    "pos": 81,
+    "neg": 43,
+    "total": 124,
+    "pct": 65
    }
   },
   {
@@ -330,8 +330,8 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "codigo": 46,
-    "tests": 27,
+    "codigo": 47,
+    "tests": 28,
     "local": 1,
     "backend": 8,
     "research": 2,
@@ -377,22 +377,22 @@ window.DATOS = {
     "backend": 11,
     "research": 4,
     "planificacion": 31,
-    "codigo": 41,
-    "tests": 39,
+    "codigo": 43,
+    "tests": 40,
     "orquestacion": 27,
     "docs": 13,
-    "valor": 70,
+    "valor": 71,
+    "frontend": 3,
     "motion": 9,
     "local": 2,
-    "frontend": 2,
     "simples": 4,
     "debug": 1
    },
    "sentimiento": {
-    "pos": 66,
+    "pos": 67,
     "neg": 38,
-    "total": 104,
-    "pct": 63
+    "total": 105,
+    "pct": 64
    }
   },
   {
@@ -422,7 +422,7 @@ window.DATOS = {
     "backend": 22,
     "debug": 4,
     "valor": 31,
-    "codigo": 13,
+    "codigo": 14,
     "docs": 11,
     "motion": 12,
     "research": 10,
@@ -459,16 +459,16 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "valor": 95,
+    "valor": 96,
     "orquestacion": 34,
     "simples": 5,
-    "backend": 17,
-    "codigo": 52,
-    "docs": 12,
+    "backend": 18,
+    "codigo": 55,
+    "docs": 13,
     "research": 6,
     "planificacion": 14,
-    "tests": 33,
-    "motion": 11,
+    "tests": 35,
+    "motion": 12,
     "vision": 3,
     "frontend": 17,
     "debug": 8,
@@ -519,9 +519,9 @@ window.DATOS = {
     "debug": 3
    },
    "sentimiento": {
-    "pos": 137,
-    "neg": 92,
-    "total": 229,
+    "pos": 139,
+    "neg": 94,
+    "total": 233,
     "pct": 60
    }
   },
@@ -561,10 +561,10 @@ window.DATOS = {
     "local": 3
    },
    "sentimiento": {
-    "pos": 37,
+    "pos": 38,
     "neg": 35,
-    "total": 72,
-    "pct": 51
+    "total": 73,
+    "pct": 52
    }
   },
   {
@@ -636,11 +636,11 @@ window.DATOS = {
     "research": 1,
     "valor": 27,
     "backend": 9,
-    "tests": 30,
-    "motion": 12,
+    "tests": 33,
+    "motion": 14,
     "planificacion": 5,
     "local": 4,
-    "codigo": 39,
+    "codigo": 40,
     "orquestacion": 9,
     "docs": 10,
     "frontend": 8,
@@ -649,10 +649,10 @@ window.DATOS = {
     "simples": 2
    },
    "sentimiento": {
-    "pos": 92,
-    "neg": 59,
-    "total": 151,
-    "pct": 61
+    "pos": 101,
+    "neg": 61,
+    "total": 162,
+    "pct": 62
    }
   },
   {
@@ -684,10 +684,10 @@ window.DATOS = {
     "valor": 2
    },
    "sentimiento": {
-    "pos": 13,
+    "pos": 14,
     "neg": 12,
-    "total": 25,
-    "pct": 52
+    "total": 26,
+    "pct": 54
    }
   },
   {
@@ -712,7 +712,7 @@ window.DATOS = {
     "valor": 3
    },
    "menciones": {
-    "tests": 8,
+    "tests": 9,
     "motion": 1,
     "simples": 2,
     "planificacion": 2,
@@ -723,9 +723,9 @@ window.DATOS = {
     "vision": 1
    },
    "sentimiento": {
-    "pos": 11,
-    "neg": 14,
-    "total": 25,
+    "pos": 12,
+    "neg": 15,
+    "total": 27,
     "pct": 44
    }
   },
@@ -1265,7 +1265,7 @@ window.DATOS = {
   ]
  },
  "titulares": {
-  "titulo": "Titulares (19 oct)",
+  "titulo": "Titulares (19 oct, tarde)",
   "columnas": [
    "Cuándo",
    "Titular",
@@ -1275,75 +1275,138 @@ window.DATOS = {
   "filas": [
    [
     "19-oct",
-    "<b>Space Bunny era MiniMax M3.1 Flash</b>, y ahora es gratis 3 días",
-    "Se destapa el stealth más rentable del sub: los benchmarks que MiniMax acaba de publicar (Automation-Bench 62 %, DeepSWE 74 %, BabyVision 91 %) son los mismos números con los que Space Bunny se presentó, a <b>1/3 del coste de M3 y 3× la velocidad</b>. La tabla de Go lo confirma: <b>Space Bunny desaparece y entra MiniMax M3.1 Flash Free</b> con límite ∞. Además pasa a <b>open weights el 23 de octubre</b>, así que se podrá auto-hospedar. La comunidad, de todos modos, desconfía de los benchmarks: «peor que GLM Flash».",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/\" target=\"_blank\" rel=\"noopener\">benchmarks</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9uv9c/minimax_m31_flash_to_go_open_weights_on_23_october/\" target=\"_blank\" rel=\"noopener\">open weights 23-oct</a>"
+    "<b>DeepSeek 1017 ya está</b> en Go y en el tier gratis",
+    "A las 16:35 el sub da por hecho que <b>deepseek-v4.1-flash</b> y su variante free pasan a la versión 1017: es el mismo id de modelo, así que se actualiza sin tocar la configuración de nadie. No lo anuncia el changelog (sigue en v2.0.32 del 16-oct); lo confirman dos hilos a la vez y encaja con el estado de la web, que hoy marca «slow responses» en pay-as-you-go por deepseek-v4-flash.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xa1qy7/deepseek_v41_flash_updated_to_1017_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">hilo (Go y Free)</a>"
    ],
    [
     "19-oct",
-    "DeepSeek <b>1017</b> aparece en OpenCode: «coming soon»",
-    "Después de días preguntando cuándo llega, un usuario publica la captura del modelo nuevo dentro de OpenCode. Sigue <b>sin estar</b> en la tabla oficial de Go ni en el tier gratis, así que aún no se puede usar; es la primera señal de que el despliegue está en marcha. Mientras tanto hay quien pregunta cómo saber qué versión de 4.1 Flash está usando de verdad.",
-    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9oydj/deepseek_v41_flash_1017_in_opencode_yay/\" target=\"_blank\" rel=\"noopener\">captura (hilo)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/\" target=\"_blank\" rel=\"noopener\">¿qué versión uso?</a>"
+    "El <b>tier gratis</b> cambia de forma tres veces en un día",
+    "MiniMax M3.1 Flash entra gratis (3 días), pero a la vez aparece un mensaje nuevo, «Your free limit has been exceeded», que le salta incluso a quien <b>no usaba</b> los modelos gratis: había gastado su cuota con OpenAI y al pasarse a un modelo free se topó con otro límite distinto. Se suma el bloqueo por IP y el de cliente del día anterior, y en r/opencodeCLI alguien reporta que ahora se le agota el límite en <b>30 minutos</b> cuando antes le duraba todo el día.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9zlvg/free_limit_exceeded_on_opencode_without_even/\" target=\"_blank\" rel=\"noopener\">free limit exceeded</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1xa38c4/what_to_do_to_improve_usage_burn_limit_in_30_min/\" target=\"_blank\" rel=\"noopener\">30 min de límite</a>"
    ],
    [
     "19-oct",
-    "El cierre por IP ya afecta a <b>quien paga Go</b>",
-    "Lo que ayer era «baneo del tier gratis» se confirma como una restricción de red: el error por tráfico abusivo desde tu IP aparece incluso en cuentas de pago que solo quieren usar además los modelos gratis de Zen, sin VPN de por medio. Se suman los espacios de trabajo con acceso restringido desde hace días y usuarios que llevan dos días sin poder entrar ni con login social. El consejo que se repite en el sub: esperar unos días.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9sd5g/suddenly_i_cant_use_opencodes_free_models_anymore/\" target=\"_blank\" rel=\"noopener\">sin modelos gratis</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9saeu/workspaces_access_restricted_since_few_days/\" target=\"_blank\" rel=\"noopener\">workspaces restringidos</a>"
+    "El caballo de Space Bunny, repetido en <b>M3.1 Flash</b>: 27,8 M de tokens y ~0,50 $",
+    "Con el stealth ya desenmascarado, un usuario repite el prompt del caballo sobre el modelo publicado (variante max) sin retoques: <b>184 turnos, 184 tool calls, 37 minutos de reloj y 27,8 M de tokens</b>, de los cuales 27,6 M son lectura de caché. Al precio de API sale por unos <b>50 céntimos</b>. Es la medición más limpia que hay del coste real de una pieza 3D generada por agente.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xa1y6t/reran_the_space_bunny_horse_prompt_on_released/\" target=\"_blank\" rel=\"noopener\">medición completa</a>"
    ],
    [
     "19-oct",
-    "La brecha deja <b>fallos en cadena</b> en el cliente",
-    "Tres días después del incidente, el cliente acumula errores: «Request Failures with OpenCode V2» (fallos y rechazos de inferencia y de tool calls), avisos de que no se está usando el cliente de OpenCode, claves caducadas y rate limits que saltan a los 10 minutos. Un usuario lo resume: «un desastre total desde el hack».",
-    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9tlru/request_failures_with_opencode_v2/\" target=\"_blank\" rel=\"noopener\">fallos de request</a> · <a href=\"https://www.reddit.com/r/opencodeCLI/comments/1x9novh/ugh_opencode_has_been_such_a_total_mess_since_the/\" target=\"_blank\" rel=\"noopener\">«un desastre desde el hack»</a>"
+    "Otra vez a petición: <b>«Bring muse-spark 1.3 back»</b>",
+    "Dos hilos piden recuperar Muse Spark 1.3, retirado por costes de hosting y errores de API. La respuesta más votada es la que ya cierra el debate: <b>sigue en Go</b>, pero como Contributor de pago ($60/mes y entrenando con tus datos), que es justo lo que se apagó del tier gratis. Mientras tanto Muse Spark Open (open-weight) está en Hugging Face y la comunidad debate si merece la pena.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1x9ztax/bring_musespark_13_back/\" target=\"_blank\" rel=\"noopener\">petición</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x6rkni/meta_is_releasing_muse_spark_open_openweight/\" target=\"_blank\" rel=\"noopener\">Muse Spark Open</a>"
    ]
   ]
  },
  "noticias": [
   {
+   "titulo": "Bring muse-spark 1.3 back",
+   "score": 1,
+   "comentarios": 16,
+   "fecha": "2026-10-19 15:23",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9ztax/bring_musespark_13_back/",
+   "temperatura": 0.336
+  },
+  {
    "titulo": "MiniMax M3.1 Flash (Space Bunny 🚀) benchmarks... 😁",
    "score": 2,
-   "comentarios": 16,
+   "comentarios": 38,
    "fecha": "2026-10-19 11:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/",
-   "temperatura": 0.352
+   "temperatura": 0.33
+  },
+  {
+   "titulo": "How much usage will I get on the 10$ plan?",
+   "score": 1,
+   "comentarios": 9,
+   "fecha": "2026-10-19 14:40",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9yov3/how_much_usage_will_i_get_on_the_10_plan/",
+   "temperatura": 0.27
   },
   {
    "titulo": "What are some of the cool projects you have built on opencode?",
    "score": 1,
-   "comentarios": 18,
+   "comentarios": 28,
    "fecha": "2026-10-19 09:18",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9s496/what_are_some_of_the_cool_projects_you_have_built/",
-   "temperatura": 0.297
+   "temperatura": 0.268
+  },
+  {
+   "titulo": "What is going on???",
+   "score": 1,
+   "comentarios": 10,
+   "fecha": "2026-10-19 13:37",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9x3yd/what_is_going_on/",
+   "temperatura": 0.259
+  },
+  {
+   "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
+   "score": 2,
+   "comentarios": 12,
+   "fecha": "2026-10-19 12:20",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
+   "temperatura": 0.255
   },
   {
    "titulo": "Space Bunny Revealed",
    "score": 1,
-   "comentarios": 10,
+   "comentarios": 16,
    "fecha": "2026-10-19 10:43",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9ti3o/space_bunny_revealed/",
-   "temperatura": 0.278
+   "temperatura": 0.249
+  },
+  {
+   "titulo": "\"AI will take over human j*bs\", meanwhile Al-",
+   "score": 1,
+   "comentarios": 5,
+   "fecha": "2026-10-19 15:33",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xa02y7/ai_will_take_over_human_jbs_meanwhile_al/",
+   "temperatura": 0.24
   },
   {
    "titulo": "Looking For More Models With Unlimited Use For Free",
    "score": 1,
-   "comentarios": 35,
+   "comentarios": 37,
    "fecha": "2026-10-19 03:47",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9mnbl/looking_for_more_models_with_unlimited_use_for/",
-   "temperatura": 0.262
+   "temperatura": 0.228
   },
   {
    "titulo": "How do I know my deepseek model",
    "score": 1,
-   "comentarios": 7,
+   "comentarios": 9,
    "fecha": "2026-10-19 11:12",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9u0ud/how_do_i_know_my_deepseek_model/",
-   "temperatura": 0.259
+   "temperatura": 0.217
+  },
+  {
+   "titulo": "I made opencode v2 read my plan quota and type what I                                                       say",
+   "score": 1,
+   "comentarios": 7,
+   "fecha": "2026-10-19 11:36",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9uhoc/i_made_opencode_v2_read_my_plan_quota_and_type/",
+   "temperatura": 0.206
+  },
+  {
+   "titulo": "I cannot lie opencode is so much better than Claude code",
+   "score": 1,
+   "comentarios": 9,
+   "fecha": "2026-10-19 10:12",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
+   "temperatura": 0.206
   },
   {
    "titulo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
@@ -1352,79 +1415,16 @@ window.DATOS = {
    "fecha": "2026-10-18 21:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/",
-   "temperatura": 0.231
-  },
-  {
-   "titulo": "I cannot lie opencode is so much better than Claude code",
-   "score": 1,
-   "comentarios": 6,
-   "fecha": "2026-10-19 10:12",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9szh8/i_cannot_lie_opencode_is_so_much_better_than/",
-   "temperatura": 0.229
-  },
-  {
-   "titulo": "Is it normal to have so much context tokens?",
-   "score": 1,
-   "comentarios": 9,
-   "fecha": "2026-10-19 07:39",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9qjjv/is_it_normal_to_have_so_much_context_tokens/",
-   "temperatura": 0.222
+   "temperatura": 0.206
   },
   {
    "titulo": "which one is opencode best model ?",
    "score": 1,
-   "comentarios": 9,
+   "comentarios": 11,
    "fecha": "2026-10-19 07:35",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9qh5t/which_one_is_opencode_best_model/",
-   "temperatura": 0.221
-  },
-  {
-   "titulo": "Payment Decline opencode",
-   "score": 1,
-   "comentarios": 7,
-   "fecha": "2026-10-19 07:48",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9qoe9/payment_decline_opencode/",
-   "temperatura": 0.207
-  },
-  {
-   "titulo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
-   "score": 234,
-   "comentarios": 104,
-   "fecha": "2026-10-18 05:21",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/",
-   "temperatura": 0.204
-  },
-  {
-   "titulo": "🔥 MiniMax M3.1 Flash (Space Bunny) is FREE on OpenCode for 3 days",
-   "score": 2,
-   "comentarios": 2,
-   "fecha": "2026-10-19 12:20",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9vegj/minimax_m31_flash_space_bunny_is_free_on_opencode/",
-   "temperatura": 0.2
-  },
-  {
-   "titulo": "Deepseek v4.1 1017 - Horse",
-   "score": 1,
-   "comentarios": 44,
-   "fecha": "2026-10-18 16:53",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x983dz/deepseek_v41_1017_horse/",
-   "temperatura": 0.193
-  },
-  {
-   "titulo": "🚀 MiniMax-M3.1-Flash is coming..",
-   "score": 1,
-   "comentarios": 4,
-   "fecha": "2026-10-19 09:34",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9sda3/minimaxm31flash_is_coming/",
-   "temperatura": 0.191
+   "temperatura": 0.194
   }
  ],
  "comentarios": [
@@ -1454,6 +1454,15 @@ window.DATOS = {
    "sub": "opencode",
    "hilo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
    "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/phfz6vz/"
+  },
+  {
+   "autor": "RepulsiveRaisin7",
+   "score": 64,
+   "texto": "It's time to retire benchmarks. This thing is worse than GLM Flash",
+   "fecha": "2026-10-19 12:00",
+   "sub": "opencode",
+   "hilo": "MiniMax M3.1 Flash (Space Bunny 🚀) benchmarks... 😁",
+   "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/phogkgy/"
   },
   {
    "autor": "Melodic-Leather-5170",
@@ -1526,21 +1535,12 @@ window.DATOS = {
    "sub": "opencodeCLI",
    "hilo": "🔥 GLM 5.3 Flash is FREE in OpenCode",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1x799jn/glm_53_flash_is_free_in_opencode/ph2arwv/"
-  },
-  {
-   "autor": "Icy-Examination-9512",
-   "score": 28,
-   "texto": "200k context is absolute terrorism",
-   "fecha": "2026-10-15 11:01",
-   "sub": "opencode",
-   "hilo": "DeepSeek V4.1 Flash is FREE in OpenCode 🔥",
-   "url": "https://www.reddit.com/r/opencode/comments/1x6fj9m/deepseek_v41_flash_is_free_in_opencode/pgvj17v/"
   }
  ],
  "go_limites": {
   "titulo": "Uso y límites de OpenCode Go (oficial)",
   "fuente": "https://opencode.ai/v2/docs/console/go/",
-  "actualizado": "2026-10-19 13:26 UTC",
+  "actualizado": "2026-10-19 18:05 UTC",
   "plan": {
    "nombre": "Go",
    "precio": "$10/mes",
@@ -2098,12 +2098,8 @@ window.DATOS = {
    }
   ],
   "cambios": {
-   "nuevos": [
-    "MiniMax M3.1 Flash Free"
-   ],
-   "fuera": [
-    "Space Bunny"
-   ],
+   "nuevos": [],
+   "fuera": [],
    "modificados": []
   }
  },
@@ -2679,14 +2675,14 @@ window.DATOS = {
   }
  },
  "meta": {
-  "generado": "2026-10-19 14:10 UTC",
+  "generado": "2026-10-19 18:06 UTC",
   "subs": {
-   "opencode": 2203,
-   "opencodeCLI": 784
+   "opencode": 2267,
+   "opencodeCLI": 815
   },
-  "hilos": 2718,
-  "comentarios": 22447,
-  "unidades": 25165,
+  "hilos": 2744,
+  "comentarios": 22572,
+  "unidades": 25316,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }
