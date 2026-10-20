@@ -96,7 +96,7 @@
    "nombre": "DeepSeek 4.1 Flash",
    "alias": "deepseek|ds ?4\\.1|v4\\.1 ?flash|dsv4",
    "rol": "Workhorse por defecto",
-   "pega": "Bucles repetidos, caídas y contexto largo flojo",
+   "pega": "Bucles repetidos y contexto largo flojo. El 1017 no cambia el id: no hay nada que elegir, solo pesos nuevos",
    "r": {
     "frontend": 2,
     "backend": 3,
@@ -1274,9 +1274,9 @@
   "filas": [
    [
     "20-oct",
-    "DeepSeek 1017, ya en producción: <b>y el truco del contexto de 1M se acabó</b>",
-    "Ayer se confirmó el despliegue; hoy se confirma el recorte: el exploit que dejaba a los usuarios gratis usar <b>1M de contexto</b> en el 1017 está parcheado. Mediciones de la comunidad: pasa hasta ~<b>530.000</b> tokens y rechaza a partir de ~555.000, con compactación alrededor de 500K. Encaja con lo de la semana pasada: el gratis sirve 200K y el de Go 1M. El hilo del anuncio es el más movido del día (63 comentarios).",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1xa4ryu/did_they_fix_the_way_to_bump_up_the_models/\" target=\"_blank\" rel=\"noopener\">contexto capado</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xa1qy7/deepseek_v41_flash_updated_to_1017_in_opencode_go/\" target=\"_blank\" rel=\"noopener\">1017 en Go y Free</a>"
+    "1017: <b>no hay un modelo nuevo que elegir</b>, y los datos de uso no lo confirman",
+    "Conviene separar dos cosas. Que exista el checkpoint es un hecho (17-oct, mismos 763B de parámetros que 4.1 Flash, solo pesos nuevos) y los usuarios reportan que Go y Free ya lo sirven. Lo que <b>no</b> hay es un id nuevo: la doc solo publica <code>deepseek-v4.1-flash</code> y <code>deepseek-v4.1-flash-free</code>, así que no hay nada que seleccionar. Y la página oficial de uso no lo confirma: la entrada 1017 registra sus 71.000 M de tokens el 19-oct y cae a 1.200 M hoy, mientras la entrada principal baja de 17 T a 361.000 M el mismo día. Se lee como un despliegue a medio camino, no como un cambio hecho.",
+    "<a href=\"https://opencode.ai/data/deepseek/deepseek-v4-1-flash-1017\" target=\"_blank\" rel=\"noopener\">uso del 1017</a> · <a href=\"https://opencode.ai/data/deepseek/deepseek-v4.1-flash\" target=\"_blank\" rel=\"noopener\">uso de 4.1 Flash</a>"
    ],
    [
     "20-oct",
@@ -1306,7 +1306,7 @@
    "fecha": "2026-10-19 16:35",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa1qy7/deepseek_v41_flash_updated_to_1017_in_opencode_go/",
-   "temperatura": 0.31
+   "temperatura": 0.308
   },
   {
    "titulo": "What is your Opencode setup?",
@@ -1315,7 +1315,7 @@
    "fecha": "2026-10-19 19:53",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa7594/what_is_your_opencode_setup/",
-   "temperatura": 0.304
+   "temperatura": 0.302
   },
   {
    "titulo": "OpenCode got me banned from github... any tips?",
@@ -1324,7 +1324,7 @@
    "fecha": "2026-10-19 17:48",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa3q5y/opencode_got_me_banned_from_github_any_tips/",
-   "temperatura": 0.264
+   "temperatura": 0.263
   },
   {
    "titulo": "MiniMax M3.1 Flash (Space Bunny 🚀) benchmarks... 😁",
@@ -1333,7 +1333,7 @@
    "fecha": "2026-10-19 11:55",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9uuxq/minimax_m31_flash_space_bunny_benchmarks/",
-   "temperatura": 0.243
+   "temperatura": 0.242
   },
   {
    "titulo": "Bring muse-spark 1.3 back",
@@ -1342,7 +1342,7 @@
    "fecha": "2026-10-19 15:23",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1x9ztax/bring_musespark_13_back/",
-   "temperatura": 0.237
+   "temperatura": 0.236
   },
   {
    "titulo": "🔥 DeepSeek V4.1 Flash updated to 1017 in OpenCode Go and Free",
@@ -1351,7 +1351,7 @@
    "fecha": "2026-10-19 16:35",
    "sub": "opencodeCLI",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1xa1qm5/deepseek_v41_flash_updated_to_1017_in_opencode_go/",
-   "temperatura": 0.229
+   "temperatura": 0.228
   },
   {
    "titulo": "What are some of the cool projects you have built on opencode?",
@@ -1369,7 +1369,7 @@
    "fecha": "2026-10-19 18:56",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa5m5g/space_bunny_minimax_m31_flash_free/",
-   "temperatura": 0.221
+   "temperatura": 0.22
   },
   {
    "titulo": "\"AI will take over human j*bs\", meanwhile Al-",
@@ -1387,7 +1387,7 @@
    "fecha": "2026-10-19 19:45",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/",
-   "temperatura": 0.208
+   "temperatura": 0.207
   },
   {
    "titulo": "How much usage will I get on the 10$ plan?",
@@ -1405,7 +1405,7 @@
    "fecha": "2026-10-19 11:55",
    "sub": "opencodeCLI",
    "url": "https://www.reddit.com/r/opencodeCLI/comments/1x9uupb/minimax_m31_flash_space_bunny_benchmarks/",
-   "temperatura": 0.201
+   "temperatura": 0.2
   },
   {
    "titulo": "I run OpenCode and Claude Code as one team with a shared memory, so I built a desktop app for it",
@@ -2674,7 +2674,7 @@
   }
  },
  "meta": {
-  "generado": "2026-10-20 02:04 UTC",
+  "generado": "2026-10-20 02:09 UTC",
   "subs": {
    "opencode": 2281,
    "opencodeCLI": 829
