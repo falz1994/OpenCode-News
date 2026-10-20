@@ -96,7 +96,7 @@
       "nombre": "DeepSeek 4.1 Flash",
       "alias": "deepseek|ds ?4\\.1|v4\\.1 ?flash|dsv4",
       "rol": "Workhorse por defecto",
-      "pega": "Bucles repetidos y contexto largo flojo. El 1017 no cambia el id: no hay nada que elegir, solo pesos nuevos",
+      "pega": "Bucles repetidos. En el gratis el contexto quedo en ~300K (compacta); el 1017 no cambia el id",
       "r": {
         "frontend": 2,
         "backend": 3,
@@ -360,7 +360,7 @@
       "nombre": "Space Bunny (codename)",
       "alias": "space ?bunny|minimax|m3\\.1",
       "rol": "Stealth: cambia de modelo por dentro",
-      "pega": "No es un modelo: llevaba M3.1 Flash por dentro, gratis 3 dias. Hay quien sostiene que la version publicada NO rinde igual y gasta 50-70% mas de tokens",
+      "pega": "Codename stealth: llevaba M3.1 Flash. Gratis hasta el 21-oct; se razona hasta morir y gasta 50-70% mas de tokens",
       "r": {
         "frontend": 2,
         "backend": 1,
@@ -896,27 +896,27 @@
     "filas": [
       [
         "20-oct",
-        "1017: <b>no hay un modelo nuevo que elegir</b>, y los datos de uso no lo confirman",
-        "Conviene separar dos cosas. Que exista el checkpoint es un hecho (17-oct, mismos 763B de parámetros que 4.1 Flash, solo pesos nuevos) y los usuarios reportan que Go y Free ya lo sirven. Lo que <b>no</b> hay es un id nuevo: la doc solo publica <code>deepseek-v4.1-flash</code> y <code>deepseek-v4.1-flash-free</code>, así que no hay nada que seleccionar. Y la página oficial de uso no lo confirma: la entrada 1017 registra sus 71.000 M de tokens el 19-oct y cae a 1.200 M hoy, mientras la entrada principal baja de 17 T a 361.000 M el mismo día. Se lee como un despliegue a medio camino, no como un cambio hecho.",
-        "<a href=\"https://opencode.ai/data/deepseek/deepseek-v4-1-flash-1017\" target=\"_blank\" rel=\"noopener\">uso del 1017</a> · <a href=\"https://opencode.ai/data/deepseek/deepseek-v4.1-flash\" target=\"_blank\" rel=\"noopener\">uso de 4.1 Flash</a>"
+        "<b>OpenCode 2.1.0</b>: cambio de contrato y primera tanda de bugs",
+        "Sale la 2.1.0 con terminales persistentes en Windows, lista de tareas en la TUI (<code>experimental.todo</code>) y comandos que ya no mueren a los 5 minutos. Lo importante: <b>rompe contratos a propósito</b> —SDK público, mensajes y eventos HTTP, y API de plugins— para que los datos de replay y la compactación se llamen igual en todas partes; las integraciones tienen que adaptarse. El mismo día aparecen la 2.1.1 y los primeros fallos visuales en la TUI.",
+        "<a href=\"https://opencode.ai/changelog\" target=\"_blank\" rel=\"noopener\">changelog 2.1.0</a>"
       ],
       [
         "20-oct",
-        "Space Bunny vs M3.1: <b>la comunidad no se pone de acuerdo</b> en si es el mismo modelo",
-        "Un usuario con arquitectura de orquestación montada para los dos concluye que <b>no es el mismo</b>: M3.1 Flash Free le rinde «cercano a GLM 5.3 Flash», le gasta <b>50-70 % más de tokens</b> porque piensa en voz alta, y sospecha que es una variante. Otro, con 10.000 M de tokens usados en Space Bunny, sostiene que sí: mismos patrones, misma velocidad. Es la respuesta honesta a «¿qué cambió con M3.1?»: nadie lo sabe con certeza.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xa5m5g/space_bunny_minimax_m31_flash_free/\" target=\"_blank\" rel=\"noopener\">«no es el mismo»</a>"
+        "Zanjado: <b>1017 sustituye a 4.1 Flash y no hay nada que elegir</b>",
+        "La respuesta más votada (26↑) al hilo de «no me aparece el 1017» lo cierra: «está reemplazando al 4.1 actual, no tienes que hacer nada más», y otro añade que se anunció en X. Es decir, el modelo se actualiza por debajo y el id sigue siendo el mismo; si lo buscas en el selector no lo vas a encontrar porque no existe como entrada aparte.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1x8z8jz/does_opencode_use_deepseek_flash_41_1017/\" target=\"_blank\" rel=\"noopener\">hilo (25 comentarios)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8ur7v/deepseek_41_flash_1017_is_the_best_logic_tracing/\" target=\"_blank\" rel=\"noopener\">qué es el 1017</a>"
       ],
       [
         "20-oct",
-        "Una <b>suscripción Go por cuenta</b>: ya no se pueden apilar",
-        "Al intentar crear un segundo workspace para aprovechar el 1017, el Console responde «You already have Go in your Default workspace». Quien quería dos Go ahora tendría que ir a Go Plus. Y con el historial de cierres por IP, la duda de si detectarán cuentas múltiples desde la misma red está sobre la mesa; de momento nadie ha reportado un baneo por eso.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xaclax/opencode_no_longer_supports_multiple_go/\" target=\"_blank\" rel=\"noopener\">un Go por cuenta</a>"
+        "El gratis se queda corto: <b>300K</b> de contexto y los flash empiezan a mezclar idiomas",
+        "Concreción del recorte de ayer: el 4.1 Flash gratis devuelve «provider rejected the request as too long; compacting» y se queda en torno a <b>300K</b>, cuando hace días tenía el mismo contexto que el de pago. En paralelo, GLM 5.3 Flash Free mezcla turco, inglés, ruso y chino en la misma respuesta (15↑) y hay hilos en francés denunciando que alucina con esfuerzo máximo. La teoría más votada: al exprimir los flash se pierde el suavizado que evitaba estas mezclas.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xaowfh/deepseek_v41_flash_free_context_limited_to_300k/\" target=\"_blank\" rel=\"noopener\">300K de contexto</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xasypc/mixing_turkish_english_russian_and_chinese_all/\" target=\"_blank\" rel=\"noopener\">idiomas mezclados</a>"
       ],
       [
         "20-oct",
-        "Pay-as-you-go lleva <b>9 horas lento</b> y afecta justo a los flash",
-        "El estado oficial arrastra desde las 16:44 UTC de ayer «slow responses» en pay-as-you-go, y los modelos señalados son <b>deepseek-v4-flash, deepseek-v4.1-flash y glm-5.3-flash</b>: o sea, los tres que medio sub usa para trabajar. Explica los hilos de «slow cheapseek» y de límites que se agotan en 30 minutos. El Free inference y el Console siguen operativos.",
-        "<a href=\"https://status.opencode.ai/\" target=\"_blank\" rel=\"noopener\">status de OpenCode</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x9x14d/slow_cheapseek/\" target=\"_blank\" rel=\"noopener\">«Slow cheapseek»</a>"
+        "MiniMax M3.1: «<b>se razona hasta morir</b>» y pide trato especial",
+        "Dos hilos nuevos y muy concretos sobre lo que pregunta la gente: con dos o tres tareas simples se le va el tiempo en razonar (captura incluida), y otro usuario, tras una sesión larga, le pide que analice su propio patrón y el modelo contesta que su narración está «optimizada para cómo se lee» y que esa es la vía más barata que encuentra. Encaja con lo de ayer: mismo modelo, 50-70 % más de tokens. Es gratis hasta el día 21 y open weights el 23.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xaq8wv/minimax_m31_flash_reasons_itself_to_death/\" target=\"_blank\" rel=\"noopener\">razona hasta morir</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xasvps/minimax_m31_flash_needs_special_treatment/\" target=\"_blank\" rel=\"noopener\">trato especial</a>"
       ]
     ]
   }
