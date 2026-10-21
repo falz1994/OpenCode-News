@@ -360,7 +360,7 @@
       "nombre": "Space Bunny (codename)",
       "alias": "space ?bunny|minimax|m3\\.1",
       "rol": "Stealth: cambia de modelo por dentro",
-      "pega": "Codename stealth: llevaba M3.1 Flash. Gratis hasta el 21-oct; se razona hasta morir y gasta 50-70% mas de tokens",
+      "pega": "Codename stealth: llevaba M3.1 Flash. Ultimo dia gratis (21-oct); bucles y 900K de contexto reportados",
       "r": {
         "frontend": 2,
         "backend": 1,
@@ -857,10 +857,7 @@
       ],
       [
         "Cuantización",
-        {
-          "class": "detalle",
-          "html": "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate es constante"
-        }
+        "Lo que sirve Go no siempre es el modelo oficial: GLM 5.3 Flash es FP8 completo, pero el debate sigue. 21-oct: un usuario mide peor resultado por Go que por la API oficial de DeepSeek con el mismo modelo, y el sub pide transparencia sobre proveedor, cuantización y checkpoint"
       ],
       [
         "Estabilidad",
@@ -896,27 +893,27 @@
     "filas": [
       [
         "21-oct",
-        "El cupo de Go, a debate: <b>DeepSeek es el único x8</b> (80 $ por 10 $)",
-        "La tabla oficial deja un solo modelo en el tramo alto: <b>DeepSeek V4.1 Flash a ×8</b> ($80/mes dentro del plan de $10, 160 $ en Go Plus = ×2 sobre Go). Todo lo demás baja a ×6 (GLM-5.3-Flash, MiMo Flash, MiniMax M3) o a ×3/×1,5. Con eso, un usuario de Go reporta que <b>una sola pregunta con GLM 5.3 le consumió el 40 % del cupo semanal y el 20 % del mensual</b>, y otro dice directamente «Go ya no sirve». La diferencia de ×8 contra ×6 no es cosmética: es la única razón por la que DeepSeek aguanta un día de trabajo.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb7c9i/opencode_go_useless_now/\" target=\"_blank\" rel=\"noopener\">«Go ya no sirve»</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/\" target=\"_blank\" rel=\"noopener\">1017 vs GLM 5.3</a>"
+        "v2.1.2 arregla lo del cupo gratis: <b>respalda el prompt y dice cuándo resetea</b>",
+        "El parche que faltaba tras el lío de límites: cuando se agota la cuota gratis, Desktop y la TUI ya no escupen un error genérico — enseñan <b>la hora de reset</b>, te devuelven el prompt en el compositor (antes lo borraban) y ofrecen <code>/connect</code> y <code>/models</code> en línea. Además llega <code>OPENCODE_DISABLE_FREE_MODELS=1</code> para esconder los modelos gratis del catálogo (útil si no quieres que tus subagentes caigan en un tier limitado) y <code>experimental.location_idle_timeout</code> para que los servicios inactivos no queden colgados.",
+        "<a href=\"https://opencode.ai/changelog\" target=\"_blank\" rel=\"noopener\">changelog 2.1.2</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbdkiy/opencode_v212_dropped_no_more_wiped_prompts_on/\" target=\"_blank\" rel=\"noopener\">resumen del sub</a>"
       ],
       [
         "21-oct",
-        "Elegir el DeepSeek de Go y no el de Zen: <b>la trampa del mismo nombre</b>",
-        "Hilo que resume el lío del multiplicador: dos modelos llamados casi igual, uno incluido en Go y otro de pago por uso, y si eliges el de Zen te sale <b>«insufficient funds»</b> aunque te queden 60 $ de cupo Go. La explicación que da el sub: <b>el nombre debe llevar «free»</b> para el de Zen; el de Go no aparece como modelo aparte y hay que asegurarse de estar en el que descuenta del plan, no del balance.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb0a5f/how_do_i_select_deepseek_41_flash_through_my_go/\" target=\"_blank\" rel=\"noopener\">elegir el de Go</a>"
+        "La duda que crece: <b>¿el DeepSeek de Go es el mismo que el de la API oficial?</b>",
+        "Un usuario compara el mismo modelo por la API de DeepSeek y por Go, y encuentra que <b>por la API oficial resuelve mejor</b> las tareas de código. Las preguntas que quedan sin respuesta: qué proveedor sirve Go, si hay cuantización, si el checkpoint es el mismo, y si los límites de contexto y compactación cambian el resultado. En los comentarios, «necesitamos transparencia», la sospecha de que hay <b>routing entre varios proveedores</b> y tasas de caché anormalmente bajas. Encaja con la retirada de la cabecera que decía qué proveedor servía cada petición.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xbftih/which_inference_provider_does_opencode_go_use_for/\" target=\"_blank\" rel=\"noopener\">hilo (5↑, 6 comentarios)</a>"
       ],
       [
         "21-oct",
-        "V2 divide al sub: <b>«si estás en V1 no te pases»</b>",
-        "Un día después de la 2.1.0 empiezan los lamentos: hilos que piden volver a V1, que el plan mode sigue tocando ficheros que no debe, que se perdió el soporte de <b>claude.md</b>, y problemas de servidor en macOS («port already in use»). También aparece un hilo de petición seria: que el Console muestre el <b>consumo de Go</b> en el dashboard, que es justo el dato que hoy falta para no quemar el cupo a ciegas.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb2il3/if_you_are_on_v1_dont_move_to_v2_its_terrible/\" target=\"_blank\" rel=\"noopener\">no te pases a V2</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xb4rg0/go_limits_on_users_dashboard/\" target=\"_blank\" rel=\"noopener\">cuota en el dashboard</a>"
+        "MiniMax M3.1, de «gran modelo» a <b>«inservible»</b> en su última semana gratis",
+        "El contraste con la semana pasada es brutal: un usuario lleva <b>dos días de bucles infinitos</b> con cajas de pensamiento enormes a esfuerzo medio/alto, y llegó a <b>900K de contexto para un arreglo simple</b> de un bug. Se suma a «se razona hasta morir» y al 50-70 % más de tokens de ayer. Hoy es el último día del periodo gratis de 3 días; el 23 toca open weights, así que podrá probarse auto-hospedado sin pasar por OpenCode.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xbh3k8/minimax_31_is_unusable_in_its_current_state/\" target=\"_blank\" rel=\"noopener\">«inservible»</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xaq8wv/minimax_m31_flash_reasons_itself_to_death/\" target=\"_blank\" rel=\"noopener\">razona hasta morir</a>"
       ],
       [
         "21-oct",
-        "El gratis sigue recortado y <b>GLM Flash Free mezcla idiomas</b>",
-        "El 4.1 Flash gratis devuelve «provider rejected the request as too long; compacting» y se queda en torno a <b>300K</b> de contexto, cuando hace días igualaba al de pago. Y GLM 5.3 Flash Free mezcla turco, inglés, ruso y chino en la misma respuesta (15↑), con hilos en francés denunciando alucinaciones al esfuerzo máximo. La teoría más votada: exprimir los flash les quitó el suavizado que evitaba estas mezclas.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xaowfh/deepseek_v41_flash_free_context_limited_to_300k/\" target=\"_blank\" rel=\"noopener\">300K de contexto</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xasypc/mixing_turkish_english_russian_and_chinese_all/\" target=\"_blank\" rel=\"noopener\">idiomas mezclados</a>"
+        "Cinco días después del susto, el gratis sigue <b>caído a ratos</b>",
+        "El estado oficial arrastra «upstream provider issues» en Free inference desde las 05:54 UTC (7 h), y los modelos afectados son <b>glm-5.3-flash-free y minimax-m3.1-flash-free</b>: justo la pareja que medio sub usa para no gastar cuota Go. Vuelven los hilos de «¿OpenCode prioriza a los de pago?» y de baneos por IP sin VPN. Los tres gratis ilimitados de la tabla (LongCat 2.5, Beam, MiniMax M3.1) son hoy el único plan B que queda cuando se cae.",
+        "<a href=\"https://status.opencode.ai/\" target=\"_blank\" rel=\"noopener\">status de OpenCode</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbggkf/does_opencode_prioritize_paid_users_over_free/\" target=\"_blank\" rel=\"noopener\">¿prioriza a los de pago?</a>"
       ]
     ]
   }

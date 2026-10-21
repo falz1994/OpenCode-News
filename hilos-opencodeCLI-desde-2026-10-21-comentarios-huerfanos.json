@@ -1,0 +1,88 @@
+{
+ "meta": {
+  "subreddit": "opencodeCLI",
+  "range": "2026-10-21 .. 2026-10-22",
+  "fetched_at": "2026-10-21T13:42:13.854339+00:00",
+  "posts": 11,
+  "comments": 5,
+  "source": "arctic-shift.photon-reddit.com",
+  "nota": "hilos fuera del rango"
+ },
+ "comments": [
+  {
+   "id": "phzupcm",
+   "author": "Robert__Sinclair",
+   "body": "Opencode.ai should do temporary bans on abuse. But they must keep in mind that some networks (many ADSL networks in Italy and almost all 5G networks, and many CI like azure/github actions/google cloudshell/etc) use a small pool of addresses. So when many users (peak time) are using opencode, they might appear as a single user abusing the system. If they continute to ban on \"usage\" they will end up banning the major networks and leave only those few users who have a static ip addres (which are less and less today).",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x9sh9r",
+   "link_id": "t3_1x9sh9r",
+   "created_utc": 1792575243,
+   "permalink": "/r/opencodeCLI/comments/1x9sh9r/opencodes_free_models_arent_available_from_your/phzupcm/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-21T09:34:03+00:00"
+  },
+  {
+   "id": "phytr4q",
+   "author": "Rustybot",
+   "body": "How is the plugin compatability? ",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1xab2a4",
+   "link_id": "t3_1xab2a4",
+   "created_utc": 1792546341,
+   "permalink": "/r/opencodeCLI/comments/1xab2a4/i_reimplement_opencode_v2_and_v1_in_rust/phytr4q/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-21T01:32:21+00:00"
+  },
+  {
+   "id": "phytm3k",
+   "author": "Rustybot",
+   "body": "Seconded. ",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phulnk0",
+   "link_id": "t3_1xab2a4",
+   "created_utc": 1792546259,
+   "permalink": "/r/opencodeCLI/comments/1xab2a4/i_reimplement_opencode_v2_and_v1_in_rust/phytm3k/",
+   "edited": false,
+   "depth": 2,
+   "created_iso": "2026-10-21T01:30:59+00:00"
+  },
+  {
+   "id": "phyohuo",
+   "author": "qwertyyyyyyy116",
+   "body": "yes",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1xacpt3",
+   "link_id": "t3_1xacpt3",
+   "created_utc": 1792543260,
+   "permalink": "/r/opencodeCLI/comments/1xacpt3/does_opencode_free_model_rate_limit_affect_all/phyohuo/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-21T00:41:00+00:00"
+  },
+  {
+   "id": "phyncct",
+   "author": "mrspock33",
+   "body": "Interesting, do you have a source/link for this?  I would love to get an official client from them that is not just a thin client that connects to your own remote opencode instance.",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phxarsy",
+   "link_id": "t3_1xab412",
+   "created_utc": 1792542601,
+   "permalink": "/r/opencodeCLI/comments/1xab412/opencode_mobile_app_made_with_deepseek_v41_flash/phyncct/",
+   "edited": false,
+   "depth": 1,
+   "created_iso": "2026-10-21T00:30:01+00:00"
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
  "titulo": "Uso y límites de OpenCode Go (oficial)",
  "fuente": "https://opencode.ai/v2/docs/console/go/",
- "actualizado": "2026-10-21 03:18 UTC",
+ "actualizado": "2026-10-21 13:42 UTC",
  "plan": {
   "nombre": "Go",
   "precio": "$10/mes",
@@ -129,11 +129,11 @@
    "cache_lectura": "$0.10",
    "cache_escritura": "—",
    "limite_go": 15.0,
-   "limite_go_txt": "$15 $604x · Limited time",
+   "limite_go_txt": "$15",
    "x_plan": 1.5,
    "limite_plus": 60.0,
    "x_go_plus": 4.0,
-   "req_mes": "—",
+   "req_mes": "2,130",
    "entrena": "Not used",
    "retencion": "0 days"
   },
@@ -561,6 +561,8 @@
  "cambios": {
   "nuevos": [],
   "fuera": [],
-  "modificados": []
+  "modificados": [
+   "Step 5 Preview: req_mes — → 2,130"
+  ]
  }
 }
