@@ -1,5 +1,43 @@
-# r/opencodeCLI — hilos 2026-10-20 → 2026-10-21
-_Generado: 2026-10-20T17:05:13.641105+00:00 · 8 hilos · 2 comentarios · fuente: Arctic Shift_
+# r/opencodeCLI — hilos 2026-10-20 → 2026-10-22
+_Generado: 2026-10-21T03:19:01.166235+00:00 · 14 hilos · 2 comentarios · fuente: Arctic Shift_
+
+## Top 10 AI agents for small local LLMs in 2026, tested on Qwen3.5-4B
+**u/GapNew4766** · 2026-10-21 00:41 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xb93er/top_10_ai_agents_for_small_local_llms_in_2026/)
+
+[removed]
+
+---
+
+## Latest CatBench shows it's time to move on to Opus 5.5
+**u/wonderkindel** · 2026-10-21 00:33 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xb8x3z/latest_catbench_shows_its_time_to_move_on_to_opus/)
+
+---
+
+## Port already in use when trying to run opencode 2 on mac os
+**u/2pins** · 2026-10-20 21:54 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xb5dpm/port_already_in_use_when_trying_to_run_opencode_2/)
+
+---
+
+## Opencode plugin
+**u/Odd-Willingness2240** · 2026-10-20 21:41 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xb52mr/opencode_plugin/)
+
+Propose to me any plugin or config for opencode desktop app I need for long opencode coding chat session with free models I want to keep the work on going with auto compressing and cross session memory handling
+
+---
+
+## OpenCode no funciona con IA's locales
+**u/lalogrez** · 2026-10-20 18:37 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xb0b3h/opencode_no_funciona_con_ias_locales/)
+
+Soy nuevo en esto y no soy programador. Quiero aprender a usar las IA's locales y quiero usar OpenCode pero no funciona ninguna, ya he bajado varias pero siempre se resetea y me dice "en que puedo ayudarte", no puede ni siquiera seguir el hilo de una conversación. ¿Acaso fue programado para que no funcione cuando usa IA local? ¿por qué con las de la nube si funciona pero locales no?. He pedido ayuda a otras IA's y hecho muchos procesos indicados por las mismas y no logro hacer funcionar OpenCode. Estoy mentalmente agotado y apunto de desistir el uso de OpenCode ni siquiera los modelos pequeños pueden hacer nada (se que aquí es exclusivo para OpenCode pero como referencia me pasa lo mismo con Jen y Bionic, las locales se resetean a "En que te ayudo hoy"). Tengo Windows, 14 núcleos, 64ram y una RTX4060. Saludos y gracias!
+
+---
+
+## I built MUON, a harness that runs OpenCode alongside Claude Code, Codex and Cursor with one shared memory
+**u/Sweetdevil144** · 2026-10-20 18:01 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xazc0v/i_built_muon_a_harness_that_runs_opencode/)
+
+[removed]
+
+---
 
 ## First time working on OpenCode
 **u/Local-Item-2241** · 2026-10-20 15:54 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencodeCLI/comments/1xavvoz/first_time_working_on_opencode/)

@@ -886,7 +886,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (20 oct)",
+    "titulo": "Titulares (21 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -895,28 +895,28 @@
     ],
     "filas": [
       [
-        "20-oct",
-        "<b>OpenCode 2.1.0</b>: cambio de contrato y primera tanda de bugs",
-        "Sale la 2.1.0 con terminales persistentes en Windows, lista de tareas en la TUI (<code>experimental.todo</code>) y comandos que ya no mueren a los 5 minutos. Lo importante: <b>rompe contratos a propósito</b> —SDK público, mensajes y eventos HTTP, y API de plugins— para que los datos de replay y la compactación se llamen igual en todas partes; las integraciones tienen que adaptarse. El mismo día aparecen la 2.1.1 y los primeros fallos visuales en la TUI.",
-        "<a href=\"https://opencode.ai/changelog\" target=\"_blank\" rel=\"noopener\">changelog 2.1.0</a>"
+        "21-oct",
+        "El cupo de Go, a debate: <b>DeepSeek es el único x8</b> (80 $ por 10 $)",
+        "La tabla oficial deja un solo modelo en el tramo alto: <b>DeepSeek V4.1 Flash a ×8</b> ($80/mes dentro del plan de $10, 160 $ en Go Plus = ×2 sobre Go). Todo lo demás baja a ×6 (GLM-5.3-Flash, MiMo Flash, MiniMax M3) o a ×3/×1,5. Con eso, un usuario de Go reporta que <b>una sola pregunta con GLM 5.3 le consumió el 40 % del cupo semanal y el 20 % del mensual</b>, y otro dice directamente «Go ya no sirve». La diferencia de ×8 contra ×6 no es cosmética: es la única razón por la que DeepSeek aguanta un día de trabajo.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb7c9i/opencode_go_useless_now/\" target=\"_blank\" rel=\"noopener\">«Go ya no sirve»</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/\" target=\"_blank\" rel=\"noopener\">1017 vs GLM 5.3</a>"
       ],
       [
-        "20-oct",
-        "Zanjado: <b>1017 sustituye a 4.1 Flash y no hay nada que elegir</b>",
-        "La respuesta más votada (26↑) al hilo de «no me aparece el 1017» lo cierra: «está reemplazando al 4.1 actual, no tienes que hacer nada más», y otro añade que se anunció en X. Es decir, el modelo se actualiza por debajo y el id sigue siendo el mismo; si lo buscas en el selector no lo vas a encontrar porque no existe como entrada aparte.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1x8z8jz/does_opencode_use_deepseek_flash_41_1017/\" target=\"_blank\" rel=\"noopener\">hilo (25 comentarios)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1x8ur7v/deepseek_41_flash_1017_is_the_best_logic_tracing/\" target=\"_blank\" rel=\"noopener\">qué es el 1017</a>"
+        "21-oct",
+        "Elegir el DeepSeek de Go y no el de Zen: <b>la trampa del mismo nombre</b>",
+        "Hilo que resume el lío del multiplicador: dos modelos llamados casi igual, uno incluido en Go y otro de pago por uso, y si eliges el de Zen te sale <b>«insufficient funds»</b> aunque te queden 60 $ de cupo Go. La explicación que da el sub: <b>el nombre debe llevar «free»</b> para el de Zen; el de Go no aparece como modelo aparte y hay que asegurarse de estar en el que descuenta del plan, no del balance.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb0a5f/how_do_i_select_deepseek_41_flash_through_my_go/\" target=\"_blank\" rel=\"noopener\">elegir el de Go</a>"
       ],
       [
-        "20-oct",
-        "El gratis se queda corto: <b>300K</b> de contexto y los flash empiezan a mezclar idiomas",
-        "Concreción del recorte de ayer: el 4.1 Flash gratis devuelve «provider rejected the request as too long; compacting» y se queda en torno a <b>300K</b>, cuando hace días tenía el mismo contexto que el de pago. En paralelo, GLM 5.3 Flash Free mezcla turco, inglés, ruso y chino en la misma respuesta (15↑) y hay hilos en francés denunciando que alucina con esfuerzo máximo. La teoría más votada: al exprimir los flash se pierde el suavizado que evitaba estas mezclas.",
+        "21-oct",
+        "V2 divide al sub: <b>«si estás en V1 no te pases»</b>",
+        "Un día después de la 2.1.0 empiezan los lamentos: hilos que piden volver a V1, que el plan mode sigue tocando ficheros que no debe, que se perdió el soporte de <b>claude.md</b>, y problemas de servidor en macOS («port already in use»). También aparece un hilo de petición seria: que el Console muestre el <b>consumo de Go</b> en el dashboard, que es justo el dato que hoy falta para no quemar el cupo a ciegas.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xb2il3/if_you_are_on_v1_dont_move_to_v2_its_terrible/\" target=\"_blank\" rel=\"noopener\">no te pases a V2</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xb4rg0/go_limits_on_users_dashboard/\" target=\"_blank\" rel=\"noopener\">cuota en el dashboard</a>"
+      ],
+      [
+        "21-oct",
+        "El gratis sigue recortado y <b>GLM Flash Free mezcla idiomas</b>",
+        "El 4.1 Flash gratis devuelve «provider rejected the request as too long; compacting» y se queda en torno a <b>300K</b> de contexto, cuando hace días igualaba al de pago. Y GLM 5.3 Flash Free mezcla turco, inglés, ruso y chino en la misma respuesta (15↑), con hilos en francés denunciando alucinaciones al esfuerzo máximo. La teoría más votada: exprimir los flash les quitó el suavizado que evitaba estas mezclas.",
         "<a href=\"https://www.reddit.com/r/opencode/comments/1xaowfh/deepseek_v41_flash_free_context_limited_to_300k/\" target=\"_blank\" rel=\"noopener\">300K de contexto</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xasypc/mixing_turkish_english_russian_and_chinese_all/\" target=\"_blank\" rel=\"noopener\">idiomas mezclados</a>"
-      ],
-      [
-        "20-oct",
-        "MiniMax M3.1: «<b>se razona hasta morir</b>» y pide trato especial",
-        "Dos hilos nuevos y muy concretos sobre lo que pregunta la gente: con dos o tres tareas simples se le va el tiempo en razonar (captura incluida), y otro usuario, tras una sesión larga, le pide que analice su propio patrón y el modelo contesta que su narración está «optimizada para cómo se lee» y que esa es la vía más barata que encuentra. Encaja con lo de ayer: mismo modelo, 50-70 % más de tokens. Es gratis hasta el día 21 y open weights el 23.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xaq8wv/minimax_m31_flash_reasons_itself_to_death/\" target=\"_blank\" rel=\"noopener\">razona hasta morir</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xasvps/minimax_m31_flash_needs_special_treatment/\" target=\"_blank\" rel=\"noopener\">trato especial</a>"
       ]
     ]
   }

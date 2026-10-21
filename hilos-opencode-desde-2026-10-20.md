@@ -1,5 +1,229 @@
-# r/opencode — hilos 2026-10-20 → 2026-10-21
-_Generado: 2026-10-20T17:05:18.628260+00:00 · 36 hilos · 193 comentarios · fuente: Arctic Shift_
+# r/opencode — hilos 2026-10-20 → 2026-10-22
+_Generado: 2026-10-21T03:19:04.911807+00:00 · 54 hilos · 193 comentarios · fuente: Arctic Shift_
+
+## Is Deepseek 4.1 flash 1017 better than glm 5.3 flash?
+**u/Upset_Disaster_1427** · 2026-10-21 02:35 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/)
+
+---
+
+## is there way deal with doom loops?
+**u/qustrolabe** · 2026-10-21 02:21 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xbb5f1/is_there_way_deal_with_doom_loops/)
+
+https://i.redd.it/pztzd8zpcqwh1.png
+
+also is there way to collapse thinking traces without scrolling all the way app, it's so annoying
+
+---
+
+## Came back to opencode. Was 🙂 now 🙁
+**u/Melodic-Mud-1116** · 2026-10-21 02:07 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xbauzx/came_back_to_opencode_was_now/)
+
+In the latest updated I don't know if it's. Me or what but I have been noticing it's running shell commands way too much and also the performance kind of seems bad is it only me or what. And any tips on it.
+
+---
+
+## Need advice on which models should i use
+**u/syakirx17** · 2026-10-21 02:05 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xbatv1/need_advice_on_which_models_should_i_use/)
+
+Hi guys, i'm new to open code, just subscribed to Go plan a few days ago.
+
+i'm using it for   
+\- moderate coding  
+\- video editing (with a customized hyperframes skill, which originally built for claude)
+
+so far, i have been using Muse Spark 1.3, which is ok for basic editing, but the generated ui animation effect is basic. i also try Deepseek 4.1 flash max, but it feel like its so slow (?)
+
+from what i have seen how people edit video with AI, the best model for this use case is actually claude Opus 5.5. but i cant afford that, so i'm looking for alternative model in open code that close to it, but not really expensive on usage cost
+
+i'm curious if anyone here also have the same video editing workflow.
+
+thanks
+
+---
+
+## Cursor to OpenCode Advice
+**u/Prudent-Promotion512** · 2026-10-21 00:19 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb8mlo/cursor_to_opencode_advice/)
+
+I just switched to OpenCode from Cursor and I have been impressed by many aspect of it and very excited to be free of the Cursor cache token tax but I have found my agents are using way more tokens in general.   
+
+I think Cursor’s internal harness was helping to make my guidance more efficient but I can’t quite figure it out.  
+
+Qualitatively the agents in OpenCode follow their guidance much more closely which I wanted but they are not as pragmatic and get bogged down in minor details more.
+
+Anyone else experience this or have advice?
+
+---
+
+## Opencode Go - useless now.
+**u/808phone** · 2026-10-20 23:20 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb7c9i/opencode_go_useless_now/)
+
+Yes, it is cheap. But it used to actually do "some things" before timing out. I asked it ONE QUESTION - yes it was GLM 5.3, but it was one question. I used to be able to ask many questions for the same code base. Now it's one question and it's over. 40% used for the week and 20% used for the month. Canceled.
+
+---
+
+## Port already in use when trying to run opencode 2 on mac os
+**u/2pins** · 2026-10-20 21:54 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb5dkj/port_already_in_use_when_trying_to_run_opencode_2/)
+
+I am getting the following error when I try to open it in my mac os. v1 worked fine, so I assume it's an issue with the background server. I could not find anybody else online with an issue like that.
+
+I've already checked the ports and tried changing the port. Same errors... 
+
+\`\`\`
+
+opencode                                                                                                                                                                                                                         
+
+Starting background server...
+
+Error: Server process exited with code 1
+
+Error: Managed service port 19474 on [127.0.0.1](http://127.0.0.1) is already in use by another process. Configure another port with \`opencode service set port <port>\` and start the service again.
+
+at <anonymous> (/$bunfs/root/chunk-z1nznd4n.js:2:9042) {
+
+  \[cause\]: ServeError: 
+
+at M (/$bunfs/root/chunk-m7854xcm.js:52:7707)
+
+at applyHandlers (node:events:64:20)
+
+at emitError (node:events:44:27)
+
+at emitListenErrorNextTick (node:\_http\_server:134:12)
+
+at processTicksAndRejections (unknown:7:39) {
+
+\[cause\]: Error: Failed to start server. Is port 19474 in use?
+
+at serve (unknown)
+
+at <anonymous> (node:\_http\_server:359:39)
+
+at <anonymous> (node:\_http\_server:332:33)
+
+at <anonymous> (/$bunfs/root/chunk-m7854xcm.js:52:7745)
+
+  }
+
+}
+
+at map (unknown:1:11)
+
+at reap (/$bunfs/root/chunk-5qs4m7qa.js:2:1203)
+
+at <anonymous> (/$bunfs/root/chunk-5qs4m7qa.js:3:6711)
+
+at service.ensure (/$bunfs/root/chunk-ef0bqts1.js:3:690)
+
+at service.ensure (definition) (/$bunfs/root/chunk-5qs4m7qa.js:3:5523)
+
+at cli.server-connection.resolve (/$bunfs/root/chunk-d7zxgbx4.js:95:6625)
+
+at cli.server-connection.resolve (definition) (/$bunfs/root/chunk-ef0bqts1.js:2:402)  
+\`\`\`
+
+---
+
+## Long opencode session
+**u/Odd-Willingness2240** · 2026-10-20 21:39 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb50l1/long_opencode_session/)
+
+Propose to me any plugin or config for opencode desktop app I need for long opencode coding chat session with free models I want to keep the work on going with auto compressing and cross session memory handling
+
+---
+
+## A tool to alert users to errors in Opencode.
+**u/Adorable_Highway_666** · 2026-10-20 21:34 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb4wnu/a_tool_to_alert_users_to_errors_in_opencode/)
+
+When I work with Opencode, I always encounter many errors, and I don't know if the problem is with the server or with Opencode itself. Is there a tool that detects such errors and sends notifications?
+
+---
+
+## Go limits on users dashboard
+**u/eachDayIWakeUp** · 2026-10-20 21:28 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb4rg0/go_limits_on_users_dashboard/)
+
+As a GO user (a very happy one) im thinking that every day I check both [https://opencode.ai/go](https://opencode.ai/go) and  the "models" page on the opencode console and im thinking, wouldnt it make sense to include the limits table on the console as well? 
+
+https://i.redd.it/tldgj4f0xowh1.png
+
+Am I the one going back and forth multiple times per day to see free and cheaper models?
+
+---
+
+## A question for the people who are using opencode with their API keys
+**u/Wise_Choice7014** · 2026-10-20 21:07 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb48bx/a_question_for_the_people_who_are_using_opencode/)
+
+&#x200B;
+
+How much is your API monthly Bill ? And do you know how to reduce it ? Like do you have any option or tool to reduce it ? And why is it high or low ? What are the projects that you're working on to consume that much tokens every month ? I am asking that question because i am a little bit curious about that topic
+
+---
+
+## if you are on V1 don't move to V2 it's terrible
+**u/Yann27** · 2026-10-20 20:00 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb2il3/if_you_are_on_v1_dont_move_to_v2_its_terrible/)
+
+buggy doesn't work as how it should 
+
+  
+cannot recommend it. 
+
+i'm going back to v1 if i can find the installer...
+
+---
+
+## updated opencode + nemotron 3 ultra ignored plan mode...
+**u/bjoern_r** · 2026-10-20 19:35 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb1v19/updated_opencode_nemotron_3_ultra_ignored_plan/)
+
+Thats a first I have to say.
+
+---
+
+## Please reintegrate the Claude.md file.
+**u/Yann27** · 2026-10-20 18:59 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb0vqd/please_reintegrate_the_claudemd_file/)
+
+I know the previous version supported agents and made the [`claude.md`](http://claude.md) file usable. Why did you decide to move away from that?
+
+Nothing works like it did before. Even with a symlink, the rules get loaded, but the behaviour is completely different and nowhere near as good. Now every chat starts and then breaks.
+
+You keep throwing out things that actually work, and somehow we have to fix every little detail ourselves. I literally had to build an automation just to make sure my rules get applied in every single session. WTF? Why should we have to build workarounds for things that already worked before?
+
+---
+
+## OpenCode no funciona con locales de IA
+**u/lalogrez** · 2026-10-20 18:38 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb0c4w/opencode_no_funciona_con_locales_de_ia/)
+
+[removed]
+
+---
+
+## How do I select DeepSeek 4.1 Flash through my Go subscription?
+**u/StraightDot6160** · 2026-10-20 18:36 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xb0a5f/how_do_i_select_deepseek_41_flash_through_my_go/)
+
+https://i.redd.it/ufqcu2s52owh1.png
+
+I am feeling stupid... What am I missing?
+
+I’ve just reinstalled OpenCode v1 and can’t figure out how to distinguish DeepSeek 4.1 Flash via my Go subscription from the Zen version.
+
+When I try using the model shown in the screenshot, I get an “insufficient funds” error, so I suspect it’s the Zen version rather than the one included with my Go subscription.
+
+I still have plenty of usage left on my Go subscription, and it was working just a couple of hours ago.
+
+---
+
+## is this normal ?
+**u/Boolean_1** · 2026-10-20 18:12 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xaznff/is_this_normal/)
+
+https://i.redd.it/n6eq4uj4ynwh1.png
+
+I was working on something opencode is in plan mode yet it can modify system ?
+
+---
+
+## Showcase Tools Project
+**u/MrinallSamal** · 2026-10-20 17:04 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xaxsgh/showcase_tools_project/)
+
+[removed]
+
+---
 
 ## İs there anyone who tried these on omo slim?
 **u/CarGold87** · 2026-10-20 16:56 UTC · ↑1 · 0 comentarios · [enlace](https://www.reddit.com/r/opencode/comments/1xaxjf5/is_there_anyone_who_tried_these_on_omo_slim/)

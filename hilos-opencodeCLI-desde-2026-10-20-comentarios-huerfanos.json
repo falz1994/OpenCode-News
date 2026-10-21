@@ -1,14 +1,29 @@
 {
  "meta": {
   "subreddit": "opencodeCLI",
-  "range": "2026-10-20 .. 2026-10-21",
-  "fetched_at": "2026-10-20T17:05:13.641105+00:00",
-  "posts": 8,
-  "comments": 62,
+  "range": "2026-10-20 .. 2026-10-22",
+  "fetched_at": "2026-10-21T03:19:01.166235+00:00",
+  "posts": 14,
+  "comments": 63,
   "source": "arctic-shift.photon-reddit.com",
   "nota": "hilos fuera del rango"
  },
  "comments": [
+  {
+   "id": "phxk3k0",
+   "author": "patrick-howard",
+   "body": "![gif](giphy|5QNQv6xmVEaabGsYrg)",
+   "score": 2,
+   "ups": 2,
+   "downs": 0,
+   "parent_id": "t1_phuqy4w",
+   "link_id": "t3_1xa4tt7",
+   "created_utc": 1792522391,
+   "permalink": "/r/opencodeCLI/comments/1xa4tt7/any_useful_plugin_for_opencode_cli/phxk3k0/",
+   "edited": false,
+   "depth": 1,
+   "created_iso": "2026-10-20T18:53:11+00:00"
+  },
   {
    "id": "phvupw7",
    "author": "boydev",
@@ -51,7 +66,7 @@
    "created_utc": 1792494501,
    "permalink": "/r/opencodeCLI/comments/1x9sw6r/with_deepseek_and_glm_free_in_opencode_the_spare/phvcbi1/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T11:08:21+00:00"
   },
   {
@@ -66,7 +81,7 @@
    "created_utc": 1792494335,
    "permalink": "/r/opencodeCLI/comments/1x9sw6r/with_deepseek_and_glm_free_in_opencode_the_spare/phvbxci/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T11:05:35+00:00"
   },
   {
@@ -283,15 +298,15 @@
    "id": "phuqy4w",
    "author": "Amarsir",
    "body": "I don't know if Opencode has a plugin marketplace. V2 changed it somewhat but not to that extent I don't think.\n\nI'm a fan of [https://github.com/alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) . If you like combining multiple agents for specialties, or running efficiently with separate context windows, it's pretty good.\n\nNot a plugin, but Openchamber is popular as a nicer interface.\n\nThe only other plugin I use is opencode-claude (to use the subscription). It doesn't sound like something you need and I'm finding it a bit awkward for my purposes too. (Admittedly I micromanage and most users would't ever see the thing that's bothering me.)",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t3_1xa4tt7",
    "link_id": "t3_1xa4tt7",
    "created_utc": 1792483713,
    "permalink": "/r/opencodeCLI/comments/1xa4tt7/any_useful_plugin_for_opencode_cli/phuqy4w/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T08:08:33+00:00"
   },
   {
@@ -351,7 +366,7 @@
    "created_utc": 1792481684,
    "permalink": "/r/opencodeCLI/comments/1xa75nw/what_is_your_opencode_setup/phun8tb/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T07:34:44+00:00"
   },
   {
@@ -411,7 +426,7 @@
    "created_utc": 1792479795,
    "permalink": "/r/opencodeCLI/comments/1x8gp72/opencode_security_breach_rotate_your_keys/phujoq0/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T07:03:15+00:00"
   },
   {

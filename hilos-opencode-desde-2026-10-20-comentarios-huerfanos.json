@@ -1,14 +1,164 @@
 {
  "meta": {
   "subreddit": "opencode",
-  "range": "2026-10-20 .. 2026-10-21",
-  "fetched_at": "2026-10-20T17:05:18.628260+00:00",
-  "posts": 36,
-  "comments": 198,
+  "range": "2026-10-20 .. 2026-10-22",
+  "fetched_at": "2026-10-21T03:19:04.911807+00:00",
+  "posts": 54,
+  "comments": 208,
   "source": "arctic-shift.photon-reddit.com",
   "nota": "hilos fuera del rango"
  },
  "comments": [
+  {
+   "id": "19rej6vdktj38",
+   "author": "qwertyyyyyyy116",
+   "body": "They claim they are working with OpenAI to resolve this",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x8lxjk",
+   "link_id": "t3_1x8lxjk",
+   "created_utc": 1792532300,
+   "permalink": "/r/opencode/comments/1x8lxjk/woke_up_to_openai_account_deactivation_because_of/19rej6vdktj38/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-20T21:38:20+00:00"
+  },
+  {
+   "id": "19ref3uqky24g",
+   "author": "Ctbhatia",
+   "body": "the window is settable, since prompt\\_cache\\_options.ttl takes a whole-minute value like 30m, so a 15 min task keeps its prefix. I work at [coralbricks.ai](http://coralbricks.ai), where cached reads bill at $0.005 per 1M.",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phv9ztc",
+   "link_id": "t3_1xa6xjw",
+   "created_utc": 1792526806,
+   "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/19ref3uqky24g/",
+   "edited": false,
+   "depth": 3,
+   "created_iso": "2026-10-20T20:06:46+00:00"
+  },
+  {
+   "id": "19reehawv7mx1",
+   "author": "Quiet-Ad-2239",
+   "body": "I was seeing it run slower before, but since the 1017 update, DSV 4.1 has gotten its speed back and is pretty fast now.  I did some long agentic coding today in orchestration mode, and I didn’t run into any problems with it whatsoever. ",
+   "score": 2,
+   "ups": 2,
+   "downs": 0,
+   "parent_id": "t1_19ree5sozmd34",
+   "link_id": "t3_1xa7wti",
+   "created_utc": 1792525964,
+   "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/19reehawv7mx1/",
+   "edited": false,
+   "depth": 1,
+   "created_iso": "2026-10-20T19:52:44+00:00"
+  },
+  {
+   "id": "19reeebz1plc3",
+   "author": "Quiet-Ad-2239",
+   "body": "You know what I just realized there is no such skill available. But I created it myself by combining and tweaking available skills. Basically I did it where it is a combination of a few skills that serve as a station - like copywriting, design, conversion rate optimization and so on. I will release it on GitHub and give you a link. It's really solid. I have so many skills at this point that I’ve kind of lost track of which ones I created and which ones I got from GitHub.  ",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_19re9a1egupmo",
+   "link_id": "t3_1xa7594",
+   "created_utc": 1792525853,
+   "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/19reeebz1plc3/",
+   "edited": false,
+   "depth": 4,
+   "created_iso": "2026-10-20T19:50:53+00:00"
+  },
+  {
+   "id": "19ree5sozmd34",
+   "author": "Standard_Wish",
+   "body": "Congrats and kudos for showing the gratitude ;)\n\nI've been making extensive use of DSFv4.1 since it was available on OC and I'm very impressed at performance/cost. \n\nHowever, as of this month, with it being heavily promoted and, presumably, heavily used, I have noticed a marked increase in task completion time. Feels so much slower now. \n\nAnyone else noticing this? I might be able to mine some logs to get approximate 'proof'; more curious to see if my feels match anyone else's in the community. \n\nThanks ^",
+   "score": 2,
+   "ups": 2,
+   "downs": 0,
+   "parent_id": "t3_1xa7wti",
+   "link_id": "t3_1xa7wti",
+   "created_utc": 1792525534,
+   "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/19ree5sozmd34/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-20T19:45:34+00:00"
+  },
+  {
+   "id": "19re9g36eegub",
+   "author": "Birghtsidecheck",
+   "body": "How do you think the agent will know which are stale memories to prune? Based on what ?. To me agents are consumers they can give feedback but do not manage or handle shared memories it must be the responsibility of the plugin. \n\nYeah yet again 20k capped, this is an experimental feature to see how an agent evolute not related to the memories. \n\nAgent recall and rate the memories when they are used, it can decide based on the task assigned to it if these memories were helpful and gave correct info then they will be rated as useful. \n\nAs i said in my original post this is a personal project, for me it is pretty simple and useful compared to what others offers, but maybe for you isn’t. That’s my goal of sharing it, to get some ideas and feedbacks (and thanks for that)",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phwlc68",
+   "link_id": "t3_1x99sux",
+   "created_utc": 1792519192,
+   "permalink": "/r/opencode/comments/1x99sux/i_built_neobrain_a_memory_system_for_my/19re9g36eegub/",
+   "edited": false,
+   "depth": 3,
+   "created_iso": "2026-10-20T17:59:52+00:00"
+  },
+  {
+   "id": "19re9a1egupmo",
+   "author": "Departedx",
+   "body": "What's the dream design team skill? ",
+   "score": 2,
+   "ups": 2,
+   "downs": 0,
+   "parent_id": "t1_phs417l",
+   "link_id": "t3_1xa7594",
+   "created_utc": 1792518966,
+   "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/19re9a1egupmo/",
+   "edited": false,
+   "depth": 3,
+   "created_iso": "2026-10-20T17:56:06+00:00"
+  },
+  {
+   "id": "19re8tyj0g8jl",
+   "author": "tinoarauz",
+   "body": "Unlike AGY and I think other harnesses, OpenCode's plan mode is mostly just to keep it from touching your code while you plan in the same session. However, at least the way I see it, the session can easily get polluted by other requests you make. That's why I prefer using a .md (Markdown) file to build a solid plan without any context pollution—that way I end up with a detailed plan that any session or agent can review.\n",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phw0zwb",
+   "link_id": "t3_1xa6xjw",
+   "created_utc": 1792518365,
+   "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/19re8tyj0g8jl/",
+   "edited": false,
+   "depth": 4,
+   "created_iso": "2026-10-20T17:46:05+00:00"
+  },
+  {
+   "id": "19re8kzofwcec",
+   "author": "ShopAdventurous7190",
+   "body": "Thank god revolut was in shambles because their single provider died so di hekkerz could not charge me >:)",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t3_1x8gtvi",
+   "link_id": "t3_1x8gtvi",
+   "created_utc": 1792518030,
+   "permalink": "/r/opencode/comments/1x8gtvi/opencode_security_breach/19re8kzofwcec/",
+   "edited": false,
+   "depth": 0,
+   "created_iso": "2026-10-20T17:40:30+00:00"
+  },
+  {
+   "id": "19re84a3fqv5u",
+   "author": "tinoarauz",
+   "body": "Most of the context in a session is cacheable, meaning the model doesn't have to recompute it every time. That's why even a long session with 700k context still feels fast and cheap it only computes what's newly added. However, after a certain period of inactivity (whether minutes or hours), the cache gets cleared because other users need those resources and OpenCode doesn't have unlimited memory. So if you have a massive context, leave it idle for hours, and then send a simple \"hi\", the model no longer has those 700k tokens cached. It has to recompute the whole thing plus your \"hi\", which gets really expensive.\nThat's why my advice is to make the most out of the cache while it's active, and then either compact it with a free model (/compact) or start a fresh session. Just make sure you have your context documented so you aren't starting from scratch-use README.md, glossaries, and AGENTS.md so new sessions aren't completely clueless.\nI also built a Python script so that when my model needs something, it doesn't re-read the entire codebase. Instead, it asks the script for what it needs, and the script searches the codebase using my glossary. Honestly feels way better than grep.\n",
+   "score": 1,
+   "ups": 1,
+   "downs": 0,
+   "parent_id": "t1_phwuyrq",
+   "link_id": "t3_1xa6xjw",
+   "created_utc": 1792517406,
+   "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/19re84a3fqv5u/",
+   "edited": false,
+   "depth": 2,
+   "created_iso": "2026-10-20T17:30:06+00:00"
+  },
   {
    "id": "phx46tn",
    "author": "Register_Defiant",
@@ -81,7 +231,7 @@
    "created_utc": 1792512405,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phwuyrq/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T16:06:45+00:00"
   },
   {
@@ -141,7 +291,7 @@
    "created_utc": 1792510235,
    "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/phwnvy5/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T15:30:35+00:00"
   },
   {
@@ -276,7 +426,7 @@
    "created_utc": 1792507783,
    "permalink": "/r/opencode/comments/1x494cb/agent_orchestration_agentic_development_options/phwg2oq/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T14:49:43+00:00"
   },
   {
@@ -321,7 +471,7 @@
    "created_utc": 1792507012,
    "permalink": "/r/opencode/comments/1x494cb/agent_orchestration_agentic_development_options/phwdnrj/",
    "edited": false,
-   "depth": null,
+   "depth": 4,
    "created_iso": "2026-10-20T14:36:52+00:00"
   },
   {
@@ -516,7 +666,7 @@
    "created_utc": 1792503238,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phw0zwb/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-20T13:33:58+00:00"
   },
   {
@@ -568,15 +718,15 @@
    "id": "phvy1gv",
    "author": "TylerRolled",
    "body": "So - I went all kinds of around lol. I run NixOS, so I scoped it out deciding if I wanted to migrate, moved things around and wrote an overlay - but then opencode bricked and I couldn’t restore it. Spent like a day figuring out what was wrong (upstream fix) they patched the fix in overnight.\n\nOmO broke completely - but then updated to v2 like same day. BUT I wasn’t interested in OmO since they’re moving to a native application (might still take it for a spin). So I looked around, didn’t find anything until you reminded me ab slim, which I tried forever ago and didn’t like and now it’s the perfect fit lol.\n\nBut yeah once v2 was working, I just slapped it in and it worked fine. Where OmO is going native, slim actually focused on being opencode v2 compatible ",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t1_phskhqi",
    "link_id": "t3_1x494cb",
    "created_utc": 1792502327,
    "permalink": "/r/opencode/comments/1x494cb/agent_orchestration_agentic_development_options/phvy1gv/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-20T13:18:47+00:00"
   },
   {
@@ -681,7 +831,7 @@
    "created_utc": 1792498846,
    "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/phvni79/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T12:20:46+00:00"
   },
   {
@@ -741,7 +891,7 @@
    "created_utc": 1792496069,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phvg4hy/",
    "edited": false,
-   "depth": null,
+   "depth": 4,
    "created_iso": "2026-10-20T11:34:29+00:00"
   },
   {
@@ -786,7 +936,7 @@
    "created_utc": 1792495692,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phvf6qu/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-20T11:28:12+00:00"
   },
   {
@@ -846,7 +996,7 @@
    "created_utc": 1792493504,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phv9ztc/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T10:51:44+00:00"
   },
   {
@@ -906,7 +1056,7 @@
    "created_utc": 1792491606,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phv5tnv/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T10:20:06+00:00"
   },
   {
@@ -981,7 +1131,7 @@
    "created_utc": 1792489824,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phv29dg/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T09:50:24+00:00"
   },
   {
@@ -1146,7 +1296,7 @@
    "created_utc": 1792481851,
    "permalink": "/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/phunjvo/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-20T07:37:31+00:00"
   },
   {
@@ -1176,7 +1326,7 @@
    "created_utc": 1792481502,
    "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/phumwnj/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T07:31:42+00:00"
   },
   {
@@ -1296,7 +1446,7 @@
    "created_utc": 1792479901,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phujw1q/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T07:05:01+00:00"
   },
   {
@@ -1341,7 +1491,7 @@
    "created_utc": 1792479067,
    "permalink": "/r/opencode/comments/1x99sux/i_built_neobrain_a_memory_system_for_my/phuiai6/",
    "edited": false,
-   "depth": null,
+   "depth": 3,
    "created_iso": "2026-10-20T06:51:07+00:00"
   },
   {
@@ -1356,7 +1506,7 @@
    "created_utc": 1792478815,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phuhsxu/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:46:55+00:00"
   },
   {
@@ -1371,7 +1521,7 @@
    "created_utc": 1792478790,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phuhr5b/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:46:30+00:00"
   },
   {
@@ -1386,7 +1536,7 @@
    "created_utc": 1792478778,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phuhq9v/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:46:18+00:00"
   },
   {
@@ -1401,7 +1551,7 @@
    "created_utc": 1792478735,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phuhnbf/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:45:35+00:00"
   },
   {
@@ -1431,7 +1581,7 @@
    "created_utc": 1792478264,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phugr03/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:37:44+00:00"
   },
   {
@@ -1446,7 +1596,7 @@
    "created_utc": 1792478226,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phugoef/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:37:06+00:00"
   },
   {
@@ -1513,15 +1663,15 @@
    "id": "phuefsw",
    "author": "Birghtsidecheck",
    "body": "1. Speed wasnt a problem for me, the precision is. Vector search is fast but returns the closest match to the query which is not same as relevant to what is being recalled. The forget is a way to clean up noise like our brain works, without it a stale memory can always be perfect vector match and it keeps coming back. I wanted the forget because i noticed during my work the precision was caped at 33% and false injection around 17%, so 2 out of 3 recalled memories were not relevant on the right topic. and most importantly forgetting wont delete it.\n\n2. The identity, soul and dreams arent cheap, the agent write them (you can edit them ofc). I wanted to see how the agent will evolve them itself every week, this part implemented out of curiosity and i didnt think about the cost but i added hard cap of 20K char per file\n\n3. rating and vector searching are different. Rating helps me and the agent to know wether this memory was helpful or not, while similarity doesnt. so the rating is a way to filter memories so they are delivered first.\n\n",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t1_phtyvt1",
    "link_id": "t3_1x99sux",
    "created_utc": 1792477064,
    "permalink": "/r/opencode/comments/1x99sux/i_built_neobrain_a_memory_system_for_my/phuefsw/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:17:44+00:00"
   },
   {
@@ -1566,7 +1716,7 @@
    "created_utc": 1792476708,
    "permalink": "/r/opencode/comments/1x9bzrj/how_is_it_even_possible_that_ive_been_coding_for/phudqhs/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T06:11:48+00:00"
   },
   {
@@ -1896,7 +2046,7 @@
    "created_utc": 1792473015,
    "permalink": "/r/opencode/comments/1x9bi8v/microsoft_azure_network_is_banned/phu6dqm/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T05:10:15+00:00"
   },
   {
@@ -2016,7 +2166,7 @@
    "created_utc": 1792471504,
    "permalink": "/r/opencode/comments/1xa43vb/can_i_use_opencode_api_on_deepseek_harness_and/phu35wk/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T04:45:04+00:00"
   },
   {
@@ -2031,7 +2181,7 @@
    "created_utc": 1792470755,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/phu1iy6/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T04:32:35+00:00"
   },
   {
@@ -2106,7 +2256,7 @@
    "created_utc": 1792469575,
    "permalink": "/r/opencode/comments/1x99sux/i_built_neobrain_a_memory_system_for_my/phtyvt1/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T04:12:55+00:00"
   },
   {
@@ -2241,7 +2391,7 @@
    "created_utc": 1792465539,
    "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/phtoxxf/",
    "edited": false,
-   "depth": null,
+   "depth": 4,
    "created_iso": "2026-10-20T03:05:39+00:00"
   },
   {
@@ -2263,15 +2413,15 @@
    "id": "phtmzv9",
    "author": "WeepingANgel1211",
    "body": "congrats bro ",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t3_1xa7wti",
    "link_id": "t3_1xa7wti",
    "created_utc": 1792464804,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phtmzv9/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T02:53:24+00:00"
   },
   {
@@ -2518,15 +2668,15 @@
    "id": "phtbj5t",
    "author": "S0k4h_",
    "body": "what model do you use?",
-   "score": 0,
-   "ups": 0,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t3_1xa7wti",
    "link_id": "t3_1xa7wti",
    "created_utc": 1792460726,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/phtbj5t/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T01:45:26+00:00"
   },
   {
@@ -2593,15 +2743,15 @@
    "id": "pht91gq",
    "author": "tinoarauz",
    "body": "Yeah, I forgot to mention that when planning, use build (carefully-always tell it \"just create the plan, don't implement it yet\"). Also tell it to create a \"plans\" folder and save your plans there. Then you can review it yourself or ask another LLM, like GLM 5.3 Flash, to review it and reach a consensus. Just tell it: \"I want you to review the plan and reach a consensus with GLM 5.3 Flash in a sub-agent.\" Once you're satisfied with it, tell it to implement the plan. Just be careful and double-check, because sometimes it doesn't finish the whole plan. Keep an eye on it.",
-   "score": 2,
-   "ups": 2,
+   "score": 3,
+   "ups": 3,
    "downs": 0,
    "parent_id": "t1_pht5yvo",
    "link_id": "t3_1xa6xjw",
    "created_utc": 1792459855,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/pht91gq/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T01:30:55+00:00"
   },
   {
@@ -2653,15 +2803,15 @@
    "id": "pht8266",
    "author": "P4ITON",
    "body": "Também sou grato a ele, graças ao OC finalizei minha aplicação em 2 meses www.precimetro.com.br 🙏",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t3_1xa7wti",
    "link_id": "t3_1xa7wti",
    "created_utc": 1792459518,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/pht8266/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T01:25:18+00:00"
   },
   {
@@ -2691,22 +2841,22 @@
    "created_utc": 1792458803,
    "permalink": "/r/opencode/comments/1xa6xjw/most_efficient_way_to_use_opencode_go/pht5yvo/",
    "edited": false,
-   "depth": null,
+   "depth": 1,
    "created_iso": "2026-10-20T01:13:23+00:00"
   },
   {
    "id": "pht5nzn",
    "author": "Parking_Soil2623",
    "body": "Felicitaciones! Que has creado y sobre todo como lo has dado a conocer? ",
-   "score": 1,
-   "ups": 1,
+   "score": 2,
+   "ups": 2,
    "downs": 0,
    "parent_id": "t3_1xa7wti",
    "link_id": "t3_1xa7wti",
    "created_utc": 1792458699,
    "permalink": "/r/opencode/comments/1xa7wti/thanks_opencode/pht5nzn/",
    "edited": false,
-   "depth": null,
+   "depth": 0,
    "created_iso": "2026-10-20T01:11:39+00:00"
   },
   {
@@ -2811,7 +2961,7 @@
    "created_utc": 1792456454,
    "permalink": "/r/opencode/comments/1xa7594/what_is_your_opencode_setup/phsz499/",
    "edited": false,
-   "depth": null,
+   "depth": 2,
    "created_iso": "2026-10-20T00:34:14+00:00"
   },
   {
