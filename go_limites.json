@@ -1,7 +1,7 @@
 {
  "titulo": "Uso y límites de OpenCode Go (oficial)",
  "fuente": "https://opencode.ai/v2/docs/console/go/",
- "actualizado": "2026-10-21 23:35 UTC",
+ "actualizado": "2026-10-23 04:28 UTC",
  "plan": {
   "nombre": "Go",
   "precio": "$10/mes",
@@ -213,17 +213,17 @@
    "retencion": "0 days"
   },
   {
-   "modelo": "MiniMax M3.1 Flash Free",
-   "entrada": "Free",
-   "salida": "Free",
-   "cache_lectura": "Free",
+   "modelo": "MiniMax M3.1 Flash",
+   "entrada": "$0.15",
+   "salida": "$0.60",
+   "cache_lectura": "$0.015",
    "cache_escritura": "—",
-   "limite_go": "∞",
-   "limite_go_txt": "Unlimited",
-   "x_plan": "∞",
-   "limite_plus": "Unlimited",
-   "x_go_plus": "—",
-   "req_mes": "Unlimited",
+   "limite_go": 20.0,
+   "limite_go_txt": "$20",
+   "x_plan": 2.0,
+   "limite_plus": 80.0,
+   "x_go_plus": 4.0,
+   "req_mes": "19,380",
    "entrena": "Not used",
    "retencion": "0 days"
   },
@@ -559,8 +559,12 @@
   }
  ],
  "cambios": {
-  "nuevos": [],
-  "fuera": [],
+  "nuevos": [
+   "MiniMax M3.1 Flash"
+  ],
+  "fuera": [
+   "MiniMax M3.1 Flash Free"
+  ],
   "modificados": []
  }
 }

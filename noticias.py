@@ -48,7 +48,15 @@ print(f"scraping {inicio} -> {fin} (ahora {datetime.datetime.now(datetime.UTC):%
 # 2) scraping incremental (reutiliza fetch.py)
 cmd = [sys.executable, os.path.join(HERE, "fetch.py"), "--subreddit", a.subreddit,
        "--after", inicio, "--before", fin, "--prefix", prefix, "--orphans"]
-subprocess.run(cmd, check=True)
+try:
+    subprocess.run(cmd, check=True)
+except subprocess.CalledProcessError:
+    # Arctic Shift es de terceros y se cae: no hay volcado nuevo, pero el dashboard
+    # se puede regenerar con los que ya estan en disco.
+    sys.exit(f"\nfetch.py fallo (Arctic Shift no responde, ver arriba).\n"
+             f"No hay volcado nuevo de r/{a.subreddit}; los anteriores siguen intactos.\n"
+             f"Sigue sin actualizar las noticias: reintenta mas tarde o ejecuta\n"
+             f"  python3 index_datos.py   # reconstruye el dashboard con los volcados que ya tienes")
 
 # 3) resumen
 d = json.load(open(os.path.join(HERE, f"{prefix}.json"), encoding="utf-8"))

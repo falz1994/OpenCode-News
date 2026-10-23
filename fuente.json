@@ -1,7 +1,7 @@
 {
   "titulo": "Modelos de OpenCode por habilidad",
   "subtitulo": "Matriz modelo x habilidad construida desde r/opencode + r/opencodeCLI",
-  "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados.",
+  "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados. Aviso: los volcados se cortan el 21-oct porque la API de Arctic Shift (terceros) lleva desde el 23 devolviendo error 500; los titulares y la tabla de Go sí están al día.",
   "ventana_dias": 45,
   "noticias_dias": 12,
   "noticias_top": 14,
@@ -360,7 +360,7 @@
       "nombre": "Space Bunny (codename)",
       "alias": "space ?bunny|minimax|m3\\.1",
       "rol": "Stealth: cambia de modelo por dentro",
-      "pega": "Codename stealth: llevaba M3.1 Flash. Ultimo dia gratis (21-oct); bucles y 900K de contexto reportados",
+      "pega": "Codename stealth: llevaba M3.1 Flash. Desde el 23-oct es de pago y solo x2 en Go; el open weights del 23 es la salida",
       "r": {
         "frontend": 2,
         "backend": 1,
@@ -549,7 +549,7 @@
         "GLM 5.3 Flash Free",
         "DeepSeek 4.1 Flash Free · MiMo Flash Free",
         "GLM 5.3 Flash Free (adversarial)",
-        "DeepSeek · GLM 5.3 · MiniMax M3.1 Flash (3 dias) · Beam · LongCat 2.5"
+        "DeepSeek · GLM 5.3 · Beam · LongCat 2.5"
       ],
       [
         "$10 (Go)",
@@ -777,7 +777,7 @@
       [
         "Space Bunny",
         "MiniMax M3.1 Flash en su version del 19-oct (no siempre el mismo)",
-        "Cambia de modelo tras el codename: la propia doc de Zen lo llama stealth y avisa de que rota; los benchmarks de M3.1 coinciden con los que se vieron bajo el nombre"
+        "Cambia de modelo tras el codename; los benchmarks de M3.1 coinciden con los que se vieron bajo el nombre. El 23-oct MiniMax lo publico como modelo de pago"
       ],
       [
         "Exo Free",
@@ -886,7 +886,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (22 oct, madrugada)",
+    "titulo": "Titulares (23 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -895,10 +895,10 @@
     ],
     "filas": [
       [
-        "22-oct",
-        "El dueño de OpenCode zanja la duda del checkpoint: <b>«es el mismo deployment, como mucho menos TPS»</b>",
-        "La pregunta de ayer tiene respuesta del propio Dax: «cada vez que ofrecemos un modelo es <b>exactamente el mismo deployment</b> que el del laboratorio que lo hizo; lo peor que hacemos es servir a menos TPS para aguantar más volumen, pero es el mismo modelo; si lo troceamos, lo sacamos con otro nombre». O sea: <b>sin cuantización</b> y sin checkpoint recortado. La comunidad pide transparencia igualmente, porque la cabecera que lo demostraba se retiró el domingo. Queda como pregunta abierta la latencia: lo lento es el ida y vuelta, no el TPS.",
-        "<a href=\"https://x.com/thdxr/status/2111853153826021686\" target=\"_blank\" rel=\"noopener\">cita del dueño</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbftih/which_inference_provider_does_opencode_go_use_for/\" target=\"_blank\" rel=\"noopener\">hilo del sub</a>"
+        "23-oct",
+        "Fin del gratis de MiniMax: <b>M3.1 Flash pasa a ×2 ($20/mes)</b>",
+        "Lo que llevábamos días anunciando se cumple en la tabla oficial: <code>MiniMax M3.1 Flash Free</code> desaparece y entra <b>MiniMax M3.1 Flash</b> de pago. A $0,15/$0,60 por 1M, el plan Go le da <b>$20/mes (×2)</b> y 19.380 peticiones, con $80 en Go Plus (×4). Es el multiplicador más bajo de los modelos nuevos: menos de la mitad que GLM-5.3-Flash (×6) y una cuarta parte de DeepSeek (×8). Hoy además toca el paso a open weights, así que la alternativa real será auto-hospedarlo.",
+        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">tabla de Go</a>"
       ],
       [
         "22-oct",
