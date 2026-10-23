@@ -29,6 +29,7 @@ con datos en vez de con impresiones:
 | `go_limites.py` | Scrapea los **límites de uso oficiales de OpenCode Go** → `go_limites.json` (incluye el multiplicador ×plan) |
 | `presets.py` | Lee los presets de DSH (`~/.dsh/.agent-presets`) y genera `presets.json` para el frame de presets |
 | `audita.py` | Auditoría del dashboard con Chrome headless (CDP): contraste WCAG, desbordes, solapes con el header y geometría |
+| `valida_enlaces.py` | Comprueba que cada enlace a un hilo de los titulares apunta a un hilo real |
 | `sonda.py` | Medidas puntuales de layout (una celda, un chip, un título) para decidir si algo está mal alineado |
 | `captura.py` | Capturas dirigidas: desplaza a un título y guarda el viewport en claro/oscuro y a cualquier ancho |
 

@@ -1,7 +1,7 @@
 {
   "titulo": "Modelos de OpenCode por habilidad",
   "subtitulo": "Matriz modelo x habilidad construida desde r/opencode + r/opencodeCLI",
-  "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados. Aviso: los volcados se cortan el 21-oct porque la API de Arctic Shift (terceros) lleva desde el 23 devolviendo error 500; los titulares y la tabla de Go sí están al día.",
+  "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados. Arctic Shift estuvo caido el 23-oct por la manana y se recupero: los dos dias de hueco (21-22) estan recuperados en este volcado.",
   "ventana_dias": 45,
   "noticias_dias": 12,
   "noticias_top": 14,
@@ -531,6 +531,28 @@
         "simples": 0,
         "valor": -1
       }
+    },
+    {
+      "nombre": "Flint 40B",
+      "alias": "flint",
+      "rol": "Gratis para portatil",
+      "pega": "MoE minimo que corre en 32-64 GB, pero malo en codigo (por debajo de Qwen 3.8 27B)",
+      "r": {
+        "frontend": 0,
+        "backend": 0,
+        "planificacion": 0,
+        "motion": 0,
+        "codigo": -1,
+        "debug": 0,
+        "tests": 0,
+        "orquestacion": 0,
+        "docs": 1,
+        "research": 1,
+        "vision": 0,
+        "local": 3,
+        "simples": 2,
+        "valor": 3
+      }
     }
   ],
   "presupuestos": {
@@ -845,7 +867,7 @@
         "Cuotas que se agotan",
         {
           "class": "detalle",
-          "html": "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"
+          "html": "Kimi K3 y Grok 4.7 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta. 22-23-oct: el cupo gratis pasa de durar el dia a agotarse en ~30 minutos y la UI deja de mostrar «200 peticiones al dia»; la comunidad lo atribuye a la avalancha de usuarios de DeepSeek V4.1 gratis. En Go, un usuario reporta $18 en un dia = 25% del cupo mensual"
         }
       ],
       [
@@ -886,7 +908,7 @@
     ]
   },
   "titulares": {
-    "titulo": "Titulares (23 oct)",
+    "titulo": "Titulares (22-23 oct)",
     "columnas": [
       "Cuándo",
       "Titular",
@@ -896,27 +918,27 @@
     "filas": [
       [
         "23-oct",
-        "Fin del gratis de MiniMax: <b>M3.1 Flash pasa a ×2 ($20/mes)</b>",
-        "Lo que llevábamos días anunciando se cumple en la tabla oficial: <code>MiniMax M3.1 Flash Free</code> desaparece y entra <b>MiniMax M3.1 Flash</b> de pago. A $0,15/$0,60 por 1M, el plan Go le da <b>$20/mes (×2)</b> y 19.380 peticiones, con $80 en Go Plus (×4). Es el multiplicador más bajo de los modelos nuevos: menos de la mitad que GLM-5.3-Flash (×6) y una cuarta parte de DeepSeek (×8). Hoy además toca el paso a open weights, así que la alternativa real será auto-hospedarlo.",
-        "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">tabla de Go</a>"
+        "El <b>tier gratis se encoge por dos lados</b>: menos cupo y menos modelos",
+        "Es el tema de los dos días. <b>Cupo</b>: media docena de hilos («Free tier is dead», «rip free models»), y el mejor documentado tiene <b>32↑ y 25 comentarios</b> — el cupo duraba el día y ahora se agota en <b>30 minutos</b>; la pantalla decía «200 peticiones al día» y ya no (la doc nunca publicó ese número, así que es observación, no dato oficial). <b>Catálogo</b>: MiniMax M3.1 ya no está para usuarios gratis (<b>33 comentarios</b>) y varios reportan que <b>Beam Free</b> desapareció del cliente esta noche (<b>19</b>), <i>aunque la tabla oficial todavía lo lista como gratis e ilimitado</i> — la doc va por detrás de la realidad. Causa que se repite: la avalancha por DeepSeek V4.1 gratis.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xc4moa/did_they_change_the_quota_for_free_user/\" target=\"_blank\" rel=\"noopener\">«¿cambiaron la cuota?» (32↑)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xcla34/minimax_m31_flash_no_longer_available_for_free/\" target=\"_blank\" rel=\"noopener\">MiniMax fuera del gratis (33c)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xcogal/beam_free_model_is_gone/\" target=\"_blank\" rel=\"noopener\">Beam Free se fue (19c)</a>"
       ],
       [
-        "22-oct",
-        "<b>Muse Wonder 1.0</b> llega a OpenCode: sin versión gratis y caro",
-        "Sale el nuevo modelo de Meta, y lo primero que pregunta el sub es «¿dónde pone free?». No lo pone: no entra en Go y el precio de la doc es <b>$4 de entrada y $20 de salida por 1M</b> (frente a $1,25/$4,25 de Muse Spark 1.3). Con Muse Spark 1.3 gratis apagado el 17, el mensaje del sub es unánime: «nos sigue faltando spark-1.3-contributor-free».",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xbsrta/meta_muse_wonder_is_now_available_on_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a> · <a href=\"https://opencode.ai/v2/docs/console/models\" target=\"_blank\" rel=\"noopener\">precios (docs)</a>"
+        "23-oct",
+        "Nuevo modelo: <b>flint-40b-free</b>, el más votado de los dos días",
+        "Sale <code>flint-40b-free</code> (64↑, 14 comentarios) y la doc lo confirma: gratis por tiempo limitado, en Zen y <b>no en Go</b>. Es un MoE pequeño que corre en un portátil de 32-64 GB, por debajo de Qwen 3.8 27B y —la pega que más se repite— «<b>realmente malo en código</b>». La respuesta más votada pide limpiar el catálogo: «fuera todo lo que baje de 200B, dejad DeepSeek, Muse Spark, GLM 5.3 y MiMo».",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xc7vph/new_model_on_opencode_flint40bfree/\" target=\"_blank\" rel=\"noopener\">hilo (64↑)</a> · <a href=\"https://opencode.ai/v2/docs/console/models\" target=\"_blank\" rel=\"noopener\">lista oficial</a>"
       ],
       [
-        "22-oct",
-        "Se cierra el truco del VPN: <b>cambiar de IP ya no resetea el límite gratis</b>",
-        "Dos hilos independientes lo confirman el mismo día: cambiar de IP para recuperar cuota gratis ya no funciona, y otro usuario reporta que sigue bloqueado con el mensaje de «solo dentro de OpenCode». Es el cierre natural del bloqueo por IP que empezó el 18: si el límite se ata a algo más que la IP, la rotación deja de servir.",
-        "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1xc2xr4/using_different_ip_doesnt_work_anymore/\" target=\"_blank\" rel=\"noopener\">«cambiar de IP ya no funciona»</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xc13th/help_guys_opencodes_free_tier_can_only_be_used/\" target=\"_blank\" rel=\"noopener\">sigue bloqueado</a>"
+        "23-oct",
+        "DeepSeek sigue en <b>×8</b>… pero ya hay quien gasta el 25 % del mes en un día",
+        "La tabla oficial no se mueve: <b>$80/mes, ×8</b>. Lo que sí se mueve es el consumo: un usuario reporta <b>$18 en un día = 25 % del cupo mensual</b>, y otro titula «¿sigue en ×8?». A eso se suma el hilo pidiendo <b>volver al DeepSeek anterior al 1017</b> («se ha vuelto más tonto»), y los que miden latencia alta <b>entre</b> peticiones por la mañana, no en el TPS: apunta a horas punta (01:00-04:00 y 06:00-10:00 UTC).",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xc7fys/is_ds_flash_41_still_at_x8_my_sub_started/\" target=\"_blank\" rel=\"noopener\">$18 en un día</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xdg9ie/revert_deepseek_pre_1017/\" target=\"_blank\" rel=\"noopener\">revertir el 1017</a>"
       ],
       [
-        "22-oct",
-        "El cupo de Go, ahora con números: <b>$7,47 de coste para un límite al 99 %</b>",
-        "Dos hilos ponen cifras a lo de ayer: uno no entiende por qué el panel le marca $7,47 de coste con el plan de $10, y otro ve «$0,08 / $3,28» con el límite mensual al 99 %. La respuesta que se repite en el sub es que <b>el límite es un porcentaje del cupo, no un contador de dólares gastados</b> — el mismo malentendido que en la subida de $60 a $80. Y sigue la comparativa que más piden: Go $10 contra Claude Code $20.",
-        "<a href=\"https://www.reddit.com/r/opencode/comments/1xbtczk/what_does_cost_mean_on_the_summary_page/\" target=\"_blank\" rel=\"noopener\">qué significa Cost</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbvj6c/limits_opencode_go_10_vs_claude_code_20/\" target=\"_blank\" rel=\"noopener\">Go $10 vs Claude $20</a>"
+        "23-oct",
+        "Movimiento en el catálogo: <b>llega Kimi K3.1</b> y MiniMax pasa a ×2",
+        "Moonshot <b>enseña Kimi K3.1</b> en un teaser («muy pronto»), y en la tabla de Go se consuma lo que avisamos esta mañana: <code>MiniMax M3.1 Flash Free</code> desaparece y entra como modelo de pago a <b>$20/mes (×2)</b>, 19.380 peticiones. El patrón de la semana es nítido: el gratis dura días, luego o pasa a pago o se apaga. Y con Beam en el aire, el fondo real del tier gratis queda en <b>DeepSeek V4.1, GLM-5.3-Flash, Flint 40B y LongCat 2.5</b>.",
+        "<a href=\"https://www.reddit.com/r/opencode/comments/1xd7e2n/kimi_k31_is_coming_very_soon_already_teased_by/\" target=\"_blank\" rel=\"noopener\">Kimi K3.1</a> · <a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">tabla de Go</a>"
       ]
     ]
   }

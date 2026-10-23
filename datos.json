@@ -1,7 +1,7 @@
 {
  "titulo": "Modelos de OpenCode por habilidad",
  "subtitulo": "Matriz modelo x habilidad construida desde r/opencode + r/opencodeCLI",
- "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados. Aviso: los volcados se cortan el 21-oct porque la API de Arctic Shift (terceros) lleva desde el 23 devolviendo error 500; los titulares y la tabla de Go sí están al día.",
+ "nota": "Valoraciones curadas a mano a partir de frases donde la comunidad asigna un modelo a una tarea. Los recuentos de menciones y el sentimiento los calcula index_datos.py sobre los volcados. Arctic Shift estuvo caido el 23-oct por la manana y se recupero: los dos dias de hueco (21-22) estan recuperados en este volcado.",
  "ventana_dias": 45,
  "noticias_dias": 12,
  "noticias_top": 14,
@@ -114,26 +114,26 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 508,
-    "docs": 35,
-    "codigo": 207,
-    "orquestacion": 106,
-    "backend": 258,
-    "tests": 118,
-    "motion": 32,
-    "planificacion": 57,
-    "frontend": 13,
-    "debug": 21,
+    "valor": 529,
+    "docs": 38,
+    "codigo": 213,
+    "orquestacion": 107,
+    "backend": 269,
+    "tests": 119,
+    "motion": 34,
+    "planificacion": 59,
+    "frontend": 12,
+    "debug": 22,
     "local": 25,
-    "simples": 18,
-    "research": 10,
+    "simples": 19,
+    "research": 9,
     "vision": 17
    },
    "sentimiento": {
-    "pos": 443,
-    "neg": 302,
-    "total": 745,
-    "pct": 59
+    "pos": 457,
+    "neg": 308,
+    "total": 765,
+    "pct": 60
    }
   },
   {
@@ -158,25 +158,25 @@
     "valor": 2
    },
    "menciones": {
-    "valor": 251,
-    "codigo": 123,
-    "backend": 50,
+    "valor": 243,
+    "codigo": 127,
+    "backend": 51,
     "tests": 74,
     "local": 13,
-    "orquestacion": 41,
+    "orquestacion": 39,
     "simples": 8,
-    "planificacion": 39,
-    "frontend": 10,
-    "motion": 16,
-    "debug": 14,
+    "planificacion": 38,
+    "frontend": 11,
+    "motion": 15,
+    "debug": 15,
     "research": 6,
-    "vision": 4,
+    "vision": 5,
     "docs": 12
    },
    "sentimiento": {
-    "pos": 232,
+    "pos": 229,
     "neg": 161,
-    "total": 393,
+    "total": 390,
     "pct": 59
    }
   },
@@ -202,25 +202,25 @@
     "valor": 1
    },
    "menciones": {
-    "codigo": 70,
-    "tests": 49,
+    "codigo": 72,
+    "tests": 48,
     "local": 4,
     "valor": 96,
-    "motion": 24,
+    "motion": 25,
     "planificacion": 36,
     "orquestacion": 35,
-    "docs": 16,
+    "docs": 18,
     "debug": 10,
     "research": 5,
     "frontend": 6,
-    "backend": 7,
-    "simples": 3
+    "backend": 8,
+    "simples": 2
    },
    "sentimiento": {
-    "pos": 90,
-    "neg": 46,
+    "pos": 91,
+    "neg": 45,
     "total": 136,
-    "pct": 66
+    "pct": 67
    }
   },
   {
@@ -246,23 +246,23 @@
    },
    "menciones": {
     "valor": 50,
-    "docs": 6,
+    "docs": 7,
     "planificacion": 10,
     "tests": 16,
-    "codigo": 26,
+    "codigo": 25,
     "orquestacion": 16,
     "local": 1,
     "motion": 6,
-    "backend": 2,
+    "backend": 3,
     "debug": 4,
     "simples": 2,
     "research": 1
    },
    "sentimiento": {
-    "pos": 37,
+    "pos": 36,
     "neg": 20,
-    "total": 57,
-    "pct": 65
+    "total": 56,
+    "pct": 64
    }
   },
   {
@@ -302,9 +302,9 @@
    },
    "sentimiento": {
     "pos": 28,
-    "neg": 10,
-    "total": 38,
-    "pct": 74
+    "neg": 11,
+    "total": 39,
+    "pct": 72
    }
   },
   {
@@ -335,8 +335,8 @@
     "backend": 8,
     "research": 2,
     "planificacion": 23,
-    "valor": 131,
-    "orquestacion": 34,
+    "valor": 129,
+    "orquestacion": 33,
     "docs": 15,
     "frontend": 3,
     "motion": 10,
@@ -345,10 +345,10 @@
     "simples": 5
    },
    "sentimiento": {
-    "pos": 121,
-    "neg": 53,
-    "total": 174,
-    "pct": 70
+    "pos": 119,
+    "neg": 54,
+    "total": 173,
+    "pct": 69
    }
   },
   {
@@ -376,22 +376,22 @@
     "backend": 11,
     "research": 4,
     "planificacion": 32,
-    "codigo": 46,
-    "tests": 41,
-    "orquestacion": 29,
+    "codigo": 48,
+    "tests": 39,
+    "orquestacion": 28,
     "docs": 13,
-    "valor": 75,
+    "valor": 74,
     "frontend": 3,
+    "motion": 10,
     "debug": 2,
-    "motion": 9,
     "local": 2,
     "simples": 4
    },
    "sentimiento": {
-    "pos": 70,
-    "neg": 38,
-    "total": 108,
-    "pct": 65
+    "pos": 67,
+    "neg": 39,
+    "total": 106,
+    "pct": 63
    }
   },
   {
@@ -420,20 +420,20 @@
     "tests": 23,
     "backend": 22,
     "debug": 4,
-    "valor": 33,
-    "codigo": 14,
+    "valor": 34,
+    "codigo": 15,
     "docs": 11,
-    "motion": 12,
+    "motion": 13,
     "orquestacion": 3,
     "research": 10,
     "planificacion": 4,
     "frontend": 4
    },
    "sentimiento": {
-    "pos": 42,
-    "neg": 23,
-    "total": 65,
-    "pct": 65
+    "pos": 43,
+    "neg": 24,
+    "total": 67,
+    "pct": 64
    }
   },
   {
@@ -458,25 +458,25 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 100,
-    "orquestacion": 35,
-    "simples": 5,
+    "valor": 101,
+    "orquestacion": 34,
+    "simples": 4,
     "backend": 18,
-    "codigo": 57,
+    "codigo": 60,
     "docs": 13,
     "research": 6,
-    "planificacion": 14,
-    "tests": 36,
+    "planificacion": 13,
+    "tests": 38,
     "motion": 13,
     "vision": 3,
     "frontend": 18,
-    "local": 4,
+    "local": 7,
     "debug": 8
    },
    "sentimiento": {
-    "pos": 196,
-    "neg": 81,
-    "total": 277,
+    "pos": 195,
+    "neg": 79,
+    "total": 274,
     "pct": 71
    }
   },
@@ -502,11 +502,11 @@
     "valor": 3
    },
    "menciones": {
-    "valor": 80,
+    "valor": 82,
     "tests": 44,
     "motion": 15,
     "planificacion": 13,
-    "codigo": 51,
+    "codigo": 52,
     "orquestacion": 16,
     "frontend": 8,
     "docs": 4,
@@ -518,9 +518,9 @@
     "vision": 2
    },
    "sentimiento": {
-    "pos": 140,
+    "pos": 142,
     "neg": 97,
-    "total": 237,
+    "total": 239,
     "pct": 59
    }
   },
@@ -549,8 +549,8 @@
     "codigo": 39,
     "orquestacion": 8,
     "backend": 14,
-    "valor": 38,
-    "motion": 4,
+    "valor": 41,
+    "motion": 7,
     "planificacion": 16,
     "tests": 17,
     "debug": 4,
@@ -561,10 +561,10 @@
     "local": 3
    },
    "sentimiento": {
-    "pos": 41,
+    "pos": 45,
     "neg": 37,
-    "total": 78,
-    "pct": 53
+    "total": 82,
+    "pct": 55
    }
   },
   {
@@ -589,15 +589,15 @@
     "valor": 2
    },
    "menciones": {
-    "local": 37,
+    "local": 38,
     "backend": 19,
     "tests": 19,
     "debug": 4,
     "frontend": 2,
-    "valor": 29,
+    "valor": 30,
     "orquestacion": 14,
     "docs": 4,
-    "codigo": 25,
+    "codigo": 26,
     "motion": 3,
     "research": 3,
     "planificacion": 6,
@@ -605,9 +605,9 @@
     "simples": 3
    },
    "sentimiento": {
-    "pos": 42,
-    "neg": 25,
-    "total": 67,
+    "pos": 44,
+    "neg": 26,
+    "total": 70,
     "pct": 63
    }
   },
@@ -634,14 +634,14 @@
    },
    "menciones": {
     "research": 1,
-    "valor": 27,
+    "valor": 30,
     "backend": 9,
-    "tests": 38,
+    "tests": 40,
     "motion": 15,
     "planificacion": 5,
     "local": 5,
     "codigo": 46,
-    "orquestacion": 9,
+    "orquestacion": 10,
     "docs": 11,
     "frontend": 8,
     "debug": 8,
@@ -649,9 +649,9 @@
     "simples": 2
    },
    "sentimiento": {
-    "pos": 107,
+    "pos": 109,
     "neg": 66,
-    "total": 173,
+    "total": 175,
     "pct": 62
    }
   },
@@ -723,10 +723,10 @@
     "vision": 1
    },
    "sentimiento": {
-    "pos": 12,
+    "pos": 13,
     "neg": 15,
-    "total": 27,
-    "pct": 44
+    "total": 28,
+    "pct": 46
    }
   },
   {
@@ -792,16 +792,16 @@
     "simples": 3,
     "valor": 5,
     "vision": 1,
-    "tests": 2,
+    "tests": 3,
     "planificacion": 1,
     "backend": 3,
     "orquestacion": 2
    },
    "sentimiento": {
-    "pos": 13,
-    "neg": 10,
-    "total": 23,
-    "pct": 57
+    "pos": 11,
+    "neg": 8,
+    "total": 19,
+    "pct": 58
    }
   },
   {
@@ -898,18 +898,49 @@
     "local": 3,
     "codigo": 12,
     "orquestacion": 2,
-    "tests": 7,
-    "valor": 18,
+    "tests": 8,
+    "valor": 20,
     "debug": 2,
     "research": 2,
     "frontend": 1,
     "docs": 1
    },
    "sentimiento": {
-    "pos": 14,
+    "pos": 15,
     "neg": 13,
-    "total": 27,
-    "pct": 52
+    "total": 28,
+    "pct": 54
+   }
+  },
+  {
+   "nombre": "Flint 40B",
+   "alias": "flint",
+   "rol": "Gratis para portatil",
+   "pega": "MoE minimo que corre en 32-64 GB, pero malo en codigo (por debajo de Qwen 3.8 27B)",
+   "r": {
+    "frontend": 0,
+    "backend": 0,
+    "planificacion": 0,
+    "motion": 0,
+    "codigo": -1,
+    "debug": 0,
+    "tests": 0,
+    "orquestacion": 0,
+    "docs": 1,
+    "research": 1,
+    "vision": 0,
+    "local": 3,
+    "simples": 2,
+    "valor": 3
+   },
+   "menciones": {
+    "codigo": 1
+   },
+   "sentimiento": {
+    "pos": 0,
+    "neg": 0,
+    "total": 0,
+    "pct": null
    }
   }
  ],
@@ -1225,7 +1256,7 @@
     "Cuotas que se agotan",
     {
      "class": "detalle",
-     "html": "Kimi K3 y Grok 4.6 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta"
+     "html": "Kimi K3 y Grok 4.7 queman la cuota en 3 prompts; el free tier se agota «en minutos» en horas punta. 22-23-oct: el cupo gratis pasa de durar el dia a agotarse en ~30 minutos y la UI deja de mostrar «200 peticiones al dia»; la comunidad lo atribuye a la avalancha de usuarios de DeepSeek V4.1 gratis. En Go, un usuario reporta $18 en un dia = 25% del cupo mensual"
     }
    ],
    [
@@ -1266,7 +1297,7 @@
   ]
  },
  "titulares": {
-  "titulo": "Titulares (23 oct)",
+  "titulo": "Titulares (22-23 oct)",
   "columnas": [
    "Cuándo",
    "Titular",
@@ -1276,156 +1307,156 @@
   "filas": [
    [
     "23-oct",
-    "Fin del gratis de MiniMax: <b>M3.1 Flash pasa a ×2 ($20/mes)</b>",
-    "Lo que llevábamos días anunciando se cumple en la tabla oficial: <code>MiniMax M3.1 Flash Free</code> desaparece y entra <b>MiniMax M3.1 Flash</b> de pago. A $0,15/$0,60 por 1M, el plan Go le da <b>$20/mes (×2)</b> y 19.380 peticiones, con $80 en Go Plus (×4). Es el multiplicador más bajo de los modelos nuevos: menos de la mitad que GLM-5.3-Flash (×6) y una cuarta parte de DeepSeek (×8). Hoy además toca el paso a open weights, así que la alternativa real será auto-hospedarlo.",
-    "<a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">tabla de Go</a>"
+    "El <b>tier gratis se encoge por dos lados</b>: menos cupo y menos modelos",
+    "Es el tema de los dos días. <b>Cupo</b>: media docena de hilos («Free tier is dead», «rip free models»), y el mejor documentado tiene <b>32↑ y 25 comentarios</b> — el cupo duraba el día y ahora se agota en <b>30 minutos</b>; la pantalla decía «200 peticiones al día» y ya no (la doc nunca publicó ese número, así que es observación, no dato oficial). <b>Catálogo</b>: MiniMax M3.1 ya no está para usuarios gratis (<b>33 comentarios</b>) y varios reportan que <b>Beam Free</b> desapareció del cliente esta noche (<b>19</b>), <i>aunque la tabla oficial todavía lo lista como gratis e ilimitado</i> — la doc va por detrás de la realidad. Causa que se repite: la avalancha por DeepSeek V4.1 gratis.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xc4moa/did_they_change_the_quota_for_free_user/\" target=\"_blank\" rel=\"noopener\">«¿cambiaron la cuota?» (32↑)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xcla34/minimax_m31_flash_no_longer_available_for_free/\" target=\"_blank\" rel=\"noopener\">MiniMax fuera del gratis (33c)</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xcogal/beam_free_model_is_gone/\" target=\"_blank\" rel=\"noopener\">Beam Free se fue (19c)</a>"
    ],
    [
-    "22-oct",
-    "<b>Muse Wonder 1.0</b> llega a OpenCode: sin versión gratis y caro",
-    "Sale el nuevo modelo de Meta, y lo primero que pregunta el sub es «¿dónde pone free?». No lo pone: no entra en Go y el precio de la doc es <b>$4 de entrada y $20 de salida por 1M</b> (frente a $1,25/$4,25 de Muse Spark 1.3). Con Muse Spark 1.3 gratis apagado el 17, el mensaje del sub es unánime: «nos sigue faltando spark-1.3-contributor-free».",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1xbsrta/meta_muse_wonder_is_now_available_on_opencode/\" target=\"_blank\" rel=\"noopener\">hilo</a> · <a href=\"https://opencode.ai/v2/docs/console/models\" target=\"_blank\" rel=\"noopener\">precios (docs)</a>"
+    "23-oct",
+    "Nuevo modelo: <b>flint-40b-free</b>, el más votado de los dos días",
+    "Sale <code>flint-40b-free</code> (64↑, 14 comentarios) y la doc lo confirma: gratis por tiempo limitado, en Zen y <b>no en Go</b>. Es un MoE pequeño que corre en un portátil de 32-64 GB, por debajo de Qwen 3.8 27B y —la pega que más se repite— «<b>realmente malo en código</b>». La respuesta más votada pide limpiar el catálogo: «fuera todo lo que baje de 200B, dejad DeepSeek, Muse Spark, GLM 5.3 y MiMo».",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xc7vph/new_model_on_opencode_flint40bfree/\" target=\"_blank\" rel=\"noopener\">hilo (64↑)</a> · <a href=\"https://opencode.ai/v2/docs/console/models\" target=\"_blank\" rel=\"noopener\">lista oficial</a>"
    ],
    [
-    "22-oct",
-    "Se cierra el truco del VPN: <b>cambiar de IP ya no resetea el límite gratis</b>",
-    "Dos hilos independientes lo confirman el mismo día: cambiar de IP para recuperar cuota gratis ya no funciona, y otro usuario reporta que sigue bloqueado con el mensaje de «solo dentro de OpenCode». Es el cierre natural del bloqueo por IP que empezó el 18: si el límite se ata a algo más que la IP, la rotación deja de servir.",
-    "<a href=\"https://www.reddit.com/r/opencodeCLI/comments/1xc2xr4/using_different_ip_doesnt_work_anymore/\" target=\"_blank\" rel=\"noopener\">«cambiar de IP ya no funciona»</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xc13th/help_guys_opencodes_free_tier_can_only_be_used/\" target=\"_blank\" rel=\"noopener\">sigue bloqueado</a>"
+    "23-oct",
+    "DeepSeek sigue en <b>×8</b>… pero ya hay quien gasta el 25 % del mes en un día",
+    "La tabla oficial no se mueve: <b>$80/mes, ×8</b>. Lo que sí se mueve es el consumo: un usuario reporta <b>$18 en un día = 25 % del cupo mensual</b>, y otro titula «¿sigue en ×8?». A eso se suma el hilo pidiendo <b>volver al DeepSeek anterior al 1017</b> («se ha vuelto más tonto»), y los que miden latencia alta <b>entre</b> peticiones por la mañana, no en el TPS: apunta a horas punta (01:00-04:00 y 06:00-10:00 UTC).",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xc7fys/is_ds_flash_41_still_at_x8_my_sub_started/\" target=\"_blank\" rel=\"noopener\">$18 en un día</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xdg9ie/revert_deepseek_pre_1017/\" target=\"_blank\" rel=\"noopener\">revertir el 1017</a>"
    ],
    [
-    "22-oct",
-    "El cupo de Go, ahora con números: <b>$7,47 de coste para un límite al 99 %</b>",
-    "Dos hilos ponen cifras a lo de ayer: uno no entiende por qué el panel le marca $7,47 de coste con el plan de $10, y otro ve «$0,08 / $3,28» con el límite mensual al 99 %. La respuesta que se repite en el sub es que <b>el límite es un porcentaje del cupo, no un contador de dólares gastados</b> — el mismo malentendido que en la subida de $60 a $80. Y sigue la comparativa que más piden: Go $10 contra Claude Code $20.",
-    "<a href=\"https://www.reddit.com/r/opencode/comments/1xbtczk/what_does_cost_mean_on_the_summary_page/\" target=\"_blank\" rel=\"noopener\">qué significa Cost</a> · <a href=\"https://www.reddit.com/r/opencode/comments/1xbvj6c/limits_opencode_go_10_vs_claude_code_20/\" target=\"_blank\" rel=\"noopener\">Go $10 vs Claude $20</a>"
+    "23-oct",
+    "Movimiento en el catálogo: <b>llega Kimi K3.1</b> y MiniMax pasa a ×2",
+    "Moonshot <b>enseña Kimi K3.1</b> en un teaser («muy pronto»), y en la tabla de Go se consuma lo que avisamos esta mañana: <code>MiniMax M3.1 Flash Free</code> desaparece y entra como modelo de pago a <b>$20/mes (×2)</b>, 19.380 peticiones. El patrón de la semana es nítido: el gratis dura días, luego o pasa a pago o se apaga. Y con Beam en el aire, el fondo real del tier gratis queda en <b>DeepSeek V4.1, GLM-5.3-Flash, Flint 40B y LongCat 2.5</b>.",
+    "<a href=\"https://www.reddit.com/r/opencode/comments/1xd7e2n/kimi_k31_is_coming_very_soon_already_teased_by/\" target=\"_blank\" rel=\"noopener\">Kimi K3.1</a> · <a href=\"https://opencode.ai/v2/docs/console/go/\" target=\"_blank\" rel=\"noopener\">tabla de Go</a>"
    ]
   ]
  },
  "noticias": [
   {
-   "titulo": "Limits Opencode Go 10$ vs. Claude Code 20$",
+   "titulo": "Minimax m3.1 flash no longer available for free users",
    "score": 1,
-   "comentarios": 22,
-   "fecha": "2026-10-21 18:39",
+   "comentarios": 33,
+   "fecha": "2026-10-22 15:12",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbvj6c/limits_opencode_go_10_vs_claude_code_20/",
-   "temperatura": 0.126
+   "url": "https://www.reddit.com/r/opencode/comments/1xcla34/minimax_m31_flash_no_longer_available_for_free/",
+   "temperatura": 0.167
   },
   {
-   "titulo": "Is buy opencode go is more worth it than buy api from official website?",
-   "score": 1,
-   "comentarios": 32,
-   "fecha": "2026-10-21 05:20",
+   "titulo": "Free account with different email",
+   "score": 3,
+   "comentarios": 5,
+   "fecha": "2026-10-23 04:48",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbeidn/is_buy_opencode_go_is_more_worth_it_than_buy_api/",
-   "temperatura": 0.112
+   "url": "https://www.reddit.com/r/opencode/comments/1xd4ntt/free_account_with_different_email/",
+   "temperatura": 0.157
+  },
+  {
+   "titulo": "Beam Free model is gone",
+   "score": 1,
+   "comentarios": 19,
+   "fecha": "2026-10-22 17:09",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xcogal/beam_free_model_is_gone/",
+   "temperatura": 0.152
+  },
+  {
+   "titulo": "Opencode Go",
+   "score": 2,
+   "comentarios": 5,
+   "fecha": "2026-10-23 04:11",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xd3zzj/opencode_go/",
+   "temperatura": 0.149
   },
   {
    "titulo": "🔥 Meta Muse Wonder is now available on OpenCode",
-   "score": 1,
-   "comentarios": 15,
+   "score": 156,
+   "comentarios": 25,
    "fecha": "2026-10-21 17:00",
    "sub": "opencode",
    "url": "https://www.reddit.com/r/opencode/comments/1xbsrta/meta_muse_wonder_is_now_available_on_opencode/",
-   "temperatura": 0.111
+   "temperatura": 0.144
   },
   {
-   "titulo": "Thinking of getting opencode. Should I buy it or not?",
-   "score": 1,
-   "comentarios": 16,
-   "fecha": "2026-10-21 16:00",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbr469/thinking_of_getting_opencode_should_i_buy_it_or/",
-   "temperatura": 0.111
-  },
-  {
-   "titulo": "Is it me or Deepseek 4.1 is super slow? Its taking an absurd amount of time for a simple task. Should I change to another model?",
-   "score": 1,
-   "comentarios": 30,
-   "fecha": "2026-10-21 05:28",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbenld/is_it_me_or_deepseek_41_is_super_slow_its_taking/",
-   "temperatura": 0.111
-  },
-  {
-   "titulo": "Is Deepseek 4.1 flash 1017 better than glm 5.3 flash?",
-   "score": 1,
-   "comentarios": 25,
-   "fecha": "2026-10-21 02:35",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/",
-   "temperatura": 0.102
-  },
-  {
-   "titulo": "Is the paid subscription deepseek flash faster than the free flash?",
-   "score": 1,
+   "titulo": "New model on OpenCode: flint-40b-free",
+   "score": 64,
    "comentarios": 14,
-   "fecha": "2026-10-21 09:24",
+   "fecha": "2026-10-22 03:31",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbig9b/is_the_paid_subscription_deepseek_flash_faster/",
-   "temperatura": 0.097
+   "url": "https://www.reddit.com/r/opencode/comments/1xc7vph/new_model_on_opencode_flint40bfree/",
+   "temperatura": 0.143
   },
   {
-   "titulo": "wow, ds 4.1 just goes blah blah compared to others",
-   "score": 1,
-   "comentarios": 15,
-   "fecha": "2026-10-21 08:37",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbhp2i/wow_ds_41_just_goes_blah_blah_compared_to_others/",
-   "temperatura": 0.097
-  },
-  {
-   "titulo": "Does OpenCode prioritize paid users over free users?",
-   "score": 1,
-   "comentarios": 16,
-   "fecha": "2026-10-21 07:18",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbggkf/does_opencode_prioritize_paid_users_over_free/",
-   "temperatura": 0.097
-  },
-  {
-   "titulo": "Can i learn coding with help from open code?",
-   "score": 1,
-   "comentarios": 10,
-   "fecha": "2026-10-21 14:25",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbolxt/can_i_learn_coding_with_help_from_open_code/",
-   "temperatura": 0.095
-  },
-  {
-   "titulo": "OpenCode keeps getting stuck in an infinite shell-command loop. Anyone else experiencing this?",
-   "score": 1,
-   "comentarios": 10,
-   "fecha": "2026-10-21 14:47",
+   "titulo": "🔥 Meta Muse Wonder is now available on OpenCode",
+   "score": 148,
+   "comentarios": 14,
+   "fecha": "2026-10-21 16:59",
    "sub": "opencodeCLI",
-   "url": "https://www.reddit.com/r/opencodeCLI/comments/1xbp6ls/opencode_keeps_getting_stuck_in_an_infinite/",
-   "temperatura": 0.095
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1xbsr00/meta_muse_wonder_is_now_available_on_opencode/",
+   "temperatura": 0.14
   },
   {
-   "titulo": "model preference",
+   "titulo": "Running into issues.",
    "score": 1,
-   "comentarios": 8,
-   "fecha": "2026-10-21 17:53",
+   "comentarios": 11,
+   "fecha": "2026-10-22 18:16",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbu8uv/model_preference/",
-   "temperatura": 0.094
+   "url": "https://www.reddit.com/r/opencode/comments/1xcqb1k/running_into_issues/",
+   "temperatura": 0.135
   },
   {
-   "titulo": "Which inference provider does OpenCode Go use for DeepSeek, and is the model quantized?",
-   "score": 5,
+   "titulo": "did they change the quota for free user ?",
+   "score": 32,
+   "comentarios": 25,
+   "fecha": "2026-10-22 00:52",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xc4moa/did_they_change_the_quota_for_free_user/",
+   "temperatura": 0.133
+  },
+  {
+   "titulo": "DeepSeek V4.1 Flash 1017: OpenCode Zen vs OpenRouter — which is cheaper?",
+   "score": 23,
+   "comentarios": 20,
+   "fecha": "2026-10-22 03:36",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xc7z3v/deepseek_v41_flash_1017_opencode_zen_vs/",
+   "temperatura": 0.131
+  },
+  {
+   "titulo": "Best free or cheap OpenCode model for general use?",
+   "score": 1,
+   "comentarios": 13,
+   "fecha": "2026-10-22 14:48",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xckn0b/best_free_or_cheap_opencode_model_for_general_use/",
+   "temperatura": 0.13
+  },
+  {
+   "titulo": "Limits Opencode Go 10$ vs. Claude Code 20$",
+   "score": 33,
+   "comentarios": 30,
+   "fecha": "2026-10-21 18:39",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbvj6c/limits_opencode_go_10_vs_claude_code_20/",
+   "temperatura": 0.125
+  },
+  {
+   "titulo": "why do they want us to use their desktop app?",
+   "score": 17,
+   "comentarios": 17,
+   "fecha": "2026-10-22 01:10",
+   "sub": "opencode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xc4ztq/why_do_they_want_us_to_use_their_desktop_app/",
+   "temperatura": 0.12
+  },
+  {
+   "titulo": "OpenCode v2.1.2 dropped: No more wiped prompts on rate limits, hiding free models, and location timeout controls",
+   "score": 153,
    "comentarios": 12,
-   "fecha": "2026-10-21 06:39",
+   "fecha": "2026-10-21 04:26",
    "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbftih/which_inference_provider_does_opencode_go_use_for/",
-   "temperatura": 0.093
-  },
-  {
-   "titulo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
-   "score": 234,
-   "comentarios": 104,
-   "fecha": "2026-10-18 05:21",
-   "sub": "opencode",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/",
-   "temperatura": 0.09
+   "url": "https://www.reddit.com/r/opencode/comments/1xbdkiy/opencode_v212_dropped_no_more_wiped_prompts_on/",
+   "temperatura": 0.12
   }
  ],
  "comentarios": [
@@ -1439,13 +1470,13 @@
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/phkxxsq/"
   },
   {
-   "autor": "SnooWalruses6610",
+   "autor": "breadnone",
    "score": 68,
-   "texto": "GLM + Deepseek.",
-   "fecha": "2026-10-18 05:25",
+   "texto": "was looking for the word \\*free\\*",
+   "fecha": "2026-10-21 17:16",
    "sub": "opencode",
-   "hilo": "Since Muse Spark 1.3 is gone now. What do i use from the free models for the best results??",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8uxna/since_muse_spark_13_is_gone_now_what_do_i_use/phfz6vz/"
+   "hilo": "🔥 Meta Muse Wonder is now available on OpenCode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbsrta/meta_muse_wonder_is_now_available_on_opencode/19rfzq73sf7gi/"
   },
   {
    "autor": "RepulsiveRaisin7",
@@ -1475,6 +1506,15 @@
    "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/phkxq40/"
   },
   {
+   "autor": "Previous-Fun4493",
+   "score": 43,
+   "texto": "hmmm... may....maybe... lets me think.. hmmnn... hm... maybe",
+   "fecha": "2026-10-21 02:36",
+   "sub": "opencode",
+   "hilo": "Is Deepseek 4.1 flash 1017 better than glm 5.3 flash?",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/19rewi4bfyvad/"
+  },
+  {
    "autor": "PrudentJelly116",
    "score": 36,
    "texto": "Today I was checking reddit 10 times to see this post, finally :D thanks bro",
@@ -1484,13 +1524,40 @@
    "url": "https://www.reddit.com/r/opencode/comments/1xa1qy7/deepseek_v41_flash_updated_to_1017_in_opencode_go/phq4jpv/"
   },
   {
-   "autor": "Previous-Fun4493",
-   "score": 36,
-   "texto": "hmmm... may....maybe... lets me think.. hmmnn... hm... maybe",
-   "fecha": "2026-10-21 02:36",
+   "autor": "OldWorldKestrell",
+   "score": 35,
+   "texto": "We still miss spark-1.3-contributor-free :D",
+   "fecha": "2026-10-21 17:05",
+   "sub": "opencodeCLI",
+   "hilo": "🔥 Meta Muse Wonder is now available on OpenCode",
+   "url": "https://www.reddit.com/r/opencodeCLI/comments/1xbsr00/meta_muse_wonder_is_now_available_on_opencode/19rfz9b6jak4i/"
+  },
+  {
+   "autor": "CalamityMetal",
+   "score": 33,
+   "texto": "Yeah we need transparency on this",
+   "fecha": "2026-10-21 06:42",
    "sub": "opencode",
-   "hilo": "Is Deepseek 4.1 flash 1017 better than glm 5.3 flash?",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbbfkn/is_deepseek_41_flash_1017_better_than_glm_53_flash/19rewi4bfyvad/"
+   "hilo": "Which inference provider does OpenCode Go use for DeepSeek, and is the model quantized?",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbftih/which_inference_provider_does_opencode_go_use_for/19rf7fupfh25e/"
+  },
+  {
+   "autor": "Expert-Couple-8639",
+   "score": 32,
+   "texto": "or contributer",
+   "fecha": "2026-10-21 17:32",
+   "sub": "opencode",
+   "hilo": "🔥 Meta Muse Wonder is now available on OpenCode",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbsrta/meta_muse_wonder_is_now_available_on_opencode/19rg0gjuk1u9s/"
+  },
+  {
+   "autor": "Amarsir",
+   "score": 31,
+   "texto": "It's a buffet. You can eat more than your money's worth. ($80 for $10). If your tastes change you can switch instantly. But you'll be bumping elbows with crowds and occasionally wondering if the quality is as good as the same items purchased *a la carte*.",
+   "fecha": "2026-10-21 05:38",
+   "sub": "opencode",
+   "hilo": "Is buy opencode go is more worth it than buy api from official website?",
+   "url": "https://www.reddit.com/r/opencode/comments/1xbeidn/is_buy_opencode_go_is_more_worth_it_than_buy_api/19rf4l3sydmio/"
   },
   {
    "autor": "DiscountFit9224",
@@ -1500,42 +1567,6 @@
    "sub": "opencode",
    "hilo": "Looking For More Models With Unlimited Use For Free",
    "url": "https://www.reddit.com/r/opencode/comments/1x9mnbl/looking_for_more_models_with_unlimited_use_for/phmqr4v/"
-  },
-  {
-   "autor": "CalamityMetal",
-   "score": 29,
-   "texto": "Yeah we need transparency on this",
-   "fecha": "2026-10-21 06:42",
-   "sub": "opencode",
-   "hilo": "Which inference provider does OpenCode Go use for DeepSeek, and is the model quantized?",
-   "url": "https://www.reddit.com/r/opencode/comments/1xbftih/which_inference_provider_does_opencode_go_use_for/19rf7fupfh25e/"
-  },
-  {
-   "autor": "surgicalcoder",
-   "score": 28,
-   "texto": "I want 5000 tps, 10m tok window, and I want it completely unlimited and free. No, in fact they should pay me to use it!",
-   "fecha": "2026-10-18 22:41",
-   "sub": "opencode",
-   "hilo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/phl68fy/"
-  },
-  {
-   "autor": "Friendly-Assistance3",
-   "score": 27,
-   "texto": "Bro discovered rate limiting exists lol. What did you expect 1000 tps?",
-   "fecha": "2026-10-18 22:30",
-   "sub": "opencode",
-   "hilo": "They finally admit it. \"the worst we do is to serve at lower tps\"",
-   "url": "https://www.reddit.com/r/opencode/comments/1x9fjum/they_finally_admit_it_the_worst_we_do_is_to_serve/phl47nn/"
-  },
-  {
-   "autor": "aliencreature12",
-   "score": 27,
-   "texto": "if they do they post about it so most likely no",
-   "fecha": "2026-10-18 09:49",
-   "sub": "opencode",
-   "hilo": "Does Opencode use Deepseek flash 4.1 1017?",
-   "url": "https://www.reddit.com/r/opencode/comments/1x8z8jz/does_opencode_use_deepseek_flash_41_1017/phgvfws/"
   }
  ],
  "go_limites": {
@@ -2680,14 +2711,14 @@
   }
  },
  "meta": {
-  "generado": "2026-10-23 04:41 UTC",
+  "generado": "2026-10-23 15:57 UTC",
   "subs": {
-   "opencode": 2398,
-   "opencodeCLI": 865
+   "opencode": 2506,
+   "opencodeCLI": 883
   },
-  "hilos": 2914,
-  "comentarios": 23465,
-  "unidades": 26298,
+  "hilos": 3040,
+  "comentarios": 23913,
+  "unidades": 26647,
   "ventana_dias": 45,
   "fuente_datos": "Arctic Shift API (arctic-shift.photon-reddit.com)"
  }
